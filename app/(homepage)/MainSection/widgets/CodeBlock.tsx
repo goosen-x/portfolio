@@ -1,8 +1,16 @@
 import { Block } from '@/components/Block'
+import { cn } from '@/lib/utils'
+import { ComponentPropsWithoutRef } from 'react'
 
-export const CodeBlock = () => {
+type Props = ComponentPropsWithoutRef<'div'>
+export const CodeBlock = ({ className }: Props) => {
 	return (
-		<Block className='col-span-12 md:col-span-4 row-span-2 relative rounded-lg bg-slate-900 p-2'>
+		<Block
+			className={cn(
+				'col-span-12 md:col-span-4 relative rounded-lg bg-slate-900 p-2',
+				className
+			)}
+		>
 			<div className='relative flex text-center'>
 				<div className='flex pl-3.5 pt-3'>
 					<svg

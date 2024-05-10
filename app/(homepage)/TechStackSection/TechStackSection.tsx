@@ -2,25 +2,35 @@
 
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
-import { BentoGrid, BentoGridItem } from '@/components/ui/bento-grid'
-import { items } from './constants'
+import { Block } from '@/components/Block'
+import { TechStackData } from './constants'
+import { BiLogoTelegram } from 'react-icons/bi'
+import { CodeBlock } from '../MainSection/widgets'
 
 export const TechStackSection = () => {
 	return (
-		<BentoGrid className='max-w-4xl mx-auto md:auto-rows-[20rem]'>
-			{items.map((item, i) => (
-				<BentoGridItem
-					key={i}
-					title={item.title}
-					description={item.description}
-					header={item.header}
-					className={cn('[&>p:text-lg]', item.className)}
-					icon={item.icon}
-				/>
+		<section className='grid grid-cols-12 gap-4 mb-6' id='tech'>
+			<h2 className='col-span-12 text-5xl text-foreground'>Tech Stack</h2>
+			<CodeBlock />
+			{TechStackData.map(item => (
+				<Block
+					className={
+						(cn('col-span-12 text-foreground'),
+						item.name !== 'Other Tools' ? 'md:col-span-4' : 'md:col-span-12')
+					}
+					key={item.name}
+				>
+					<p className='text-3xl'>{item.name}</p>
+					<ul>
+						{item.techs.map(tech => (
+							<li className='flex items-center gap-2' key={tech.name}>
+								{tech.icon}
+								{tech.name}
+							</li>
+						))}
+					</ul>
+				</Block>
 			))}
-		</BentoGrid>
+		</section>
 	)
 }
-const Skeleton = () => (
-	<div className='flex flex-1 w-full h-full min-h-[6rem] rounded-xl   dark:bg-dot-white/[0.2] bg-dot-black/[0.2] [mask-image:radial-gradient(ellipse_at_center,white,transparent)]  border border-transparent dark:border-white/[0.2] bg-neutral-100 dark:bg-black'></div>
-)

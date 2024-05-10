@@ -2,7 +2,6 @@ import { Block } from '@/components/Block'
 import {
 	AboutBlock,
 	CVBlock,
-	CodeBlock,
 	EmailListBlock,
 	HeaderBlock,
 	LocationBlock,
@@ -15,9 +14,8 @@ export const MainSection = () => {
 			<HeaderBlock />
 			<SocialsBlock />
 			<AboutBlock />
-			<CodeBlock />
-			<LocationBlock />
 			<CVBlock />
+			<LocationBlock />
 			<EmailListBlock />
 		</section>
 	)
