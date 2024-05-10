@@ -8,7 +8,7 @@ import {
 
 export const MainSection = () => {
 	return (
-		<section className='grid grid-cols-12 gap-4 mb-6' id='main'>
+		<section className='grid grid-cols-12 gap-4 mb-24' id='main'>
 			<HeaderBlock />
 			<SocialsBlock />
 			<AboutBlock />

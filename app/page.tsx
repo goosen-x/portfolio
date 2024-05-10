@@ -11,9 +11,9 @@ export default function Home() {
 				<MainSection />
 				<TechStackSection />
 				<PortfolioSection />
-				<section className='h-screen py-20 w-full'>
+				{/* <section className='h-screen py-20 w-full'>
 					<LayoutGrid cards={cards} />
-				</section>
+				</section> */}
 			</div>
 		</main>
 	)

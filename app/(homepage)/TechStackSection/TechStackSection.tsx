@@ -6,11 +6,12 @@ import { Block } from '@/components/Block'
 import { TechStackData } from './constants'
 import { CodeBlock } from '../MainSection/widgets'
 import { Badge } from '@/components/ui/badge'
+import { SectionTitle } from '@/components/global/SectionTitle'
 
 export const TechStackSection = () => {
 	return (
-		<section className='grid grid-cols-12 gap-4 mb-6' id='tech'>
-			<h2 className='col-span-12 text-5xl text-foreground mb-2'>Tech Stack</h2>
+		<section className='grid grid-cols-12 gap-4 mb-24' id='tech'>
+			<SectionTitle className='col-span-12' title='Tech Stack' />
 			<CodeBlock />
 			{TechStackData.map(item => (
 				<Block
