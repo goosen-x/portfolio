@@ -1,6 +1,31 @@
 import { TechStackDataType } from './types'
-import { SiNextdotjs } from 'react-icons/si'
-import { BiLogoTypescript } from 'react-icons/bi'
+
+import { GrGraphQl } from 'react-icons/gr'
+import { BiLogoPostgresql, BiLogoTypescript } from 'react-icons/bi'
+import {
+	SiEslint,
+	SiJest,
+	SiStrapi,
+	SiMongodb,
+	SiSequelize,
+	SiJsonwebtokens,
+	SiExpress,
+	SiTailwindcss,
+	SiRedux,
+	SiNextdotjs,
+	SiRadixui
+} from 'react-icons/si'
+import {
+	FaGithub,
+	FaGitlab,
+	FaGitAlt,
+	FaSass,
+	FaCss3Alt,
+	FaHtml5,
+	FaBootstrap,
+	FaNodeJs,
+	FaReact
+} from 'react-icons/fa'
 
 export const TechStackData: TechStackDataType = [
 	{
@@ -9,19 +34,63 @@ export const TechStackData: TechStackDataType = [
 		techs: [
 			{
 				name: 'Typescript',
-				icon: <BiLogoTypescript />
+				icon: <BiLogoTypescript />,
+				percent: 95
 			},
 			{
 				name: 'React',
-				icon: 'react'
+				icon: <FaReact />,
+				percent: 90
 			},
 			{
 				name: 'Next.js',
-				icon: <SiNextdotjs />
+				icon: <SiNextdotjs />,
+				percent: 95
 			},
 			{
-				name: 'SvelteKit',
-				icon: 'sveltekit'
+				name: 'GraphQL',
+				icon: <GrGraphQl />,
+				percent: 80
+			},
+			{
+				name: 'Redux',
+				icon: <SiRedux />,
+				percent: 70
+			},
+			{
+				name: 'TailwindCSS',
+				icon: <SiTailwindcss />,
+				percent: 85
+			},
+			{
+				name: 'RadixUI',
+				icon: <SiRadixui />,
+				percent: 85
+			},
+			{
+				name: 'RadixUI',
+				icon: <SiRadixui />,
+				percent: 85
+			},
+			{
+				name: 'Bootstrap',
+				icon: <FaBootstrap />,
+				percent: 80
+			},
+			{
+				name: 'HTML5',
+				icon: <FaHtml5 />,
+				percent: 95
+			},
+			{
+				name: 'CSS3',
+				icon: <FaCss3Alt />,
+				percent: 95
+			},
+			{
+				name: 'SASS',
+				icon: <FaSass />,
+				percent: 95
 			}
 		]
 	},
@@ -30,15 +99,38 @@ export const TechStackData: TechStackDataType = [
 		techs: [
 			{
 				name: 'Node.js',
-				icon: 'nodejs'
+				icon: <FaNodeJs />,
+				percent: 85
 			},
 			{
 				name: 'Express.js',
-				icon: 'express'
+				icon: <SiExpress />,
+				percent: 75
 			},
 			{
-				name: 'Nuxt.js',
-				icon: 'nuxt'
+				name: 'JSON Web Tokens',
+				icon: <SiJsonwebtokens />,
+				percent: 80
+			},
+			{
+				name: 'PostgreSQL',
+				icon: <BiLogoPostgresql />,
+				percent: 90
+			},
+			{
+				name: 'Sequelize',
+				icon: <SiSequelize />,
+				percent: 80
+			},
+			{
+				name: 'MongoDB',
+				icon: <SiMongodb />,
+				percent: 80
+			},
+			{
+				name: 'Strapi',
+				icon: <SiStrapi />,
+				percent: 90
 			}
 		]
 	},
@@ -46,16 +138,29 @@ export const TechStackData: TechStackDataType = [
 		name: 'Other Tools',
 		techs: [
 			{
-				name: 'Node.js',
-				icon: 'nodejs'
+				name: 'Jest',
+				icon: <SiJest />,
+				percent: 90
 			},
 			{
-				name: 'Express.js',
-				icon: 'express'
+				name: 'ESLint',
+				icon: <SiEslint />,
+				percent: 90
 			},
 			{
-				name: 'Nuxt.js',
-				icon: 'nuxt'
+				name: 'Git',
+				icon: <FaGitAlt />,
+				percent: 90
+			},
+			{
+				name: 'GitHub',
+				icon: <FaGithub />,
+				percent: 90
+			},
+			{
+				name: 'GitLab',
+				icon: <FaGitlab />,
+				percent: 90
 			}
 		]
 	}

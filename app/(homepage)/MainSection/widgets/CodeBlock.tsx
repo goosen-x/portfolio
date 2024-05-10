@@ -7,7 +7,7 @@ export const CodeBlock = ({ className }: Props) => {
 	return (
 		<Block
 			className={cn(
-				'col-span-12 md:col-span-4 relative rounded-lg bg-slate-900 p-2',
+				'col-span-12 md:col-span-6 relative rounded-lg bg-slate-900 p-2 -z-1',
 				className
 			)}
 		>

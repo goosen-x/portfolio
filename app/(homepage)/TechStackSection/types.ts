@@ -5,5 +5,6 @@ export type TechStackDataType = {
 	techs: {
 		name: string
 		icon: ReactNode
+		percent: number
 	}[]
 }[]
