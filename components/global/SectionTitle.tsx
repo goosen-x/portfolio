@@ -16,7 +16,7 @@ export const SectionTitle = ({ className, title, tag = 'h2' }: Props) => {
 				className
 			)}
 		>
-			<Tag className={'text-6xl font-black'}>
+			<Tag className={'text-6xl font-black text-foreground'}>
 				{title}
 				<span className='text-violet-500'>.</span>
 			</Tag>
