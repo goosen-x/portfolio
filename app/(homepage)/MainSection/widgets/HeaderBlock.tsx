@@ -8,7 +8,7 @@ export const HeaderBlock = () => {
 	return (
 		<Block className='col-span-12 row-span-2 md:col-span-6'>
 			<Image
-				className='mb-4 size-20 rounded-full group-hover/block:scale-110  group-hover/block:translate-x-2 group-hover/block:translate-y-2 transition duration-200'
+				className='group-hover/block:z-0 mb-4 size-20 rounded-full group-hover/block:scale-110  group-hover/block:translate-x-2 group-hover/block:translate-y-2 transition duration-200'
 				src={
 					'https://lh3.googleusercontent.com/ogw/AF2bZyhPfLZmAxGeUTL2Syg9SoOz0VdELu5JqE3Lym_AxPJ6GRU=s64-c-mo'
 				}

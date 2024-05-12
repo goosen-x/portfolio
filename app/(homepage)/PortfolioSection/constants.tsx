@@ -1,33 +1,113 @@
-import { SkeletonFour } from './widgets/SkeletonFour'
-import { SkeletonOne } from './widgets/SkeletonOne'
-import { SkeletonThree } from './widgets/SkeletonThree'
-import { SkeletonTwo } from './widgets/SkeletonTwo'
+import { BiLogoJavascript, BiLogoTypescript } from 'react-icons/bi'
+import { ProjectDataType } from './types'
+import { FaCss3Alt, FaHtml5, FaNodeJs, FaReact, FaSass } from 'react-icons/fa'
+import { SiExpress, SiNextdotjs, SiStrapi } from 'react-icons/si'
+import { TbAlpha } from 'react-icons/tb'
+import { GrGraphQl } from 'react-icons/gr'
 
-export const cards = [
+export const ProjectsData: ProjectDataType[] = [
 	{
-		id: 1,
-		content: <SkeletonOne />,
-		className: 'md:col-span-2',
-		thumbnail: '/images/komponenta.png'
+		name: 'Moscow Business Academy',
+		image: '/images/mba.png',
+		link: 'https://moscow.mba/',
+		description:
+			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.',
+		techs: [
+			{
+				name: 'Typescript',
+				icon: <BiLogoTypescript />
+			},
+			{
+				name: 'Next.js',
+				icon: <SiNextdotjs />
+			},
+			{
+				name: 'GraphQL',
+				icon: <GrGraphQl />
+			},
+			{
+				name: 'SASS',
+				icon: <FaSass />
+			},
+			{
+				name: 'Node.js',
+				icon: <FaNodeJs />
+			},
+			{
+				name: 'Strapi',
+				icon: <SiStrapi />
+			}
+		]
 	},
 	{
-		id: 2,
-		content: <SkeletonTwo />,
-		className: 'col-span-1',
-		thumbnail:
-			'https://images.unsplash.com/photo-1475070929565-c985b496cb9f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+		name: 'Komponenta',
+		image: '/images/komponenta.png',
+		link: 'https://www.komponenta-bfl.ru/',
+		description:
+			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.',
+		techs: [
+			{
+				name: 'Javascript',
+				icon: <BiLogoJavascript />
+			},
+			{
+				name: 'HTML',
+				icon: <FaHtml5 />
+			},
+			{
+				name: 'CSS',
+				icon: <FaCss3Alt />
+			},
+			{
+				name: 'Express.js',
+				icon: <SiExpress />
+			},
+			{
+				name: 'AMO CRM',
+				icon: <TbAlpha />
+			}
+		]
 	},
 	{
-		id: 3,
-		content: <SkeletonThree />,
-		className: 'col-span-1',
-		thumbnail:
-			'https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+		name: 'Project 3',
+		image: '/images/heroes.png',
+		link: 'https://www.komponenta-bfl.ru/',
+		description:
+			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.',
+		techs: [
+			{
+				name: 'Javascript',
+				icon: <BiLogoJavascript />
+			},
+			{
+				name: 'Typescript',
+				icon: <BiLogoTypescript />
+			},
+			{
+				name: 'React',
+				icon: <FaReact />
+			}
+		]
 	},
 	{
-		id: 4,
-		content: <SkeletonFour />,
-		className: 'md:col-span-2',
-		thumbnail: '/images/mba.png'
+		name: 'Project 4',
+		image: '/images/heroes.png',
+		link: '/project-4',
+		description:
+			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.',
+		techs: [
+			{
+				name: 'Javascript',
+				icon: <BiLogoJavascript />
+			},
+			{
+				name: 'Typescript',
+				icon: <BiLogoTypescript />
+			},
+			{
+				name: 'React',
+				icon: <FaReact />
+			}
+		]
 	}
 ]

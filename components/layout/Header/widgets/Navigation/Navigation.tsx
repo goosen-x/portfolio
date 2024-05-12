@@ -1,13 +1,16 @@
-import React from 'react'
+'use client'
+
+import React, { Dispatch, SetStateAction } from 'react'
 import { menuItems } from './constants'
 import { LogoLink } from '../LogoLink/LogoLink'
 import Link from 'next/link'
 
 type NavigationProps = {
 	burger?: boolean
+	setOpen?: Dispatch<SetStateAction<boolean>>
 }
 
-export const Navigation = ({ burger = false }: NavigationProps) => {
+export const Navigation = ({ burger = false, setOpen }: NavigationProps) => {
 	return (
 		<nav
 			className={
@@ -22,6 +25,7 @@ export const Navigation = ({ burger = false }: NavigationProps) => {
 					className='text-muted-foreground transition-colors hover:text-foreground'
 					href={item.href}
 					key={item.title}
+					onClick={() => burger && setOpen && setOpen(false)}
 				>
 					{item.title}
 				</Link>

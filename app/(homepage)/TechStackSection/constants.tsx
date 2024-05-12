@@ -1,9 +1,12 @@
 import { TechStackDataType } from './types'
 
 import { GrGraphQl } from 'react-icons/gr'
-import { BiLogoPostgresql, BiLogoTypescript } from 'react-icons/bi'
 import {
-	SiEslint,
+	BiLogoPostgresql,
+	BiLogoTypescript,
+	BiLogoJavascript
+} from 'react-icons/bi'
+import {
 	SiJest,
 	SiStrapi,
 	SiMongodb,
@@ -33,6 +36,11 @@ export const TechStackData: TechStackDataType = [
 
 		techs: [
 			{
+				name: 'Javascript',
+				icon: <BiLogoJavascript />,
+				percent: 95
+			},
+			{
 				name: 'Typescript',
 				icon: <BiLogoTypescript />,
 				percent: 95
@@ -41,6 +49,11 @@ export const TechStackData: TechStackDataType = [
 				name: 'React',
 				icon: <FaReact />,
 				percent: 90
+			},
+			{
+				name: 'Redux',
+				icon: <SiRedux />,
+				percent: 70
 			},
 			{
 				name: 'Next.js',
@@ -53,37 +66,12 @@ export const TechStackData: TechStackDataType = [
 				percent: 80
 			},
 			{
-				name: 'Redux',
-				icon: <SiRedux />,
-				percent: 70
-			},
-			{
-				name: 'TailwindCSS',
-				icon: <SiTailwindcss />,
-				percent: 85
-			},
-			{
-				name: 'RadixUI',
-				icon: <SiRadixui />,
-				percent: 85
-			},
-			{
-				name: 'RadixUI',
-				icon: <SiRadixui />,
-				percent: 85
-			},
-			{
-				name: 'Bootstrap',
-				icon: <FaBootstrap />,
-				percent: 80
-			},
-			{
-				name: 'HTML5',
+				name: 'HTML',
 				icon: <FaHtml5 />,
 				percent: 95
 			},
 			{
-				name: 'CSS3',
+				name: 'CSS',
 				icon: <FaCss3Alt />,
 				percent: 95
 			},
@@ -91,6 +79,21 @@ export const TechStackData: TechStackDataType = [
 				name: 'SASS',
 				icon: <FaSass />,
 				percent: 95
+			},
+			{
+				name: 'Bootstrap',
+				icon: <FaBootstrap />,
+				percent: 80
+			},
+			{
+				name: 'Tailwind',
+				icon: <SiTailwindcss />,
+				percent: 85
+			},
+			{
+				name: 'RadixUI',
+				icon: <SiRadixui />,
+				percent: 85
 			}
 		]
 	},
@@ -140,11 +143,6 @@ export const TechStackData: TechStackDataType = [
 			{
 				name: 'Jest',
 				icon: <SiJest />,
-				percent: 90
-			},
-			{
-				name: 'ESLint',
-				icon: <SiEslint />,
 				percent: 90
 			},
 			{

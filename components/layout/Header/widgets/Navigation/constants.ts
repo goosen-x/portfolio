@@ -1,5 +1,5 @@
 export const menuItems = [
-	{ title: 'Dashboard', href: '#dashboard' },
-	{ title: 'TechStack', href: '#techstack' },
+	{ title: 'Dashboard', href: '#main' },
+	{ title: 'TechStack', href: '#tech' },
 	{ title: 'Projects', href: '#projects' }
 ]

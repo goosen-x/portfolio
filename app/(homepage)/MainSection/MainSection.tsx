@@ -1,3 +1,4 @@
+import { LocationCard } from '@/components/global/LocationCard'
 import {
 	AboutBlock,
 	EmailListBlock,

@@ -20,7 +20,7 @@ export const SectionTitle = ({ className, title, tag = 'h2' }: Props) => {
 				{title}
 				<span className='text-violet-500'>.</span>
 			</Tag>
-			<div className='size-full h-px bg-card'></div>
+			<div className='size-full h-1 bg-card'></div>
 		</div>
 	)
 }
