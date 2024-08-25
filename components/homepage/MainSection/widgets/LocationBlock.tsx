@@ -1,5 +1,6 @@
 import { Block } from '@/components/Block'
-import { Globe } from '@/components/global/globe'
+import { Globus } from '@/components/global/Globus'
+
 import { FaLocationDot } from 'react-icons/fa6'
 
 export const LocationBlock = () => {
@@ -9,7 +10,7 @@ export const LocationBlock = () => {
 				<FaLocationDot className='text-foreground text-2xl' />
 				Russia, Moscow
 			</p>
-			<Globe />
+			<Globus />
 		</Block>
 	)
 }

@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react'
 import createGlobe from 'cobe'
 
-export const Globe = ({ className }: { className?: string }) => {
+export const Globus = ({ className }: { className?: string }) => {
 	const canvasRef = useRef<HTMLCanvasElement>(null)
 
 	useEffect(() => {
