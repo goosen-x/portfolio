@@ -3,7 +3,6 @@ import { cn } from '@/lib/utils'
 
 import { Block } from '@/components/Block'
 import { TechStackData } from './constants'
-import { CodeBlock } from '../MainSection/widgets'
 import { Badge } from '@/components/ui/badge'
 import { SectionTitle } from '@/components/global/SectionTitle'
 
@@ -17,10 +16,10 @@ export const TechStackSection = ({
 			{...rest}
 		>
 			<SectionTitle className='col-span-12' title='Tech Stack' />
-			<CodeBlock />
+			{/* <CodeBlock /> */}
 			{TechStackData.map(item => (
 				<Block
-					className={cn('col-span-12 md:col-span-6 text-foreground')}
+					className={cn('col-span-12 md:col-span-4 text-foreground')}
 					key={item.name}
 				>
 					<p className='text-3xl mb-4'>{item.name}</p>

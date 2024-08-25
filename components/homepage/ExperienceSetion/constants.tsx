@@ -31,26 +31,26 @@ export const experienceData: Array<ExperienceData> = [
 		companyUrl: null,
 		description:
 			'Worked on the SAP UI5 framework and Angular. Also worked on the SAP UI5 Angular Components. I also worked on the SAP UI5 React Components. framework and Angular. Also worked on the SAP UI5 Angular Components. I also worked on the SAP UI5 React Components. framework and Angular. Also worked on the SAP UI5 Angular Components. I also worked on the SAP UI5 React Components.',
-		images: ['']
+		images: ['/images/mba.png', '/images/mba-experience.png']
 	},
 	{
-		title: '2021-2022',
+		title: '2020-2022',
 		job: 'Frontend Developer',
 		company: 'Inspro',
 		city: 'Moscow',
 		companyUrl: 'https://www.inspro.ru/',
 		description:
 			'Worked on the SAP UI5 framework and Angular. Also worked on the SAP UI5 Angular Components. I also worked on the SAP UI5 React Components. L framework and Angular. Also worked on the SAP UI5 Angular Components. I also worked on the SAP UI5 React Components. framework and Angular. Also worked on the SAP UI5 Angular Components. I also worked on the SAP UI5 React Components. framework and Angular. Also worked on the SAP UI5 Angular Components. I also worked on the SAP UI5 React Components.',
-		images: ['']
+		images: ['/images/mba.png', '/images/mba-experience.png']
 	},
 	{
-		title: '2019-2021',
+		title: '2019-2020',
 		job: 'Frontend Developer',
 		company: 'Mbloq',
 		city: 'Moscow',
 		companyUrl: null,
 		description:
 			'Worked on the SAP UI5 framework and Angular. Also worked on the SAP UI5 Angular Components. I also worked on the SAP UI5 React Components. framework and Angular. Also worked on the SAP UI5 Angular Components. I also worked on the SAP UI5 React Components.',
-		images: ['']
+		images: ['/images/mba-experience.png']
 	}
 ]

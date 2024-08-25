@@ -1,9 +1,10 @@
 import '../globals.css'
 import { cn } from '@/lib/utils'
 
-import { ThemeProvider } from '@/components/ui/theme-provider'
 import type { Metadata } from 'next'
-import { Manrope as FontSans } from 'next/font/google'
+import { ThemeProvider } from '@/components/ui/theme-provider'
+// import { Manrope as FontSans } from 'next/font/google'
+import { Tektur as FontSans } from 'next/font/google'
 import { Footer, Header } from '@/components/layout'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
@@ -38,7 +39,7 @@ export default async function RootLayout({
 						)}
 					>
 						<Header />
-						<main>{children}</main>
+						<main className='min-h-screen w-full'>{children}</main>
 						<Footer />
 					</body>
 				</ThemeProvider>

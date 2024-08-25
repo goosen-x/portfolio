@@ -8,7 +8,7 @@ export const HeaderBlock = () => {
 	return (
 		<Block className='col-span-12 row-span-2 md:col-span-8'>
 			<Image
-				className='group-hover/block:z-0 mb-4 size-20 rounded-full group-hover/block:scale-110  group-hover/block:translate-x-2 group-hover/block:translate-y-2 transition duration-200'
+				className='group-hover/block:z-0 mb-4 size-20 rounded-full group-hover/block:w-32 group-hover/block:h-32 transition-all duration-500'
 				src={
 					'https://lh3.googleusercontent.com/ogw/AF2bZyhPfLZmAxGeUTL2Syg9SoOz0VdELu5JqE3Lym_AxPJ6GRU=s64-c-mo'
 				}
@@ -18,16 +18,17 @@ export const HeaderBlock = () => {
 			/>
 			<h1 className='mb-12 text-3xl text-foreground font-medium leading-tight'>
 				Fullstack developer
-				<span className='text-blue-300 text-4xl font-bold block'>
+				<span className='text-blue-300 text-3xl group-hover/block:text-4xl font-bold block transition-all duration-500'>
 					{' '}
 					Borisenko Dmitry
 				</span>
 			</h1>
 			<Link
-				className='group-hover/block:translate-x-2 transition duration-200 flex items-center gap-1 text-blue-300 hover:underline'
+				className='group-hover/block:translate-x-2 transition w-fit flex items-center gap-2 text-blue-300 hover:underline duration-500'
 				href='#'
 			>
-				Contact Me <FiArrowRight />
+				Contact Me{' '}
+				<FiArrowRight className='group-hover/block:scale-x-150 transition-all duration-500' />
 			</Link>
 		</Block>
 	)
