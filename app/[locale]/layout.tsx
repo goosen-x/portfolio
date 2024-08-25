@@ -3,15 +3,24 @@ import { cn } from '@/lib/utils'
 
 import type { Metadata } from 'next'
 import { ThemeProvider } from '@/components/ui/theme-provider'
-// import { Manrope as FontSans } from 'next/font/google'
-import { Tektur as FontSans } from 'next/font/google'
+import localFont from 'next/font/local'
 import { Footer, Header } from '@/components/layout'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 
-const fontSans = FontSans({
-	subsets: ['latin', 'cyrillic'],
-	variable: '--font-sans'
+const myFont = localFont({
+	src: [
+		{
+			path: '../../public/fonts/Tektur-Regular.ttf',
+			weight: '400',
+			style: 'normal'
+		},
+		{
+			path: '../../public/fonts/Tektur-Bold.ttf',
+			weight: '700',
+			style: 'normal'
+		}
+	]
 })
 
 export const metadata: Metadata = {
@@ -29,13 +38,13 @@ export default async function RootLayout({
 	const messages = await getMessages()
 
 	return (
-		<html className='scroll-smooth scroll-mt-96' lang={locale}>
+		<html className='scroll-smooth scroll-pt-24' lang={locale}>
 			<NextIntlClientProvider messages={messages}>
 				<ThemeProvider>
 					<body
 						className={cn(
 							'min-h-screen bg-background font-sans antialiased',
-							fontSans.variable
+							myFont.className
 						)}
 					>
 						<Header />

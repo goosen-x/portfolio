@@ -21,7 +21,6 @@ export const ContactSection = ({ className, ...rest }: Props) => {
 						type='email'
 						placeholder='john@doe.com'
 					/>
-
 					<button className='absolute end-1 top-1/2 -translate-y-1/2 rounded-full bg-blue-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-blue-700'>
 						Subscribe
 					</button>

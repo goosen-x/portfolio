@@ -19,7 +19,6 @@ export const HeaderBlock = () => {
 			<h1 className='mb-12 text-3xl text-foreground font-medium leading-tight'>
 				Fullstack developer
 				<span className='text-blue-300 text-3xl group-hover/block:text-4xl font-bold block transition-all duration-500'>
-					{' '}
 					Borisenko Dmitry
 				</span>
 			</h1>
