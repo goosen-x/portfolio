@@ -1,4 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 'use client'
+
 import { useEffect, useRef, useState } from 'react'
 import { Color, Scene, Fog, PerspectiveCamera, Vector3 } from 'three'
 import ThreeGlobe from 'three-globe'

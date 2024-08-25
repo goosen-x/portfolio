@@ -1,0 +1,23 @@
+import { ComponentPropsWithoutRef } from 'react'
+import { cn } from '@/lib/utils'
+
+import { SectionTitle } from '@/components/global/SectionTitle'
+import { ProjectBlock } from './widgets/ProjectBlock'
+import { ProjectsData } from './constants'
+
+export const ProjectsSection = ({
+	className,
+	...rest
+}: ComponentPropsWithoutRef<'section'>) => {
+	return (
+		<section
+			className={cn('grid grid-cols-12 gap-x-6 gap-y-10 mb-24', className)}
+			{...rest}
+		>
+			<SectionTitle className='col-span-12' title='Projects' />
+			{ProjectsData.map(project => (
+				<ProjectBlock project={project} key={project.name} />
+			))}
+		</section>
+	)
+}

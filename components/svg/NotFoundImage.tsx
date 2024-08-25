@@ -1,28 +1,24 @@
 'use client'
 
+import { generateRandomColor } from '@/lib/helpers/generateRandomColor'
 import { useState, useEffect } from 'react'
 
 export const NotFoundImage = () => {
-	const [color, setColor] = useState('#6f56ff')
+	const [color, setColor] = useState(generateRandomColor())
 
 	useEffect(() => {
 		const interval = setInterval(() => {
-			setColor(generateRandomColor()) // Генерация случайного цвета
-		}, 3000) // Интервал в миллисекундах для изменения цвета
+			setColor(generateRandomColor())
+		}, 3000)
 
 		return () => clearInterval(interval)
 	}, [])
-
-	const generateRandomColor = () => {
-		// Генерация случайного HEX-цвета
-		return '#' + Math.floor(Math.random() * 16777215).toString(16)
-	}
 
 	return (
 		<svg
 			xmlns='http://www.w3.org/2000/svg'
 			viewBox='0 0 1024 768'
-			className='mx-auto h-56 w-auto text-black sm:h-64'
+			className='mx-auto h-56 w-auto text-foreground sm:h-64'
 		>
 			<g fill='none' fillRule='evenodd'>
 				<g className='transition-all duration-1000' fill={color}>
