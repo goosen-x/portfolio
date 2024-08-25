@@ -17,7 +17,9 @@ export const Footer = () => {
 
 					<div className='mt-6 flex justify-center gap-4 lg:justify-start'>
 						{socials.map((social, idx) => (
-							<Link href={social.href}>{social.icon}</Link>
+							<Link href={social.href} key={idx}>
+								{social.icon}
+							</Link>
 						))}
 					</div>
 				</div>

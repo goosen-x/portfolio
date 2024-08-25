@@ -16,7 +16,6 @@ export const TechStackSection = ({
 			{...rest}
 		>
 			<SectionTitle className='col-span-12' title='Tech Stack' />
-			{/* <CodeBlock /> */}
 			{TechStackData.map(item => (
 				<Block
 					className={cn('col-span-12 md:col-span-4 text-foreground')}
