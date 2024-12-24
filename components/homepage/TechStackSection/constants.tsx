@@ -16,7 +16,9 @@ import {
 	SiTailwindcss,
 	SiRedux,
 	SiNextdotjs,
-	SiRadixui
+	SiRadixui,
+	SiPrisma,
+	SiPostman
 } from 'react-icons/si'
 import {
 	FaGithub,
@@ -29,6 +31,9 @@ import {
 	FaNodeJs,
 	FaReact
 } from 'react-icons/fa'
+import { CgFigma } from 'react-icons/cg'
+import { BsFilterCircleFill } from 'react-icons/bs'
+// import { SiPostman } from "react-icons/si";
 
 export const TechStackData: TechStackDataType = [
 	{
@@ -91,6 +96,11 @@ export const TechStackData: TechStackDataType = [
 				percent: 85
 			},
 			{
+				name: 'Chadcn ui',
+				icon: <BsFilterCircleFill className='-rotate-45' />,
+				percent: 85
+			},
+			{
 				name: 'RadixUI',
 				icon: <SiRadixui />,
 				percent: 85
@@ -119,6 +129,11 @@ export const TechStackData: TechStackDataType = [
 				name: 'PostgreSQL',
 				icon: <BiLogoPostgresql />,
 				percent: 90
+			},
+			{
+				name: 'Prisma ORM',
+				icon: <SiPrisma />,
+				percent: 85
 			},
 			{
 				name: 'Sequelize',
@@ -158,6 +173,16 @@ export const TechStackData: TechStackDataType = [
 			{
 				name: 'GitLab',
 				icon: <FaGitlab />,
+				percent: 90
+			},
+			{
+				name: 'Figma',
+				icon: <CgFigma />,
+				percent: 90
+			},
+			{
+				name: 'Postman',
+				icon: <SiPostman />,
 				percent: 90
 			}
 		]

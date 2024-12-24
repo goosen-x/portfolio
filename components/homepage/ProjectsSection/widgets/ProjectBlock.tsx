@@ -69,21 +69,20 @@ export const ProjectBlock = ({ project }: Props) => {
 			<ul className='flex flex-wrap gap-2 mb-4'>
 				{project.techs.map(tech => (
 					<li className='flex items-center gap-2' key={tech.name}>
-						<Badge>
+						<Badge className='text-foreground/70' variant='outline'>
 							{tech.icon}
 							<span className='ml-2'>{tech.name}</span>
 						</Badge>
 					</li>
 				))}
 			</ul>
-			<p className='line-clamp-2'>{project.description}</p>
-			<Link
-				className='hover:underline hover:text-blue-300'
-				href='/'
-				target='_blank'
+			<p className='line-clamp-2 text-foreground/70'>{project.description}</p>
+			<Button
+				className='text-foreground/70 hover:underline hover:text-blue-300 w-fit p-0'
+				variant='link'
 			>
 				{'Learn more >'}
-			</Link>
+			</Button>
 		</div>
 	)
 }

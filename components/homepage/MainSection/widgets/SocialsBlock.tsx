@@ -11,7 +11,7 @@ export const SocialsBlock = () => {
 				<Block
 					className={cn(
 						`p-0 col-span-6 md:col-span-2 min-h-32 hover-scale-105 hover:-translate-y-1 transition-all duration-100`,
-						`${idx === 0 || idx === 3 ? 'bg-blue-500 text-zinc-50' : ''}`
+						`${idx === 0 || idx === 3 ? 'bg-accent text-zinc-50' : ''}`
 					)}
 					key={social.name}
 				>

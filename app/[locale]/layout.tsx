@@ -37,6 +37,8 @@ export default async function RootLayout({
 }>) {
 	const messages = await getMessages()
 
+	// console.log('locale: ', locale)
+
 	return (
 		<html className='scroll-smooth scroll-pt-24' lang={locale}>
 			<NextIntlClientProvider messages={messages}>
@@ -47,7 +49,7 @@ export default async function RootLayout({
 							myFont.className
 						)}
 					>
-						<Header />
+						<Header locale={locale} />
 						<main className='min-h-screen w-full'>{children}</main>
 						<Footer />
 					</body>

@@ -1,9 +1,14 @@
 import { BiLogoJavascript, BiLogoTypescript } from 'react-icons/bi'
 import { ProjectDataType } from './types'
-import { FaCss3Alt, FaHtml5, FaNodeJs, FaReact, FaSass } from 'react-icons/fa'
+import { FaCss3Alt, FaHtml5, FaNodeJs, FaSass } from 'react-icons/fa'
 import { SiExpress, SiNextdotjs, SiStrapi } from 'react-icons/si'
 import { TbAlpha } from 'react-icons/tb'
 import { GrGraphQl } from 'react-icons/gr'
+import { FaShieldAlt } from 'react-icons/fa'
+import { SiPrisma } from 'react-icons/si'
+import { SiTailwindcss } from 'react-icons/si'
+import { BsFilterCircleFill } from 'react-icons/bs'
+import { IoLogoVercel } from 'react-icons/io5'
 
 export const ProjectsData: ProjectDataType[] = [
 	{
@@ -77,16 +82,24 @@ export const ProjectsData: ProjectDataType[] = [
 			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.',
 		techs: [
 			{
-				name: 'Javascript',
-				icon: <BiLogoJavascript />
-			},
-			{
 				name: 'Typescript',
 				icon: <BiLogoTypescript />
 			},
 			{
-				name: 'React',
-				icon: <FaReact />
+				name: 'Next.js',
+				icon: <SiNextdotjs />
+			},
+			{
+				name: 'Chadcn ui',
+				icon: <BsFilterCircleFill className='-rotate-45' />
+			},
+			{
+				name: 'NextAuth.js',
+				icon: <FaShieldAlt />
+			},
+			{
+				name: 'Prisma ORM',
+				icon: <SiPrisma />
 			}
 		]
 	},
@@ -108,19 +121,15 @@ export const ProjectsData: ProjectDataType[] = [
 			},
 			{
 				name: 'Chadcn ui',
-				icon: <GrGraphQl />
+				icon: <BsFilterCircleFill className='-rotate-45' />
+			},
+			{
+				name: 'Vercel',
+				icon: <IoLogoVercel />
 			},
 			{
 				name: 'Tailwind CSS',
-				icon: <FaSass />
-			},
-			{
-				name: 'v0',
-				icon: <FaNodeJs />
-			},
-			{
-				name: 'JSON',
-				icon: <SiStrapi />
+				icon: <SiTailwindcss />
 			}
 		]
 	}

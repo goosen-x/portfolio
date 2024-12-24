@@ -1,4 +1,4 @@
-import { SiGithub, SiLinkedin, SiTelegram } from 'react-icons/si'
+import { SiGithub, SiLinkedin } from 'react-icons/si'
 import { RiTwitterXFill } from 'react-icons/ri'
 import { BiLogoTelegram } from 'react-icons/bi'
 

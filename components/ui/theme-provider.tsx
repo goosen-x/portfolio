@@ -15,28 +15,3 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
 		</NextThemesProvider>
 	)
 }
-
-const test = () => {
-	try {
-		var documentEl = document.documentElement
-		var className = documentEl.classList
-		className.remove('light', 'dark')
-		var e = localStorage.getItem('theme')
-		if ('system' === e || (!e && true)) {
-			var t = '(prefers-color-scheme: dark)'
-			var m = window.matchMedia(t)
-			if (m.media !== t || m.matches) {
-				documentEl.style.colorScheme = 'dark'
-				className.add('dark')
-			} else {
-				documentEl.style.colorScheme = 'light'
-				className.add('light')
-			}
-		} else if (e) {
-			className.add(e || '')
-		}
-		if (e === 'light' || e === 'dark') {
-			documentEl.style.colorScheme = e
-		}
-	} catch (e) {}
-}

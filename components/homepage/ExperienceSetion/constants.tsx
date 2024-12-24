@@ -10,7 +10,7 @@ export type ExperienceData = {
 
 export const experienceData: Array<ExperienceData> = [
 	{
-		title: '2023-2024',
+		title: '2023-Now',
 		job: 'Fullstack Developer',
 		company: 'MBA',
 		city: 'Moscow',
@@ -26,12 +26,12 @@ export const experienceData: Array<ExperienceData> = [
 	{
 		title: 'Early 2023',
 		job: 'Fullstack Developer',
-		company: 'Aurora',
-		city: 'Minsk',
-		companyUrl: null,
+		company: 'Dobrostok',
+		city: 'Moscow',
+		companyUrl: 'https://dobrostock.ru/',
 		description:
-			'Worked on the SAP UI5 framework and Angular. Also worked on the SAP UI5 Angular Components. I also worked on the SAP UI5 React Components. framework and Angular. Also worked on the SAP UI5 Angular Components. I also worked on the SAP UI5 React Components. framework and Angular. Also worked on the SAP UI5 Angular Components. I also worked on the SAP UI5 React Components.',
-		images: ['/images/mba.png', '/images/mba-experience.png']
+			'Developed the admin panel for authors of the Dobrostok photo stock using T3 stack and Next.js, providing an easy-to-use interface for content management. Implemented an authentication system using NextAuth. Optimized images on the backend, which improved site performance and reduced loading times',
+		images: ['/images/dobrostok.png', '/images/dobrostok-2.png']
 	},
 	{
 		title: '2020-2022',
@@ -40,7 +40,7 @@ export const experienceData: Array<ExperienceData> = [
 		city: 'Moscow',
 		companyUrl: 'https://www.inspro.ru/',
 		description:
-			'Worked on the SAP UI5 framework and Angular. Also worked on the SAP UI5 Angular Components. I also worked on the SAP UI5 React Components. L framework and Angular. Also worked on the SAP UI5 Angular Components. I also worked on the SAP UI5 React Components. framework and Angular. Also worked on the SAP UI5 Angular Components. I also worked on the SAP UI5 React Components. framework and Angular. Also worked on the SAP UI5 Angular Components. I also worked on the SAP UI5 React Components.',
+			'Worked at a company providing accounting services, where I was responsible for backend development, including working with PostgreSQL databases. Managed various server-side processes, such as data synchronization between accounting systems and implementing a reporting system for clients. Ensured the performance and security of the system, supporting the efficient processing of accounting data and reports',
 		images: ['/images/mba.png', '/images/mba-experience.png']
 	},
 	{
@@ -50,7 +50,7 @@ export const experienceData: Array<ExperienceData> = [
 		city: 'Moscow',
 		companyUrl: null,
 		description:
-			'Worked on the SAP UI5 framework and Angular. Also worked on the SAP UI5 Angular Components. I also worked on the SAP UI5 React Components. framework and Angular. Also worked on the SAP UI5 Angular Components. I also worked on the SAP UI5 React Components.',
+			'Developed the women’s clothing online store "Mbloq" using Vanilla JS. Worked with the WordPress CMS to manage products, orders, and users. Optimized the website for search engines (SEO), including improving semantics and URL structure, as well as implementing a structured data system (Schema.org). Performed the deployment of web applications to the server, including environment setup and project build automation',
 		images: ['/images/mba-experience.png']
 	}
 ]
