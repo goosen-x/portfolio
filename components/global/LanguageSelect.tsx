@@ -14,67 +14,46 @@ import {
 	SelectPortal,
 	SelectViewport
 } from '@radix-ui/react-select'
-import { useState } from 'react'
+import Link from 'next/link'
 
-const LANGUAGE = {
-	ENGLISH: 'en',
-	RUSSIAN: 'ru',
-	HEBREW: 'he'
-} as const
-
-const countries = {
-	[LANGUAGE.ENGLISH]: '🇬🇧',
-	[LANGUAGE.RUSSIAN]: '🇷🇺',
-	[LANGUAGE.HEBREW]: '🇮🇱'
-}
+export const LOCALES = [
+	{ key: 'ENGLISH', value: 'en', flag: '🇬🇧' },
+	{ key: 'RUSSIAN', value: 'ru', flag: '🇷🇺' },
+	{ key: 'HEBREW', value: 'he', flag: '🇮🇱' }
+] as const
 
 type Props = {
 	locale: string
 }
 
 export const LanguageSelect = ({ locale }: Props) => {
-	const [value, setValue] = useState(
-		locale as (typeof LANGUAGE)[keyof typeof LANGUAGE]
-	)
-
 	const router = useRouter()
 
-	console.log('locale', locale)
-
-	const handleLanguageChange = (
-		value: (typeof LANGUAGE)[keyof typeof LANGUAGE]
-	) => {
-		if (value) {
-			setValue(value)
-			router.push(`/${value}`)
-		}
-	}
-
 	return (
-		<div>
-			<Select value={value} onValueChange={handleLanguageChange}>
-				<SelectTrigger className='h-8'>
-					<SelectValue aria-label={value}>{countries[value]}</SelectValue>
-				</SelectTrigger>
-				<SelectPortal>
-					<SelectContent>
-						<SelectViewport>
-							<SelectItem value={LANGUAGE.ENGLISH}>
-								<SelectItemText>English</SelectItemText>
-								<SelectItemIndicator>…</SelectItemIndicator>
-							</SelectItem>
-							<SelectItem value={LANGUAGE.RUSSIAN}>
-								<SelectItemText>Russian</SelectItemText>
-								<SelectItemIndicator>…</SelectItemIndicator>
-							</SelectItem>
-							<SelectItem value={LANGUAGE.HEBREW}>
-								<SelectItemText>Hebrew</SelectItemText>
-								<SelectItemIndicator>…</SelectItemIndicator>
-							</SelectItem>
-						</SelectViewport>
-					</SelectContent>
-				</SelectPortal>
-			</Select>
-		</div>
+		<Select value={locale} onValueChange={value => router.push(`/${value}`)}>
+			<SelectTrigger className='h-8'>
+				<SelectValue aria-label={locale}>
+					{LOCALES.find(LOCALE => LOCALE.value === locale)?.flag}
+				</SelectValue>
+			</SelectTrigger>
+			<SelectPortal>
+				<SelectContent>
+					<SelectViewport>
+						{LOCALES.map(LOCALE => (
+							<Link
+								href={`/${LOCALE.value}`}
+								locale={LOCALE.value}
+								key={LOCALE.key}
+							>
+								<SelectItem value={LOCALE.value}>
+									<SelectItemText>{LOCALE.key}</SelectItemText>
+									<SelectItemIndicator>…</SelectItemIndicator>
+								</SelectItem>
+							</Link>
+						))}
+					</SelectViewport>
+				</SelectContent>
+			</SelectPortal>
+		</Select>
 	)
 }

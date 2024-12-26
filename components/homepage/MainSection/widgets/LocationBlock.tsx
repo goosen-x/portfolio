@@ -1,4 +1,4 @@
-import { Block } from '@/components/Block'
+import { Block } from '@/components/ui/block'
 import { Globus } from '@/components/global/Globus'
 
 import { FaLocationDot } from 'react-icons/fa6'

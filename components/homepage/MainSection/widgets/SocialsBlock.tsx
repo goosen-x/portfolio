@@ -1,8 +1,8 @@
 import { cn } from '@/lib/utils'
 
-import { Block } from '@/components/Block'
+import { Block } from '@/components/ui/block'
 import Link from 'next/link'
-import { socials } from '@/constants/socials'
+import { socials } from '@/lib/constants/socials'
 
 export const SocialsBlock = () => {
 	return (
@@ -18,6 +18,7 @@ export const SocialsBlock = () => {
 					<Link
 						className='grid h-full place-content-center text-3xl group-hover/block:text-5xl transition-all duration-200'
 						href={social.href}
+						target='_blank'
 					>
 						{social.icon}
 					</Link>

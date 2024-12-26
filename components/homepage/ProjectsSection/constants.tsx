@@ -13,7 +13,7 @@ import { IoLogoVercel } from 'react-icons/io5'
 export const ProjectsData: ProjectDataType[] = [
 	{
 		name: 'Moscow Business Academy',
-		image: '/images/mba-2.png',
+		image: '/images/mba-experience-3.png',
 		link: 'https://moscow.mba/',
 		description:
 			'A real-time coaching app for Moscow Business Academy. Built with Next.js, GraphQL, and Strapi.',
@@ -74,8 +74,8 @@ export const ProjectsData: ProjectDataType[] = [
 		]
 	},
 	{
-		name: 'Dobrostok',
-		image: '/images/dobrostok.png',
+		name: 'Digital Dyatel',
+		image: '/images/digital-dyatel.png',
 		link: 'https://www.nsp-healthshop.ru/',
 		github: '/nsp-healthshop',
 		description:

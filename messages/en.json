@@ -1,8 +1,25 @@
 {
+	"MetaData": {
+		"title": "Goosen.pro Web Developer Portfolio",
+		"description": "Projects and experience in web development: building modern applications using Next.js, Strapi, PostgreSQL, and other technologies."
+	},
+	"Header": {
+		"nav": {
+			"main": "Main",
+			"techstack": "TechStack",
+			"projects": "Projects",
+			"experience": "Experience",
+			"contact": "Contact"
+		},
+		"download": "DOWNLOAD CV"
+	},
 	"Index": {
 		"language": "en",
+		"job": "Fullstack Developer",
 		"name": "Borisenko Dmitry",
-		"markedText": "Hi there! I'm a Fullstack developer from Moscow, Russia.",
+		"contact": "Contact me",
+		"location": "Russia, Moscow",
+		"markedText": "Hi there! I'm a Fullstack developer from Russia.",
 		"aboutFirst": "I'm passionate about creating interactive and beautiful web interfaces. I enjoy coding and design to make websites that not only look good but also provide a delightful user experience. I'm constantly striving for excellence and tirelessly learning new technologies and trends in web development. This helps me create modern and innovative projects that meet the highest standards. I love solving creative challenges and finding elegant solutions to complex problems.",
 		"aboutSecond": "It's important to me that every project I work on is not only functional but also leaves a positive impression on users. I'm always up for new challenges and ready to collaborate on exciting projects!"
 	}

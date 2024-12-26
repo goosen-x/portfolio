@@ -1,4 +1,4 @@
-import { Block } from '@/components/Block'
+import { Block } from '@/components/ui/block'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -20,7 +20,7 @@ export const HeaderBlock = () => {
 				alt=''
 			/>
 			<h1 className='mb-12 text-3xl text-foreground font-medium leading-tight'>
-				Fullstack developer
+				{t('job')}
 				<span className='text-accent text-4xl group-hover/block:text-5xl font-bold block transition-all duration-500'>
 					{t('name')}
 				</span>
@@ -29,7 +29,7 @@ export const HeaderBlock = () => {
 				className='group-hover/block:translate-x-2 transition w-fit flex items-center gap-2 text-accent/50 hover:underline duration-500'
 				href='#'
 			>
-				Contact Me{' '}
+				{t('contact')}{' '}
 				<FiArrowRight className='group-hover/block:scale-x-150 transition-all duration-500' />
 			</Link>
 		</Block>

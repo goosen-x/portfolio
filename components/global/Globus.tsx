@@ -24,7 +24,7 @@ export const Globus = ({ className }: { className?: string }) => {
 			mapSamples: 16000,
 			mapBrightness: theme === 'dark' ? 6 : 1.2,
 			baseColor: theme === 'dark' ? [0.231, 0.51, 0.965] : [1, 1, 1],
-			markerColor: [0.1, 0.8, 1],
+			markerColor: [0.599, 0.132, 0.876],
 			glowColor: [1, 1, 1],
 			markers: [
 				// moscow

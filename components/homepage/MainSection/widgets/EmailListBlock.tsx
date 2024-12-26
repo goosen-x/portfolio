@@ -1,4 +1,4 @@
-import { Block } from '@/components/Block'
+import { Block } from '@/components/ui/block'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 

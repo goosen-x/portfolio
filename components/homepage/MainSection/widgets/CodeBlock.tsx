@@ -1,4 +1,4 @@
-import { Block } from '@/components/Block'
+import { Block } from '@/components/ui/block'
 import { cn } from '@/lib/utils'
 import { ComponentPropsWithoutRef } from 'react'
 

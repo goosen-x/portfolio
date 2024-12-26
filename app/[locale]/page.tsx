@@ -13,7 +13,7 @@ export default function Home() {
 		<Container>
 			<BackgroundBeams className='-z-10' />
 			<MainSection id='main' />
-			<TechStackSection id='tech' />
+			<TechStackSection id='techstack' />
 			<ProjectsSection id='projects' />
 			<ExperienceSection id='experience' />
 			<ContactSection id='contact' />

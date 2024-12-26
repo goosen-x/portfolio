@@ -4,13 +4,12 @@ import { useRef, useState } from 'react'
 import { FiDownload } from 'react-icons/fi'
 import { motion } from 'framer-motion'
 
-const TARGET_TEXT = 'DOWNLOAD CV'
 const CYCLES_PER_LETTER = 2
 const SHUFFLE_TIME = 50
 
-const CHARS = '!@#$%^&*():{};|,.<>/?'
-
 export const DownloadCV = () => {
+	const TARGET_TEXT = 'DOWNLOAD CV'
+	const CHARS = '!@#$%^&*():{};|,.<>/?'
 	const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
 	const [text, setText] = useState(TARGET_TEXT)
@@ -48,7 +47,10 @@ export const DownloadCV = () => {
 	}
 
 	return (
-		<motion.button
+		<motion.a
+			className='h-8 group relative overflow-hidden cursor-pointer rounded-md border-[1px] border-input bg-background px-4 py-1 font-medium uppercase text-foreground transition-colors hover:text-accent min-w-44 text-sm shadow-sm '
+			href='https://drive.google.com/file/d/1E5VefyzV2i4S_mYLdaTo9GsFdyZ05fUt/view?usp=drive_link'
+			target='_blank'
 			whileHover={{
 				scale: 1.025
 			}}
@@ -57,7 +59,6 @@ export const DownloadCV = () => {
 			}}
 			onMouseEnter={scramble}
 			onMouseLeave={stopScramble}
-			className='h-8 group relative overflow-hidden rounded-md border-[1px] border-input bg-background px-4 py-1 font-medium uppercase text-foreground transition-colors hover:text-accent min-w-44 text-sm shadow-sm '
 		>
 			<div className='relative z-10 flex items-center gap-2'>
 				<FiDownload className='mr-2' />
@@ -78,6 +79,6 @@ export const DownloadCV = () => {
 				}}
 				className='duration-300 absolute inset-0 z-0 scale-125 bg-gradient-to-t from-accent/0 from-40% via-accent/100 to-accent/0 to-60% opacity-0 transition-opacity group-hover:opacity-100'
 			/>
-		</motion.button>
+		</motion.a>
 	)
 }

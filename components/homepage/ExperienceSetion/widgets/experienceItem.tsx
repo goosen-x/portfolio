@@ -4,6 +4,8 @@ import { TbWorld } from 'react-icons/tb'
 import { FaLocationDot } from 'react-icons/fa6'
 
 import { ExperienceData } from '../constants'
+import { useTranslations } from 'next-intl'
+import { TLocale } from '@/i18n/routing'
 
 type Props = {
 	itemData: ExperienceData
@@ -11,6 +13,10 @@ type Props = {
 
 export const ExperienceItem = ({ itemData }: Props) => {
 	const { company, job, city, companyUrl, description, images } = itemData
+
+	const t = useTranslations('Index')
+
+	const locale = t('language') as TLocale
 
 	return (
 		<div className='grid grid-cols-2 gap-2 mb-4 p-4' key={itemData.title}>
@@ -32,7 +38,7 @@ export const ExperienceItem = ({ itemData }: Props) => {
 					</Link>
 				)}
 			</div>
-			<p className='text-foreground col-span-2 mb-4'>{description}</p>
+			<p className='text-foreground col-span-2 mb-4'>{description[locale]}</p>
 			{images.length > 0 &&
 				images.map((src, idx) => (
 					<Image

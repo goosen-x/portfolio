@@ -12,7 +12,6 @@ export default function NotFound() {
 					Uh-oh!
 				</h1>
 				<p className='mt-4 text-gray-500 mb-5'>{"We can't find that page."}</p>
-				{/* <Button>Back to Home Page</Button> */}
 				<Button asChild>
 					<Link href='/'>Back to Home Page</Link>
 				</Button>

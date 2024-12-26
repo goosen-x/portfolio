@@ -1,4 +1,4 @@
-import { Block } from '@/components/Block'
+import { Block } from '@/components/ui/block'
 import { useTranslations } from 'next-intl'
 // import { useTranslation } from 'react-i18next'
 

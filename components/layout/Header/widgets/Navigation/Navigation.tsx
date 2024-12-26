@@ -1,9 +1,9 @@
 'use client'
 
 import React, { Dispatch, SetStateAction } from 'react'
-import { menuItems } from './constants'
 import { LogoLink } from '../LogoLink/LogoLink'
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 
 type NavigationProps = {
 	burger?: boolean
@@ -11,6 +11,15 @@ type NavigationProps = {
 }
 
 export const Navigation = ({ burger = false, setOpen }: NavigationProps) => {
+	const t = useTranslations('Header.nav')
+
+	const arr = ['main', 'techstack', 'projects', 'experience', 'contact']
+
+	const menuItems = arr.reduce<{ title: string; href: string }[]>(
+		(acc, item) => [...acc, { title: t(item), href: `#${item}` }],
+		[]
+	)
+
 	return (
 		<nav
 			className={

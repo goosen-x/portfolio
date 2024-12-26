@@ -1,8 +1,8 @@
 import { Navigation } from './widgets/Navigation/Navigation'
 import { Burger } from './widgets/Burger/Burger'
-import { SliderToggle } from '@/components/global/ModeToggle'
 import { DownloadCV } from '@/components/global/DownloadCV'
 import { LanguageSelect } from '@/components/global/LanguageSelect'
+import ThemeToggle from '@/components/global/ThemeToggle'
 
 type Props = {
 	locale: string
@@ -16,7 +16,7 @@ export const Header = ({ locale }: Props) => {
 			<div className='flex items-center gap-4 md:gap-2 lg:gap-4'>
 				<DownloadCV />
 				<LanguageSelect locale={locale} />
-				<SliderToggle />
+				<ThemeToggle />
 			</div>
 		</header>
 	)

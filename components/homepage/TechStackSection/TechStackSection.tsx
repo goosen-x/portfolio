@@ -1,7 +1,7 @@
 import { ComponentPropsWithoutRef } from 'react'
 import { cn } from '@/lib/utils'
 
-import { Block } from '@/components/Block'
+import { Block } from '@/components/ui/block'
 import { TechStackData } from './constants'
 import { Badge } from '@/components/ui/badge'
 import { SectionTitle } from '@/components/global/SectionTitle'

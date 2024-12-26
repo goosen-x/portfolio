@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { Navigation } from '../Header/widgets/Navigation/Navigation'
-import { socials } from '@/constants/socials'
+import { socials } from '@/lib/constants/socials'
 
 export const Footer = () => {
 	const year = new Date().getFullYear()
