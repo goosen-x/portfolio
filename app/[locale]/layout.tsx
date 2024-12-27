@@ -3,9 +3,8 @@ import { cn } from '@/lib/utils'
 import type { Metadata } from 'next'
 import { Footer, Header } from '@/components/layout'
 import { NextIntlClientProvider } from 'next-intl'
-import { getLocale, getMessages } from 'next-intl/server'
+import { getMessages } from 'next-intl/server'
 import { tekturFont } from '@/lib/fonts/fonts'
-import { getMetadataByLocale } from '@/lib/meta/getMetadata'
 import { notFound } from 'next/navigation'
 import { routing } from '@/i18n/routing'
 import { dev } from '@/lib/config/env'
@@ -19,7 +18,7 @@ export default async function RootLayout({
 	params
 }: Readonly<{
 	children: React.ReactNode
-	params: { locale: string }
+	params: Promise<{ locale: string }>
 }>) {
 	const locale = (await params).locale
 	if (!routing.locales.includes(locale as any)) notFound()
@@ -30,7 +29,7 @@ export default async function RootLayout({
 	return (
 		<html
 			lang={locale}
-			className='scroll-smooth scroll-pt-24 transition-colors duration-300 ease-in-out'
+			className='scroll-smooth scroll-pt-24'
 			suppressHydrationWarning
 		>
 			<NextIntlClientProvider messages={messages}>

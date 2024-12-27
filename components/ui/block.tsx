@@ -11,7 +11,7 @@ export const Block = ({ children, className, ...rest }: BlockProps) => {
 	return (
 		<div
 			className={twMerge(
-				'group/block col-span-4 rounded-lg dark:border border-zinc-700 text-foreground bg-card p-6 hover:shadow-xl transition shadow-input duration-300 ease-in-out',
+				'group/block col-span-4 rounded-lg dark:border border-zinc-700 text-foreground bg-card p-6 hover:shadow-xl shadow-input  ease-in-out',
 				className
 			)}
 			{...rest}

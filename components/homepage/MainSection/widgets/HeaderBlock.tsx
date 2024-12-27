@@ -5,19 +5,19 @@ import Link from 'next/link'
 import React from 'react'
 import { FiArrowRight } from 'react-icons/fi'
 
+import avatarImg from '@/public/images/avatar.jpeg'
+
 export const HeaderBlock = () => {
 	const t = useTranslations('Index')
 
 	return (
 		<Block className='col-span-12 row-span-2 md:col-span-8'>
 			<Image
-				className='group-hover/block:z-0 mb-4 size-20 rounded-full group-hover/block:w-32 group-hover/block:h-32 transition-all duration-500'
-				src={
-					'https://lh3.googleusercontent.com/ogw/AF2bZyhPfLZmAxGeUTL2Syg9SoOz0VdELu5JqE3Lym_AxPJ6GRU=s64-c-mo'
-				}
+				className='group-hover/block:z-0 mb-4 size-20 rounded-full object-cover group-hover/block:w-32 group-hover/block:h-32 transition-all duration-500'
+				src={avatarImg.src}
 				width={500}
 				height={500}
-				alt=''
+				alt='Borisenko Dmitry'
 			/>
 			<h1 className='mb-12 text-3xl text-foreground font-medium leading-tight'>
 				{t('job')}

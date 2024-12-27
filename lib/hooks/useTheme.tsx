@@ -7,11 +7,6 @@ const useTheme = (): [Theme, (newTheme: Theme) => void] => {
 		window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
 
 	const getInitialTheme = (): Theme => {
-		if (typeof window === 'undefined') {
-			// Если мы на сервере, возвращаем системную тему по умолчанию
-			return 'light'
-		}
-
 		const storedTheme = localStorage.getItem('theme') as Theme | null
 		return storedTheme || getSystemTheme()
 	}
@@ -20,8 +15,6 @@ const useTheme = (): [Theme, (newTheme: Theme) => void] => {
 
 	useEffect(() => {
 		if (typeof window === 'undefined') return
-
-		const systemTheme = getSystemTheme()
 
 		// Синхронизация с системной темой
 		const handleSystemThemeChange = (e: MediaQueryListEvent) => {

@@ -48,7 +48,7 @@ export const DownloadCV = () => {
 
 	return (
 		<motion.a
-			className='h-8 group relative overflow-hidden cursor-pointer rounded-md border-[1px] border-input bg-background px-4 py-1 font-medium uppercase text-foreground transition-colors hover:text-accent min-w-44 text-sm shadow-sm '
+			className='h-8 group relative overflow-hidden cursor-pointer rounded-md border-[1px] border-input bg-background px-4 py-1 font-medium uppercase text-foreground hover:text-accent min-w-44 text-sm shadow-sm '
 			href='https://drive.google.com/file/d/1E5VefyzV2i4S_mYLdaTo9GsFdyZ05fUt/view?usp=drive_link'
 			target='_blank'
 			whileHover={{
