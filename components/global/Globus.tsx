@@ -2,11 +2,10 @@
 
 import { useEffect, useRef } from 'react'
 import createGlobe from 'cobe'
-import { useTheme } from 'next-themes'
 
 export const Globus = ({ className }: { className?: string }) => {
-	const { theme } = useTheme()
 	const canvasRef = useRef<HTMLCanvasElement>(null)
+	const darkTheme = false
 
 	useEffect(() => {
 		let phi = 0
@@ -19,11 +18,11 @@ export const Globus = ({ className }: { className?: string }) => {
 			height: 600 * 2,
 			phi: 0,
 			theta: 0.4,
-			dark: theme === 'dark' ? 1 : 0,
-			diffuse: theme === 'dark' ? 1.2 : 0.4,
+			dark: darkTheme ? 1 : 0,
+			diffuse: darkTheme ? 1.2 : 0.4,
 			mapSamples: 16000,
-			mapBrightness: theme === 'dark' ? 6 : 1.2,
-			baseColor: theme === 'dark' ? [0.231, 0.51, 0.965] : [1, 1, 1],
+			mapBrightness: darkTheme ? 6 : 1.2,
+			baseColor: darkTheme ? [0.231, 0.51, 0.965] : [1, 1, 1],
 			markerColor: [0.599, 0.132, 0.876],
 			glowColor: [1, 1, 1],
 			markers: [
@@ -43,7 +42,7 @@ export const Globus = ({ className }: { className?: string }) => {
 		return () => {
 			globe.destroy()
 		}
-	}, [theme])
+	}, [darkTheme])
 
 	return (
 		<canvas

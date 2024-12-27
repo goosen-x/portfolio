@@ -45,7 +45,7 @@ export const ProjectsData: ProjectDataType[] = [
 		]
 	},
 	{
-		name: 'Componenta',
+		name: 'Komponenta',
 		image: '/images/komponenta.png',
 		link: 'https://www.komponenta-bfl.ru/',
 		description:

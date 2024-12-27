@@ -11,6 +11,12 @@ import { dev } from '@/lib/config/env'
 
 // todo add metadata
 
+export const metadata: Metadata = {
+	title: 'Goosen.pro Web Developer Portfolio',
+	description:
+		'Projects and experience in web development: building modern applications using Next.js, Strapi, PostgreSQL, and other technologies.'
+}
+
 // todo http://localhost:3000/rufd (not found)
 
 export default async function RootLayout({

@@ -3,20 +3,20 @@ import { Container } from '@/components/layout/Container/container'
 import {
 	ContactSection,
 	ExperienceSection,
-	MainSection,
-	ProjectsSection,
-	TechStackSection
+	SectionMain,
+	SectionProjects,
+	SectionTechStack
 } from '@/components/homepage'
 
 export default function Home() {
 	return (
 		<Container>
 			<BackgroundBeams className='-z-10' />
-			<MainSection id='main' />
-			<TechStackSection id='techstack' />
-			<ProjectsSection id='projects' />
+			<SectionMain id='main' />
+			<SectionTechStack id='techstack' />
+			<SectionProjects id='projects' />
 			<ExperienceSection id='experience' />
-			<ContactSection id='contact' />
+			{/* <ContactSection id='contact' /> */}
 		</Container>
 	)
 }

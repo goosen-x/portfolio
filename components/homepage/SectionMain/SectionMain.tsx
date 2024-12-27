@@ -9,7 +9,7 @@ import {
 	SocialsBlock
 } from './widgets'
 
-export const MainSection = ({
+export const SectionMain = ({
 	className,
 	...rest
 }: ComponentPropsWithoutRef<'section'>) => {

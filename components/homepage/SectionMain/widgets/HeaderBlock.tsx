@@ -8,7 +8,7 @@ import { FiArrowRight } from 'react-icons/fi'
 import avatarImg from '@/public/images/avatar.jpeg'
 
 export const HeaderBlock = () => {
-	const t = useTranslations('Index')
+	const t = useTranslations('SectionMain')
 
 	return (
 		<Block className='col-span-12 row-span-2 md:col-span-8'>

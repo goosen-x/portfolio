@@ -13,7 +13,7 @@ type Props = {
 export const ExperienceItem = ({ itemData }: Props) => {
 	const { company, job, city, companyUrl, description, images } = itemData
 
-	const t = useTranslations('Index')
+	const t = useTranslations('SectionMain')
 
 	const locale = t('language') as 'en' | 'ru' | 'he'
 

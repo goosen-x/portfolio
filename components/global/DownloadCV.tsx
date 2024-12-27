@@ -3,12 +3,16 @@
 import { useRef, useState } from 'react'
 import { FiDownload } from 'react-icons/fi'
 import { motion } from 'framer-motion'
+import { useTranslations } from 'next-intl'
 
 const CYCLES_PER_LETTER = 2
 const SHUFFLE_TIME = 50
 
 export const DownloadCV = () => {
-	const TARGET_TEXT = 'DOWNLOAD CV'
+	const t = useTranslations('Header.cv')
+
+	const TARGET_TEXT = t('btnText')
+	const TARGET_HREF = t('href')
 	const CHARS = '!@#$%^&*():{};|,.<>/?'
 	const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
@@ -48,8 +52,8 @@ export const DownloadCV = () => {
 
 	return (
 		<motion.a
-			className='h-8 group relative overflow-hidden cursor-pointer rounded-md border-[1px] border-input bg-background px-4 py-1 font-medium uppercase text-foreground hover:text-accent min-w-44 text-sm shadow-sm '
-			href='https://drive.google.com/file/d/1E5VefyzV2i4S_mYLdaTo9GsFdyZ05fUt/view?usp=drive_link'
+			className='h-8 group relative overflow-hidden cursor-pointer rounded-md border-[1px] border-input bg-background px-4 py-1 font-medium uppercase text-foreground hover:text-accent min-w-48 text-sm shadow-sm '
+			href={TARGET_HREF}
 			target='_blank'
 			whileHover={{
 				scale: 1.025
@@ -61,8 +65,8 @@ export const DownloadCV = () => {
 			onMouseLeave={stopScramble}
 		>
 			<div className='relative z-10 flex items-center gap-2'>
-				<FiDownload className='mr-2' />
-				<span>{text}</span>
+				<FiDownload className='mr-2 shrink-0' />
+				<span className='text-nowrap'>{text}</span>
 			</div>
 			<motion.span
 				initial={{

@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl'
 // import { useTranslation } from 'react-i18next'
 
 export const AboutBlock = () => {
-	const t = useTranslations('Index')
+	const t = useTranslations('SectionMain')
 
 	return (
 		<Block className='col-span-12 md:col-span-8 md:row-span-2 text-2xl leading-snug'>

@@ -5,17 +5,19 @@ import { Block } from '@/components/ui/block'
 import { TechStackData } from './constants'
 import { Badge } from '@/components/ui/badge'
 import { SectionTitle } from '@/components/global/SectionTitle'
+import { useTranslations } from 'next-intl'
 
-export const TechStackSection = ({
+export const SectionTechStack = ({
 	className,
 	...rest
 }: ComponentPropsWithoutRef<'section'>) => {
+	const t = useTranslations('SectionTechStack')
 	return (
 		<section
 			className={cn('grid grid-cols-12 gap-4 mb-24', className)}
 			{...rest}
 		>
-			<SectionTitle className='col-span-12' title='Tech Stack' />
+			<SectionTitle className='col-span-12' title={t('title')} />
 			{TechStackData.map(item => (
 				<Block
 					className={cn('col-span-12 md:col-span-4 text-foreground')}

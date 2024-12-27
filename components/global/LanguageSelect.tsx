@@ -18,8 +18,8 @@ import Link from 'next/link'
 
 export const LOCALES = [
 	{ key: 'ENGLISH', value: 'en', flag: '🇬🇧' },
-	{ key: 'RUSSIAN', value: 'ru', flag: '🇷🇺' },
-	{ key: 'HEBREW', value: 'he', flag: '🇮🇱' }
+	{ key: 'RUSSIAN', value: 'ru', flag: '🇷🇺' }
+	// { key: 'HEBREW', value: 'he', flag: '🇮🇱' }
 ] as const
 
 type Props = {
@@ -30,30 +30,32 @@ export const LanguageSelect = ({ locale }: Props) => {
 	const router = useRouter()
 
 	return (
-		<Select value={locale} onValueChange={value => router.push(`/${value}`)}>
-			<SelectTrigger className='h-8'>
-				<SelectValue aria-label={locale}>
-					{LOCALES.find(LOCALE => LOCALE.value === locale)?.flag}
-				</SelectValue>
-			</SelectTrigger>
-			<SelectPortal>
-				<SelectContent>
-					<SelectViewport>
-						{LOCALES.map(LOCALE => (
-							<Link
-								href={`/${LOCALE.value}`}
-								locale={LOCALE.value}
-								key={LOCALE.key}
-							>
-								<SelectItem value={LOCALE.value}>
-									<SelectItemText>{LOCALE.key}</SelectItemText>
-									<SelectItemIndicator>…</SelectItemIndicator>
-								</SelectItem>
-							</Link>
-						))}
-					</SelectViewport>
-				</SelectContent>
-			</SelectPortal>
-		</Select>
+		<div className='shrink-0'>
+			<Select value={locale} onValueChange={value => router.push(`/${value}`)}>
+				<SelectTrigger className='h-8'>
+					<SelectValue aria-label={locale}>
+						{LOCALES.find(LOCALE => LOCALE.value === locale)?.flag}
+					</SelectValue>
+				</SelectTrigger>
+				<SelectPortal>
+					<SelectContent>
+						<SelectViewport>
+							{LOCALES.map(LOCALE => (
+								<Link
+									href={`/${LOCALE.value}`}
+									locale={LOCALE.value}
+									key={LOCALE.key}
+								>
+									<SelectItem value={LOCALE.value}>
+										<SelectItemText>{LOCALE.key}</SelectItemText>
+										<SelectItemIndicator>…</SelectItemIndicator>
+									</SelectItem>
+								</Link>
+							))}
+						</SelectViewport>
+					</SelectContent>
+				</SelectPortal>
+			</Select>
+		</div>
 	)
 }
