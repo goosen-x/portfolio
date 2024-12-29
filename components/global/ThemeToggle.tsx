@@ -3,15 +3,22 @@
 import { motion } from 'framer-motion'
 import { FiMoon, FiSun } from 'react-icons/fi'
 import useTheme from '@/lib/hooks/useTheme'
+import { ComponentPropsWithoutRef } from 'react'
+import { cn } from '@/lib/utils'
 
 const TOGGLE_CLASSES =
 	'text-sm font-medium h-8 flex items-center gap-2 px-3 md:pl-3 md:pr-3.5 py-3 md:py-1.5 transition-colors relative z-10'
 
-const ThemeToggle = () => {
+const ThemeToggle = ({ className }: ComponentPropsWithoutRef<'div'>) => {
 	const [theme, setTheme] = useTheme()
 
 	return (
-		<div className='relative flex w-fit items-center rounded-full'>
+		<div
+			className={cn(
+				'shrink-0 relative flex w-fit items-center rounded-full',
+				className
+			)}
+		>
 			<button
 				className={`${TOGGLE_CLASSES} text-white`}
 				onClick={() => setTheme('light')}

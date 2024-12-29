@@ -10,13 +10,13 @@ type Props = {
 
 export const Header = ({ locale }: Props) => {
 	return (
-		<header className='sticky top-0 flex justify-between h-16 items-center gap-4 border-b bg-background px-4 md:px-6 z-50'>
+		<header className='sticky top-0 flex justify-between h-16 items-center gap-4 border-b bg-background px-4 lg:px-6 z-50'>
 			<Navigation />
-			<Burger />
+			<Burger locale={locale} />
 			<div className='flex items-center gap-4 md:gap-2 lg:gap-4'>
 				<DownloadCV />
-				<LanguageSelect locale={locale} />
-				<ThemeToggle />
+				<LanguageSelect className='hidden lg:block' locale={locale} />
+				<ThemeToggle className='hidden lg:flex shrink-0' />
 			</div>
 		</header>
 	)

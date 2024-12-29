@@ -15,6 +15,8 @@ import {
 	SelectViewport
 } from '@radix-ui/react-select'
 import Link from 'next/link'
+import { ComponentPropsWithoutRef } from 'react'
+import { cn } from '@/lib/utils'
 
 export const LOCALES = [
 	{ key: 'ENGLISH', value: 'en', flag: '🇬🇧' },
@@ -24,13 +26,13 @@ export const LOCALES = [
 
 type Props = {
 	locale: string
-}
+} & ComponentPropsWithoutRef<'div'>
 
-export const LanguageSelect = ({ locale }: Props) => {
+export const LanguageSelect = ({ className, locale }: Props) => {
 	const router = useRouter()
 
 	return (
-		<div className='shrink-0'>
+		<div className={cn('shrink-0', className)}>
 			<Select value={locale} onValueChange={value => router.push(`/${value}`)}>
 				<SelectTrigger className='h-8'>
 					<SelectValue aria-label={locale}>

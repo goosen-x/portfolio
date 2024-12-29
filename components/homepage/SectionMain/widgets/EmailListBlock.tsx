@@ -12,7 +12,7 @@ export const EmailListBlock = () => {
 	return (
 		<Block className='col-span-12 md:col-span-4'>
 			<p className='mb-3 text-lg'>{t('subscribeTitle')}</p>
-			<form className='flex items-conter gap-2'>
+			<form className='flex flex-col md:flex-row items-conter gap-2'>
 				<Input type='email' placeholder={t('subscribePlaceholder')} />
 				<Button className='flex gap-2'>
 					<FiMail /> {t('subscribeButton')}

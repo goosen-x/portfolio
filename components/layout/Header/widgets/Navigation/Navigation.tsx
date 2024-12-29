@@ -25,7 +25,7 @@ export const Navigation = ({ burger = false, setOpen }: NavigationProps) => {
 			className={
 				burger
 					? 'grid gap-6 text-lg font-medium'
-					: 'hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6'
+					: 'hidden flex-col gap-6 text-lg font-medium lg:flex lg:flex-row lg:items-center lg:text-sm lg:gap-6'
 			}
 		>
 			<LogoLink />

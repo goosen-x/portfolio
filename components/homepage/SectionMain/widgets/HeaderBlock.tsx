@@ -29,7 +29,7 @@ export const HeaderBlock = () => {
 			/>
 			<h1 className='mb-12 text-3xl text-foreground font-medium leading-tight'>
 				{t('job')}
-				<span className='text-accent text-4xl group-hover/block:text-5xl font-bold block transition-all duration-500'>
+				<span className='text-accent text-4xl md:group-hover/block:text-5xl font-bold block transition-all duration-500'>
 					{t('name')}
 				</span>
 			</h1>
