@@ -13,10 +13,11 @@ type Props = {
 export const ExperienceItem = ({ itemData }: Props) => {
 	const { company, job, city, companyUrl, description, images } = itemData
 
-	const t = useTranslations('SectionMain')
-
 	return (
-		<div className='grid grid-cols-2 gap-2 mb-4 p-4' key={itemData.title}>
+		<div
+			className='grid grin-cols-1 md:grid-cols-2 gap-2 mb-4 p-4'
+			key={itemData.title}
+		>
 			<div>
 				<p className='text-foreground text-4xl font-bold'>{company}</p>
 				<p className='text-xl mb-4'>{job}</p>
@@ -35,7 +36,9 @@ export const ExperienceItem = ({ itemData }: Props) => {
 					</Link>
 				)}
 			</div>
-			<p className='text-foreground col-span-2 mb-4'>{description}</p>
+			<p className='text-foreground md:col-span-2 mb-4 text-sm md:text-base'>
+				{description}
+			</p>
 			{images.length > 0 &&
 				images.map((src, idx) => (
 					<Image

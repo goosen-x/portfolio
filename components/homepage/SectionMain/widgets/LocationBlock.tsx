@@ -1,11 +1,16 @@
+'use client'
+
 import { Block } from '@/components/ui/block'
 import { Globus } from '@/components/global/Globus'
 
 import { FaLocationDot } from 'react-icons/fa6'
 import { useTranslations } from 'next-intl'
+import { useMediaQuery } from '@/lib/hooks/useMediaQuery'
 
 export const LocationBlock = () => {
 	const t = useTranslations('SectionMain')
+
+	const isDesktop = useMediaQuery('(min-width: 768px)')
 
 	return (
 		<Block className='hidden md:block col-span-12 md:col-span-4 relative p-0 max-h-80 overflow-hidden'>
@@ -13,7 +18,7 @@ export const LocationBlock = () => {
 				<FaLocationDot className='text-foreground text-2xl' />
 				{t('location')}
 			</p>
-			<Globus />
+			{isDesktop && <Globus />}
 		</Block>
 	)
 }
