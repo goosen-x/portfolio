@@ -114,8 +114,7 @@ improvements. Feel free to open an issue or submit a pull request.
 Dmitry Borisenko -
 [dmitryborisenko.msk@gmail.com](mailto:dmitryborisenko.msk@gmail.com)
 
-Project Link:
-[https://github.com/goosen-x/next-portfolio](https://github.com/goosen-x/next-portfolio)
+Project Link: [https://www.goosen.pro](https://www.goosen.pro)
 
 ---
 

@@ -20,21 +20,30 @@ export const ProjectBlock = ({ project }: Props) => {
 	const [open, setOpen] = useState(false)
 
 	const t = useTranslations('SectionProjects')
-
 	const description = t(`projects.${project.name}.description`)
+
+	const popupData = {
+		title: t(`projects.${project.name}.name`),
+		description: t(`projects.${project.name}.description`),
+		company: t(`projects.${project.name}.company`),
+		image: project.image,
+		github: project.github,
+		link: project.link,
+		techs: project.techs
+	}
 
 	return (
 		<div className='flex flex-col col-span-12 md:col-span-6 p-0 relative overflow-hidden'>
-			<ModalDrawer open={open} setOpen={setOpen}>
+			<ModalDrawer open={open} setOpen={setOpen} project={popupData}>
 				text
 			</ModalDrawer>
 
 			<Block
-				className='pb-0 rounded-t-2xl overflow-hidden relative'
+				className='pb-0 rounded-t-2xl overflow-hidden relative cursor-pointe hover:bg-card/50 transition-bg duration-300'
 				onClick={() => setOpen(true)}
 			>
 				<Image
-					className='mx-auto object-cover object-top h-64 w-[85%] group p-0 rounded-t-lg group-hover/block:scale-105 group-hover/block:rotate-1 transition-all'
+					className='mx-auto object-cover object-top h-64 w-[85%] group p-0 rounded-t-lg group-hover/block:scale-105 group-hover/block:rotate-1 transition-all duration-300'
 					src={project.image}
 					width={1000}
 					height={2000}

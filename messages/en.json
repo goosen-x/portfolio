@@ -97,7 +97,7 @@
 				"job": "Frontend Developer",
 				"company": "Mbloq",
 				"city": "Moscow",
-				"companyUrl": "",
+				"companyUrl": "https://www.mbloq.ru/",
 				"description": "Developed the women’s clothing online store Mbloq using Vanilla JS. Worked with the WordPress CMS to manage products, orders, and users. Optimized the website for search engines (SEO), including improving semantics and URL structure, as well as implementing a structured data system (Schema.org). Performed the deployment of web applications to the server, including environment setup and project build automation"
 			}
 		}
