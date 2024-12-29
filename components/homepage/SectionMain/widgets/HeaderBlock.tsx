@@ -10,6 +10,14 @@ import avatarImg from '@/public/images/avatar.jpeg'
 export const HeaderBlock = () => {
 	const t = useTranslations('SectionMain')
 
+	const email = 'dmitryborisenko.msk@gmail.com'
+	const subject = t('email.subject')
+	const body = t('email.body')
+
+	const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
+		subject
+	)}&body=${encodeURIComponent(body)}`
+
 	return (
 		<Block className='col-span-12 row-span-2 md:col-span-8'>
 			<Image
@@ -27,7 +35,7 @@ export const HeaderBlock = () => {
 			</h1>
 			<Link
 				className='group-hover/block:translate-x-2 transition w-fit flex items-center gap-2 text-accent/50 hover:underline duration-500'
-				href='#'
+				href={mailtoLink}
 			>
 				{t('contact')}{' '}
 				<FiArrowRight className='group-hover/block:scale-x-150 transition-all duration-500' />

@@ -1,6 +1,7 @@
 {
+	"Locale": "en",
 	"MetaData": {
-		"title": "Goosen.pro Web Developer Portfolio",
+		"title": "goosen.pro Web Developer Portfolio",
 		"description": "Projects and experience in web development: building modern applications using Next.js, Strapi, PostgreSQL, and other technologies."
 	},
 	"Header": {
@@ -20,7 +21,11 @@
 		"language": "en",
 		"job": "Fullstack Developer",
 		"name": "Borisenko Dmitry",
-		"contact": "Contact me",
+		"contact": "EMAIL ME",
+		"email": {
+			"subject": "Job Opportunity: Frontend Developer Position",
+			"body": "Dear Dmitry Borisenko,\n\nI came across your portfolio and I'm impressed with your skills and experience. I'd like to discuss a potential job opportunity with you.\n\nCould we schedule a call to talk about [briefly describe the position or project]?\n\nLooking forward to hearing from you.\n\nBest regards,\n[Your Name]\n[Your Company]"
+		},
 		"location": "Russia, Moscow",
 		"markedText": "Hi there! I'm a Fullstack developer from Russia.",
 		"aboutFirst": "I'm passionate about creating interactive and beautiful web interfaces. I enjoy coding and design to make websites that not only look good but also provide a delightful user experience. I'm constantly striving for excellence and tirelessly learning new technologies and trends in web development. This helps me create modern and innovative projects that meet the highest standards. I love solving creative challenges and finding elegant solutions to complex problems.",
@@ -38,8 +43,8 @@
 	"SectionProjects": {
 		"title": "Projects",
 		"projects": {
-			"componenta": {
-				"name": "Componenta",
+			"komponenta": {
+				"name": "Komponenta",
 				"company": "The company specializes in providing professional assistance in the field of personal bankruptcy. It offers comprehensive services for clients facing financial difficulties.",
 				"description": "This project is a Single Page Application (SPA) developed using pure JavaScript (ES6+) without the use of frameworks, implementing a modular code structure using the MVC pattern to improve scalability and maintainability. Performance optimization is achieved through the use of lazy loading for images and asynchronous loading of JavaScript modules, while interaction with the AmoCRM API is implemented through the native Fetch API with error handling and retries in case of network failures. CSS Grid and Flexbox are used to ensure responsive design, and the build process is configured using Webpack for minification and bundling of resources, followed by deployment through a CI/CD pipeline to a dedicated Linux server with Nginx. Special attention is paid to security: protection against XSS attacks is implemented, security headers are configured, and a rate limiting system is implemented at the server level to prevent DDoS attacks. A custom module for collecting performance metrics and user behavior is integrated with data sent to Google Analytics, allowing for evaluation of application effectiveness and improvement of user experience. The project demonstrates a deep understanding of vanilla JavaScript, asynchronous programming, web application performance optimization, and server infrastructure configuration, providing a smooth user experience and efficient processing of client applications for personal bankruptcy."
 			},
@@ -57,6 +62,43 @@
 				"name": "HealthShop",
 				"company": "HealthShop is an innovative online store specializing in health and wellness products. The company aims to provide customers with a wide range of quality products for maintaining a healthy lifestyle, including organic food, dietary supplements, sports nutrition, natural cosmetics, and fitness equipment. HealthShop is distinguished by careful product selection, cooperation with trusted manufacturers, and providing detailed information about each product.",
 				"description": "The HealthShop project is a modern e-commerce platform developed using advanced web technologies. The frontend is implemented in React using Next.js to ensure high performance, SEO optimization, and enhanced user experience. Redux is used for application state management, and styling is done using Styled Components, allowing for flexible and easily maintainable styles. The backend is built on Node.js using Express.js, and MongoDB is chosen for database operations, providing high performance and scalability. The payment system is integrated using the Stripe API, ensuring transaction security. Special attention is paid to developing a smart recommendation system that analyzes user behavior and offers personalized products. A product comparison feature is implemented, allowing customers to easily compare characteristics of different products. A review and rating system is integrated, helping users make informed purchase decisions. The project also includes an information section with expert articles on healthy lifestyles and proper use of products. To improve user experience, a machine learning-based chatbot is implemented, capable of answering frequently asked questions and assisting in product selection. HealthShop demonstrates a high level of technical implementation, combining modern development technologies with innovative solutions in the field of e-commerce and healthcare."
+			}
+		}
+	},
+	"SectionExperience": {
+		"title": "Experience",
+		"companies": {
+			"mba": {
+				"title": "2023-Now",
+				"job": "Fullstack Developer",
+				"company": "MBA",
+				"city": "Moscow",
+				"companyUrl": "https://www.moscow.mba/",
+				"description": "Developed and maintained web applications for Moscow Business Academy and several educational organizations using Next.js on the frontend, Strapi with PostgreSQL on the backend. Worked with Portainer for container management, resolved bugs, and handled DevOps tasks related to CI/CD and deployment automation"
+			},
+			"dobrostock": {
+				"title": "Early 2023",
+				"job": "Fullstack Developer",
+				"company": "Dobrostok",
+				"city": "Moscow",
+				"companyUrl": "https://dobrostock.ru/",
+				"description": "Developed the admin panel for authors of the Dobrostok photo stock using T3 stack and Next.js, providing an easy-to-use interface for content management. Implemented an authentication system using NextAuth. Optimized images on the backend, which improved site performance and reduced loading times"
+			},
+			"inspro": {
+				"title": "2020-2022",
+				"job": "Fullstack Developer",
+				"company": "Inspro",
+				"city": "Moscow",
+				"companyUrl": "https://www.inspro.ru/",
+				"description": "Worked at a company providing accounting services, where I was responsible for backend development, including working with PostgreSQL databases. Managed various server-side processes, such as data synchronization between accounting systems and implementing a reporting system for clients. Ensured the performance and security of the system, supporting the efficient processing of accounting data and reports"
+			},
+			"mbloq": {
+				"title": "2019-2020",
+				"job": "Frontend Developer",
+				"company": "Mbloq",
+				"city": "Moscow",
+				"companyUrl": "",
+				"description": "Developed the women’s clothing online store Mbloq using Vanilla JS. Worked with the WordPress CMS to manage products, orders, and users. Optimized the website for search engines (SEO), including improving semantics and URL structure, as well as implementing a structured data system (Schema.org). Performed the deployment of web applications to the server, including environment setup and project build automation"
 			}
 		}
 	},

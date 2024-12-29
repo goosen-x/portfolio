@@ -12,7 +12,7 @@ import { dev } from '@/lib/config/env'
 // todo add metadata
 
 export const metadata: Metadata = {
-	title: 'Goosen.pro Web Developer Portfolio',
+	title: 'goosen.pro Web Developer Portfolio',
 	description:
 		'Projects and experience in web development: building modern applications using Next.js, Strapi, PostgreSQL, and other technologies.'
 }

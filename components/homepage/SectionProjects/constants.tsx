@@ -12,11 +12,10 @@ import { IoLogoVercel } from 'react-icons/io5'
 
 export const ProjectsData: ProjectDataType[] = [
 	{
-		name: 'Moscow Business Academy',
+		name: 'mba',
+		title: 'Moscow Business Academy',
 		image: '/images/mba-experience-3.png',
 		link: 'https://moscow.mba/',
-		description:
-			'A real-time coaching app for Moscow Business Academy. Built with Next.js, GraphQL, and Strapi.',
 		techs: [
 			{
 				name: 'Typescript',
@@ -45,11 +44,10 @@ export const ProjectsData: ProjectDataType[] = [
 		]
 	},
 	{
-		name: 'Komponenta',
+		name: 'komponenta',
+		title: 'Komponenta',
 		image: '/images/komponenta.png',
 		link: 'https://www.komponenta-bfl.ru/',
-		description:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.',
 		techs: [
 			{
 				name: 'Javascript',
@@ -74,12 +72,11 @@ export const ProjectsData: ProjectDataType[] = [
 		]
 	},
 	{
-		name: 'Digital Dyatel',
+		name: 'digitalDyatel',
+		title: 'Digital Dyatel',
 		image: '/images/digital-dyatel.png',
-		link: 'https://www.nsp-healthshop.ru/',
-		github: '/nsp-healthshop',
-		description:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.',
+		link: '/',
+		github: '/',
 		techs: [
 			{
 				name: 'Typescript',
@@ -92,24 +89,15 @@ export const ProjectsData: ProjectDataType[] = [
 			{
 				name: 'Chadcn ui',
 				icon: <BsFilterCircleFill className='-rotate-45' />
-			},
-			{
-				name: 'NextAuth.js',
-				icon: <FaShieldAlt />
-			},
-			{
-				name: 'Prisma ORM',
-				icon: <SiPrisma />
 			}
 		]
 	},
 	{
-		name: 'HealthShop',
+		name: 'healthshop',
+		title: 'HealthShop',
 		image: '/images/natures.png',
 		link: 'https://www.nsp-healthshop.ru/',
 		github: '',
-		description:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.',
 		techs: [
 			{
 				name: 'Typescript',

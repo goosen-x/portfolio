@@ -2,6 +2,7 @@ import { ReactNode } from 'react'
 
 export type ProjectDataType = {
 	name: string
+	title: string
 	techs: {
 		name: string
 		icon: ReactNode
@@ -9,5 +10,4 @@ export type ProjectDataType = {
 	image: string
 	link?: string
 	github?: string
-	description: string
 }

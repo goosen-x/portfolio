@@ -2,7 +2,7 @@ import { BackgroundBeams } from '@/components/ui/background-beams'
 import { Container } from '@/components/layout/Container/container'
 import {
 	ContactSection,
-	ExperienceSection,
+	SectionExperience,
 	SectionMain,
 	SectionProjects,
 	SectionTechStack
@@ -11,12 +11,12 @@ import {
 export default function Home() {
 	return (
 		<Container>
-			<BackgroundBeams className='-z-10' />
 			<SectionMain id='main' />
 			<SectionTechStack id='techstack' />
 			<SectionProjects id='projects' />
-			<ExperienceSection id='experience' />
+			<SectionExperience id='experience' />
 			{/* <ContactSection id='contact' /> */}
+			<BackgroundBeams className='-z-10' />
 		</Container>
 	)
 }

@@ -1,36 +1,123 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Dmitry Borisenko's Portfolio
 
-## Getting Started
+Welcome to my personal portfolio website! This project showcases my skills,
+experience, and projects as a fullstack developer.
 
-First, run the development server:
+![screen-gif](/public/images/readme.gif)
 
-```bash
+## 🌟 Features
+
+- Responsive design for optimal viewing on all devices
+- Internationalization support for English, Russian, and Hebrew
+- Interactive sections for About Me, Experience, Skills, and Projects
+- Dark mode support
+- 3D animations and interactive elements
+- Optimized performance with Next.js
+
+## 🛠 Technologies Used
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Three.js / React Three Fiber
+- next-intl for internationalization
+- Vercel for deployment
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or later)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+
+   ```
+   git clone https://github.com/goosen-x/next-portfolio
+   cd portfolio
+   ```
+
+2. Install dependencies:
+
+   ```
+   npm install
+   # or
+   yarn install
+   ```
+
+3. Create a `.env.local` file in the root directory and add any necessary
+   environment variables.
+
+### Running the Development Server
+
+```
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the
+result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🌐 Internationalization
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+This project supports multiple languages:
 
-## Learn More
+- English (default)
+- Russian
+- Hebrew
 
-To learn more about Next.js, take a look at the following resources:
+Language files are located in the `messages` directory. To add a new language,
+create a new JSON file in this directory and update the language switcher
+component.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📁 Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- `app/`: Next.js pages and API routes
+- `components/`: Reusable React components
+- `lib/`: Utility functions and custom hooks
+- `i18n/`: Internationalization configuration
+- `messages/`: Internationalization JSON files
+- `public/`: Static assets (images, fonts, etc.)
 
-## Deploy on Vercel
+## 🚢 Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project is set up for easy deployment on Vercel. Simply connect your GitHub
+repository to Vercel, and it will automatically deploy your main branch.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+For other hosting platforms, build the project using:
+
+```
+npm run build
+# or
+yarn build
+```
+
+Then start the production server:
+
+```
+npm start
+# or
+yarn start
+```
+
+## 🤝 Contributing
+
+While this is a personal portfolio project, I'm open to suggestions and
+improvements. Feel free to open an issue or submit a pull request.
+
+## 📞 Contact
+
+Dmitry Borisenko -
+[dmitryborisenko.msk@gmail.com](mailto:dmitryborisenko.msk@gmail.com)
+
+Project Link:
+[https://github.com/goosen-x/next-portfolio](https://github.com/goosen-x/next-portfolio)
+
+---
+
+Thank you for checking out my portfolio project! I hope you find it interesting
+and informative.

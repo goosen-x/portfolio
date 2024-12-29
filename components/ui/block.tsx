@@ -1,10 +1,10 @@
-import { ReactNode } from 'react'
+import { Component, ComponentPropsWithoutRef, ReactNode } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 type BlockProps = {
 	className?: string
 	children?: ReactNode
-}
+} & ComponentPropsWithoutRef<'div'>
 // & MotionProps
 
 export const Block = ({ children, className, ...rest }: BlockProps) => {

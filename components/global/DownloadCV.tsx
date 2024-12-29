@@ -66,7 +66,7 @@ export const DownloadCV = () => {
 		>
 			<div className='relative z-10 flex items-center gap-2'>
 				<FiDownload className='mr-2 shrink-0' />
-				<span className='text-nowrap'>{text}</span>
+				<span className='text-nowrap tracking-wide'>{text}</span>
 			</div>
 			<motion.span
 				initial={{
