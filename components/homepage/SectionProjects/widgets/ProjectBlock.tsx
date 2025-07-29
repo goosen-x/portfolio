@@ -29,7 +29,8 @@ export const ProjectBlock = ({ project }: Props) => {
 		image: project.image,
 		github: project.github,
 		link: project.link,
-		techs: project.techs
+		techs: project.techs,
+		about: t('about')
 	}
 
 	return (

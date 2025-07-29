@@ -42,6 +42,7 @@ type Props = {
 		company: string
 		github?: string
 		link?: string
+		about: string
 		techs: {
 			name: string
 			icon: ReactNode
@@ -53,7 +54,8 @@ export const ModalDrawer = ({ open, setOpen, project }: Props) => {
 	const t = useTranslations('SectionMain')
 	const isDesktop = useMediaQuery('(min-width: 768px)')
 
-	const { title, description, company, image, github, link, techs } = project
+	const { title, description, company, image, github, link, techs, about } =
+		project
 
 	return (
 		<>
@@ -100,7 +102,7 @@ export const ModalDrawer = ({ open, setOpen, project }: Props) => {
 								alt={project.title}
 							/>
 							<div className='col-span-2'>
-								<p className='font-bold text-base mb-2'>О проекте</p>
+								<p className='font-bold text-base mb-2'>{about}</p>
 								<p className='text-sm'>{description}</p>
 							</div>
 						</div>

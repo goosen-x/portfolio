@@ -42,6 +42,7 @@
 	},
 	"SectionProjects": {
 		"title": "Projects",
+		"about": "About project",
 		"projects": {
 			"komponenta": {
 				"name": "Komponenta",

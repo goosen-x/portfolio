@@ -8,11 +8,12 @@ import { tekturFont } from '@/lib/fonts/fonts'
 import { notFound } from 'next/navigation'
 import { routing } from '@/i18n/routing'
 import { dev } from '@/lib/config/env'
+import { ReactNode } from 'react'
 
 // todo add metadata
 
 export const metadata: Metadata = {
-	title: 'goosen.pro Web Developer Portfolio',
+	title: 'Web Developer Borisenko Dmitry',
 	description:
 		'Projects and experience in web development: building modern applications using Next.js, Strapi, PostgreSQL, and other technologies.'
 }
@@ -23,7 +24,7 @@ export default async function RootLayout({
 	children,
 	params
 }: Readonly<{
-	children: React.ReactNode
+	children: ReactNode
 	params: Promise<{ locale: string }>
 }>) {
 	const locale = (await params).locale
@@ -40,6 +41,7 @@ export default async function RootLayout({
 		>
 			<NextIntlClientProvider messages={messages}>
 				<body
+					// add scroll offset
 					className={cn(
 						'min-h-screen bg-background font-sans antialiased',
 						tekturFont.className

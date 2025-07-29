@@ -47,7 +47,7 @@ export const ProjectsData: ProjectDataType[] = [
 		name: 'komponenta',
 		title: 'Komponenta',
 		image: '/images/komponenta.png',
-		link: 'https://www.komponenta-bfl.ru/',
+		link: 'https://ub-komponenta.ru/',
 		techs: [
 			{
 				name: 'Javascript',
@@ -75,8 +75,8 @@ export const ProjectsData: ProjectDataType[] = [
 		name: 'digitalDyatel',
 		title: 'Digital Dyatel',
 		image: '/images/digital-dyatel.png',
-		link: '/',
-		github: '/',
+		link: 'https://digitaldyatel.ru',
+		// github: '/',
 		techs: [
 			{
 				name: 'Typescript',
