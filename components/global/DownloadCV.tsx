@@ -52,7 +52,7 @@ export const DownloadCV = () => {
 
 	return (
 		<motion.a
-			className='h-8 group relative overflow-hidden cursor-pointer rounded-md border-[1px] border-input bg-background px-4 py-1 font-medium uppercase text-foreground hover:text-accent min-w-48 text-sm shadow-sm '
+			className='h-8 group relative overflow-hidden cursor-pointer rounded-md border border-input bg-background px-4 py-1 font-medium uppercase text-foreground hover:text-accent min-w-48 text-sm shadow-xs '
 			href={TARGET_HREF}
 			target='_blank'
 			whileHover={{
@@ -81,7 +81,7 @@ export const DownloadCV = () => {
 					duration: 1,
 					ease: 'linear'
 				}}
-				className='duration-300 absolute inset-0 z-0 scale-125 bg-gradient-to-t from-accent/0 from-40% via-accent/100 to-accent/0 to-60% opacity-0 transition-opacity group-hover:opacity-100'
+				className='duration-300 absolute inset-0 z-0 scale-125 bg-linear-to-t from-accent/0 from-40% via-accent to-accent/0 to-60% opacity-0 transition-opacity group-hover:opacity-100'
 			/>
 		</motion.a>
 	)
