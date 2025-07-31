@@ -43,6 +43,7 @@
 	"SectionProjects": {
 		"title": "Projects",
 		"about": "About project",
+		"moreButton": "Learn more",
 		"projects": {
 			"komponenta": {
 				"name": "Komponenta",
