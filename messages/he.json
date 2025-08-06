@@ -61,6 +61,9 @@
 			}
 		}
 	},
+	"blog": {
+		"title": "בלוג"
+	},
 	"Footer": {
 		"slogan": "Every line of code is a step towards perfection. I'm ready to take on your challenge and turn it into a successful project.",
 		"copyright": "Created by Borisenko Dmitry",

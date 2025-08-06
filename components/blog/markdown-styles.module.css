@@ -16,3 +16,136 @@
 .markdown h3 {
 	@apply text-2xl mt-8 mb-4 leading-snug;
 }
+
+/* Code blocks styling */
+.markdown pre {
+	@apply relative rounded-lg bg-gray-900 text-gray-100 overflow-x-auto my-6;
+	padding: 1.5rem;
+	font-size: 0.875rem;
+	line-height: 1.7;
+	font-family: 'Fira Code', 'Monaco', 'Consolas', 'Liberation Mono', monospace;
+}
+
+.markdown pre code {
+	@apply block;
+	background: none;
+	padding: 0;
+	border-radius: 0;
+}
+
+/* Inline code styling */
+.markdown code {
+	@apply bg-gray-100 text-gray-800 rounded px-1.5 py-0.5 text-sm;
+	font-family: 'Fira Code', 'Monaco', 'Consolas', monospace;
+}
+
+/* Prism.js syntax highlighting - GitHub Dark theme */
+.markdown .token.comment,
+.markdown .token.prolog,
+.markdown .token.doctype,
+.markdown .token.cdata {
+	color: #8b949e;
+	font-style: italic;
+}
+
+.markdown .token.punctuation {
+	color: #e6edf3;
+}
+
+.markdown .token.property,
+.markdown .token.tag,
+.markdown .token.boolean,
+.markdown .token.number,
+.markdown .token.constant,
+.markdown .token.symbol,
+.markdown .token.deleted {
+	color: #79c0ff;
+}
+
+.markdown .token.selector,
+.markdown .token.attr-name,
+.markdown .token.string,
+.markdown .token.char,
+.markdown .token.builtin,
+.markdown .token.inserted {
+	color: #a5d6ff;
+}
+
+.markdown .token.operator,
+.markdown .token.entity,
+.markdown .token.url,
+.markdown .language-css .token.string,
+.markdown .style .token.string {
+	color: #ff7b72;
+}
+
+.markdown .token.atrule,
+.markdown .token.attr-value,
+.markdown .token.keyword {
+	color: #ff7b72;
+}
+
+.markdown .token.function,
+.markdown .token.class-name {
+	color: #d2a8ff;
+}
+
+.markdown .token.regex,
+.markdown .token.important,
+.markdown .token.variable {
+	color: #ffa657;
+}
+
+/* Line numbers */
+.markdown pre.line-numbers {
+	position: relative;
+	padding-left: 3.5rem;
+}
+
+.markdown pre.line-numbers .line-number {
+	position: absolute;
+	left: 0;
+	width: 3rem;
+	text-align: right;
+	padding-right: 1rem;
+	color: #6a737d;
+	user-select: none;
+}
+
+/* Copy button */
+.markdown .code-block-wrapper {
+	position: relative;
+}
+
+.markdown .copy-button {
+	position: absolute;
+	top: 0.5rem;
+	right: 0.5rem;
+	padding: 0.25rem 0.5rem;
+	background: rgba(255, 255, 255, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	border-radius: 0.25rem;
+	color: #e1e4e8;
+	font-size: 0.75rem;
+	cursor: pointer;
+	transition: all 0.2s;
+}
+
+.markdown .copy-button:hover {
+	background: rgba(255, 255, 255, 0.2);
+	border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Language label */
+.markdown pre[data-language]::before {
+	content: attr(data-language);
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 0.25rem 0.75rem;
+	background: rgba(255, 255, 255, 0.1);
+	border-bottom-right-radius: 0.25rem;
+	font-size: 0.75rem;
+	color: #959da5;
+	text-transform: uppercase;
+}
