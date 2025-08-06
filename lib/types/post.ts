@@ -13,3 +13,6 @@ export type Post = {
 	content: string
 	preview?: boolean
 }
+
+// Legacy support - mapped from database types
+export type LegacyPost = Post

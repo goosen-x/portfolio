@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { getAllPosts, getPostBySlug } from '@/lib/api'
+import { getAllPosts, getPostBySlug } from '@/lib/api-db'
 import markdownToHtml from '@/lib/helpers/markdownToHtml'
 import Alert from '@/components/blog/alert'
 import Header from '@/components/blog/header'
@@ -9,7 +9,7 @@ import { PostHeader } from '@/components/blog/post-header'
 
 export default async function Post(props: Params) {
 	const params = await props.params
-	const post = getPostBySlug(params.slug)
+	const post = await getPostBySlug(params.slug, params.locale)
 
 	if (!post) {
 		return notFound()
@@ -37,19 +37,20 @@ export default async function Post(props: Params) {
 
 type Params = {
 	params: Promise<{
+		locale: string
 		slug: string
 	}>
 }
 
 export async function generateMetadata(props: Params): Promise<Metadata> {
 	const params = await props.params
-	const post = getPostBySlug(params.slug)
+	const post = await getPostBySlug(params.slug, params.locale)
 
 	if (!post) {
 		return notFound()
 	}
 
-	const title = `${post.title} | Next.js Blog Example`
+	const title = `${post.title} | Dmitry Borisenko Blog`
 
 	return {
 		title,
@@ -61,9 +62,7 @@ export async function generateMetadata(props: Params): Promise<Metadata> {
 }
 
 export async function generateStaticParams() {
-	const posts = getAllPosts()
-
-	return posts.map(post => ({
-		slug: post.slug
-	}))
+	// For now, we'll generate params at runtime
+	// You could cache this or make it more efficient based on your needs
+	return []
 }

@@ -11,6 +11,22 @@ npm run start  # Run production server
 npm run lint   # Run ESLint for code quality checks
 ```
 
+## Database Setup
+
+This project uses **Neon PostgreSQL** (via Vercel Postgres) for blog data storage.
+
+### Setup Steps:
+1. **Create Vercel Postgres database** in your Vercel dashboard
+2. **Copy environment variables** from Vercel to your `.env.local`
+3. **Run database schema** in Neon Console (SQL Editor):
+   ```sql
+   -- Copy and run the contents of lib/db/schema.sql
+   ```
+4. **Migrate existing posts** (optional):
+   ```bash
+   npx tsx lib/scripts/migrate-posts.ts
+   ```
+
 ## Architecture Overview
 
 This is a modern Next.js 15 portfolio website with internationalization support for English, Russian, and Hebrew. The project uses the App Router architecture with TypeScript and Tailwind CSS v4.
