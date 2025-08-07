@@ -13,6 +13,7 @@ type Props = {
 export default async function Blog(props: Props) {
 	const params = await props.params
 	const t = await getTranslations('blog')
+	
 	const posts = await getAllPosts(params.locale)
 
 	return (

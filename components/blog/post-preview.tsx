@@ -28,7 +28,7 @@ export function PostPreview({
 		<article>
 			<div className='mb-5'>
 				<Link href={`/${locale}/blog/${slug}`} className='group'>
-					<PostCover title={title} slug={slug} />
+					<PostCover title={title} slug={slug} className='aspect-[16/9]' />
 				</Link>
 			</div>
 			<h3 className='text-3xl mb-3 leading-snug'></h3>
@@ -36,7 +36,7 @@ export function PostPreview({
 				<Image
 					src={author.picture}
 					alt={author.name}
-					className='w-10 h-10 rounded-full'
+					className='w-10 h-10 rounded-full object-cover'
 					width={40}
 					height={40}
 				/>

@@ -9,6 +9,7 @@ import { notFound } from 'next/navigation'
 import { routing } from '@/i18n/routing'
 import { dev } from '@/lib/config/env'
 import { ReactNode } from 'react'
+import YandexMetrika from '@/components/analytics/YandexMetrika'
 
 // todo add metadata
 
@@ -47,6 +48,7 @@ export default async function RootLayout({
 						tekturFont.className
 					)}
 				>
+					<YandexMetrika />
 					<Header locale={locale} />
 					<main className='min-h-screen w-full'>{children}</main>
 					<Footer />

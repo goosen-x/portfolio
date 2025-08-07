@@ -4,7 +4,7 @@ import { getAllPosts, getPostBySlug } from '@/lib/api-db'
 import markdownToHtml from '@/lib/helpers/markdownToHtml'
 import Alert from '@/components/blog/alert'
 import Header from '@/components/blog/header'
-import { PostBody } from '@/components/blog/post-body'
+import { PostBodySimple } from '@/components/blog/post-body-simple'
 import { PostHeader } from '@/components/blog/post-header'
 
 export default async function Post(props: Params) {
@@ -19,7 +19,7 @@ export default async function Post(props: Params) {
 
 	return (
 		<main>
-			<Alert preview={post.preview} />
+			{/* <Alert preview={post.preview} /> */}
 			<Header />
 			<article className='mb-32'>
 				<PostHeader
@@ -29,7 +29,7 @@ export default async function Post(props: Params) {
 					author={post.author}
 					slug={post.slug}
 				/>
-				<PostBody content={content} />
+				<PostBodySimple content={content} />
 			</article>
 		</main>
 	)

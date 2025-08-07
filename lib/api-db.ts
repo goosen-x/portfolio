@@ -15,7 +15,7 @@ function convertDbPostToLegacy(dbPost: BlogPost): Post {
 	return {
 		slug: dbPost.slug,
 		title: dbPost.title,
-		date: dbPost.published_at || dbPost.created_at,
+		date: new Date(dbPost.published_at || dbPost.created_at).toISOString(),
 		coverImage: dbPost.cover_image || '/images/avatar.jpeg',
 		author,
 		excerpt: dbPost.excerpt || '',

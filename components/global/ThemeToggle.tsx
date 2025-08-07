@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { FiMoon, FiSun } from 'react-icons/fi'
 import useTheme from '@/lib/hooks/useTheme'
-import { ComponentPropsWithoutRef } from 'react'
+import { ComponentPropsWithoutRef, useState, useEffect } from 'react'
 import { cn } from '@/lib/utils'
 
 const TOGGLE_CLASSES =
@@ -11,6 +11,20 @@ const TOGGLE_CLASSES =
 
 const ThemeToggle = ({ className }: ComponentPropsWithoutRef<'div'>) => {
 	const [theme, setTheme] = useTheme()
+	const [mounted, setMounted] = useState(false)
+
+	useEffect(() => {
+		setMounted(true)
+	}, [])
+
+	// Avoid hydration mismatch by not rendering until mounted
+	if (!mounted) {
+		return (
+			<div className={cn('shrink-0 relative flex w-fit items-center rounded-full', className)}>
+				<div className="w-[116px] h-8 bg-muted/50 rounded-full animate-pulse" />
+			</div>
+		)
+	}
 
 	return (
 		<div

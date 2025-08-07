@@ -1,13 +1,18 @@
+import { config } from 'dotenv'
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import { createBlogPost, getAllAuthors } from '../db/blog'
-import type { CreateBlogPostData } from '../types/database'
+
+// Load environment variables FIRST
+config({ path: path.join(process.cwd(), '.env.local') })
 
 const postsDirectory = path.join(process.cwd(), '_posts')
 
 async function migratePosts() {
 	console.log('Starting migration of markdown posts to database...')
+
+	// Dynamically import after env vars are loaded
+	const { createBlogPost, getAllAuthors } = await import('../db/blog')
 
 	try {
 		// Get all authors
@@ -25,6 +30,10 @@ async function migratePosts() {
 
 		console.log(`Found ${markdownFiles.length} markdown files to migrate`)
 
+		let successCount = 0
+		let skipCount = 0
+		let errorCount = 0
+
 		for (const fileName of markdownFiles) {
 			const slug = fileName.replace(/\.md$/, '')
 			const fullPath = path.join(postsDirectory, fileName)
@@ -32,7 +41,7 @@ async function migratePosts() {
 			const { data, content } = matter(fileContents)
 
 			// Create blog post data
-			const postData: CreateBlogPostData = {
+			const postData = {
 				slug,
 				title: data.title,
 				excerpt: data.excerpt,
@@ -43,30 +52,38 @@ async function migratePosts() {
 				author_ids: [defaultAuthor.id]
 			}
 
-			console.log(`Migrating: ${postData.title}`)
+			console.log(`\nMigrating: ${postData.title}`)
 
 			try {
 				const result = await createBlogPost(postData)
 				if (result) {
 					console.log(`✅ Successfully migrated: ${postData.title}`)
+					successCount++
 				} else {
-					console.log(`❌ Failed to migrate: ${postData.title}`)
+					console.log(`⚠️  Skipped (may already exist): ${postData.title}`)
+					skipCount++
 				}
-			} catch (error) {
-				console.error(`Error migrating ${postData.title}:`, error)
+			} catch (error: any) {
+				if (error.message?.includes('duplicate key')) {
+					console.log(`⚠️  Already exists: ${postData.title}`)
+					skipCount++
+				} else {
+					console.error(`❌ Error migrating ${postData.title}:`, error.message)
+					errorCount++
+				}
 			}
 		}
 
-		console.log('Migration completed!')
+		console.log('\n=== Migration Summary ===')
+		console.log(`✅ Successfully migrated: ${successCount} posts`)
+		console.log(`⚠️  Skipped/Already exists: ${skipCount} posts`)
+		console.log(`❌ Errors: ${errorCount} posts`)
+		console.log(`Total processed: ${markdownFiles.length} posts`)
+		console.log('\nMigration completed!')
 	} catch (error) {
 		console.error('Migration failed:', error)
 	}
 }
 
-// Export for use in other scripts
-export { migratePosts }
-
-// Run if called directly
-if (require.main === module) {
-	migratePosts()
-}
+// Run migration
+migratePosts()

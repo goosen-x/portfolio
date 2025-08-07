@@ -17,7 +17,7 @@ export function PostHeader({ title, date, author, slug }: Props) {
 	return (
 		<>
 			<div className='mb-8'>
-				<PostCover title={title} slug={slug} />
+				<PostCover title={title} slug={slug} className='aspect-[16/4]' />
 			</div>
 			<div className='max-w-2xl mx-auto'>
 				<h1 className='text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-tight mb-8'>
@@ -25,9 +25,16 @@ export function PostHeader({ title, date, author, slug }: Props) {
 				</h1>
 				<div className='flex items-center gap-4 mb-8'>
 					<Avatar>
-						<AvatarImage src={author.picture} alt={author.name} />
+						<AvatarImage
+							src={author.picture}
+							alt={author.name}
+							className='object-cover'
+						/>
 						<AvatarFallback>
-							{author.name.split(' ').map(n => n[0]).join('')}
+							{author.name
+								.split(' ')
+								.map(n => n[0])
+								.join('')}
 						</AvatarFallback>
 					</Avatar>
 					<div>

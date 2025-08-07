@@ -1,7 +1,8 @@
 import { neon } from '@neondatabase/serverless'
 
 // Handle missing DATABASE_URL during build time
-const databaseUrl = process.env.DATABASE_URL
+const databaseUrl = process.env.DATABASE_URL || process.env.POSTGRES_URL
+
 
 // Create mock sql function for when database is not configured
 const mockSql = Object.assign(

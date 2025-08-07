@@ -3,9 +3,23 @@ import html from 'remark-html'
 
 export default async function markdownToHtml(markdown: string): Promise<string> {
 	const result = await remark()
-		.use(html, {
-			sanitize: false
-		})
+		.use(html, { sanitize: false })
 		.process(markdown)
-	return result.toString()
+	
+	// Add language classes to code blocks
+	let htmlString = result.toString()
+	
+	// Replace code blocks with language classes
+	htmlString = htmlString.replace(
+		/<pre><code class="language-(\w+)">/g,
+		'<pre class="language-$1"><code class="language-$1">'
+	)
+	
+	// Also handle code blocks without language specified
+	htmlString = htmlString.replace(
+		/<pre><code>/g,
+		'<pre class="language-plaintext"><code class="language-plaintext">'
+	)
+	
+	return htmlString
 }

@@ -3,15 +3,29 @@ import { useState, useEffect } from 'react'
 type Theme = 'light' | 'dark'
 
 const useTheme = (): [Theme, (newTheme: Theme) => void] => {
-	const getSystemTheme = (): Theme =>
-		window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+	const getSystemTheme = (): Theme => {
+		if (typeof window === 'undefined') return 'dark'
+		return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+	}
 
 	const getInitialTheme = (): Theme => {
+		if (typeof window === 'undefined') return 'dark'
 		const storedTheme = localStorage.getItem('theme') as Theme | null
 		return storedTheme || getSystemTheme()
 	}
 
-	const [theme, setTheme] = useState<Theme>(() => getInitialTheme())
+	const [theme, setTheme] = useState<Theme>('dark') // Default to dark theme
+
+	// Set initial theme on mount
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	useEffect(() => {
+		if (typeof window === 'undefined') return
+		
+		const initialTheme = getInitialTheme()
+		setTheme(initialTheme)
+		document.documentElement.classList.remove('light', 'dark')
+		document.documentElement.classList.add(initialTheme)
+	}, []) // getInitialTheme is stable and doesn't need to be in deps
 
 	useEffect(() => {
 		if (typeof window === 'undefined') return
@@ -43,11 +57,6 @@ const useTheme = (): [Theme, (newTheme: Theme) => void] => {
 		}
 	}
 
-	useEffect(() => {
-		if (typeof window !== 'undefined') {
-			updateTheme(theme)
-		}
-	}, [theme])
 
 	return [theme, updateTheme]
 }
