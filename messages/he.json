@@ -10,7 +10,8 @@
 			"techstack": "מחסנית טכנולוגית",
 			"projects": "פרויקטים",
 			"experience": "ניסיון",
-			"contact": "צור קשר"
+			"contact": "צור קשר",
+			"blog": "בלוג"
 		},
 		"cv": {
 			"btnText": "DOWNLOAD CV",
@@ -61,8 +62,55 @@
 			}
 		}
 	},
+	"SectionBlog": {
+		"title": "האחרון מהבלוג",
+		"description": "תובנות על פיתוח אינטרנט, דפוסי עיצוב ומגמות טכנולוגיות"
+	},
 	"blog": {
 		"title": "בלוג"
+	},
+	"contact": {
+		"title": "צור קשר",
+		"subtitle": "בואו נדבר על הפרויקט הבא שלכם או הזדמנויות שיתוף פעולה",
+		"form": {
+			"title": "שלח הודעה",
+			"description": "מלא את הטופס למטה ואחזור אליך בהקדם האפשרי.",
+			"fields": {
+				"name": "שם מלא",
+				"email": "כתובת אימייל",
+				"subject": "נושא",
+				"message": "הודעה"
+			},
+			"placeholders": {
+				"name": "השם המלא שלך",
+				"email": "your.email@example.com",
+				"subject": "על מה היית רוצה לדבר?",
+				"message": "ספר לי עוד על הפרויקט או השאלה שלך..."
+			},
+			"submit": "שלח הודעה",
+			"sending": "שולח...",
+			"success": {
+				"title": "ההודעה נשלחה!",
+				"message": "תודה שפנית אלי. אחזור אליך תוך 24 שעות."
+			}
+		},
+		"info": {
+			"title": "פרטי יצירת קשר",
+			"description": "אל תהסס ליצור קשר דרך כל אחד מהערוצים האלה.",
+			"email": "אימייל",
+			"telegram": "טלגרם",
+			"location": "מיקום",
+			"locationValue": "מוסקבה, רוסיה",
+			"timezone": "אזור זמן",
+			"social": "עקוב אחרי",
+			"availability": {
+				"title": "זמינות",
+				"status": "כרגע פתוח להזדמנויות חדשות",
+				"remote": "זמין לעבודה מרחוק",
+				"freelance": "פתוח לפרויקטי פרילאנס",
+				"fulltime": "שוקל משרות קבועות"
+			}
+		}
 	},
 	"Footer": {
 		"slogan": "Every line of code is a step towards perfection. I'm ready to take on your challenge and turn it into a successful project.",

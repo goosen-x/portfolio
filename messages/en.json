@@ -10,7 +10,8 @@
 			"techstack": "TechStack",
 			"projects": "Projects",
 			"experience": "Experience",
-			"contact": "Contact"
+			"contact": "Contact",
+			"blog": "Blog"
 		},
 		"cv": {
 			"btnText": "DOWNLOAD CV",
@@ -104,9 +105,56 @@
 			}
 		}
 	},
+	"SectionBlog": {
+		"title": "Latest from the Blog",
+		"description": "Insights on web development, design patterns, and technology trends"
+	},
 	"blog": {
 		"title": "Blog",
 		"noPosts": "No blog posts found. Please add some posts to the database."
+	},
+	"contact": {
+		"title": "Get In Touch",
+		"subtitle": "Let's discuss your next project or potential collaboration opportunities",
+		"form": {
+			"title": "Send Message",
+			"description": "Fill out the form below and I'll get back to you as soon as possible.",
+			"fields": {
+				"name": "Full Name",
+				"email": "Email Address",
+				"subject": "Subject",
+				"message": "Message"
+			},
+			"placeholders": {
+				"name": "Your full name",
+				"email": "your.email@example.com",
+				"subject": "What would you like to discuss?",
+				"message": "Tell me more about your project or inquiry..."
+			},
+			"submit": "Send Message",
+			"sending": "Sending...",
+			"success": {
+				"title": "Message Sent!",
+				"message": "Thank you for reaching out. I'll get back to you within 24 hours."
+			}
+		},
+		"info": {
+			"title": "Contact Information",
+			"description": "Feel free to reach out through any of these channels.",
+			"email": "Email",
+			"telegram": "Telegram",
+			"location": "Location",
+			"locationValue": "Moscow, Russia",
+			"timezone": "Timezone",
+			"social": "Follow Me",
+			"availability": {
+				"title": "Availability",
+				"status": "Currently open to new opportunities",
+				"remote": "Available for remote work",
+				"freelance": "Open to freelance projects",
+				"fulltime": "Considering full-time positions"
+			}
+		}
 	},
 	"Footer": {
 		"slogan": "Every line of code is a step towards perfection. I'm ready to take on your challenge and turn it into a successful project.",

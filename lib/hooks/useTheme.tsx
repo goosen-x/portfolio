@@ -14,18 +14,21 @@ const useTheme = (): [Theme, (newTheme: Theme) => void] => {
 		return storedTheme || getSystemTheme()
 	}
 
-	const [theme, setTheme] = useState<Theme>('dark') // Default to dark theme
+	const [theme, setTheme] = useState<Theme>(() => {
+		// На сервере возвращаем 'dark', на клиенте читаем реальную тему
+		if (typeof window === 'undefined') return 'dark'
+		return getInitialTheme()
+	})
 
-	// Set initial theme on mount
-	// eslint-disable-next-line react-hooks/exhaustive-deps
+	// Set initial theme on mount (только если тема изменилась)
 	useEffect(() => {
 		if (typeof window === 'undefined') return
 		
 		const initialTheme = getInitialTheme()
-		setTheme(initialTheme)
-		document.documentElement.classList.remove('light', 'dark')
-		document.documentElement.classList.add(initialTheme)
-	}, []) // getInitialTheme is stable and doesn't need to be in deps
+		if (theme !== initialTheme) {
+			setTheme(initialTheme)
+		}
+	}, [theme])
 
 	useEffect(() => {
 		if (typeof window === 'undefined') return
@@ -46,8 +49,6 @@ const useTheme = (): [Theme, (newTheme: Theme) => void] => {
 	}, [])
 
 	const updateTheme = (newTheme: Theme) => {
-		setTheme(newTheme)
-
 		if (typeof window !== 'undefined') {
 			localStorage.setItem('theme', newTheme)
 
@@ -55,6 +56,8 @@ const useTheme = (): [Theme, (newTheme: Theme) => void] => {
 			document.documentElement.classList.remove('light', 'dark')
 			document.documentElement.classList.add(newTheme)
 		}
+		
+		setTheme(newTheme)
 	}
 
 

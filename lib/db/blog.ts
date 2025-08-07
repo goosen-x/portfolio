@@ -34,6 +34,40 @@ export async function getAllPublishedPosts(locale: string = 'en'): Promise<BlogP
 	}
 }
 
+// Get latest published blog posts with limit
+export async function getLatestPublishedPosts(locale: string = 'en', limit: number = 6): Promise<BlogPost[]> {
+	try {
+		const posts = await sql`
+			SELECT 
+				bp.*,
+				json_agg(
+					json_build_object(
+						'id', a.id,
+						'name', a.name,
+						'picture', a.picture,
+						'bio', a.bio
+					)
+				) as authors
+			FROM blog_posts bp
+			LEFT JOIN blog_post_authors bpa ON bp.id = bpa.blog_post_id
+			LEFT JOIN authors a ON bpa.author_id = a.id
+			WHERE bp.published = true 
+				AND bp.locale = ${locale}
+			GROUP BY bp.id
+			ORDER BY bp.published_at DESC, bp.created_at DESC
+			LIMIT ${limit}
+		`
+
+		return posts.map(post => ({
+			...post,
+			authors: post.authors?.filter(Boolean) || []
+		})) as BlogPost[]
+	} catch (error) {
+		console.error('Error fetching latest posts:', error)
+		return []
+	}
+}
+
 // Get blog post by slug
 export async function getPostBySlug(slug: string, locale: string = 'en'): Promise<BlogPost | null> {
 	try {

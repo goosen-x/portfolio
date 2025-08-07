@@ -13,25 +13,20 @@ type Props = {
 export default async function Blog(props: Props) {
 	const params = await props.params
 	const t = await getTranslations('blog')
-	
+
 	const posts = await getAllPosts(params.locale)
 
 	return (
 		<main>
-			<Alert preview={false} />
-			<Header />
-			<div className="max-w-7xl mx-auto px-5">
+			<div className='max-w-7xl mx-auto px-5'>
 				<section>
-					<h1 className="text-5xl md:text-7xl font-bold tracking-tighter leading-tight md:pr-8 mb-16">
-						{t('title')}
-					</h1>
 					{posts.length === 0 ? (
-						<div className="text-center py-16">
-							<p className="text-xl text-gray-600">{t('noPosts')}</p>
+						<div className='text-center py-16'>
+							<p className='text-xl text-gray-600'>{t('noPosts')}</p>
 						</div>
 					) : (
-						<div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-32">
-							{posts.map((post) => (
+						<div className='grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-32'>
+							{posts.map(post => (
 								<PostPreview
 									key={post.slug}
 									title={post.title}

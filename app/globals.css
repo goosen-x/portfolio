@@ -160,6 +160,50 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Interactive elements should have pointer cursor */
+  button,
+  a,
+  [role="button"],
+  [role="link"],
+  [role="checkbox"],
+  [role="radio"],
+  [role="switch"],
+  [role="tab"],
+  [role="menuitem"],
+  [role="option"],
+  [role="combobox"],
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"],
+  input[type="checkbox"],
+  input[type="radio"],
+  select,
+  [tabindex]:not([tabindex="-1"]) {
+    @apply cursor-pointer;
+  }
+
+  /* Text inputs and textareas should have text cursor */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="number"],
+  textarea {
+    @apply cursor-text;
+  }
+
+  /* Disabled elements should have not-allowed cursor */
+  button:disabled,
+  input:disabled,
+  select:disabled,
+  textarea:disabled,
+  [aria-disabled="true"],
+  [disabled] {
+    @apply cursor-not-allowed;
+  }
 }
 
 /* Override Prism styles for better dark theme integration */

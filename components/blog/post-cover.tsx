@@ -53,9 +53,9 @@ export function PostCover({ className, title, slug }: Props) {
 	return (
 		<div
 			className={cn(
-				className,
-				'relative overflow-hidden rounded-lg flex items-center justify-center p-8 transition-transform duration-300 group-hover:scale-[1.02]',
-				'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'
+				'relative overflow-hidden flex items-center justify-center p-8 transition-transform duration-300 group-hover:scale-[1.02]',
+				'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500',
+				className
 			)}
 			style={{
 				background: pattern.background
@@ -68,7 +68,7 @@ export function PostCover({ className, title, slug }: Props) {
 				}}
 			/>
 			<div className='relative z-10 text-center'>
-				<h2 className='text-white text-2xl md:text-3xl lg:text-4xl font-bold drop-shadow-lg'>
+				<h2 className='text-white text-xl md:text-2xl lg:text-3xl font-bold drop-shadow-lg line-clamp-3'>
 					{title}
 				</h2>
 			</div>

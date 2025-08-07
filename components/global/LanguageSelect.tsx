@@ -1,6 +1,6 @@
 'use client'
 
-import { useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 import {
 	Select,
 	SelectContent,
@@ -14,7 +14,6 @@ import {
 	SelectPortal,
 	SelectViewport
 } from '@radix-ui/react-select'
-import Link from 'next/link'
 import { ComponentPropsWithoutRef } from 'react'
 import { cn } from '@/lib/utils'
 
@@ -29,11 +28,19 @@ type Props = {
 } & ComponentPropsWithoutRef<'div'>
 
 export const LanguageSelect = ({ className, locale }: Props) => {
-	const router = useRouter()
+	const pathname = usePathname()
+
+	// Удаляем текущую локаль из пути, чтобы получить относительный путь
+	const pathWithoutLocale = pathname.replace(`/${locale}`, '') || '/'
+
+	const handleLanguageChange = (newLocale: string) => {
+		// Используем window.location для сохранения темы
+		window.location.href = `/${newLocale}${pathWithoutLocale}`
+	}
 
 	return (
 		<div className={cn('shrink-0', className)}>
-			<Select value={locale} onValueChange={value => router.push(`/${value}`)}>
+			<Select value={locale} onValueChange={handleLanguageChange}>
 				<SelectTrigger className='h-8'>
 					<SelectValue aria-label={locale}>
 						{LOCALES.find(LOCALE => LOCALE.value === locale)?.flag}
@@ -43,16 +50,10 @@ export const LanguageSelect = ({ className, locale }: Props) => {
 					<SelectContent>
 						<SelectViewport>
 							{LOCALES.map(LOCALE => (
-								<Link
-									href={`/${LOCALE.value}`}
-									locale={LOCALE.value}
-									key={LOCALE.key}
-								>
-									<SelectItem value={LOCALE.value}>
-										<SelectItemText>{LOCALE.key}</SelectItemText>
-										<SelectItemIndicator>…</SelectItemIndicator>
-									</SelectItem>
-								</Link>
+								<SelectItem value={LOCALE.value} key={LOCALE.key}>
+									<SelectItemText>{LOCALE.key}</SelectItemText>
+									<SelectItemIndicator>…</SelectItemIndicator>
+								</SelectItem>
 							))}
 						</SelectViewport>
 					</SelectContent>

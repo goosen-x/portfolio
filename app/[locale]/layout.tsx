@@ -1,7 +1,7 @@
 import '../globals.css'
 import { cn } from '@/lib/utils'
 import type { Metadata } from 'next'
-import { Footer, Header } from '@/components/layout'
+import { Footer } from '@/components/layout'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import { tekturFont } from '@/lib/fonts/fonts'
@@ -10,6 +10,7 @@ import { routing } from '@/i18n/routing'
 import { dev } from '@/lib/config/env'
 import { ReactNode } from 'react'
 import YandexMetrika from '@/components/analytics/YandexMetrika'
+import { ThemeScript } from '@/components/theme/ThemeScript'
 
 // todo add metadata
 
@@ -40,18 +41,18 @@ export default async function RootLayout({
 			className='scroll-smooth scroll-pt-24'
 			suppressHydrationWarning
 		>
+			<head>
+				<ThemeScript />
+			</head>
 			<NextIntlClientProvider messages={messages}>
 				<body
-					// add scroll offset
 					className={cn(
 						'min-h-screen bg-background font-sans antialiased',
 						tekturFont.className
 					)}
 				>
 					<YandexMetrika />
-					<Header locale={locale} />
-					<main className='min-h-screen w-full'>{children}</main>
-					<Footer />
+					{children}
 				</body>
 			</NextIntlClientProvider>
 		</html>

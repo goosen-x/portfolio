@@ -3,7 +3,7 @@
 import React, { Dispatch, SetStateAction } from 'react'
 import { LogoLink } from '../LogoLink/LogoLink'
 import Link from 'next/link'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 
 type NavigationProps = {
 	burger?: boolean
@@ -12,13 +12,23 @@ type NavigationProps = {
 
 export const Navigation = ({ burger = false, setOpen }: NavigationProps) => {
 	const t = useTranslations('Header.nav')
+	const locale = useLocale()
 
 	const arr = ['main', 'techstack', 'projects', 'experience', 'contact']
 
 	const menuItems = arr.reduce<{ title: string; href: string }[]>(
-		(acc, item) => [...acc, { title: t(item), href: `#${item}` }],
+		(acc, item) => {
+			if (item === 'contact') {
+				// Контакты теперь ведут на отдельную страницу
+				return [...acc, { title: t(item), href: `/${locale}/contact` }]
+			}
+			return [...acc, { title: t(item), href: `#${item}` }]
+		},
 		[]
 	)
+
+	// Добавляем ссылку на блог с учётом локали
+	menuItems.push({ title: t('blog'), href: `/${locale}/blog` })
 
 	return (
 		<nav

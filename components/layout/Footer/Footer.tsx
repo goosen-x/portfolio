@@ -1,11 +1,11 @@
 import Link from 'next/link'
-import { Navigation } from '../Header/widgets/Navigation/Navigation'
+import { FooterNavigation } from './widgets/FooterNavigation'
 import { socials } from '@/lib/constants/socials'
-import { useTranslations } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 
-export const Footer = () => {
+export const Footer = async () => {
 	const year = new Date().getFullYear()
-	const t = useTranslations('Footer')
+	const t = await getTranslations('Footer')
 
 	return (
 		<footer className='bg-background mx-auto max-w-(--breakpoint-xl) px-4 pb-8 pt-16 sm:px-6 lg:px-8'>
@@ -24,7 +24,7 @@ export const Footer = () => {
 					</div>
 				</div>
 
-				<Navigation />
+				<FooterNavigation />
 			</div>
 
 			<div className='mt-16 border-t border-gray-100 pt-8'>
