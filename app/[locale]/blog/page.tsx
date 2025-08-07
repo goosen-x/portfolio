@@ -27,7 +27,7 @@ export default async function Blog(props: Props) {
 					</h1>
 					{posts.length === 0 ? (
 						<div className="text-center py-16">
-							<p className="text-xl text-gray-600">No blog posts found. Please add some posts to the database.</p>
+							<p className="text-xl text-gray-600">{t('noPosts')}</p>
 						</div>
 					) : (
 						<div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-32">

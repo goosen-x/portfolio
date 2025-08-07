@@ -1,4 +1,4 @@
-import { Component, ComponentPropsWithoutRef, ReactNode } from 'react'
+import { ComponentPropsWithoutRef, ReactNode } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 type BlockProps = {

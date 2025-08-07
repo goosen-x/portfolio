@@ -105,7 +105,8 @@
 		}
 	},
 	"blog": {
-		"title": "Blog"
+		"title": "Blog",
+		"noPosts": "No blog posts found. Please add some posts to the database."
 	},
 	"Footer": {
 		"slogan": "Every line of code is a step towards perfection. I'm ready to take on your challenge and turn it into a successful project.",
