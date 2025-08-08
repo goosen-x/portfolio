@@ -11,7 +11,8 @@
 			"projects": "Projects",
 			"experience": "Experience",
 			"contact": "Contact",
-			"blog": "Blog"
+			"blog": "Blog",
+			"activities": "Activities"
 		},
 		"cv": {
 			"btnText": "DOWNLOAD CV",
@@ -160,5 +161,69 @@
 		"slogan": "Every line of code is a step towards perfection. I'm ready to take on your challenge and turn it into a successful project.",
 		"copyright": "Created by Borisenko Dmitry",
 		"description": "View source code on GitHub"
+	},
+	"activities": {
+		"title": "IT Activities",
+		"description": "My involvement in the tech community, open source contributions, and continuous learning journey.",
+		"stats": {
+			"opensource": "Open Source Contributions",
+			"talks": "Tech Talks",
+			"courses": "Completed Courses",
+			"projects": "Active Projects"
+		},
+		"badges": {
+			"active": "Active",
+			"ongoing": "Ongoing",
+			"live": "Live",
+			"year": "2024"
+		},
+		"sections": {
+			"codewars": "Codewars Progress",
+			"achievement": "Latest Achievement",
+			"achievementText": "Completed Advanced React Patterns course with certification",
+			"community": "Community Involvement",
+			"communityItems": {
+				"react": "Active member of React Russia community",
+				"meetups": "Regular participant in local meetups",
+				"mentor": "Mentor for junior developers",
+				"opensource": "Open source contributor"
+			},
+			"learning": "Learning Path",
+			"learningItems": {
+				"ai": "AI/ML Fundamentals",
+				"system": "System Design",
+				"typescript": "Advanced TypeScript",
+				"performance": "React Performance"
+			},
+			"status": {
+				"progress": "In Progress",
+				"completed": "Completed"
+			},
+			"skills": "Top Skills",
+			"goals": "2025 Goals",
+			"goalsItems": {
+				"oss": "Contribute to major OSS",
+				"rust": "Learn Rust"
+			}
+		},
+		"cta": {
+			"title": "Let's Connect!",
+			"description": "I'm always interested in collaborating on open source projects, speaking at events, or connecting with fellow developers. Feel free to reach out!",
+			"button": "Get in Touch"
+		},
+		"viewProfile": "View Profile",
+		"december": "December",
+		"github": {
+			"title": "GitHub Activity",
+			"error": "Unable to load GitHub activity at this time.",
+			"viewProfile": "View Profile",
+			"totalCount": "{{count}} contributions in the last year",
+			"stats": {
+				"total": "Total Contributions",
+				"average": "Daily Average",
+				"activeDays": "Active Days",
+				"maxDay": "Max in Day"
+			}
+		}
 	}
 }

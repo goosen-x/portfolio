@@ -3,8 +3,7 @@ import { notFound } from 'next/navigation'
 import { getAllPosts, getPostBySlug } from '@/lib/api-db'
 import markdownToHtml from '@/lib/helpers/markdownToHtml'
 import Alert from '@/components/blog/alert'
-import Header from '@/components/blog/header'
-import { PostBodySimple } from '@/components/blog/post-body-simple'
+import { PostBodyWithHighlight } from '@/components/blog/post-body-with-highlight'
 import { PostHeader } from '@/components/blog/post-header'
 
 export default async function Post(props: Params) {
@@ -28,7 +27,7 @@ export default async function Post(props: Params) {
 					author={post.author}
 					slug={post.slug}
 				/>
-				<PostBodySimple content={content} />
+				<PostBodyWithHighlight content={content} />
 			</article>
 		</main>
 	)

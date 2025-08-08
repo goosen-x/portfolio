@@ -1,17 +1,34 @@
+'use client'
+
 import Link from 'next/link'
 import { useLocale, useTranslations } from 'next-intl'
+import { usePathname } from 'next/navigation'
 import ThemeToggle from '@/components/global/ThemeToggle'
 import { LanguageSelect } from '@/components/global/LanguageSelect'
 
-const BlogHeader = () => {
+const BreadcrumbHeader = () => {
 	const locale = useLocale()
 	const t = useTranslations('Header')
+	const pathname = usePathname()
+
+	// Parse pathname to create breadcrumb items
+	const pathSegments = pathname.split('/').filter(Boolean)
+	// Remove locale from segments
+	const segments = pathSegments.slice(1)
+
+	// Create breadcrumb items
+	const breadcrumbs = segments.map((segment, index) => {
+		const path = `/${locale}/${segments.slice(0, index + 1).join('/')}`
+		// Capitalize first letter for display
+		const label = segment.charAt(0).toUpperCase() + segment.slice(1)
+		return { path, label, segment }
+	})
 
 	return (
 		<header className='border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50'>
 			<div className='max-w-7xl mx-auto px-5'>
 				<div className='flex items-center justify-between h-16'>
-					{/* Logo/Brand */}
+					{/* Logo/Brand with Breadcrumbs */}
 					<div className='flex items-center'>
 						<Link
 							href={`/${locale}`}
@@ -19,13 +36,29 @@ const BlogHeader = () => {
 						>
 							goosen.pro
 						</Link>
-						<span className='ml-3 text-muted-foreground'>/</span>
-						<Link
-							href={`/${locale}/blog`}
-							className='ml-3 text-xl font-semibold text-primary hover:text-primary/80 transition-colors'
-						>
-							Blog
-						</Link>
+						
+						{/* Breadcrumb navigation */}
+						{breadcrumbs.length > 0 && (
+							<nav className='flex items-center ml-2' aria-label='Breadcrumb'>
+								{breadcrumbs.map((crumb, index) => (
+									<div key={crumb.path} className='flex items-center'>
+										<span className='mx-2 text-muted-foreground'>/</span>
+										{index === breadcrumbs.length - 1 ? (
+											<span className='text-lg font-medium text-primary'>
+												{crumb.label}
+											</span>
+										) : (
+											<Link
+												href={crumb.path}
+												className='text-lg font-medium text-muted-foreground hover:text-foreground transition-colors'
+											>
+												{crumb.label}
+											</Link>
+										)}
+									</div>
+								))}
+							</nav>
+						)}
 					</div>
 
 					{/* Navigation & Controls */}
@@ -38,6 +71,18 @@ const BlogHeader = () => {
 								{t('nav.main')}
 							</Link>
 
+							<Link
+								href={`/${locale}/projects`}
+								className='text-muted-foreground hover:text-foreground font-medium transition-colors'
+							>
+								{t('nav.projects')}
+							</Link>
+							<Link
+								href={`/${locale}/activities`}
+								className='text-muted-foreground hover:text-foreground font-medium transition-colors'
+							>
+								{t('nav.activities')}
+							</Link>
 							<Link
 								href={`/${locale}/blog`}
 								className='text-muted-foreground hover:text-foreground font-medium transition-colors'
@@ -83,4 +128,4 @@ const BlogHeader = () => {
 	)
 }
 
-export default BlogHeader
+export default BreadcrumbHeader

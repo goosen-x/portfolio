@@ -2,6 +2,7 @@ import { getAllPublishedPosts, getPostBySlug as getDbPostBySlug } from './db/blo
 import type { BlogPost } from './types/database'
 import type { Post } from './types/post'
 import type { Author } from './types/author'
+import { getAllPostsFromFiles, getPostBySlugFromFile } from './api-file'
 
 // Convert database BlogPost to legacy Post format
 function convertDbPostToLegacy(dbPost: BlogPost): Post {
@@ -34,8 +35,13 @@ export async function getAllPosts(locale: string = 'en'): Promise<Post[]> {
 		return dbPosts.map(convertDbPostToLegacy)
 	} catch (error) {
 		console.error('Error fetching posts from database:', error)
-		// Fallback to empty array
-		return []
+		// Fallback to file system
+		try {
+			return getAllPostsFromFiles()
+		} catch (fileError) {
+			console.error('Error fetching posts from files:', fileError)
+			return []
+		}
 	}
 }
 
@@ -49,7 +55,13 @@ export async function getPostBySlug(slug: string, locale: string = 'en'): Promis
 		return convertDbPostToLegacy(dbPost)
 	} catch (error) {
 		console.error('Error fetching post by slug from database:', error)
-		return null
+		// Fallback to file system
+		try {
+			return getPostBySlugFromFile(slug)
+		} catch (fileError) {
+			console.error('Error fetching post from file:', fileError)
+			return null
+		}
 	}
 }
 

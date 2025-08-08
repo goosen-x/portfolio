@@ -1,8 +1,10 @@
 import { remark } from 'remark'
 import html from 'remark-html'
+import remarkLiveCode from '@/lib/remark-plugins/remark-live-code'
 
 export default async function markdownToHtml(markdown: string): Promise<string> {
 	const result = await remark()
+		.use(remarkLiveCode)
 		.use(html, { sanitize: false })
 		.process(markdown)
 	

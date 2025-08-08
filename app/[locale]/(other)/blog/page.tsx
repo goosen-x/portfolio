@@ -1,7 +1,5 @@
 import { getAllPosts } from '@/lib/api-db'
 import { PostPreview } from '@/components/blog/post-preview'
-import Header from '@/components/blog/header'
-import Alert from '@/components/blog/alert'
 import { getTranslations } from 'next-intl/server'
 
 type Props = {
@@ -18,7 +16,7 @@ export default async function Blog(props: Props) {
 
 	return (
 		<main>
-			<div className='max-w-7xl mx-auto px-5'>
+			<div className='max-w-7xl mx-auto px-5 pt-12'>
 				<section>
 					{posts.length === 0 ? (
 						<div className='text-center py-16'>

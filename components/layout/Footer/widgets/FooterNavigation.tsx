@@ -9,16 +9,13 @@ export const FooterNavigation = () => {
 
 	const links = [
 		{ title: t('main'), href: `/${locale}` },
-		{ title: t('techstack'), href: `#techstack` },
-		{ title: t('projects'), href: `#projects` },
-		{ title: t('experience'), href: `#experience` },
 		{ title: t('blog'), href: `/${locale}/blog` },
 		{ title: t('contact'), href: `/${locale}/contact` }
 	]
 
 	return (
-		<div className='grid gap-3 text-sm'>
-			<h3 className='font-semibold text-foreground'>Navigation</h3>
+		<div className='flex justify-end gap-3 text-sm'>
+			{/* <h3 className='font-semibold text-foreground'>Navigation</h3> */}
 			{links.map(link => (
 				<Link
 					key={link.title}

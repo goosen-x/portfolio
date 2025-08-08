@@ -8,7 +8,9 @@ const nextConfig = {
 		domains: [
 			'lh3.googleusercontent.com',
 			'pbs.twimg.com',
-			'images.unsplash.com'
+			'images.unsplash.com',
+			'img.youtube.com',
+			'www.codewars.com'
 		]
 	}
 }

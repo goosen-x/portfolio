@@ -20,7 +20,6 @@ import { cn } from '@/lib/utils'
 export const LOCALES = [
 	{ key: 'ENGLISH', value: 'en', flag: '🇬🇧' },
 	{ key: 'RUSSIAN', value: 'ru', flag: '🇷🇺' }
-	// { key: 'HEBREW', value: 'he', flag: '🇮🇱' }
 ] as const
 
 type Props = {
