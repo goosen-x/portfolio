@@ -122,9 +122,10 @@ export default function GridGeneratorPage() {
 		display: 'grid',
 		gridTemplateColumns: props.columns,
 		gridTemplateRows: props.rows,
-		gap: useUniformGap ? `${props.gap}px` : undefined,
-		rowGap: !useUniformGap ? `${props.rowGap}px` : undefined,
-		columnGap: !useUniformGap ? `${props.columnGap}px` : undefined,
+		...(useUniformGap 
+			? { gap: `${props.gap}px` }
+			: { rowGap: `${props.rowGap}px`, columnGap: `${props.columnGap}px` }
+		),
 		justifyItems: props.justifyItems as any,
 		alignItems: props.alignItems as any,
 		justifyContent: props.justifyContent as any,

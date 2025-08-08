@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useLocale, useTranslations } from 'next-intl'
 import { cn } from '@/lib/utils'
+import { cloneElement } from 'react'
 import {
 	Home,
 	ChevronRight,
@@ -12,7 +13,11 @@ import {
 	Youtube,
 	GitBranch,
 	Box,
-	Grid3X3
+	Grid3X3,
+	QrCode,
+	Gauge,
+	Key,
+	Link as LinkIcon
 } from 'lucide-react'
 
 interface ProjectItem {
@@ -58,6 +63,30 @@ const projects: ProjectItem[] = [
 		title: 'Grid Generator',
 		icon: <Grid3X3 className="w-4 h-4" />,
 		description: 'Visual CSS Grid layout generator'
+	},
+	{
+		id: 'qr-generator',
+		title: 'QR Code Generator',
+		icon: <QrCode className="w-4 h-4" />,
+		description: 'Generate QR codes for various purposes'
+	},
+	{
+		id: 'speed-test',
+		title: 'Internet Speed Test',
+		icon: <Gauge className="w-4 h-4" />,
+		description: 'Test your internet connection speed'
+	},
+	{
+		id: 'password-generator',
+		title: 'Password Generator',
+		icon: <Key className="w-4 h-4" />,
+		description: 'Generate secure passwords'
+	},
+	{
+		id: 'utm-builder',
+		title: 'UTM Builder',
+		icon: <LinkIcon className="w-4 h-4" />,
+		description: 'Create UTM tracking links'
 	}
 ]
 
@@ -83,10 +112,10 @@ export function ProjectsSidebar() {
 							href={`/${locale}/projects`}
 							className={cn(
 								"flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-colors hover:bg-accent hover:text-accent-foreground",
-								pathname === `/${locale}/projects` && "bg-accent text-accent-foreground"
+								pathname === `/${locale}/projects` && "bg-accent !text-white"
 							)}
 						>
-							<Home className="w-4 h-4" />
+							<Home className={cn("w-4 h-4", pathname === `/${locale}/projects` && "text-white")} />
 							<span>Overview</span>
 						</Link>
 
@@ -102,12 +131,14 @@ export function ProjectsSidebar() {
 										href={`/${locale}/projects/${project.id}`}
 										className={cn(
 											"flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-colors hover:bg-accent hover:text-accent-foreground",
-											isActive && "bg-accent text-accent-foreground"
+											isActive && "bg-accent !text-white"
 										)}
 									>
-										{project.icon}
+										{cloneElement(project.icon as React.ReactElement, {
+											className: cn("w-4 h-4", isActive && "text-white")
+										})}
 										<span className="flex-1">{widgetT(`${project.id.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase())}.title`)}</span>
-										{isActive && <ChevronRight className="w-4 h-4" />}
+										{isActive && <ChevronRight className="w-4 h-4 text-white" />}
 									</Link>
 								)
 							})}

@@ -1,4 +1,5 @@
 import '../globals.css'
+import '@/lib/utils/suppress-warnings'
 import { cn } from '@/lib/utils'
 import type { Metadata } from 'next'
 import { Footer } from '@/components/layout'

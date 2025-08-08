@@ -1,4 +1,4 @@
-import { Ruler, FileImage, Youtube, GitBranch, Box, Grid3X3 } from 'lucide-react'
+import { Ruler, FileImage, Youtube, GitBranch, Box, Grid3X3, QrCode, Gauge, Key, Link as LinkIcon } from 'lucide-react'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 
@@ -52,6 +52,34 @@ const projects: ProjectCard[] = [
 		description: 'Visual tool for creating CSS Grid layouts with interactive controls and instant code output.',
 		icon: <Grid3X3 className="w-8 h-8" />,
 		gradient: 'from-green-500 to-emerald-500'
+	},
+	{
+		id: 'qr-generator',
+		title: 'QR Code Generator',
+		description: 'Generate QR codes for URLs, App Store links, and WiFi passwords with customizable colors and sizes.',
+		icon: <QrCode className="w-8 h-8" />,
+		gradient: 'from-violet-500 to-purple-500'
+	},
+	{
+		id: 'speed-test',
+		title: 'Internet Speed Test',
+		description: 'Test your internet connection speed, measure download/upload speeds and ping latency.',
+		icon: <Gauge className="w-8 h-8" />,
+		gradient: 'from-slate-500 to-gray-600'
+	},
+	{
+		id: 'password-generator',
+		title: 'Password Generator',
+		description: 'Generate secure passwords with customizable options, passphrase support and strength analysis.',
+		icon: <Key className="w-8 h-8" />,
+		gradient: 'from-emerald-500 to-teal-600'
+	},
+	{
+		id: 'utm-builder',
+		title: 'UTM Builder',
+		description: 'Create and manage UTM tracking links for marketing campaigns with dynamic parameters support.',
+		icon: <LinkIcon className="w-8 h-8" />,
+		gradient: 'from-pink-500 to-rose-500'
 	}
 ]
 

@@ -379,6 +379,235 @@
 				"copied": "CSS has been copied to clipboard",
 				"copyError": "Failed to copy to clipboard"
 			}
+		},
+		"qrGenerator": {
+			"title": "QR Code Generator",
+			"description": "Generate QR codes for URLs, App Store links, and WiFi passwords with customizable colors and sizes.",
+			"settings": "Settings",
+			"preview": "Preview",
+			"download": "Download",
+			"copy": "Copy",
+			"types": {
+				"url": "URL",
+				"appStore": "App Store",
+				"wifi": "WiFi"
+			},
+			"url": {
+				"label": "URL",
+				"placeholder": "https://example.com"
+			},
+			"appStore": {
+				"platform": "Platform",
+				"appId": "App ID",
+				"universal": "Universal Link (Auto-detect)",
+				"iosAppId": "iOS App ID",
+				"androidAppId": "Android Package Name",
+				"iosHint": "Enter the numeric App ID from App Store",
+				"androidHint": "Enter the package name from Google Play",
+				"universalHint": "This will create a smart link that automatically redirects users to the correct app store based on their device."
+			},
+			"wifi": {
+				"networkName": "Network Name (SSID)",
+				"networkNamePlaceholder": "MyWiFiNetwork",
+				"password": "Password",
+				"passwordPlaceholder": "WiFi password",
+				"security": "Security Type",
+				"noPassword": "No Password",
+				"hidden": "Hidden Network"
+			},
+			"qrSettings": "QR Code Settings",
+			"size": "Size",
+			"darkColor": "Dark Color",
+			"lightColor": "Light Color",
+			"errorCorrection": "Error Correction Level",
+			"errorLevels": {
+				"L": "Low (~7%)",
+				"M": "Medium (~15%)",
+				"Q": "Quartile (~25%)",
+				"H": "High (~30%)"
+			},
+			"toast": {
+				"emptyData": "Please enter data to generate QR code",
+				"generated": "QR code generated successfully",
+				"generateError": "Failed to generate QR code",
+				"downloaded": "QR code downloaded successfully",
+				"copied": "QR code copied to clipboard",
+				"copyError": "Failed to copy to clipboard"
+			}
+		},
+		"speedTest": {
+			"title": "Internet Speed Test",
+			"description": "Test your internet connection speed. Press Enter or Space to start the test.",
+			"download": "Download",
+			"upload": "Upload",
+			"ping": "Latency",
+			"client": "Your IP",
+			"server": "Location",
+			"start": "Start Test",
+			"cancel": "Cancel",
+			"tabs": {
+				"test": "Speed Test",
+				"status": "Network Status",
+				"history": "History"
+			},
+			"phase": {
+				"idle": "Ready",
+				"ping": "Testing latency...",
+				"download": "Testing download speed...",
+				"upload": "Testing upload speed...",
+				"complete": "Test complete"
+			},
+			"info": {
+				"title": "How it works",
+				"description": "This web app measures your internet speed without any software installation. It automatically adjusts test size based on your connection speed.",
+				"recommendations": "Speed recommendations for streaming"
+			},
+			"status": {
+				"title": "Network Status",
+				"connectionType": "Connection Type",
+				"quality": "Connection Quality",
+				"excellent": "Excellent",
+				"good": "Good",
+				"fair": "Fair",
+				"poor": "Poor",
+				"capable": "Your connection can handle:",
+				"activities": {
+					"browsing": "Web Browsing",
+					"streaming720p": "HD Video Streaming (720p)",
+					"streaming1080p": "Full HD Streaming (1080p)",
+					"streaming4k": "4K Video Streaming",
+					"gaming": "Online Gaming"
+				},
+				"noData": "Run a speed test to see your network status"
+			},
+			"history": {
+				"title": "Test History",
+				"clear": "Clear",
+				"empty": "No test history available"
+			},
+			"toast": {
+				"testComplete": "Speed test completed successfully",
+				"testError": "Failed to complete speed test",
+				"historyCleared": "Test history cleared"
+			}
+		},
+		"passwordGenerator": {
+			"title": "Password Generator",
+			"description": "Generate strong, secure passwords with customizable options and strength analysis.",
+			"placeholder": "Your generated password",
+			"generate": "Generate New",
+			"copy": "Copy",
+			"tabs": {
+				"random": "Random",
+				"passphrase": "Passphrase",
+				"history": "History"
+			},
+			"strength": {
+				"label": "Password Strength",
+				"veryWeak": "Very Weak",
+				"weak": "Weak",
+				"medium": "Medium",
+				"strong": "Strong",
+				"veryStrong": "Very Strong"
+			},
+			"options": {
+				"title": "Password Options",
+				"length": "Password Length",
+				"characterTypes": "Character Types",
+				"uppercase": "Uppercase Letters",
+				"lowercase": "Lowercase Letters",
+				"numbers": "Numbers",
+				"symbols": "Symbols",
+				"exclusions": "Exclusions",
+				"excludeSimilar": "Exclude Similar Characters",
+				"excludeAmbiguous": "Exclude Ambiguous Symbols"
+			},
+			"passphrase": {
+				"title": "Passphrase Generator",
+				"description": "Create memorable passphrases from custom words. Passphrases are easier to remember but still secure.",
+				"words": "Word List",
+				"placeholder": "coffee mountain bicycle sunset ocean thunder",
+				"hint": "Enter at least 4 words. The generator will randomly select and combine them.",
+				"generate": "Generate Passphrase"
+			},
+			"tips": {
+				"title": "Security Tips",
+				"length": "Use at least 12 characters for important accounts",
+				"unique": "Use a unique password for each account",
+				"manager": "Consider using a password manager",
+				"personal": "Avoid personal information (names, birthdays)",
+				"reuse": "Never reuse passwords across multiple sites"
+			},
+			"history": {
+				"title": "Password History",
+				"download": "Download",
+				"clear": "Clear",
+				"empty": "No passwords generated yet"
+			},
+			"errors": {
+				"noCharset": "Please select at least one character type",
+				"notEnoughWords": "Please enter at least 4 words for passphrase generation"
+			},
+			"toast": {
+				"generated": "Password generated successfully",
+				"passphraseGenerated": "Passphrase generated successfully",
+				"copied": "Password copied to clipboard",
+				"copyError": "Failed to copy to clipboard",
+				"historyCleared": "Password history cleared",
+				"downloaded": "Passwords downloaded successfully"
+			}
+		},
+		"utmBuilder": {
+			"title": "UTM Link Builder",
+			"description": "Create tracking links with UTM parameters for your marketing campaigns.",
+			"tabs": {
+				"builder": "Builder",
+				"parameters": "Parameters",
+				"history": "History"
+			},
+			"form": {
+				"title": "Build Your Link",
+				"url": "Target URL",
+				"preset": "Traffic Source Preset",
+				"presetPlaceholder": "Select a preset",
+				"custom": "Custom",
+				"source": "Campaign Source (utm_source)",
+				"sourceHint": "Identify the advertiser, site, publication, etc.",
+				"medium": "Campaign Medium (utm_medium)",
+				"mediumHint": "Marketing medium: cpc, banner, email, social",
+				"campaign": "Campaign Name (utm_campaign)",
+				"campaignHint": "Product, promo code, or slogan",
+				"content": "Campaign Content (utm_content)",
+				"contentHint": "Differentiate ads or links that point to the same URL",
+				"term": "Campaign Term (utm_term)",
+				"termHint": "Identify paid search keywords"
+			},
+			"result": {
+				"title": "Generated Link",
+				"empty": "Fill in required fields to generate link",
+				"copy": "Copy",
+				"save": "Save",
+				"qr": "QR Code",
+				"test": "Test Link",
+				"parameters": "UTM Parameters"
+			},
+			"parameters": {
+				"hint": "Use these dynamic parameters in your ads to track performance automatically"
+			},
+			"history": {
+				"title": "Saved Links",
+				"download": "Download",
+				"clear": "Clear",
+				"empty": "No saved links yet"
+			},
+			"toast": {
+				"copied": "Link copied to clipboard",
+				"copyError": "Failed to copy to clipboard",
+				"saved": "Link saved to history",
+				"historyCleared": "History cleared",
+				"downloaded": "Links downloaded successfully",
+				"qrError": "Failed to generate QR code"
+			}
 		}
 	}
 }
