@@ -231,7 +231,25 @@
 	},
 	"projectsPage": {
 		"title": "Mini Projects",
-		"description": "A collection of interactive tools and demos built with modern web technologies."
+		"description": "A collection of interactive tools and demos built with modern web technologies.",
+		"categories": {
+			"css-tools": {
+				"title": "CSS Tools",
+				"description": "Tools for working with CSS, layouts, and styling"
+			},
+			"media-tools": {
+				"title": "Media & Content",
+				"description": "Tools for working with images, videos, and content"
+			},
+			"dev-tools": {
+				"title": "Development Tools",
+				"description": "Tools for developers and debugging"
+			},
+			"productivity": {
+				"title": "Productivity & Security",
+				"description": "Tools for productivity and security"
+			}
+		}
 	},
 	"widgets": {
 		"clampCalculator": {

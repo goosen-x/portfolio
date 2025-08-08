@@ -126,29 +126,110 @@ export function ProjectsSidebar() {
 							<span>Overview</span>
 						</Link>
 
-						<div className="my-4">
-							<h3 className="mb-2 px-3 text-xs font-medium text-muted-foreground uppercase tracking-wider">
-								Projects
-							</h3>
-							{projects.map((project) => {
-								const isActive = pathname === `/${locale}/projects/${project.id}`
-								return (
-									<Link
-										key={project.id}
-										href={`/${locale}/projects/${project.id}`}
-										className={cn(
-											"flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-colors hover:bg-accent hover:text-accent-foreground",
-											isActive && "bg-accent !text-white"
-										)}
-									>
-										{cloneElement(project.icon as React.ReactElement, {
-											className: cn("w-4 h-4", isActive && "text-white")
-										})}
-										<span className="flex-1">{widgetT(`${project.id.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase())}.title`)}</span>
-										{isActive && <ChevronRight className="w-4 h-4 text-white" />}
-									</Link>
-								)
-							})}
+						<div className="my-4 space-y-4">
+							{/* CSS Tools */}
+							<div>
+								<h3 className="mb-2 px-3 text-xs font-medium text-muted-foreground uppercase tracking-wider">
+									CSS Tools
+								</h3>
+								{projects.filter(p => ['clamp-calculator', 'flexbox-generator', 'grid-generator', 'css-specificity'].includes(p.id)).map((project) => {
+									const isActive = pathname === `/${locale}/projects/${project.id}`
+									return (
+										<Link
+											key={project.id}
+											href={`/${locale}/projects/${project.id}`}
+											className={cn(
+												"flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-colors hover:bg-accent hover:text-accent-foreground",
+												isActive && "bg-accent !text-white"
+											)}
+										>
+											{cloneElement(project.icon as React.ReactElement, {
+												className: cn("w-4 h-4", isActive && "text-white")
+											})}
+											<span className="flex-1">{widgetT(`${project.id.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase())}.title`)}</span>
+											{isActive && <ChevronRight className="w-4 h-4 text-white" />}
+										</Link>
+									)
+								})}
+							</div>
+
+							{/* Media & Content */}
+							<div>
+								<h3 className="mb-2 px-3 text-xs font-medium text-muted-foreground uppercase tracking-wider">
+									Media & Content
+								</h3>
+								{projects.filter(p => ['svg-encoder', 'youtube-thumbnail', 'qr-generator'].includes(p.id)).map((project) => {
+									const isActive = pathname === `/${locale}/projects/${project.id}`
+									return (
+										<Link
+											key={project.id}
+											href={`/${locale}/projects/${project.id}`}
+											className={cn(
+												"flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-colors hover:bg-accent hover:text-accent-foreground",
+												isActive && "bg-accent !text-white"
+											)}
+										>
+											{cloneElement(project.icon as React.ReactElement, {
+												className: cn("w-4 h-4", isActive && "text-white")
+											})}
+											<span className="flex-1">{widgetT(`${project.id.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase())}.title`)}</span>
+											{isActive && <ChevronRight className="w-4 h-4 text-white" />}
+										</Link>
+									)
+								})}
+							</div>
+
+							{/* Dev Tools */}
+							<div>
+								<h3 className="mb-2 px-3 text-xs font-medium text-muted-foreground uppercase tracking-wider">
+									Dev Tools
+								</h3>
+								{projects.filter(p => ['html-tree', 'speed-test'].includes(p.id)).map((project) => {
+									const isActive = pathname === `/${locale}/projects/${project.id}`
+									return (
+										<Link
+											key={project.id}
+											href={`/${locale}/projects/${project.id}`}
+											className={cn(
+												"flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-colors hover:bg-accent hover:text-accent-foreground",
+												isActive && "bg-accent !text-white"
+											)}
+										>
+											{cloneElement(project.icon as React.ReactElement, {
+												className: cn("w-4 h-4", isActive && "text-white")
+											})}
+											<span className="flex-1">{widgetT(`${project.id.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase())}.title`)}</span>
+											{isActive && <ChevronRight className="w-4 h-4 text-white" />}
+										</Link>
+									)
+								})}
+							</div>
+
+							{/* Productivity & Security */}
+							<div>
+								<h3 className="mb-2 px-3 text-xs font-medium text-muted-foreground uppercase tracking-wider">
+									Productivity
+								</h3>
+								{projects.filter(p => ['password-generator', 'utm-builder'].includes(p.id)).map((project) => {
+									const isActive = pathname === `/${locale}/projects/${project.id}`
+									return (
+										<Link
+											key={project.id}
+											href={`/${locale}/projects/${project.id}`}
+											className={cn(
+												"flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-colors hover:bg-accent hover:text-accent-foreground",
+												isActive && "bg-accent !text-white"
+											)}
+										>
+											{cloneElement(project.icon as React.ReactElement, {
+												className: cn("w-4 h-4", isActive && "text-white")
+											})}
+											<span className="flex-1">{widgetT(`${project.id.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase())}.title`)}</span>
+											{isActive && <ChevronRight className="w-4 h-4 text-white" />}
+										</Link>
+									)
+								})}
+							</div>
 						</div>
 					</div>
 				</nav>
