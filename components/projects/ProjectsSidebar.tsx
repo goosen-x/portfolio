@@ -18,7 +18,9 @@ import {
 	Key,
 	Link as LinkIcon,
 	BarChart3,
-	Palette
+	Palette,
+	SunMoon,
+	Languages
 } from 'lucide-react'
 
 interface ProjectItem {
@@ -94,6 +96,18 @@ const projects: ProjectItem[] = [
 		title: 'CSS Specificity',
 		icon: BarChart3,
 		description: 'Calculate CSS selector specificity'
+	},
+	{
+		id: 'theme-settings',
+		title: 'Theme Settings',
+		icon: SunMoon,
+		description: 'Customize theme preferences'
+	},
+	{
+		id: 'language-settings',
+		title: 'Language Settings',
+		icon: Languages,
+		description: 'Change interface language'
 	}
 ]
 
@@ -205,6 +219,30 @@ export function ProjectsSidebar() {
 									Productivity
 								</h3>
 								{projects.filter(p => ['password-generator', 'utm-builder'].includes(p.id)).map((project) => {
+									const isActive = pathname === `/${locale}/projects/${project.id}`
+									return (
+										<Link
+											key={project.id}
+											href={`/${locale}/projects/${project.id}`}
+											className={cn(
+												"flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-colors hover:bg-accent hover:text-accent-foreground",
+												isActive && "bg-accent !text-white"
+											)}
+										>
+											<project.icon className={cn("w-4 h-4", isActive && "text-white")} />
+											<span className="flex-1">{widgetT(`${project.id.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase())}.title`)}</span>
+											{isActive && <ChevronRight className="w-4 h-4 text-white" />}
+										</Link>
+									)
+								})}
+							</div>
+
+							{/* Settings */}
+							<div>
+								<h3 className="mb-2 px-3 text-xs font-medium text-muted-foreground uppercase tracking-wider">
+									Settings
+								</h3>
+								{projects.filter(p => ['theme-settings', 'language-settings'].includes(p.id)).map((project) => {
 									const isActive = pathname === `/${locale}/projects/${project.id}`
 									return (
 										<Link

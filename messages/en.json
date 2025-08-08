@@ -251,6 +251,10 @@
 			"productivity": {
 				"title": "Productivity & Security",
 				"description": "Tools for productivity and security"
+			},
+			"settings": {
+				"title": "Settings & Preferences",
+				"description": "Customize your experience and preferences"
 			}
 		}
 	},
@@ -636,6 +640,14 @@
 				"downloaded": "Links downloaded successfully",
 				"qrError": "Failed to generate QR code"
 			}
+		},
+		"themeSettings": {
+			"title": "Theme Settings",
+			"description": "Customize the appearance of the site with theme preferences and color modes."
+		},
+		"languageSettings": {
+			"title": "Language Settings",
+			"description": "Change the display language and regional preferences for the interface."
 		},
 		"cssSpecificity": {
 			"title": "CSS Specificity Calculator",

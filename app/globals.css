@@ -2,6 +2,126 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* View Transitions for theme switching */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in-out;
+  animation-name: fade-out; /* Default animation */
+}
+
+::view-transition-new(root) {
+  animation-name: fade-in; /* Default animation */
+}
+
+/* Fade transition (default) */
+.theme-transition-fade::view-transition-old(root) {
+  animation-name: fade-out !important;
+}
+
+.theme-transition-fade::view-transition-new(root) {
+  animation-name: fade-in !important;
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Scale transition */
+.theme-transition-scale::view-transition-old(root) {
+  animation-name: scale-out !important;
+}
+
+.theme-transition-scale::view-transition-new(root) {
+  animation-name: scale-in !important;
+}
+
+@keyframes scale-out {
+  from { 
+    opacity: 1;
+    transform: scale(1);
+  }
+  to { 
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+
+@keyframes scale-in {
+  from { 
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  to { 
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Slide transition */
+.theme-transition-slide::view-transition-old(root) {
+  animation-name: slide-out !important;
+}
+
+.theme-transition-slide::view-transition-new(root) {
+  animation-name: slide-in !important;
+}
+
+@keyframes slide-out {
+  from { 
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to { 
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+}
+
+@keyframes slide-in {
+  from { 
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Circle transition */
+.theme-transition-circle::view-transition-old(root) {
+  animation-name: circle-out !important;
+}
+
+.theme-transition-circle::view-transition-new(root) {
+  animation-name: circle-in !important;
+}
+
+@keyframes circle-out {
+  from {
+    clip-path: circle(100% at var(--theme-x, 50%) var(--theme-y, 50%));
+  }
+  to {
+    clip-path: circle(0% at var(--theme-x, 50%) var(--theme-y, 50%));
+  }
+}
+
+@keyframes circle-in {
+  from {
+    clip-path: circle(0% at var(--theme-x, 50%) var(--theme-y, 50%));
+  }
+  to {
+    clip-path: circle(150% at var(--theme-x, 50%) var(--theme-y, 50%));
+  }
+}
+
 @theme {
   --font-sans:
     var(--font-sans), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',

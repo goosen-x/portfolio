@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { FiMoon, FiSun } from 'react-icons/fi'
-import { useTheme } from 'next-themes'
+import useThemeWithTransition from '@/lib/hooks/useThemeWithTransition'
 import { ComponentPropsWithoutRef, useState, useEffect } from 'react'
 import { cn } from '@/lib/utils'
 
@@ -10,7 +10,7 @@ const TOGGLE_CLASSES =
 	'text-sm font-medium h-8 flex items-center gap-2 px-3 md:pl-3 md:pr-3.5 py-3 md:py-1.5 transition-colors relative z-10'
 
 const ThemeToggle = ({ className }: ComponentPropsWithoutRef<'div'>) => {
-	const { theme, setTheme } = useTheme()
+	const { theme, setTheme } = useThemeWithTransition()
 	const [mounted, setMounted] = useState(false)
 
 	useEffect(() => {
@@ -35,7 +35,7 @@ const ThemeToggle = ({ className }: ComponentPropsWithoutRef<'div'>) => {
 		>
 			<button
 				className={`${TOGGLE_CLASSES} text-white`}
-				onClick={() => setTheme('light')}
+				onClick={(e) => setTheme('light', e)}
 			>
 				<FiSun className='relative z-10 text-lg md:text-sm' />
 			</button>
@@ -43,7 +43,7 @@ const ThemeToggle = ({ className }: ComponentPropsWithoutRef<'div'>) => {
 				className={`${TOGGLE_CLASSES} ${
 					theme === 'dark' ? 'text-white' : 'text-slate-800'
 				}`}
-				onClick={() => setTheme('dark')}
+				onClick={(e) => setTheme('dark', e)}
 			>
 				<FiMoon className='relative z-10 text-lg md:text-sm' />
 			</button>

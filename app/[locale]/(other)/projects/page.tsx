@@ -1,4 +1,4 @@
-import { Ruler, FileImage, Youtube, GitBranch, Box, Grid3X3, QrCode, Gauge, Key, Link as LinkIcon, BarChart3, Palette } from 'lucide-react'
+import { Ruler, FileImage, Youtube, GitBranch, Box, Grid3X3, QrCode, Gauge, Key, Link as LinkIcon, BarChart3, Palette, Settings, Languages, SunMoon } from 'lucide-react'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
@@ -121,6 +121,27 @@ const categories: Category[] = [
 				description: 'Create and manage UTM tracking links for marketing campaigns with dynamic parameters support.',
 				icon: <LinkIcon className="w-8 h-8" />,
 				gradient: 'from-pink-500 to-rose-500'
+			}
+		]
+	},
+	{
+		id: 'settings',
+		title: 'Settings & Preferences',
+		description: 'Customize your experience and preferences',
+		projects: [
+			{
+				id: 'theme-settings',
+				title: 'Theme Settings',
+				description: 'Customize the appearance of the site with theme preferences and color modes.',
+				icon: <SunMoon className="w-8 h-8" />,
+				gradient: 'from-gray-500 to-slate-600'
+			},
+			{
+				id: 'language-settings',
+				title: 'Language Settings',
+				description: 'Change the display language and regional preferences for the interface.',
+				icon: <Languages className="w-8 h-8" />,
+				gradient: 'from-blue-500 to-cyan-500'
 			}
 		]
 	}
