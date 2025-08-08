@@ -11,9 +11,9 @@ import { routing } from '@/i18n/routing'
 import { dev } from '@/lib/config/env'
 import { ReactNode } from 'react'
 import YandexMetrika from '@/components/analytics/YandexMetrika'
-import { ThemeScript } from '@/components/theme/ThemeScript'
 import { ScrollToTop } from '@/components/global/ScrollToTop'
 import { Toaster } from '@/components/ui/sonner'
+import { ThemeProvider } from '@/components/providers/theme-provider'
 
 // todo add metadata
 
@@ -44,9 +44,6 @@ export default async function RootLayout({
 			className='scroll-smooth scroll-pt-24'
 			suppressHydrationWarning
 		>
-			<head>
-				<ThemeScript />
-			</head>
 			<NextIntlClientProvider messages={messages}>
 				<body
 					className={cn(
@@ -54,10 +51,16 @@ export default async function RootLayout({
 						tekturFont.className
 					)}
 				>
-					<YandexMetrika />
-					{children}
-					<ScrollToTop />
-					<Toaster />
+					<ThemeProvider
+						attribute="class"
+						defaultTheme="system"
+						enableSystem
+					>
+						<YandexMetrika />
+						{children}
+						<ScrollToTop />
+						<Toaster />
+					</ThemeProvider>
 				</body>
 			</NextIntlClientProvider>
 		</html>

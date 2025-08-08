@@ -41,7 +41,8 @@
 		"title": "Tech Stack",
 		"frontend": "Frontend",
 		"backend": "Backend",
-		"other": "Other tools"
+		"other": "Other tools",
+		"devops": "DevOps & Cloud"
 	},
 	"SectionProjects": {
 		"title": "Projects",
@@ -233,6 +234,7 @@
 	"projectsPage": {
 		"title": "Mini Projects",
 		"description": "A collection of interactive tools and demos built with modern web technologies.",
+		"mainPageSections": "Main Page",
 		"categories": {
 			"css-tools": {
 				"title": "CSS Tools",
@@ -253,6 +255,13 @@
 		}
 	},
 	"widgets": {
+		"mainPage": {
+			"main": "Main",
+			"techstack": "Tech Stack",
+			"projects": "Projects",
+			"experience": "Experience",
+			"blog": "Blog"
+		},
 		"clampCalculator": {
 			"title": "CSS Clamp Calculator",
 			"description": "Create fluid typography and spacing that scales smoothly between viewport sizes.",
@@ -656,6 +665,23 @@
 				"emptyInput": "Please enter CSS selectors to analyze",
 				"noSelectors": "No valid CSS selectors found. Please enter only selectors, not CSS properties.",
 				"exampleLoaded": "Example loaded"
+			}
+		},
+		"themeTransitions": {
+			"title": "Theme Transitions",
+			"description": "Experiment with different theme transition animations"
+		}
+	},
+	"settings": {
+		"themeTransition": {
+			"title": "Theme Transition",
+			"types": {
+				"fade": "Fade",
+				"circle": "Circle",
+				"slide": "Slide",
+				"flip": "Flip",
+				"blur": "Blur",
+				"none": "None"
 			}
 		}
 	}

@@ -41,7 +41,8 @@
 		"title": "Стек технологий",
 		"frontend": "Frontend",
 		"backend": "Backend",
-		"other": "Другие инструменты"
+		"other": "Другие инструменты",
+		"devops": "DevOps и Облако"
 	},
 	"SectionProjects": {
 		"title": "Проекты",
@@ -233,6 +234,7 @@
 	"projectsPage": {
 		"title": "Мини-проекты",
 		"description": "Интерактивные инструменты и демо.",
+		"mainPageSections": "Главная страница",
 		"categories": {
 			"css-tools": {
 				"title": "CSS Инструменты",
@@ -253,6 +255,13 @@
 		}
 	},
 	"widgets": {
+		"mainPage": {
+			"main": "Главная",
+			"techstack": "Технологии",
+			"projects": "Проекты",
+			"experience": "Опыт",
+			"blog": "Блог"
+		},
 		"clampCalculator": {
 			"title": "CSS Clamp Калькулятор",
 			"description": "Создание плавной типографики и отступов, которые масштабируются между размерами вьюпорта.",
@@ -656,6 +665,23 @@
 				"emptyInput": "Введите CSS селекторы для анализа",
 				"noSelectors": "Не найдено валидных CSS селекторов. Введите только селекторы, а не CSS свойства.",
 				"exampleLoaded": "Пример загружен"
+			}
+		},
+		"themeTransitions": {
+			"title": "Переходы темы",
+			"description": "Экспериментируйте с различными анимациями переключения темы"
+		}
+	},
+	"settings": {
+		"themeTransition": {
+			"title": "Переход темы",
+			"types": {
+				"fade": "Затухание",
+				"circle": "Круг",
+				"slide": "Слайд",
+				"flip": "Переворот",
+				"blur": "Размытие",
+				"none": "Без эффекта"
 			}
 		}
 	}

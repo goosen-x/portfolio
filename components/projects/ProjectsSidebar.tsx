@@ -17,7 +17,8 @@ import {
 	Gauge,
 	Key,
 	Link as LinkIcon,
-	BarChart3
+	BarChart3,
+	Palette
 } from 'lucide-react'
 
 interface ProjectItem {

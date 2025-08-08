@@ -1,4 +1,4 @@
-import { Ruler, FileImage, Youtube, GitBranch, Box, Grid3X3, QrCode, Gauge, Key, Link as LinkIcon, BarChart3 } from 'lucide-react'
+import { Ruler, FileImage, Youtube, GitBranch, Box, Grid3X3, QrCode, Gauge, Key, Link as LinkIcon, BarChart3, Palette } from 'lucide-react'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'

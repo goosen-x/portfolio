@@ -5,16 +5,37 @@ import { useLocale, useTranslations } from 'next-intl'
 import { usePathname } from 'next/navigation'
 import ThemeToggle from '@/components/global/ThemeToggle'
 import { LanguageSelect } from '@/components/global/LanguageSelect'
+import { DownloadCV } from '@/components/global/DownloadCV'
+import { useEffect } from 'react'
 
 const BreadcrumbHeader = () => {
 	const locale = useLocale()
 	const t = useTranslations('Header')
 	const pathname = usePathname()
+	
+	// Clean up any theme transition artifacts on route change
+	useEffect(() => {
+		// Remove all transition-related state when route changes
+		document.documentElement.classList.remove(
+			'theme-fade-transition',
+			'theme-circle-transition', 
+			'theme-slide-transition',
+			'theme-flip-transition',
+			'theme-blur-transition'
+		)
+		document.documentElement.style.removeProperty('--theme-circle-x')
+		document.documentElement.style.removeProperty('--theme-circle-y')
+		document.documentElement.style.removeProperty('--theme-circle-radius')
+		document.documentElement.removeAttribute('data-theme-transitioning')
+	}, [pathname])
 
 	// Parse pathname to create breadcrumb items
 	const pathSegments = pathname.split('/').filter(Boolean)
 	// Remove locale from segments
 	const segments = pathSegments.slice(1)
+	
+	// Check if we're on the main page
+	const isMainPage = segments.length === 0
 
 	// Create breadcrumb items
 	const breadcrumbs = segments.map((segment, index) => {
@@ -97,6 +118,7 @@ const BreadcrumbHeader = () => {
 							</Link>
 						</nav>
 						<div className='hidden md:flex items-center gap-2'>
+							{isMainPage && <DownloadCV />}
 							<LanguageSelect className='shrink-0' locale={locale} />
 							<ThemeToggle className='shrink-0' />
 						</div>
@@ -104,6 +126,7 @@ const BreadcrumbHeader = () => {
 
 					{/* Mobile controls */}
 					<div className='flex items-center gap-2 md:hidden'>
+						{isMainPage && <DownloadCV />}
 						<LanguageSelect className='shrink-0' locale={locale} />
 						<ThemeToggle className='shrink-0' />
 						<button className='text-muted-foreground hover:text-foreground'>

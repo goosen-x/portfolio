@@ -18,7 +18,12 @@ import {
 	SiNextdotjs,
 	SiRadixui,
 	SiPrisma,
-	SiPostman
+	SiPostman,
+	SiDocker,
+	SiVercel,
+	SiNginx,
+	SiGithubactions,
+	SiRedis
 } from 'react-icons/si'
 import {
 	FaGithub,
@@ -29,11 +34,11 @@ import {
 	FaHtml5,
 	FaBootstrap,
 	FaNodeJs,
-	FaReact
+	FaReact,
+	FaServer
 } from 'react-icons/fa'
 import { CgFigma } from 'react-icons/cg'
 import { BsFilterCircleFill } from 'react-icons/bs'
-// import { SiPostman } from "react-icons/si";
 
 export const TechStackData: TechStackDataType = [
 	{
@@ -149,6 +154,41 @@ export const TechStackData: TechStackDataType = [
 				name: 'Strapi',
 				icon: <SiStrapi />,
 				percent: 90
+			}
+		]
+	},
+	{
+		name: 'DevOps & Cloud',
+		techs: [
+			{
+				name: 'Docker',
+				icon: <SiDocker />,
+				percent: 85
+			},
+			{
+				name: 'Vercel',
+				icon: <SiVercel />,
+				percent: 90
+			},
+			{
+				name: 'Nginx',
+				icon: <SiNginx />,
+				percent: 80
+			},
+			{
+				name: 'GitHub Actions',
+				icon: <SiGithubactions />,
+				percent: 85
+			},
+			{
+				name: 'PM2',
+				icon: <FaServer />,
+				percent: 80
+			},
+			{
+				name: 'Redis',
+				icon: <SiRedis />,
+				percent: 75
 			}
 		]
 	},

@@ -14,21 +14,13 @@ export const Navigation = ({ burger = false, setOpen }: NavigationProps) => {
 	const t = useTranslations('Header.nav')
 	const locale = useLocale()
 
-	const arr = ['main', 'techstack', 'projects', 'experience', 'contact']
-
-	const menuItems = arr.reduce<{ title: string; href: string }[]>(
-		(acc, item) => {
-			if (item === 'contact') {
-				// Контакты теперь ведут на отдельную страницу
-				return [...acc, { title: t(item), href: `/${locale}/contact` }]
-			}
-			return [...acc, { title: t(item), href: `#${item}` }]
-		},
-		[]
-	)
-
-	// Добавляем ссылку на блог с учётом локали
-	menuItems.push({ title: t('blog'), href: `/${locale}/blog` })
+	// Только страницы, якори убраны в ScrollSpy
+	const menuItems = [
+		{ title: t('projects'), href: `/${locale}/projects` },
+		{ title: t('activities'), href: `/${locale}/activities` },
+		{ title: t('blog'), href: `/${locale}/blog` },
+		{ title: t('contact'), href: `/${locale}/contact` }
+	]
 
 	return (
 		<nav

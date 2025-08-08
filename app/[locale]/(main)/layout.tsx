@@ -1,4 +1,5 @@
-import { Footer, Header } from '@/components/layout'
+import BreadcrumbHeader from '@/components/global/BreadcrumbHeader'
+import { Footer } from '@/components/layout'
 import { ReactNode } from 'react'
 
 type Props = {
@@ -11,7 +12,7 @@ export default async function MainLayout({ children, params }: Props) {
 
 	return (
 		<main className='min-h-screen w-full'>
-			<Header locale={locale} />
+			<BreadcrumbHeader />
 			{children}
 			<Footer />
 		</main>
