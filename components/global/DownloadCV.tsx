@@ -52,7 +52,7 @@ export const DownloadCV = () => {
 
 	return (
 		<motion.div
-			className='inline-block'
+			style={{ display: 'inline-block' }}
 			whileHover={{
 				scale: 1.025
 			}}
