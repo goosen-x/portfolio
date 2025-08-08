@@ -72,21 +72,7 @@ export const DownloadCV = () => {
 					<FiDownload className='mr-2 shrink-0' />
 					<span className='text-nowrap tracking-wide'>{text}</span>
 				</div>
-				<motion.span
-					initial={{
-						y: '100%'
-					}}
-					animate={{
-						y: '-100%'
-					}}
-					transition={{
-						repeat: Infinity,
-						repeatType: 'mirror',
-						duration: 1,
-						ease: 'linear'
-					}}
-					className='duration-300 absolute inset-0 z-0 scale-125 bg-linear-to-t from-accent/0 from-40% via-accent to-accent/0 to-60% opacity-0 transition-opacity group-hover:opacity-100'
-				/>
+				<span className='duration-300 absolute inset-0 z-0 scale-125 bg-gradient-to-t from-accent/0 from-40% via-accent to-accent/0 to-60% opacity-0 transition-opacity group-hover:opacity-100' />
 			</a>
 		</motion.div>
 	)
