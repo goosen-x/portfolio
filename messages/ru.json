@@ -16,7 +16,8 @@
 		},
 		"cv": {
 			"btnText": "СКАЧАТЬ РЕЗЮМЕ",
-			"href": "https://drive.google.com/file/d/1B-jDKElDsy7tDEl-sEOIG70IF5NqBrL6/view?usp=sharing"
+			"href": "/cv/CV_Borisenko_Dmitry_Frontend.pdf",
+			"filename": "CV_Borisenko_Dmitry_Frontend.pdf"
 		}
 	},
 	"SectionMain": {

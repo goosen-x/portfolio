@@ -16,7 +16,8 @@
 		},
 		"cv": {
 			"btnText": "DOWNLOAD CV",
-			"href": "https://drive.google.com/file/d/1yh4dJ6LMnsTVQMb99aAnU8TDj-9dgGe7/view?usp=sharing"
+			"href": "/cv/CV_Borisenko_Dmitry_Frontend_En.pdf",
+			"filename": "CV_Borisenko_Dmitry_Frontend_En.pdf"
 		}
 	},
 	"SectionMain": {

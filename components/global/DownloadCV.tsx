@@ -13,6 +13,7 @@ export const DownloadCV = () => {
 
 	const TARGET_TEXT = t('btnText')
 	const TARGET_HREF = t('href')
+	const TARGET_FILENAME = t('filename')
 	const CHARS = '!@#$%^&*():{};|,.<>/?'
 	const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
@@ -63,8 +64,7 @@ export const DownloadCV = () => {
 			<a
 				className='h-8 group relative overflow-hidden cursor-pointer rounded-md border border-input bg-background px-4 py-1 font-medium uppercase text-foreground hover:text-accent min-w-48 text-sm shadow-xs flex items-center'
 				href={TARGET_HREF}
-				target='_blank'
-				rel='noopener noreferrer'
+				download={TARGET_FILENAME}
 				onMouseEnter={scramble}
 				onMouseLeave={stopScramble}
 			>
