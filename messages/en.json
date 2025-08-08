@@ -167,7 +167,9 @@
 		"description": "My involvement in the tech community, open source contributions, and continuous learning journey.",
 		"stats": {
 			"opensource": "Open Source Contributions",
+			"completed": "Completed Projects",
 			"talks": "Tech Talks",
+			"csstalk": "Planned Talk at MoscowCSS Conference",
 			"courses": "Completed Courses",
 			"projects": "Active Projects"
 		},
@@ -175,18 +177,18 @@
 			"active": "Active",
 			"ongoing": "Ongoing",
 			"live": "Live",
-			"year": "2024"
+			"year": "2024",
+			"planned": "Conferences"
 		},
 		"sections": {
 			"codewars": "Codewars Progress",
 			"achievement": "Latest Achievement",
-			"achievementText": "Completed Advanced React Patterns course with certification",
+			"achievementText": "Completed Neovim course at PurpleSchool",
 			"community": "Community Involvement",
 			"communityItems": {
-				"react": "Active member of React Russia community",
+				"react": "Active member of MoscowCSS community",
 				"meetups": "Regular participant in local meetups",
-				"mentor": "Mentor for junior developers",
-				"opensource": "Open source contributor"
+				"mentor": "Mentor for junior developers"
 			},
 			"learning": "Learning Path",
 			"learningItems": {
@@ -202,8 +204,8 @@
 			"skills": "Top Skills",
 			"goals": "2025 Goals",
 			"goalsItems": {
-				"oss": "Contribute to major OSS",
-				"rust": "Learn Rust"
+				"oss": "Speaking at MoscowCSS Conference",
+				"rust": "Advanced Linux"
 			}
 		},
 		"cta": {
@@ -213,16 +215,169 @@
 		},
 		"viewProfile": "View Profile",
 		"december": "December",
+		"february": "February",
 		"github": {
 			"title": "GitHub Activity",
 			"error": "Unable to load GitHub activity at this time.",
 			"viewProfile": "View Profile",
-			"totalCount": "{{count}} contributions in the last year",
+			"contributionsText": "contributions in the last year",
 			"stats": {
 				"total": "Total Contributions",
 				"average": "Daily Average",
 				"activeDays": "Active Days",
 				"maxDay": "Max in Day"
+			}
+		}
+	},
+	"projectsPage": {
+		"title": "Mini Projects",
+		"description": "A collection of interactive tools and demos built with modern web technologies."
+	},
+	"widgets": {
+		"clampCalculator": {
+			"title": "CSS Clamp Calculator",
+			"description": "Create fluid typography and spacing that scales smoothly between viewport sizes.",
+			"values": "Values",
+			"min": "Min",
+			"max": "Max",
+			"viewport": "Viewport",
+			"result": "Result",
+			"liveExample": "Live Example",
+			"liveExampleText": "This text uses the calculated clamp formula. Try editing this text or resize your browser window to see how it scales smoothly between the minimum and maximum values! 🎨",
+			"errors": {
+				"title": "Oh no, there are errors:",
+				"viewportValues": "Please make sure all the viewport values are positive numbers and the max viewport is greater than 0",
+				"minMax": "Min value must be less than max value",
+				"minMaxViewport": "Min viewport must be less than max viewport",
+				"allFields": "Please make sure all fields are filled with numbers"
+			},
+			"tooltips": {
+				"negative": "Can be negative, e.g. for margins or positioning"
+			},
+			"toast": {
+				"copied": "CSS clamp value copied to clipboard",
+				"copyError": "Failed to copy to clipboard"
+			}
+		},
+		"svgEncoder": {
+			"title": "SVG URL Encoder",
+			"description": "Encode SVG for use in CSS background-image property. Drag & drop SVG files or paste code.",
+			"quotes": "Quotes",
+			"single": "Single",
+			"double": "Double",
+			"insertSvg": "Insert SVG:",
+			"takeEncoded": "Take encoded:",
+			"readyForCss": "Ready for CSS:",
+			"preview": "Preview:",
+			"background": "Background:",
+			"white": "White",
+			"silver": "Silver",
+			"black": "Black",
+			"example": "Example",
+			"placeholder": "Paste your SVG code here or drag & drop an SVG file...",
+			"encodedPlaceholder": "Encoded result will appear here...",
+			"cssPlaceholder": "CSS result will appear here...",
+			"dropFile": "Drop SVG file here",
+			"editHint": "You can edit this field to decode back to SVG",
+			"toast": {
+				"encodedCopied": "Encoded SVG copied to clipboard",
+				"cssCopied": "CSS code copied to clipboard",
+				"copyError": "Failed to copy to clipboard",
+				"fileLoaded": "SVG file loaded successfully",
+				"invalidFile": "Please drop a valid SVG file"
+			}
+		},
+		"youtubeThumbnail": {
+			"title": "YouTube Thumbnail Grabber",
+			"description": "Extract thumbnail images from any YouTube video in various resolutions.",
+			"inputLabel": "Enter YouTube URL or Video ID",
+			"example": "Example",
+			"videoId": "Video ID:",
+			"supportedFormats": "Supported formats:",
+			"resolution": {
+				"max": "Max Resolution",
+				"standard": "Standard Definition",
+				"high": "High Quality",
+				"medium": "Medium Quality",
+				"default": "Default"
+			},
+			"alternativeUrls": "Alternative Thumbnail URLs",
+			"thumbnail": "Thumbnail",
+			"copyUrl": "Copy URL",
+			"errors": {
+				"invalid": "Invalid YouTube URL or video ID"
+			},
+			"notAvailable": "Not available",
+			"toast": {
+				"copied": "URL copied to clipboard",
+				"copyError": "Failed to copy to clipboard",
+				"downloaded": "Thumbnail downloaded successfully",
+				"downloadError": "Failed to download thumbnail"
+			}
+		},
+		"htmlTree": {
+			"title": "HTML Tree Visualizer",
+			"description": "Visualize HTML structure as a tree with BEM validation",
+			"htmlInput": "HTML Input",
+			"treeStructure": "Tree Structure",
+			"depth": "Depth",
+			"loadExample": "Load Example",
+			"placeholder": "Paste your HTML code here...",
+			"emptyState": "Enter HTML code to see the tree structure",
+			"bemWarnings": "BEM Warnings:",
+			"warnings": {
+				"blockNotFound": "BEM warning: \"{{className}}\" - block \"{{blockName}}\" not found on element or parent",
+				"baseNotFound": "BEM warning: \"{{className}}\" - base class \"{{baseName}}\" not found"
+			},
+			"toast": {
+				"parsed": "HTML parsed successfully",
+				"parsedWithWarnings": "HTML parsed with {{count}} BEM warning{{plural}}",
+				"parseError": "Failed to parse HTML: Invalid syntax",
+				"exampleLoaded": "Example loaded"
+			}
+		},
+		"flexboxGenerator": {
+			"title": "Flexbox Generator",
+			"description": "Visual tool for creating CSS Flexbox layouts",
+			"properties": "Properties",
+			"preview": "Preview",
+			"generatedCss": "Generated CSS",
+			"reset": "Reset",
+			"copy": "Copy",
+			"direction": "Direction",
+			"justifyContent": "Justify Content",
+			"alignItems": "Align Items",
+			"flexWrap": "Flex Wrap",
+			"alignContent": "Align Content",
+			"gap": "Gap",
+			"items": "Items",
+			"showNumbers": "Show Numbers",
+			"toast": {
+				"copied": "CSS has been copied to clipboard",
+				"copyError": "Failed to copy to clipboard"
+			}
+		},
+		"gridGenerator": {
+			"title": "Grid Generator",
+			"description": "Visual tool for creating CSS Grid layouts",
+			"properties": "Properties",
+			"preview": "Preview",
+			"generatedCss": "Generated CSS",
+			"reset": "Reset",
+			"copy": "Copy",
+			"columns": "Columns",
+			"rows": "Rows",
+			"gap": "Gap",
+			"rowGap": "Row Gap",
+			"columnGap": "Column Gap",
+			"justifyItems": "Justify Items",
+			"alignItems": "Align Items",
+			"autoFlow": "Auto Flow",
+			"items": "Items",
+			"showNumbers": "Show Numbers",
+			"toast": {
+				"copied": "CSS has been copied to clipboard",
+				"copyError": "Failed to copy to clipboard"
 			}
 		}
 	}

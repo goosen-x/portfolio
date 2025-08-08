@@ -12,6 +12,7 @@ import { ReactNode } from 'react'
 import YandexMetrika from '@/components/analytics/YandexMetrika'
 import { ThemeScript } from '@/components/theme/ThemeScript'
 import { ScrollToTop } from '@/components/global/ScrollToTop'
+import { Toaster } from '@/components/ui/sonner'
 
 // todo add metadata
 
@@ -55,6 +56,7 @@ export default async function RootLayout({
 					<YandexMetrika />
 					{children}
 					<ScrollToTop />
+					<Toaster />
 				</body>
 			</NextIntlClientProvider>
 		</html>

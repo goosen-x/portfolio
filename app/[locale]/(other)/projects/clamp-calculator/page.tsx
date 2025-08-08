@@ -8,8 +8,11 @@ import { Button } from '@/components/ui/button'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { Copy, Check, AlertCircle } from 'lucide-react'
 import { Alert, AlertDescription } from '@/components/ui/alert'
+import { toast } from 'sonner'
+import { useTranslations } from 'next-intl'
 
 export default function ClampCalculatorPage() {
+	const t = useTranslations('widgets.clampCalculator')
 	const [unit, setUnit] = useState<'px' | 'rem'>('rem')
 	const [minValue, setMinValue] = useState(16)
 	const [maxValue, setMaxValue] = useState(24)
@@ -30,26 +33,30 @@ export default function ClampCalculatorPage() {
 		const newErrors: string[] = []
 		
 		if (minViewport < 0 || maxViewport < 1) {
-			newErrors.push('Please make sure all the viewport values are positive numbers and the max viewport is greater than 0')
+			newErrors.push(t('errors.viewportValues'))
 		}
 		if (minValue >= maxValue) {
-			newErrors.push('Min value must be less than max value')
+			newErrors.push(t('errors.minMax'))
 		}
 		if (minViewport >= maxViewport) {
-			newErrors.push('Min viewport must be less than max viewport')
+			newErrors.push(t('errors.minMaxViewport'))
 		}
 		if ([minValue, maxValue, minViewport, maxViewport].some(v => isNaN(v))) {
-			newErrors.push('Please make sure all fields are filled with numbers')
+			newErrors.push(t('errors.allFields'))
 		}
 		
 		setErrors(newErrors)
 	}
 
-	const copyToClipboard = () => {
-		navigator.clipboard.writeText(result).then(() => {
+	const copyToClipboard = async () => {
+		try {
+			await navigator.clipboard.writeText(result)
 			setCopied(true)
 			setTimeout(() => setCopied(false), 2000)
-		})
+			toast.success(t('toast.copied'))
+		} catch (err) {
+			toast.error(t('toast.copyError'))
+		}
 	}
 
 	const handleValueChange = (value: number, setter: (v: number) => void) => {
@@ -88,15 +95,15 @@ export default function ClampCalculatorPage() {
 
 	return (
 		<div className="max-w-4xl mx-auto">
-			<h1 className="text-2xl font-bold mb-2">CSS Clamp Calculator</h1>
+			<h1 className="text-2xl font-bold mb-2">{t('title')}</h1>
 			<p className="text-muted-foreground mb-6">
-				Create fluid typography and spacing that scales smoothly between viewport sizes.
+				{t('description')}
 			</p>
 
 			<div className="grid gap-6 md:grid-cols-2">
 				<Card className="p-6">
 					<div className="flex items-center justify-between mb-4">
-						<h3 className="font-semibold">Values</h3>
+						<h3 className="font-semibold">{t('values')}</h3>
 						<RadioGroup value={unit} onValueChange={(v) => setUnit(v as 'px' | 'rem')}>
 							<div className="flex items-center space-x-4">
 								<div className="flex items-center space-x-2">
@@ -113,7 +120,7 @@ export default function ClampCalculatorPage() {
 
 					<div className="space-y-4">
 						<div>
-							<Label htmlFor="min-value">Min</Label>
+							<Label htmlFor="min-value">{t('min')}</Label>
 							<div className="relative">
 								<Input
 									id="min-value"
@@ -128,12 +135,12 @@ export default function ClampCalculatorPage() {
 								</span>
 							</div>
 							<p className="text-xs text-muted-foreground mt-1">
-								Can be negative, e.g. for margins or positioning
+								{t('tooltips.negative')}
 							</p>
 						</div>
 
 						<div>
-							<Label htmlFor="max-value">Max</Label>
+							<Label htmlFor="max-value">{t('max')}</Label>
 							<div className="relative">
 								<Input
 									id="max-value"
@@ -152,10 +159,10 @@ export default function ClampCalculatorPage() {
 				</Card>
 
 				<Card className="p-6">
-					<h3 className="font-semibold mb-4">Viewport</h3>
+					<h3 className="font-semibold mb-4">{t('viewport')}</h3>
 					<div className="space-y-4">
 						<div>
-							<Label htmlFor="min-viewport">Min</Label>
+							<Label htmlFor="min-viewport">{t('min')}</Label>
 							<div className="relative">
 								<Input
 									id="min-viewport"
@@ -173,7 +180,7 @@ export default function ClampCalculatorPage() {
 						</div>
 
 						<div>
-							<Label htmlFor="max-viewport">Max</Label>
+							<Label htmlFor="max-viewport">{t('max')}</Label>
 							<div className="relative">
 								<Input
 									id="max-viewport"
@@ -197,7 +204,7 @@ export default function ClampCalculatorPage() {
 				<Alert variant="destructive" className="mt-6">
 					<AlertCircle className="h-4 w-4" />
 					<AlertDescription>
-						<strong>Oh no, there are errors:</strong>
+						<strong>{t('errors.title')}</strong>
 						<ul className="list-disc list-inside mt-2">
 							{errors.map((error, index) => (
 								<li key={index}>{error}</li>
@@ -208,7 +215,7 @@ export default function ClampCalculatorPage() {
 			)}
 
 			<Card className="mt-6 p-6">
-				<h3 className="font-semibold mb-4">Result</h3>
+				<h3 className="font-semibold mb-4">{t('result')}</h3>
 				<div className="bg-muted rounded-lg p-4 font-mono text-sm flex items-center justify-between">
 					<code>{result}</code>
 					<Button
@@ -227,14 +234,14 @@ export default function ClampCalculatorPage() {
 			</Card>
 
 			<Card className="mt-6 p-6">
-				<h3 className="font-semibold mb-4">Live Example</h3>
+				<h3 className="font-semibold mb-4">{t('liveExample')}</h3>
 				<p 
 					className="text-lg leading-relaxed"
 					style={{ fontSize: result }}
 					contentEditable
 					suppressContentEditableWarning
 				>
-					This text uses the calculated clamp formula. Try editing this text or resize your browser window to see how it scales smoothly between the minimum and maximum values! 🎨
+					{t('liveExampleText')}
 				</p>
 			</Card>
 		</div>

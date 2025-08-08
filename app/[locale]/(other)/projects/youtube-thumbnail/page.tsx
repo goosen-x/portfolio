@@ -7,6 +7,8 @@ import { Label } from '@/components/ui/label'
 import { Button } from '@/components/ui/button'
 import { Copy, Check, Download, Youtube } from 'lucide-react'
 import Image from 'next/image'
+import { toast } from 'sonner'
+import { useTranslations } from 'next-intl'
 
 interface ThumbnailType {
 	name: string
@@ -16,45 +18,41 @@ interface ThumbnailType {
 	getUrl: (videoId: string) => string
 }
 
-const thumbnailTypes: ThumbnailType[] = [
+const thumbnailTypes = [
 	{
-		name: 'Max Resolution',
 		quality: 'maxresdefault',
 		width: 1280,
 		height: 720,
-		getUrl: (id) => `https://img.youtube.com/vi/${id}/maxresdefault.jpg`
+		getUrl: (id: string) => `https://img.youtube.com/vi/${id}/maxresdefault.jpg`
 	},
 	{
-		name: 'Standard Definition',
 		quality: 'sddefault',
 		width: 640,
 		height: 480,
-		getUrl: (id) => `https://img.youtube.com/vi/${id}/sddefault.jpg`
+		getUrl: (id: string) => `https://img.youtube.com/vi/${id}/sddefault.jpg`
 	},
 	{
-		name: 'High Quality',
 		quality: 'hqdefault',
 		width: 480,
 		height: 360,
-		getUrl: (id) => `https://img.youtube.com/vi/${id}/hqdefault.jpg`
+		getUrl: (id: string) => `https://img.youtube.com/vi/${id}/hqdefault.jpg`
 	},
 	{
-		name: 'Medium Quality',
 		quality: 'mqdefault',
 		width: 320,
 		height: 180,
-		getUrl: (id) => `https://img.youtube.com/vi/${id}/mqdefault.jpg`
+		getUrl: (id: string) => `https://img.youtube.com/vi/${id}/mqdefault.jpg`
 	},
 	{
-		name: 'Default',
 		quality: 'default',
 		width: 120,
 		height: 90,
-		getUrl: (id) => `https://img.youtube.com/vi/${id}/default.jpg`
+		getUrl: (id: string) => `https://img.youtube.com/vi/${id}/default.jpg`
 	}
 ]
 
 export default function YouTubeThumbnailPage() {
+	const t = useTranslations('widgets.youtubeThumbnail')
 	const [url, setUrl] = useState('')
 	const [videoId, setVideoId] = useState('')
 	const [copiedUrl, setCopiedUrl] = useState<string | null>(null)
@@ -89,7 +87,7 @@ export default function YouTubeThumbnailPage() {
 			}
 		}
 
-		setError('Invalid YouTube URL or video ID')
+		setError(t('errors.invalid'))
 		setVideoId('')
 	}
 
@@ -98,11 +96,15 @@ export default function YouTubeThumbnailPage() {
 		extractVideoId(value)
 	}
 
-	const copyToClipboard = (text: string) => {
-		navigator.clipboard.writeText(text).then(() => {
+	const copyToClipboard = async (text: string) => {
+		try {
+			await navigator.clipboard.writeText(text)
 			setCopiedUrl(text)
 			setTimeout(() => setCopiedUrl(null), 2000)
-		})
+			toast.success(t('toast.copied'))
+		} catch (err) {
+			toast.error(t('toast.copyError'))
+		}
 	}
 
 	const downloadImage = async (imageUrl: string, filename: string) => {
@@ -117,8 +119,10 @@ export default function YouTubeThumbnailPage() {
 			a.click()
 			document.body.removeChild(a)
 			URL.revokeObjectURL(url)
+			toast.success(t('toast.downloaded'))
 		} catch (error) {
 			console.error('Download failed:', error)
+			toast.error(t('toast.downloadError'))
 		}
 	}
 
@@ -130,14 +134,14 @@ export default function YouTubeThumbnailPage() {
 
 	return (
 		<div className="max-w-6xl mx-auto">
-			<h1 className="text-2xl font-bold mb-2">YouTube Thumbnail Grabber</h1>
+			<h1 className="text-2xl font-bold mb-2">{t('title')}</h1>
 			<p className="text-muted-foreground mb-6">
-				Extract thumbnail images from any YouTube video in various resolutions.
+				{t('description')}
 			</p>
 
 			<Card className="p-6 mb-6">
 				<Label htmlFor="youtube-url" className="text-base font-semibold mb-2 block">
-					Enter YouTube URL or Video ID
+					{t('inputLabel')}
 				</Label>
 				<div className="flex gap-2">
 					<Input
@@ -152,14 +156,14 @@ export default function YouTubeThumbnailPage() {
 						variant="outline"
 						onClick={() => handleUrlChange(exampleUrls[0])}
 					>
-						Example
+						{t('example')}
 					</Button>
 				</div>
 				{error && (
 					<p className="text-sm text-destructive mt-2">{error}</p>
 				)}
 				<div className="mt-3 space-y-1">
-					<p className="text-sm text-muted-foreground">Supported formats:</p>
+					<p className="text-sm text-muted-foreground">{t('supportedFormats')}</p>
 					<ul className="text-sm text-muted-foreground list-disc list-inside space-y-1">
 						{exampleUrls.map((example, index) => (
 							<li key={index}>
@@ -179,7 +183,7 @@ export default function YouTubeThumbnailPage() {
 							<div className="flex items-center justify-between">
 								<div className="flex items-center gap-2">
 									<Youtube className="w-5 h-5 text-red-500" />
-									<span className="font-medium">Video ID:</span>
+									<span className="font-medium">{t('videoId')}</span>
 									<code className="bg-muted px-2 py-1 rounded text-sm">
 										{videoId}
 									</code>
@@ -202,12 +206,13 @@ export default function YouTubeThumbnailPage() {
 					<div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
 						{thumbnailTypes.map((type) => {
 							const imageUrl = type.getUrl(videoId)
+							const nameKey = `resolution.${type.quality === 'maxresdefault' ? 'max' : type.quality === 'sddefault' ? 'standard' : type.quality === 'hqdefault' ? 'high' : type.quality === 'mqdefault' ? 'medium' : 'default'}`
 							return (
 								<Card key={type.quality} className="overflow-hidden">
 									<div className="relative aspect-video bg-muted">
 										<Image
 											src={imageUrl}
-											alt={`${type.name} thumbnail`}
+											alt={`${t(nameKey)} thumbnail`}
 											fill
 											className="object-cover"
 											unoptimized
@@ -218,14 +223,14 @@ export default function YouTubeThumbnailPage() {
 												if (parent) {
 													const errorDiv = document.createElement('div')
 													errorDiv.className = 'absolute inset-0 flex items-center justify-center text-muted-foreground'
-													errorDiv.textContent = 'Not available'
+													errorDiv.textContent = t('notAvailable')
 													parent.appendChild(errorDiv)
 												}
 											}}
 										/>
 									</div>
 									<div className="p-4">
-										<h3 className="font-semibold">{type.name}</h3>
+										<h3 className="font-semibold">{t(nameKey)}</h3>
 										<p className="text-sm text-muted-foreground mb-3">
 											{type.width} × {type.height}
 										</p>
@@ -241,7 +246,7 @@ export default function YouTubeThumbnailPage() {
 												) : (
 													<Copy className="h-4 w-4" />
 												)}
-												<span className="ml-1">Copy URL</span>
+												<span className="ml-1">{t('copyUrl')}</span>
 											</Button>
 											<Button
 												size="sm"
@@ -258,22 +263,22 @@ export default function YouTubeThumbnailPage() {
 					</div>
 
 					<Card className="mt-6 p-6">
-						<h3 className="font-semibold mb-4">Alternative Thumbnail URLs</h3>
+						<h3 className="font-semibold mb-4">{t('alternativeUrls')}</h3>
 						<div className="space-y-3">
 							<div>
-								<p className="text-sm font-medium mb-1">Thumbnail 1:</p>
+								<p className="text-sm font-medium mb-1">{t('thumbnail')} 1:</p>
 								<code className="text-xs bg-muted px-2 py-1 rounded block overflow-x-auto">
 									{`https://img.youtube.com/vi/${videoId}/1.jpg`}
 								</code>
 							</div>
 							<div>
-								<p className="text-sm font-medium mb-1">Thumbnail 2:</p>
+								<p className="text-sm font-medium mb-1">{t('thumbnail')} 2:</p>
 								<code className="text-xs bg-muted px-2 py-1 rounded block overflow-x-auto">
 									{`https://img.youtube.com/vi/${videoId}/2.jpg`}
 								</code>
 							</div>
 							<div>
-								<p className="text-sm font-medium mb-1">Thumbnail 3:</p>
+								<p className="text-sm font-medium mb-1">{t('thumbnail')} 3:</p>
 								<code className="text-xs bg-muted px-2 py-1 rounded block overflow-x-auto">
 									{`https://img.youtube.com/vi/${videoId}/3.jpg`}
 								</code>

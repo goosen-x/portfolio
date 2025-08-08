@@ -36,9 +36,7 @@ export default async function ActivitiesPage({ params }: Props) {
 			<div className='max-w-7xl mx-auto px-5'>
 				<div className='mb-12'>
 					<h1 className='text-4xl font-bold mb-4'>{t('title')}</h1>
-					<p className='text-xl text-muted-foreground'>
-						{t('description')}
-					</p>
+					<p className='text-xl text-muted-foreground'>{t('description')}</p>
 				</div>
 
 				{/* Bento Grid Layout */}
@@ -56,9 +54,9 @@ export default async function ActivitiesPage({ params }: Props) {
 								{t('badges.active')}
 							</Badge>
 						</div>
-						<div className='text-3xl font-bold mb-1'>50+</div>
+						<div className='text-3xl font-bold mb-1'>9</div>
 						<p className='text-sm text-muted-foreground'>
-							{t('stats.opensource')}
+							{t('stats.completed')}
 						</p>
 					</Card>
 
@@ -66,11 +64,13 @@ export default async function ActivitiesPage({ params }: Props) {
 						<div className='flex items-center justify-between mb-2'>
 							<MessageSquare className='w-8 h-8 text-purple-600' />
 							<Badge variant='secondary' className='bg-purple-500/20'>
-								{t('badges.year')}
+								{t('badges.planned')}
 							</Badge>
 						</div>
-						<div className='text-3xl font-bold mb-1'>10+</div>
-						<p className='text-sm text-muted-foreground'>{t('stats.talks')}</p>
+						<div className='text-3xl font-bold mb-1'>1</div>
+						<p className='text-sm text-muted-foreground'>
+							{t('stats.csstalk')}
+						</p>
 					</Card>
 
 					<Card className='p-6 bg-gradient-to-br from-green-500/10 to-green-600/10 border-green-500/20'>
@@ -80,8 +80,10 @@ export default async function ActivitiesPage({ params }: Props) {
 								{t('badges.ongoing')}
 							</Badge>
 						</div>
-						<div className='text-3xl font-bold mb-1'>20+</div>
-						<p className='text-sm text-muted-foreground'>{t('stats.courses')}</p>
+						<div className='text-3xl font-bold mb-1'>16</div>
+						<p className='text-sm text-muted-foreground'>
+							{t('stats.courses')}
+						</p>
 					</Card>
 
 					<Card className='p-6 bg-gradient-to-br from-orange-500/10 to-orange-600/10 border-orange-500/20'>
@@ -91,8 +93,10 @@ export default async function ActivitiesPage({ params }: Props) {
 								{t('badges.live')}
 							</Badge>
 						</div>
-						<div className='text-3xl font-bold mb-1'>5+</div>
-						<p className='text-sm text-muted-foreground'>{t('stats.projects')}</p>
+						<div className='text-3xl font-bold mb-1'>3</div>
+						<p className='text-sm text-muted-foreground'>
+							{t('stats.projects')}
+						</p>
 					</Card>
 
 					{/* Codewars Badge - Medium card */}
@@ -114,7 +118,7 @@ export default async function ActivitiesPage({ params }: Props) {
 								<ExternalLink className='w-5 h-5' />
 							</Link>
 						</div>
-						<div className='flex justify-center py-2'>
+						<div className='flex justify-start py-2'>
 							<Image
 								src='https://www.codewars.com/users/gysen/badges/large'
 								alt='Codewars Badge'
@@ -133,13 +137,17 @@ export default async function ActivitiesPage({ params }: Props) {
 								<Trophy className='w-8 h-8 text-yellow-600' />
 							</div>
 							<div className='flex-1'>
-								<h3 className='font-semibold text-lg mb-1'>{t('sections.achievement')}</h3>
+								<h3 className='font-semibold text-lg mb-1'>
+									{t('sections.achievement')}
+								</h3>
 								<p className='text-sm text-muted-foreground mb-3'>
 									{t('sections.achievementText')}
 								</p>
 								<div className='flex items-center gap-2 text-sm'>
 									<Calendar className='w-4 h-4' />
-									<span className='text-muted-foreground'>{t('december')} 2024</span>
+									<span className='text-muted-foreground'>
+										{t('february')} 2025
+									</span>
 								</div>
 							</div>
 						</div>
@@ -158,19 +166,21 @@ export default async function ActivitiesPage({ params }: Props) {
 						<div className='space-y-3'>
 							<div className='flex items-center gap-3'>
 								<div className='w-2 h-2 rounded-full bg-blue-500' />
-								<span className='text-sm'>{t('sections.communityItems.react')}</span>
+								<span className='text-sm'>
+									{t('sections.communityItems.react')}
+								</span>
 							</div>
 							<div className='flex items-center gap-3'>
 								<div className='w-2 h-2 rounded-full bg-blue-500' />
-								<span className='text-sm'>{t('sections.communityItems.meetups')}</span>
+								<span className='text-sm'>
+									{t('sections.communityItems.meetups')}
+								</span>
 							</div>
 							<div className='flex items-center gap-3'>
 								<div className='w-2 h-2 rounded-full bg-blue-500' />
-								<span className='text-sm'>{t('sections.communityItems.mentor')}</span>
-							</div>
-							<div className='flex items-center gap-3'>
-								<div className='w-2 h-2 rounded-full bg-blue-500' />
-								<span className='text-sm'>{t('sections.communityItems.opensource')}</span>
+								<span className='text-sm'>
+									{t('sections.communityItems.mentor')}
+								</span>
 							</div>
 						</div>
 					</Card>
@@ -190,29 +200,45 @@ export default async function ActivitiesPage({ params }: Props) {
 									<div className='flex gap-3'>
 										<div className='w-4 h-4 rounded-full bg-purple-500 mt-1 relative z-10' />
 										<div className='flex-1'>
-											<p className='font-medium text-sm'>{t('sections.learningItems.ai')}</p>
-											<p className='text-xs text-muted-foreground'>{t('sections.status.progress')}</p>
+											<p className='font-medium text-sm'>
+												{t('sections.learningItems.ai')}
+											</p>
+											<p className='text-xs text-muted-foreground'>
+												{t('sections.status.progress')}
+											</p>
 										</div>
 									</div>
 									<div className='flex gap-3'>
 										<div className='w-4 h-4 rounded-full bg-purple-300 mt-1 relative z-10' />
 										<div className='flex-1'>
-											<p className='font-medium text-sm'>{t('sections.learningItems.system')}</p>
-											<p className='text-xs text-muted-foreground'>{t('sections.status.completed')}</p>
+											<p className='font-medium text-sm'>
+												{t('sections.learningItems.system')}
+											</p>
+											<p className='text-xs text-muted-foreground'>
+												{t('sections.status.completed')}
+											</p>
 										</div>
 									</div>
 									<div className='flex gap-3'>
 										<div className='w-4 h-4 rounded-full bg-purple-300 mt-1 relative z-10' />
 										<div className='flex-1'>
-											<p className='font-medium text-sm'>{t('sections.learningItems.typescript')}</p>
-											<p className='text-xs text-muted-foreground'>{t('sections.status.completed')}</p>
+											<p className='font-medium text-sm'>
+												{t('sections.learningItems.typescript')}
+											</p>
+											<p className='text-xs text-muted-foreground'>
+												{t('sections.status.completed')}
+											</p>
 										</div>
 									</div>
 									<div className='flex gap-3'>
 										<div className='w-4 h-4 rounded-full bg-purple-300 mt-1 relative z-10' />
 										<div className='flex-1'>
-											<p className='font-medium text-sm'>{t('sections.learningItems.performance')}</p>
-											<p className='text-xs text-muted-foreground'>{t('sections.status.completed')}</p>
+											<p className='font-medium text-sm'>
+												{t('sections.learningItems.performance')}
+											</p>
+											<p className='text-xs text-muted-foreground'>
+												{t('sections.status.completed')}
+											</p>
 										</div>
 									</div>
 								</div>
@@ -247,15 +273,25 @@ export default async function ActivitiesPage({ params }: Props) {
 						</div>
 						<div className='grid grid-cols-2 gap-4'>
 							<div>
-								<p className='text-sm font-medium mb-1'>{t('sections.goalsItems.oss')}</p>
+								<p className='text-xs font-medium mb-1'>
+									{t('sections.goalsItems.oss')}
+								</p>
 								<div className='w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2'>
-									<div className='bg-indigo-500 h-2 rounded-full' style={{ width: '30%' }} />
+									<div
+										className='bg-indigo-500 h-2 rounded-full'
+										style={{ width: '50%' }}
+									/>
 								</div>
 							</div>
 							<div>
-								<p className='text-sm font-medium mb-1'>{t('sections.goalsItems.rust')}</p>
+								<p className='text-xs font-medium mb-1'>
+									{t('sections.goalsItems.rust')}
+								</p>
 								<div className='w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2'>
-									<div className='bg-indigo-500 h-2 rounded-full' style={{ width: '15%' }} />
+									<div
+										className='bg-indigo-500 h-2 rounded-full'
+										style={{ width: '15%' }}
+									/>
 								</div>
 							</div>
 						</div>

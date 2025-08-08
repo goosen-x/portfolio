@@ -7,8 +7,11 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { Label } from '@/components/ui/label'
 import { Copy, Check, Upload } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { toast } from 'sonner'
+import { useTranslations } from 'next-intl'
 
 export default function SVGEncoderPage() {
+	const t = useTranslations('widgets.svgEncoder')
 	const [svgInput, setSvgInput] = useState('')
 	const [encodedResult, setEncodedResult] = useState('')
 	const [cssResult, setCssResult] = useState('')
@@ -88,11 +91,16 @@ export default function SVGEncoderPage() {
 		}
 	}
 
-	const copyToClipboard = (text: string, field: string) => {
-		navigator.clipboard.writeText(text).then(() => {
+	const copyToClipboard = async (text: string, field: string) => {
+		try {
+			await navigator.clipboard.writeText(text)
 			setCopiedField(field)
 			setTimeout(() => setCopiedField(null), 2000)
-		})
+			const toastKey = field === 'encoded' ? 'toast.encodedCopied' : 'toast.cssCopied'
+			toast.success(t(toastKey))
+		} catch (err) {
+			toast.error(t('toast.copyError'))
+		}
 	}
 
 	const handleDragOver = (e: React.DragEvent) => {
@@ -113,8 +121,11 @@ export default function SVGEncoderPage() {
 			const reader = new FileReader()
 			reader.onload = (e) => {
 				setSvgInput(e.target?.result as string)
+				toast.success(t('toast.fileLoaded'))
 			}
 			reader.readAsText(file)
+		} else if (file) {
+			toast.error(t('toast.invalidFile'))
 		}
 	}
 
@@ -124,24 +135,24 @@ export default function SVGEncoderPage() {
 
 	return (
 		<div className="max-w-6xl mx-auto">
-			<h1 className="text-2xl font-bold mb-2">SVG URL Encoder</h1>
+			<h1 className="text-2xl font-bold mb-2">{t('title')}</h1>
 			<p className="text-muted-foreground mb-6">
-				Encode SVG for use in CSS background-image property. Drag & drop SVG files or paste code.
+				{t('description')}
 			</p>
 
 			<div className="mb-6">
 				<Card className="p-4">
 					<div className="flex items-center gap-6">
-						<span className="font-medium">Quotes:</span>
+						<span className="font-medium">{t('quotes')}:</span>
 						<RadioGroup value={quotes} onValueChange={(v) => setQuotes(v as 'single' | 'double')}>
 							<div className="flex items-center space-x-4">
 								<div className="flex items-center space-x-2">
 									<RadioGroupItem value="single" id="single" />
-									<Label htmlFor="single">Single</Label>
+									<Label htmlFor="single">{t('single')}</Label>
 								</div>
 								<div className="flex items-center space-x-2">
 									<RadioGroupItem value="double" id="double" />
-									<Label htmlFor="double">Double</Label>
+									<Label htmlFor="double">{t('double')}</Label>
 								</div>
 							</div>
 						</RadioGroup>
@@ -161,27 +172,27 @@ export default function SVGEncoderPage() {
 				>
 					<Card className="p-6 h-full">
 						<div className="flex items-center justify-between mb-4">
-							<h3 className="font-semibold">Insert SVG:</h3>
+							<h3 className="font-semibold">{t('insertSvg')}</h3>
 							<Button
 								size="sm"
 								variant="outline"
 								onClick={() => setSvgInput(exampleSvg)}
 							>
-								Example
+								{t('example')}
 							</Button>
 						</div>
 						<textarea
 							value={svgInput}
 							onChange={(e) => setSvgInput(e.target.value)}
 							className="w-full h-64 p-3 font-mono text-sm border rounded-md bg-background resize-none focus:outline-none focus:ring-2 focus:ring-primary"
-							placeholder="Paste your SVG code here or drag & drop an SVG file..."
+							placeholder={t('placeholder')}
 							spellCheck={false}
 						/>
 						{isDragging && (
 							<div className="absolute inset-0 flex items-center justify-center bg-background/80 rounded-lg">
 								<div className="text-center">
 									<Upload className="w-12 h-12 mx-auto mb-2 text-muted-foreground" />
-									<p className="text-sm font-medium">Drop SVG file here</p>
+									<p className="text-sm font-medium">{t('dropFile')}</p>
 								</div>
 							</div>
 						)}
@@ -190,7 +201,7 @@ export default function SVGEncoderPage() {
 
 				<Card className="p-6">
 					<div className="flex items-center justify-between mb-4">
-						<h3 className="font-semibold">Take encoded:</h3>
+						<h3 className="font-semibold">{t('takeEncoded')}</h3>
 						<Button
 							size="sm"
 							variant="outline"
@@ -208,17 +219,17 @@ export default function SVGEncoderPage() {
 						value={encodedResult}
 						onChange={(e) => handleEncodedChange(e.target.value)}
 						className="w-full h-64 p-3 font-mono text-sm border rounded-md bg-background resize-none focus:outline-none focus:ring-2 focus:ring-primary"
-						placeholder="Encoded result will appear here..."
+						placeholder={t('encodedPlaceholder')}
 						spellCheck={false}
 					/>
 					<p className="text-xs text-muted-foreground mt-2">
-						You can edit this field to decode back to SVG
+						{t('editHint')}
 					</p>
 				</Card>
 
 				<Card className="p-6">
 					<div className="flex items-center justify-between mb-4">
-						<h3 className="font-semibold">Ready for CSS:</h3>
+						<h3 className="font-semibold">{t('readyForCss')}</h3>
 						<Button
 							size="sm"
 							variant="outline"
@@ -236,20 +247,20 @@ export default function SVGEncoderPage() {
 						value={cssResult}
 						readOnly
 						className="w-full h-64 p-3 font-mono text-sm border rounded-md bg-muted resize-none"
-						placeholder="CSS result will appear here..."
+						placeholder={t('cssPlaceholder')}
 						spellCheck={false}
 					/>
 				</Card>
 
 				<Card className="p-6">
-					<h3 className="font-semibold mb-4">Preview:</h3>
+					<h3 className="font-semibold mb-4">{t('preview')}</h3>
 					<div className="mb-4">
-						<span className="text-sm font-medium mr-2">Background:</span>
+						<span className="text-sm font-medium mr-2">{t('background')}:</span>
 						<div className="inline-flex gap-2">
 							{[
-								{ color: 'white', label: 'White', class: 'bg-white border' },
-								{ color: 'silver', label: 'Silver', class: 'bg-gray-400' },
-								{ color: 'black', label: 'Black', class: 'bg-black' }
+								{ color: 'white', label: t('white'), class: 'bg-white border' },
+								{ color: 'silver', label: t('silver'), class: 'bg-gray-400' },
+								{ color: 'black', label: t('black'), class: 'bg-black' }
 							].map((bg) => (
 								<button
 									key={bg.color}

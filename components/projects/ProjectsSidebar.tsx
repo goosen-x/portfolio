@@ -2,20 +2,17 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useLocale } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { cn } from '@/lib/utils'
 import {
-	Code2,
-	Calculator,
-	Palette,
-	Timer,
-	Gamepad2,
-	Sparkles,
 	Home,
 	ChevronRight,
 	Ruler,
 	FileImage,
-	Youtube
+	Youtube,
+	GitBranch,
+	Box,
+	Grid3X3
 } from 'lucide-react'
 
 interface ProjectItem {
@@ -45,42 +42,38 @@ const projects: ProjectItem[] = [
 		description: 'Extract thumbnails from YouTube videos'
 	},
 	{
-		id: 'pomodoro',
-		title: 'Pomodoro Timer',
-		icon: <Timer className="w-4 h-4" />,
-		description: 'Productivity timer using Pomodoro technique'
+		id: 'html-tree',
+		title: 'HTML Tree',
+		icon: <GitBranch className="w-4 h-4" />,
+		description: 'Visualize HTML structure as a tree'
 	},
 	{
-		id: 'code-formatter',
-		title: 'Code Formatter',
-		icon: <Code2 className="w-4 h-4" />,
-		description: 'Format and beautify your code'
+		id: 'flexbox-generator',
+		title: 'Flexbox Generator',
+		icon: <Box className="w-4 h-4" />,
+		description: 'Visual CSS Flexbox layout generator'
 	},
 	{
-		id: 'mini-games',
-		title: 'Mini Games',
-		icon: <Gamepad2 className="w-4 h-4" />,
-		description: 'Collection of fun mini games'
-	},
-	{
-		id: 'animations',
-		title: 'CSS Animations',
-		icon: <Sparkles className="w-4 h-4" />,
-		description: 'Interactive CSS animation playground'
+		id: 'grid-generator',
+		title: 'Grid Generator',
+		icon: <Grid3X3 className="w-4 h-4" />,
+		description: 'Visual CSS Grid layout generator'
 	}
 ]
 
 export function ProjectsSidebar() {
 	const pathname = usePathname()
 	const locale = useLocale()
+	const t = useTranslations('projectsPage')
+	const widgetT = useTranslations('widgets')
 
 	return (
 		<aside className="w-64 border-r bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
 			<div className="flex h-full flex-col">
 				<div className="border-b px-6 py-4">
-					<h2 className="text-lg font-semibold">Mini Projects</h2>
+					<h2 className="text-lg font-semibold">{t('title')}</h2>
 					<p className="text-sm text-muted-foreground mt-1">
-						Interactive demos & tools
+						{t('description')}
 					</p>
 				</div>
 
@@ -113,7 +106,7 @@ export function ProjectsSidebar() {
 										)}
 									>
 										{project.icon}
-										<span className="flex-1">{project.title}</span>
+										<span className="flex-1">{widgetT(`${project.id.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase())}.title`)}</span>
 										{isActive && <ChevronRight className="w-4 h-4" />}
 									</Link>
 								)
