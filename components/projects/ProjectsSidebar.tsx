@@ -17,7 +17,8 @@ import {
 	QrCode,
 	Gauge,
 	Key,
-	Link as LinkIcon
+	Link as LinkIcon,
+	BarChart3
 } from 'lucide-react'
 
 interface ProjectItem {
@@ -87,6 +88,12 @@ const projects: ProjectItem[] = [
 		title: 'UTM Builder',
 		icon: <LinkIcon className="w-4 h-4" />,
 		description: 'Create UTM tracking links'
+	},
+	{
+		id: 'css-specificity',
+		title: 'CSS Specificity',
+		icon: <BarChart3 className="w-4 h-4" />,
+		description: 'Calculate CSS selector specificity'
 	}
 ]
 

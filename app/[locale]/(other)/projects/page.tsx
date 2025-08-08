@@ -1,4 +1,4 @@
-import { Ruler, FileImage, Youtube, GitBranch, Box, Grid3X3, QrCode, Gauge, Key, Link as LinkIcon } from 'lucide-react'
+import { Ruler, FileImage, Youtube, GitBranch, Box, Grid3X3, QrCode, Gauge, Key, Link as LinkIcon, BarChart3 } from 'lucide-react'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 
@@ -80,6 +80,13 @@ const projects: ProjectCard[] = [
 		description: 'Create and manage UTM tracking links for marketing campaigns with dynamic parameters support.',
 		icon: <LinkIcon className="w-8 h-8" />,
 		gradient: 'from-pink-500 to-rose-500'
+	},
+	{
+		id: 'css-specificity',
+		title: 'CSS Specificity Calculator',
+		description: 'Analyze CSS selector specificity, understand cascade rules, and optimize your stylesheets.',
+		icon: <BarChart3 className="w-8 h-8" />,
+		gradient: 'from-indigo-500 to-blue-600'
 	}
 ]
 

@@ -608,6 +608,36 @@
 				"downloaded": "Links downloaded successfully",
 				"qrError": "Failed to generate QR code"
 			}
+		},
+		"cssSpecificity": {
+			"title": "CSS Specificity Calculator",
+			"description": "Analyze CSS selector specificity to understand cascade rules and optimize your stylesheets.",
+			"input": "CSS Selectors",
+			"results": "Specificity Analysis",
+			"placeholder": "Enter CSS selectors, one per line or paste complete CSS rules...\n\nExamples:\nbody\n.header\n#main-content\nnav ul li a\n\nOr paste CSS:\n.card '{ color: red; }'\n#header > nav '{ ... }'",
+			"analyze": "Analyze",
+			"loadExample": "Example",
+			"sortByWeight": "Sort by Weight",
+			"sortByOrder": "Sort by Order",
+			"weight": "Weight",
+			"emptyState": "Enter CSS selectors to analyze their specificity",
+			"howItWorks": {
+				"title": "How CSS Specificity Works",
+				"description": "CSS specificity determines which styles are applied when multiple rules target the same element. It's calculated using a four-part value: inline styles, IDs, classes/attributes/pseudo-classes, and elements.",
+				"calculation": "Specificity Calculation",
+				"inline": "Inline styles",
+				"id": "ID selectors (#id)",
+				"class": "Classes (.class), attributes [attr], pseudo-classes (:hover)",
+				"element": "Elements (div, p, a) and pseudo-elements (::before)",
+				"examples": "Examples"
+			},
+			"toast": {
+				"analyzed": "Analyzed {count} selectors",
+				"copied": "Results copied to clipboard",
+				"emptyInput": "Please enter CSS selectors to analyze",
+				"noSelectors": "No valid CSS selectors found. Please enter only selectors, not CSS properties.",
+				"exampleLoaded": "Example loaded"
+			}
 		}
 	}
 }
