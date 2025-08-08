@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useLocale, useTranslations } from 'next-intl'
 import { cn } from '@/lib/utils'
-import { cloneElement } from 'react'
 import {
 	Home,
 	ChevronRight,
@@ -24,7 +23,7 @@ import {
 interface ProjectItem {
 	id: string
 	title: string
-	icon: React.ReactNode
+	icon: React.ComponentType<{ className?: string }>
 	description: string
 }
 
@@ -32,67 +31,67 @@ const projects: ProjectItem[] = [
 	{
 		id: 'clamp-calculator',
 		title: 'Clamp Calculator',
-		icon: <Ruler className="w-4 h-4" />,
+		icon: Ruler,
 		description: 'CSS clamp() calculator for fluid typography'
 	},
 	{
 		id: 'svg-encoder',
 		title: 'SVG URL Encoder',
-		icon: <FileImage className="w-4 h-4" />,
+		icon: FileImage,
 		description: 'Encode SVG for CSS background-image'
 	},
 	{
 		id: 'youtube-thumbnail',
 		title: 'YouTube Thumbnail',
-		icon: <Youtube className="w-4 h-4" />,
+		icon: Youtube,
 		description: 'Extract thumbnails from YouTube videos'
 	},
 	{
 		id: 'html-tree',
 		title: 'HTML Tree',
-		icon: <GitBranch className="w-4 h-4" />,
+		icon: GitBranch,
 		description: 'Visualize HTML structure as a tree'
 	},
 	{
 		id: 'flexbox-generator',
 		title: 'Flexbox Generator',
-		icon: <Box className="w-4 h-4" />,
+		icon: Box,
 		description: 'Visual CSS Flexbox layout generator'
 	},
 	{
 		id: 'grid-generator',
 		title: 'Grid Generator',
-		icon: <Grid3X3 className="w-4 h-4" />,
+		icon: Grid3X3,
 		description: 'Visual CSS Grid layout generator'
 	},
 	{
 		id: 'qr-generator',
 		title: 'QR Code Generator',
-		icon: <QrCode className="w-4 h-4" />,
+		icon: QrCode,
 		description: 'Generate QR codes for various purposes'
 	},
 	{
 		id: 'speed-test',
 		title: 'Internet Speed Test',
-		icon: <Gauge className="w-4 h-4" />,
+		icon: Gauge,
 		description: 'Test your internet connection speed'
 	},
 	{
 		id: 'password-generator',
 		title: 'Password Generator',
-		icon: <Key className="w-4 h-4" />,
+		icon: Key,
 		description: 'Generate secure passwords'
 	},
 	{
 		id: 'utm-builder',
 		title: 'UTM Builder',
-		icon: <LinkIcon className="w-4 h-4" />,
+		icon: LinkIcon,
 		description: 'Create UTM tracking links'
 	},
 	{
 		id: 'css-specificity',
 		title: 'CSS Specificity',
-		icon: <BarChart3 className="w-4 h-4" />,
+		icon: BarChart3,
 		description: 'Calculate CSS selector specificity'
 	}
 ]
@@ -143,9 +142,7 @@ export function ProjectsSidebar() {
 												isActive && "bg-accent !text-white"
 											)}
 										>
-											{cloneElement(project.icon as React.ReactElement, {
-												className: cn("w-4 h-4", isActive && "text-white")
-											})}
+											<project.icon className={cn("w-4 h-4", isActive && "text-white")} />
 											<span className="flex-1">{widgetT(`${project.id.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase())}.title`)}</span>
 											{isActive && <ChevronRight className="w-4 h-4 text-white" />}
 										</Link>
@@ -169,9 +166,7 @@ export function ProjectsSidebar() {
 												isActive && "bg-accent !text-white"
 											)}
 										>
-											{cloneElement(project.icon as React.ReactElement, {
-												className: cn("w-4 h-4", isActive && "text-white")
-											})}
+											<project.icon className={cn("w-4 h-4", isActive && "text-white")} />
 											<span className="flex-1">{widgetT(`${project.id.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase())}.title`)}</span>
 											{isActive && <ChevronRight className="w-4 h-4 text-white" />}
 										</Link>
@@ -195,9 +190,7 @@ export function ProjectsSidebar() {
 												isActive && "bg-accent !text-white"
 											)}
 										>
-											{cloneElement(project.icon as React.ReactElement, {
-												className: cn("w-4 h-4", isActive && "text-white")
-											})}
+											<project.icon className={cn("w-4 h-4", isActive && "text-white")} />
 											<span className="flex-1">{widgetT(`${project.id.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase())}.title`)}</span>
 											{isActive && <ChevronRight className="w-4 h-4 text-white" />}
 										</Link>
@@ -221,9 +214,7 @@ export function ProjectsSidebar() {
 												isActive && "bg-accent !text-white"
 											)}
 										>
-											{cloneElement(project.icon as React.ReactElement, {
-												className: cn("w-4 h-4", isActive && "text-white")
-											})}
+											<project.icon className={cn("w-4 h-4", isActive && "text-white")} />
 											<span className="flex-1">{widgetT(`${project.id.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase())}.title`)}</span>
 											{isActive && <ChevronRight className="w-4 h-4 text-white" />}
 										</Link>

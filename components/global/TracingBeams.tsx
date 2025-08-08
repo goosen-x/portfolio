@@ -18,7 +18,7 @@ export const TracingBeam = ({
 }) => {
 	const ref = useRef<HTMLDivElement>(null)
 	const { scrollYProgress } = useScroll({
-		target: ref,
+		target: ref as React.RefObject<HTMLElement>,
 		offset: ['start start', 'end start']
 	})
 
@@ -47,7 +47,7 @@ export const TracingBeam = ({
 	)
 
 	return (
-		<motion.div
+		<div
 			ref={ref}
 			className={cn('relative w-full max-w-4xl mx-auto h-full', className)}
 		>
@@ -63,7 +63,16 @@ export const TracingBeam = ({
 								? 'none'
 								: 'rgba(0, 0, 0, 0.24) 0px 3px 8px'
 					}}
-					className='ml-[27px] h-4 w-4 rounded-full border border-netural-200 shadow-xs flex items-center justify-center'
+					style={{
+						marginLeft: '27px',
+						height: '16px',
+						width: '16px',
+						borderRadius: '9999px',
+						border: '1px solid rgb(229 229 229)',
+						display: 'flex',
+						alignItems: 'center',
+						justifyContent: 'center'
+					}}
 				>
 					<motion.div
 						transition={{
@@ -76,7 +85,13 @@ export const TracingBeam = ({
 							borderColor:
 								scrollYProgress.get() > 0 ? 'white' : 'var(--emerald-600)'
 						}}
-						className='h-2 w-2  rounded-full border border-neutral-300 bg-white'
+						style={{
+							height: '8px',
+							width: '8px',
+							borderRadius: '9999px',
+							border: '1px solid rgb(212 212 212)',
+							backgroundColor: 'white'
+						}}
 					/>
 				</motion.div>
 				<svg
@@ -100,7 +115,6 @@ export const TracingBeam = ({
 						fill='none'
 						stroke='url(#gradient)'
 						strokeWidth='1.25'
-						className='motion-reduce:hidden'
 						transition={{
 							duration: 10
 						}}
@@ -123,6 +137,6 @@ export const TracingBeam = ({
 				</svg>
 			</div>
 			<div ref={contentRef}>{children}</div>
-		</motion.div>
+		</div>
 	)
 }

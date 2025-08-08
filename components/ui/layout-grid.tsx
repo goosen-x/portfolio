@@ -29,7 +29,7 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
 		<div className='w-full h-full p-10 grid grid-cols-1 md:grid-cols-3  max-w-7xl mx-auto gap-4 relative'>
 			{cards.map((card, i) => (
 				<div key={i} className={cn(card.className, '')}>
-					<motion.div
+					<div
 						onClick={() => handleClick(card)}
 						className={cn(
 							card.className,
@@ -40,21 +40,29 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
 								? 'z-40 bg-white rounded-xl h-full w-full'
 								: 'bg-white rounded-xl h-full w-full'
 						)}
-						layout
 					>
-						{selected?.id === card.id && <SelectedCard selected={selected} />}
-						<BlurImage card={card} />
-					</motion.div>
+						<motion.div
+							layout
+							style={{ width: '100%', height: '100%' }}
+						>
+							{selected?.id === card.id && <SelectedCard selected={selected} />}
+							<BlurImage card={card} />
+						</motion.div>
+					</div>
 				</div>
 			))}
-			<motion.div
+			<div
 				onClick={handleOutsideClick}
 				className={cn(
-					'absolute h-full w-full left-0 top-0 bg-black opacity-0 z-10',
+					'absolute h-full w-full left-0 top-0 bg-black z-10',
 					selected?.id ? 'pointer-events-auto' : 'pointer-events-none'
 				)}
-				animate={{ opacity: selected?.id ? 0.3 : 0 }}
-			/>
+			>
+				<motion.div
+					style={{ width: '100%', height: '100%', backgroundColor: 'black' }}
+					animate={{ opacity: selected?.id ? 0.3 : 0 }}
+				/>
+			</div>
 		</div>
 	)
 }
@@ -86,7 +94,14 @@ const SelectedCard = ({ selected }: { selected: Card | null }) => {
 				animate={{
 					opacity: 0.6
 				}}
-				className='absolute inset-0 h-full w-full bg-black opacity-60 z-10'
+				style={{
+					position: 'absolute',
+					inset: 0,
+					height: '100%',
+					width: '100%',
+					backgroundColor: 'black',
+					zIndex: 10
+				}}
 			/>
 			<motion.div
 				initial={{
@@ -101,7 +116,13 @@ const SelectedCard = ({ selected }: { selected: Card | null }) => {
 					duration: 0.3,
 					ease: 'easeInOut'
 				}}
-				className='relative px-8 pb-4 z-70'
+				style={{
+					position: 'relative',
+					paddingLeft: '32px',
+					paddingRight: '32px',
+					paddingBottom: '16px',
+					zIndex: 70
+				}}
 			>
 				{selected?.content}
 			</motion.div>

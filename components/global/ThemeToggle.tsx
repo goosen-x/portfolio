@@ -55,7 +55,12 @@ const ThemeToggle = ({ className }: ComponentPropsWithoutRef<'div'>) => {
 				<motion.span
 					layout
 					transition={{ type: 'spring', damping: 15, stiffness: 250 }}
-					className='h-full w-1/2 rounded bg-accent'
+					style={{
+						height: '100%',
+						width: '50%',
+						borderRadius: '9999px',
+						backgroundColor: 'hsl(var(--accent))'
+					}}
 				/>
 			</div>
 		</div>
