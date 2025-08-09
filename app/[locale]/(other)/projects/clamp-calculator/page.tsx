@@ -11,8 +11,13 @@ import { Alert, AlertDescription } from '@/components/ui/alert'
 import { toast } from 'sonner'
 import { useTranslations } from 'next-intl'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
+import { RelatedTools } from '@/components/seo/RelatedTools'
+import { FAQ } from '@/components/seo/FAQ'
+import { widgetFAQ } from '@/lib/seo/widget-faq'
+import { useLocale } from 'next-intl'
 
 export default function ClampCalculatorPage() {
+	const locale = useLocale() as 'en' | 'ru' | 'he'
 	const t = useTranslations('widgets.clampCalculator')
 	const [unit, setUnit] = useState<'px' | 'rem'>('rem')
 	const [minValue, setMinValue] = useState<number | ''>('')
@@ -272,6 +277,15 @@ export default function ClampCalculatorPage() {
 					{t('liveExampleText')}
 				</p>
 			</Card>
+			
+			<RelatedTools currentTool="css-clamp-calculator" category="css" />
+			
+			{widgetFAQ['css-clamp-calculator']?.[locale] && (
+				<FAQ 
+					items={widgetFAQ['css-clamp-calculator'][locale]}
+					title={locale === 'ru' ? 'Часто задаваемые вопросы' : locale === 'he' ? 'שאלות נפוצות' : 'Frequently Asked Questions'}
+				/>
+			)}
 		</div>
 	)
 }

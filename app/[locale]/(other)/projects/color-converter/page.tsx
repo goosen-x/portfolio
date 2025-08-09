@@ -1,7 +1,10 @@
 'use client'
 
 import { useState } from 'react'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
+import { RelatedTools } from '@/components/seo/RelatedTools'
+import { FAQ } from '@/components/seo/FAQ'
+import { widgetFAQ } from '@/lib/seo/widget-faq'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -40,6 +43,7 @@ import {
 
 export default function ColorConverterPage() {
   const t = useTranslations('widgets.colorConverter')
+  const locale = useLocale() as 'en' | 'ru' | 'he'
   
   // State
   const [hexValue, setHexValue] = useState('#FF9999')
@@ -616,6 +620,15 @@ export default function ColorConverterPage() {
           </div>
         </CardContent>
       </Card>
+      
+      <RelatedTools currentTool="color-converter" category="design" />
+      
+      {widgetFAQ['color-converter']?.[locale] && (
+        <FAQ 
+          items={widgetFAQ['color-converter'][locale]}
+          title={locale === 'ru' ? 'Часто задаваемые вопросы' : locale === 'he' ? 'שאלות נפוצות' : 'Frequently Asked Questions'}
+        />
+      )}
     </div>
   )
 }
