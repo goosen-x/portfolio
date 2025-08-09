@@ -119,6 +119,9 @@
 	"contact": {
 		"title": "Get In Touch",
 		"subtitle": "Let's discuss your next project or potential collaboration opportunities",
+		"email": {
+			"subject": "Inquiry from Portfolio Website"
+		},
 		"form": {
 			"title": "Send Message",
 			"description": "Fill out the form below and I'll get back to you as soon as possible.",

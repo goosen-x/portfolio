@@ -7,6 +7,7 @@ import ThemeToggle from '@/components/global/ThemeToggle'
 import { LanguageSelect } from '@/components/global/LanguageSelect'
 import { DownloadCV } from '@/components/global/DownloadCV'
 import { useEffect } from 'react'
+import { cn } from '@/lib/utils'
 
 const BreadcrumbHeader = () => {
 	const locale = useLocale()
@@ -87,40 +88,80 @@ const BreadcrumbHeader = () => {
 						<nav className='hidden md:flex items-center space-x-8'>
 							<Link
 								href={`/${locale}`}
-								className='text-muted-foreground hover:text-foreground font-medium transition-colors'
+								className={cn(
+									'font-medium transition-colors relative',
+									pathname === `/${locale}` 
+										? 'text-foreground' 
+										: 'text-muted-foreground hover:text-foreground'
+								)}
 							>
 								{t('nav.main')}
+								{pathname === `/${locale}` && (
+									<span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-accent" />
+								)}
 							</Link>
 
 							<Link
 								href={`/${locale}/projects`}
-								className='text-muted-foreground hover:text-foreground font-medium transition-colors'
+								className={cn(
+									'font-medium transition-colors relative',
+									pathname.startsWith(`/${locale}/projects`) 
+										? 'text-foreground' 
+										: 'text-muted-foreground hover:text-foreground'
+								)}
 							>
 								{t('nav.projects')}
+								{pathname.startsWith(`/${locale}/projects`) && (
+									<span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-accent" />
+								)}
 							</Link>
 							<Link
 								href={`/${locale}/activities`}
-								className='text-muted-foreground hover:text-foreground font-medium transition-colors'
+								className={cn(
+									'font-medium transition-colors relative',
+									pathname === `/${locale}/activities` 
+										? 'text-foreground' 
+										: 'text-muted-foreground hover:text-foreground'
+								)}
 							>
 								{t('nav.activities')}
+								{pathname === `/${locale}/activities` && (
+									<span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-accent" />
+								)}
 							</Link>
 							<Link
 								href={`/${locale}/blog`}
-								className='text-muted-foreground hover:text-foreground font-medium transition-colors'
+								className={cn(
+									'font-medium transition-colors relative',
+									pathname.startsWith(`/${locale}/blog`) 
+										? 'text-foreground' 
+										: 'text-muted-foreground hover:text-foreground'
+								)}
 							>
 								{t('nav.blog')}
+								{pathname.startsWith(`/${locale}/blog`) && (
+									<span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-accent" />
+								)}
 							</Link>
 							<Link
 								href={`/${locale}/contact`}
-								className='text-muted-foreground hover:text-foreground font-medium transition-colors'
+								className={cn(
+									'font-medium transition-colors relative',
+									pathname === `/${locale}/contact` 
+										? 'text-foreground' 
+										: 'text-muted-foreground hover:text-foreground'
+								)}
 							>
 								{t('nav.contact')}
+								{pathname === `/${locale}/contact` && (
+									<span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-accent" />
+								)}
 							</Link>
 						</nav>
 						<div className='hidden md:flex items-center gap-2'>
 							{isMainPage && <DownloadCV />}
 							<LanguageSelect className='shrink-0' locale={locale} />
-							<ThemeToggle className='shrink-0' />
+							<ThemeToggle />
 						</div>
 					</div>
 
@@ -128,7 +169,7 @@ const BreadcrumbHeader = () => {
 					<div className='flex items-center gap-2 md:hidden'>
 						{isMainPage && <DownloadCV />}
 						<LanguageSelect className='shrink-0' locale={locale} />
-						<ThemeToggle className='shrink-0' />
+						<ThemeToggle />
 						<button className='text-muted-foreground hover:text-foreground'>
 							<svg
 								className='w-6 h-6'

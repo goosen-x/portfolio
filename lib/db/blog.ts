@@ -37,6 +37,12 @@ export async function getAllPublishedPosts(locale: string = 'en'): Promise<BlogP
 // Get latest published blog posts with limit
 export async function getLatestPublishedPosts(locale: string = 'en', limit: number = 6): Promise<BlogPost[]> {
 	try {
+		// Check if database is configured
+		if (!process.env.DATABASE_URL && !process.env.POSTGRES_URL) {
+			console.warn('Database URL not configured, returning empty posts')
+			return []
+		}
+		
 		const posts = await sql`
 			SELECT 
 				bp.*,

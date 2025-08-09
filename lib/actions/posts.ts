@@ -32,6 +32,11 @@ function convertDbPostToPost(dbPost: BlogPost): Post {
 }
 
 export async function getLatestPosts({ limit = 6, locale = 'en' }: { limit?: number; locale?: string }): Promise<Post[]> {
-	const dbPosts = await getLatestPublishedPosts(locale, limit)
-	return dbPosts.map(convertDbPostToPost)
+	try {
+		const dbPosts = await getLatestPublishedPosts(locale, limit)
+		return dbPosts.map(convertDbPostToPost)
+	} catch (error) {
+		console.error('Error fetching latest posts:', error)
+		return []
+	}
 }
