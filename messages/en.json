@@ -725,6 +725,43 @@
 			"toast": {
 				"copied": "CSS value copied to clipboard"
 			}
+		},
+		"seoMarkdownGenerator": {
+			"title": "SEO Markdown Generator",
+			"description": "Generate SEO-optimized markdown files for your blog posts with proper metadata and structure",
+			"articleSettings": "Article Settings",
+			"articleSettingsDesc": "Basic information about your article",
+			"articleTitle": "Article Title",
+			"titlePlaceholder": "How to Build Responsive Websites in 2025",
+			"articleExcerpt": "Article Excerpt",
+			"excerptPlaceholder": "A comprehensive guide to building modern responsive websites...",
+			"keywords": "Keywords (comma-separated)",
+			"keywordsPlaceholder": "responsive design, CSS, mobile-first, web development",
+			"authorName": "Author Name",
+			"authorPlaceholder": "John Doe",
+			"category": "Category",
+			"categoryPlaceholder": "Web Development",
+			"contentType": "Content Type",
+			"contentStructure": "Content Structure",
+			"contentStructureDesc": "Define the outline and structure of your article",
+			"contentOutline": "Content Outline (one section per line)",
+			"outlinePlaceholder": "Introduction\nWhat is Responsive Design\nMobile-First Approach\nBest Practices\nTools and Resources",
+			"includeTableOfContents": "Include Table of Contents",
+			"includeFAQ": "Include FAQ Section",
+			"includeRelatedLinks": "Include Related Links",
+			"generateMarkdown": "Generate Markdown",
+			"preview": "Preview",
+			"noPreview": "Fill in the form to generate markdown",
+			"copied": "Markdown copied to clipboard",
+			"downloaded": "Markdown file downloaded",
+			"faq": {
+				"q1": "What is SEO-optimized markdown?",
+				"a1": "SEO-optimized markdown includes proper metadata, structured headings, keywords, and semantic HTML that helps search engines understand and rank your content better.",
+				"q2": "Can I customize the generated structure?",
+				"a2": "Yes! You can choose different content types, customize the outline, and toggle various sections like FAQ and table of contents.",
+				"q3": "What metadata is included?",
+				"a3": "The generator includes title, excerpt, date, author info, categories, keywords, and Open Graph images for social media sharing."
+			}
 		}
 	},
 	"settings": {

@@ -198,6 +198,23 @@ export const widgetMetadata: Record<string, WidgetMetadata> = {
       keywords: ['תמונה ממוזערת youtube', 'מוריד תמונות', 'youtube thumbnail', 'תמונת youtube']
     }
   },
+  'seo-markdown-generator': {
+    en: {
+      title: 'SEO Markdown Generator - Create Optimized Blog Posts | Free Tool',
+      description: 'Generate SEO-optimized markdown files for blog posts. Create structured content with metadata, keywords, and proper formatting. Perfect for bloggers and content creators.',
+      keywords: ['seo markdown', 'markdown generator', 'blog post generator', 'seo content', 'markdown creator', 'content generator']
+    },
+    ru: {
+      title: 'SEO Markdown Генератор - Создание Оптимизированных Постов | Бесплатно',
+      description: 'Генерируйте SEO-оптимизированные markdown файлы для блога. Создавайте структурированный контент с метаданными и ключевыми словами.',
+      keywords: ['seo markdown', 'генератор markdown', 'генератор постов', 'seo контент', 'создать markdown', 'генератор контента']
+    },
+    he: {
+      title: 'מחולל Markdown ל-SEO - צור פוסטים מותאמים | כלי חינמי',
+      description: 'צור קבצי markdown מותאמי SEO לפוסטים בבלוג. צור תוכן מובנה עם מטא-נתונים ומילות מפתח.',
+      keywords: ['seo markdown', 'מחולל markdown', 'מחולל פוסטים', 'תוכן seo', 'יצירת markdown']
+    }
+  },
   'html-tree': {
     en: {
       title: 'HTML Tree Visualizer - DOM Structure Viewer | Developer Tool',

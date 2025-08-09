@@ -3,40 +3,8 @@
 import Link from 'next/link'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { useTranslations, useLocale } from 'next-intl'
-import { ArrowRight, Palette, Spline, Grid3X3, Box, Hash, FileCode } from 'lucide-react'
-
-const tools = [
-  {
-    id: 'css-clamp-calculator',
-    icon: Hash,
-    category: 'css'
-  },
-  {
-    id: 'color-converter',
-    icon: Palette,
-    category: 'design'
-  },
-  {
-    id: 'bezier-curve',
-    icon: Spline,
-    category: 'css'
-  },
-  {
-    id: 'flexbox-generator',
-    icon: Box,
-    category: 'css'
-  },
-  {
-    id: 'grid-generator',
-    icon: Grid3X3,
-    category: 'css'
-  },
-  {
-    id: 'css-specificity',
-    icon: FileCode,
-    category: 'css'
-  }
-]
+import { ArrowRight } from 'lucide-react'
+import { widgets, getWidgetById, getRecommendedWidgets } from '@/lib/constants/widgets'
 
 interface RelatedToolsProps {
   currentTool: string
@@ -47,11 +15,21 @@ export function RelatedTools({ currentTool, category = 'css' }: RelatedToolsProp
   const t = useTranslations('widgets')
   const locale = useLocale()
   
-  // Get related tools (same category or just different tools)
-  const relatedTools = tools
-    .filter(tool => tool.id !== currentTool)
-    .filter(tool => category ? tool.category === category : true)
-    .slice(0, 3)
+  // First try to get recommended tools from widget data
+  let relatedTools = getRecommendedWidgets(currentTool)
+  
+  // If no recommended tools or less than 3, fall back to category-based selection
+  if (relatedTools.length < 3) {
+    const additionalTools = widgets
+      .filter(widget => 
+        widget.id !== currentTool && 
+        !relatedTools.some(rt => rt.id === widget.id) &&
+        (category ? widget.category === category : true)
+      )
+      .slice(0, 3 - relatedTools.length)
+    
+    relatedTools = [...relatedTools, ...additionalTools]
+  }
 
   if (relatedTools.length === 0) {
     return null
@@ -66,17 +44,19 @@ export function RelatedTools({ currentTool, category = 'css' }: RelatedToolsProp
       </CardHeader>
       <CardContent>
         <div className="grid gap-3 sm:grid-cols-3">
-          {relatedTools.map((tool) => {
-            const Icon = tool.icon
-            const title = t(`${tool.id.replace(/-/g, '')}.title` as any)
+          {relatedTools.map((widget) => {
+            const Icon = widget.icon
+            const title = t(`${widget.translationKey}.title` as any)
             
             return (
               <Link
-                key={tool.id}
-                href={`/${locale}/projects/${tool.id}`}
-                className="group flex items-center gap-3 rounded-lg border p-3 transition-colors hover:bg-accent"
+                key={widget.id}
+                href={`/${locale}/projects/${widget.path}`}
+                className="group flex items-center gap-3 rounded-lg border p-3 transition-colors hover:bg-accent/50"
               >
-                <Icon className="h-5 w-5 text-muted-foreground group-hover:text-foreground" />
+                <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${widget.gradient} flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition-transform`}>
+                  <Icon className="h-5 w-5" />
+                </div>
                 <div className="flex-1">
                   <p className="text-sm font-medium leading-tight">{title}</p>
                 </div>

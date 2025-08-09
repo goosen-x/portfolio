@@ -4,125 +4,8 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useLocale, useTranslations } from 'next-intl'
 import { cn } from '@/lib/utils'
-import {
-	Home,
-	ChevronRight,
-	Ruler,
-	FileImage,
-	Youtube,
-	GitBranch,
-	Box,
-	Grid3X3,
-	QrCode,
-	Gauge,
-	Key,
-	Link as LinkIcon,
-	BarChart3,
-	Palette,
-	SunMoon,
-	Languages,
-	Spline
-} from 'lucide-react'
-
-interface ProjectItem {
-	id: string
-	title: string
-	icon: React.ComponentType<{ className?: string }>
-	description: string
-}
-
-const projects: ProjectItem[] = [
-	{
-		id: 'clamp-calculator',
-		title: 'Clamp Calculator',
-		icon: Ruler,
-		description: 'CSS clamp() calculator for fluid typography'
-	},
-	{
-		id: 'svg-encoder',
-		title: 'SVG URL Encoder',
-		icon: FileImage,
-		description: 'Encode SVG for CSS background-image'
-	},
-	{
-		id: 'youtube-thumbnail',
-		title: 'YouTube Thumbnail',
-		icon: Youtube,
-		description: 'Extract thumbnails from YouTube videos'
-	},
-	{
-		id: 'html-tree',
-		title: 'HTML Tree',
-		icon: GitBranch,
-		description: 'Visualize HTML structure as a tree'
-	},
-	{
-		id: 'flexbox-generator',
-		title: 'Flexbox Generator',
-		icon: Box,
-		description: 'Visual CSS Flexbox layout generator'
-	},
-	{
-		id: 'grid-generator',
-		title: 'Grid Generator',
-		icon: Grid3X3,
-		description: 'Visual CSS Grid layout generator'
-	},
-	{
-		id: 'qr-generator',
-		title: 'QR Code Generator',
-		icon: QrCode,
-		description: 'Generate QR codes for various purposes'
-	},
-	{
-		id: 'speed-test',
-		title: 'Internet Speed Test',
-		icon: Gauge,
-		description: 'Test your internet connection speed'
-	},
-	{
-		id: 'password-generator',
-		title: 'Password Generator',
-		icon: Key,
-		description: 'Generate secure passwords'
-	},
-	{
-		id: 'utm-builder',
-		title: 'UTM Builder',
-		icon: LinkIcon,
-		description: 'Create UTM tracking links'
-	},
-	{
-		id: 'css-specificity',
-		title: 'CSS Specificity',
-		icon: BarChart3,
-		description: 'Calculate CSS selector specificity'
-	},
-	{
-		id: 'theme-settings',
-		title: 'Theme Settings',
-		icon: SunMoon,
-		description: 'Customize theme preferences'
-	},
-	{
-		id: 'language-settings',
-		title: 'Language Settings',
-		icon: Languages,
-		description: 'Change interface language'
-	},
-	{
-		id: 'color-converter',
-		title: 'Color Converter',
-		icon: Palette,
-		description: 'Convert between color formats'
-	},
-	{
-		id: 'bezier-curve',
-		title: 'Bezier Curve Generator',
-		icon: Spline,
-		description: 'Create custom easing curves'
-	}
-]
+import { Home, ChevronRight } from 'lucide-react'
+import { widgets, widgetCategories, getWidgetsByCategory } from '@/lib/constants/widgets'
 
 export function ProjectsSidebar() {
 	const pathname = usePathname()
@@ -154,128 +37,70 @@ export function ProjectsSidebar() {
 						</Link>
 
 						<div className="my-4 space-y-4">
-							{/* CSS Tools */}
-							<div>
-								<h3 className="mb-2 px-3 text-xs font-medium text-muted-foreground uppercase tracking-wider">
-									CSS Tools
-								</h3>
-								{projects.filter(p => ['clamp-calculator', 'flexbox-generator', 'grid-generator', 'css-specificity', 'bezier-curve'].includes(p.id)).map((project) => {
-									const isActive = pathname === `/${locale}/projects/${project.id}`
-									return (
-										<Link
-											key={project.id}
-											href={`/${locale}/projects/${project.id}`}
-											className={cn(
-												"flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-all hover:bg-accent/10 hover:text-foreground",
-												isActive && "bg-accent text-white"
-											)}
-										>
-											<project.icon className="w-4 h-4" />
-											<span className="flex-1">{widgetT(`${project.id.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase())}.title`)}</span>
-											{isActive && <ChevronRight className="w-4 h-4" />}
-										</Link>
-									)
-								})}
-							</div>
+							{/* Render categories dynamically (excluding settings) */}
+							{Object.entries(widgetCategories)
+								.filter(([categoryKey]) => categoryKey !== 'settings')
+								.map(([categoryKey, categoryName]) => {
+									const categoryWidgets = getWidgetsByCategory(categoryKey as keyof typeof widgetCategories)
+									
+									if (categoryWidgets.length === 0) return null
 
-							{/* Media & Content */}
-							<div>
-								<h3 className="mb-2 px-3 text-xs font-medium text-muted-foreground uppercase tracking-wider">
-									Media & Content
-								</h3>
-								{projects.filter(p => ['svg-encoder', 'youtube-thumbnail', 'qr-generator', 'color-converter'].includes(p.id)).map((project) => {
-									const isActive = pathname === `/${locale}/projects/${project.id}`
 									return (
-										<Link
-											key={project.id}
-											href={`/${locale}/projects/${project.id}`}
-											className={cn(
-												"flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-all hover:bg-accent/10 hover:text-foreground",
-												isActive && "bg-accent text-white"
-											)}
-										>
-											<project.icon className="w-4 h-4" />
-											<span className="flex-1">{widgetT(`${project.id.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase())}.title`)}</span>
-											{isActive && <ChevronRight className="w-4 h-4" />}
-										</Link>
+										<div key={categoryKey}>
+											<h3 className="mb-2 px-3 text-xs font-medium text-muted-foreground uppercase tracking-wider">
+												{categoryName}
+											</h3>
+											{categoryWidgets.map((widget) => {
+												const isActive = pathname === `/${locale}/projects/${widget.path}`
+												const Icon = widget.icon
+												
+												return (
+													<Link
+														key={widget.id}
+														href={`/${locale}/projects/${widget.path}`}
+														className={cn(
+															"flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-all hover:bg-accent/10 hover:text-foreground",
+															isActive && "bg-accent text-white"
+														)}
+													>
+														<Icon className="w-4 h-4" />
+														<span className="flex-1">{widgetT(`${widget.translationKey}.title`)}</span>
+														{isActive && <ChevronRight className="w-4 h-4" />}
+													</Link>
+												)
+											})}
+										</div>
 									)
 								})}
-							</div>
-
-							{/* Dev Tools */}
-							<div>
-								<h3 className="mb-2 px-3 text-xs font-medium text-muted-foreground uppercase tracking-wider">
-									Dev Tools
-								</h3>
-								{projects.filter(p => ['html-tree', 'speed-test'].includes(p.id)).map((project) => {
-									const isActive = pathname === `/${locale}/projects/${project.id}`
-									return (
-										<Link
-											key={project.id}
-											href={`/${locale}/projects/${project.id}`}
-											className={cn(
-												"flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-all hover:bg-accent/10 hover:text-foreground",
-												isActive && "bg-accent text-white"
-											)}
-										>
-											<project.icon className="w-4 h-4" />
-											<span className="flex-1">{widgetT(`${project.id.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase())}.title`)}</span>
-											{isActive && <ChevronRight className="w-4 h-4" />}
-										</Link>
-									)
-								})}
-							</div>
-
-							{/* Productivity & Security */}
-							<div>
-								<h3 className="mb-2 px-3 text-xs font-medium text-muted-foreground uppercase tracking-wider">
-									Productivity
-								</h3>
-								{projects.filter(p => ['password-generator', 'utm-builder'].includes(p.id)).map((project) => {
-									const isActive = pathname === `/${locale}/projects/${project.id}`
-									return (
-										<Link
-											key={project.id}
-											href={`/${locale}/projects/${project.id}`}
-											className={cn(
-												"flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-all hover:bg-accent/10 hover:text-foreground",
-												isActive && "bg-accent text-white"
-											)}
-										>
-											<project.icon className="w-4 h-4" />
-											<span className="flex-1">{widgetT(`${project.id.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase())}.title`)}</span>
-											{isActive && <ChevronRight className="w-4 h-4" />}
-										</Link>
-									)
-								})}
-							</div>
-
-							{/* Settings */}
-							<div>
-								<h3 className="mb-2 px-3 text-xs font-medium text-muted-foreground uppercase tracking-wider">
-									Settings
-								</h3>
-								{projects.filter(p => ['theme-settings', 'language-settings'].includes(p.id)).map((project) => {
-									const isActive = pathname === `/${locale}/projects/${project.id}`
-									return (
-										<Link
-											key={project.id}
-											href={`/${locale}/projects/${project.id}`}
-											className={cn(
-												"flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-all hover:bg-accent/10 hover:text-foreground",
-												isActive && "bg-accent text-white"
-											)}
-										>
-											<project.icon className="w-4 h-4" />
-											<span className="flex-1">{widgetT(`${project.id.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase())}.title`)}</span>
-											{isActive && <ChevronRight className="w-4 h-4" />}
-										</Link>
-									)
-								})}
-							</div>
 						</div>
 					</div>
 				</nav>
+
+				{/* Settings section at the bottom */}
+				<div className="border-t p-4">
+					<h3 className="mb-2 px-3 text-xs font-medium text-muted-foreground uppercase tracking-wider">
+						{widgetCategories.settings}
+					</h3>
+					{getWidgetsByCategory('settings').map((widget) => {
+						const isActive = pathname === `/${locale}/projects/${widget.path}`
+						const Icon = widget.icon
+						
+						return (
+							<Link
+								key={widget.id}
+								href={`/${locale}/projects/${widget.path}`}
+								className={cn(
+									"flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-all hover:bg-accent/10 hover:text-foreground",
+									isActive && "bg-accent text-white"
+								)}
+							>
+								<Icon className="w-4 h-4" />
+								<span className="flex-1">{widgetT(`${widget.translationKey}.title`)}</span>
+								{isActive && <ChevronRight className="w-4 h-4" />}
+							</Link>
+						)
+					})}
+				</div>
 			</div>
 		</aside>
 	)
