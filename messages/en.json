@@ -20,6 +20,24 @@
 			"filename": "CV_Borisenko_Dmitry_Frontend_En.pdf"
 		}
 	},
+	"CryptoDonation": {
+		"title": "Support Development",
+		"subtitle": "Crypto Donation",
+		"supportWithCrypto": "Support with cryptocurrency",
+		"selectNetwork": "Select Network",
+		"amount": "Amount",
+		"sendDonation": "Send Donation",
+		"connectWallet": "Connect Wallet",
+		"walletConnected": "Wallet connected successfully",
+		"connectionError": "Failed to connect wallet",
+		"noWallet": "MetaMask not found. Please install it",
+		"networkError": "Failed to switch network",
+		"enterAmount": "Please enter amount",
+		"donationSent": "Thank you for your donation!",
+		"transactionError": "Transaction failed",
+		"addressCopied": "Address copied to clipboard",
+		"manualTransfer": "Or send directly to this address:"
+	},
 	"SectionMain": {
 		"language": "en",
 		"job": "Fullstack Developer",
@@ -165,7 +183,17 @@
 	"Footer": {
 		"slogan": "Every line of code is a step towards perfection. I'm ready to take on your challenge and turn it into a successful project.",
 		"copyright": "Created by Borisenko Dmitry",
-		"description": "View source code on GitHub"
+		"description": "View source code on GitHub",
+		"shortcuts": {
+			"title": "Shortcuts:",
+			"copy": "⌘C Copy",
+			"clear": "⌘K Clear",
+			"save": "⌘S Save"
+		},
+		"support": {
+			"title": "Support",
+			"buyMeCoffee": "Buy me a coffee"
+		}
 	},
 	"activities": {
 		"title": "IT Activities",
@@ -232,6 +260,11 @@
 				"activeDays": "Active Days",
 				"maxDay": "Max in Day"
 			}
+		},
+		"donation": {
+			"title": "Support Development",
+			"crypto": "Donate Crypto",
+			"tooltip": "Support with cryptocurrency"
 		}
 	},
 	"projectsPage": {
@@ -651,6 +684,10 @@
 		"languageSettings": {
 			"title": "Language Settings",
 			"description": "Change the display language and regional preferences for the interface"
+		},
+		"fontSettings": {
+			"title": "Font Settings",
+			"description": "Choose your preferred font for better readability with full language support"
 		},
 		"cssSpecificity": {
 			"title": "CSS Specificity Calculator",

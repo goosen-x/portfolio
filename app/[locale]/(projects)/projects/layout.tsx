@@ -2,6 +2,8 @@
 
 import BreadcrumbHeader from '@/components/global/BreadcrumbHeader'
 import { ProjectsSidebar } from '@/components/projects/ProjectsSidebar'
+import { ProjectsFooter } from '@/components/projects/ProjectsFooter'
+import { ProjectsRightSidebar } from '@/components/projects/ProjectsRightSidebar'
 import { WidgetHeader, WidgetFAQ } from '@/components/widgets'
 import { RelatedTools } from '@/components/seo/RelatedTools'
 import { getWidgetByPath } from '@/lib/constants/widgets'
@@ -20,23 +22,26 @@ export default function ProjectsLayout({ children }: Props) {
 	const widgetId = widget?.id
 
 	return (
-		<>
-			{/* <BreadcrumbHeader /> */}
-			<div className='flex h-[calc(100vh-4rem)]'>
-				<ProjectsSidebar />
-				<main className='flex-1 overflow-y-auto'>
-					<div className='container mx-auto py-8 max-w-6xl'>
-						{widgetId && <WidgetHeader widgetId={widgetId} />}
-						{children}
-						{widgetId && (
-							<>
-								<RelatedTools currentTool={widgetId} />
-								<WidgetFAQ widgetId={widgetId} />
-							</>
-						)}
+		<div className='flex h-full'>
+			<ProjectsSidebar />
+			<main className='flex-1 flex flex-col overflow-hidden'>
+				<div className='flex-1 flex overflow-hidden'>
+					<div className='flex-1 overflow-y-auto projects-scroll'>
+						<div className='container mx-auto py-8 max-w-6xl'>
+							{widgetId && <WidgetHeader widgetId={widgetId} />}
+							{children}
+							{widgetId && (
+								<>
+									<RelatedTools currentTool={widgetId} />
+									<WidgetFAQ widgetId={widgetId} />
+								</>
+							)}
+						</div>
 					</div>
-				</main>
-			</div>
-		</>
+					{widgetId && <ProjectsRightSidebar />}
+				</div>
+				<ProjectsFooter />
+			</main>
+		</div>
 	)
 }

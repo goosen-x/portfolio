@@ -2,14 +2,15 @@ import Link from 'next/link'
 import { FooterNavigation } from './widgets/FooterNavigation'
 import { socials } from '@/lib/constants/socials'
 import { getTranslations } from 'next-intl/server'
+import { tekturFont } from '@/lib/fonts/fonts'
 
 export const Footer = async () => {
 	const year = new Date().getFullYear()
 	const t = await getTranslations('Footer')
 
 	return (
-		<footer className='bg-background mx-auto max-w-(--breakpoint-xl) px-4 pb-8 pt-16 sm:px-6 lg:px-8'>
-			<div className='grid grid-cols-1 gap-12 lg:grid-cols-2'>
+		<footer className={`bg-background mx-auto max-w-(--breakpoint-xl) px-4 pb-8 pt-16 sm:px-6 lg:px-8 ${tekturFont.className}`} data-force-font="tektur">
+			<div className='space-y-12'>
 				<div className='space-y-6'>
 					<div>
 						<h2 className='text-2xl font-bold text-foreground'>goosen.pro</h2>

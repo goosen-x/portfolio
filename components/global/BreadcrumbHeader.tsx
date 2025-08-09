@@ -8,6 +8,7 @@ import { LanguageSelect } from '@/components/global/LanguageSelect'
 import { DownloadCV } from '@/components/global/DownloadCV'
 import { useEffect } from 'react'
 import { cn } from '@/lib/utils'
+import { tekturFont } from '@/lib/fonts/fonts'
 
 const BreadcrumbHeader = () => {
 	const locale = useLocale()
@@ -47,7 +48,7 @@ const BreadcrumbHeader = () => {
 	})
 
 	return (
-		<header className='border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50'>
+		<header className={cn('border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50', tekturFont.className)} data-force-font="tektur">
 			<div className='px-5'>
 				<div className='flex items-center justify-between h-16'>
 					{/* Logo/Brand with Breadcrumbs */}

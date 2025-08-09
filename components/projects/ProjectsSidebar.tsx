@@ -23,7 +23,7 @@ export function ProjectsSidebar() {
 					</p>
 				</div>
 
-				<nav className="flex-1 overflow-y-auto p-4">
+				<nav className="flex-1 overflow-y-auto p-4 projects-scroll">
 					<div className="space-y-1">
 						<Link
 							href={`/${locale}/projects`}

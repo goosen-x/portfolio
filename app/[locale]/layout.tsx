@@ -41,7 +41,7 @@ export default async function RootLayout({
 	return (
 		<html
 			lang={locale}
-			className='scroll-smooth scroll-pt-24'
+			className="scroll-smooth scroll-pt-24"
 			suppressHydrationWarning
 		>
 			<NextIntlClientProvider messages={messages}>

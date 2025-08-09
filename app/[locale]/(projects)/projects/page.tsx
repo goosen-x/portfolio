@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { useTranslations } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { widgets, widgetCategories, getWidgetsByCategory } from '@/lib/constants/widgets'
 
@@ -26,8 +26,8 @@ export default async function ProjectsPage({
 	params: Promise<{ locale: string }>
 }) {
 	const { locale } = await params
-	const t = useTranslations('projectsPage')
-	const widgetT = useTranslations('widgets')
+	const t = await getTranslations('projectsPage')
+	const widgetT = await getTranslations('widgets')
 
 	const getProjectCards = (category: keyof typeof widgetCategories): ProjectCard[] => {
 		return getWidgetsByCategory(category).map(widget => {

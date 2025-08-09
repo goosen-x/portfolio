@@ -20,6 +20,24 @@
 			"filename": "CV_Borisenko_Dmitry_Frontend.pdf"
 		}
 	},
+	"CryptoDonation": {
+		"title": "Поддержать разработку",
+		"subtitle": "Донат в крипте",
+		"supportWithCrypto": "Поддержать криптовалютой",
+		"selectNetwork": "Выберите сеть",
+		"amount": "Сумма",
+		"sendDonation": "Отправить донат",
+		"connectWallet": "Подключить кошелек",
+		"walletConnected": "Кошелек успешно подключен",
+		"connectionError": "Ошибка подключения кошелька",
+		"noWallet": "MetaMask не найден. Пожалуйста, установите его",
+		"networkError": "Не удалось переключить сеть",
+		"enterAmount": "Пожалуйста, введите сумму",
+		"donationSent": "Спасибо за вашу поддержку!",
+		"transactionError": "Ошибка транзакции",
+		"addressCopied": "Адрес скопирован в буфер обмена",
+		"manualTransfer": "Или отправьте напрямую на этот адрес:"
+	},
 	"SectionMain": {
 		"language": "ru",
 		"job": "Fullstack-разработчик",
@@ -165,7 +183,17 @@
 	"Footer": {
 		"slogan": "Каждая строка кода - это шаг к совершенству. Готов принять ваш вызов и превратить его в успешный проект",
 		"copyright": "Сайт разработан Борисенко Дмитрием",
-		"description": "Посмотреть исходный код на GitHub"
+		"description": "Посмотреть исходный код на GitHub",
+		"shortcuts": {
+			"title": "Горячие клавиши:",
+			"copy": "⌘C Копировать",
+			"clear": "⌘K Очистить",
+			"save": "⌘S Сохранить"
+		},
+		"support": {
+			"title": "Поддержка",
+			"buyMeCoffee": "Купить мне кофе"
+		}
 	},
 	"activities": {
 		"title": "IT Активности",
@@ -232,6 +260,11 @@
 				"activeDays": "Активных дней",
 				"maxDay": "Максимум за день"
 			}
+		},
+		"donation": {
+			"title": "Поддержать разработку",
+			"crypto": "Донат в крипте",
+			"tooltip": "Поддержать криптовалютой"
 		}
 	},
 	"projectsPage": {
@@ -651,6 +684,10 @@
 		"languageSettings": {
 			"title": "Настройки языка",
 			"description": "Измените язык интерфейса и региональные настройки"
+		},
+		"fontSettings": {
+			"title": "Настройки шрифта",
+			"description": "Выберите предпочитаемый шрифт для лучшей читаемости с полной поддержкой языков"
 		},
 		"cssSpecificity": {
 			"title": "Калькулятор специфичности CSS",

@@ -11,10 +11,11 @@ export default async function OtherLayout({ children, params }: Props) {
 	const locale = (await params).locale
 
 	return (
-		<main className='min-h-screen w-full'>
+		<main className='h-screen w-full flex flex-col'>
 			<BreadcrumbHeader />
-			{children}
-			<Footer />
+			<div className='flex-1 overflow-hidden'>
+				{children}
+			</div>
 		</main>
 	)
 }
