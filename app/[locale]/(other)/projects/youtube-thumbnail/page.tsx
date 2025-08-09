@@ -192,6 +192,7 @@ export default function YouTubeThumbnailPage() {
 									size="sm"
 									variant="outline"
 									onClick={() => copyToClipboard(videoId)}
+									className="hover:bg-accent hover:text-white"
 								>
 									{copiedUrl === videoId ? (
 										<Check className="h-4 w-4 text-green-500" />
@@ -238,7 +239,7 @@ export default function YouTubeThumbnailPage() {
 											<Button
 												size="sm"
 												variant="outline"
-												className="flex-1"
+												className="flex-1 hover:bg-accent hover:text-white"
 												onClick={() => copyToClipboard(imageUrl)}
 											>
 												{copiedUrl === imageUrl ? (

@@ -417,7 +417,7 @@ export default function QRGeneratorPage() {
 							</Button>
 							<Button
 								onClick={copyQRAsImage}
-								className="flex-1"
+								className="flex-1 hover:bg-accent hover:text-white"
 								variant="outline"
 							>
 								<Copy className="w-4 h-4 mr-2" />

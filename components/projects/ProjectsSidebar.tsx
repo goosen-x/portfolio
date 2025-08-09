@@ -20,7 +20,8 @@ import {
 	BarChart3,
 	Palette,
 	SunMoon,
-	Languages
+	Languages,
+	Spline
 } from 'lucide-react'
 
 interface ProjectItem {
@@ -108,6 +109,18 @@ const projects: ProjectItem[] = [
 		title: 'Language Settings',
 		icon: Languages,
 		description: 'Change interface language'
+	},
+	{
+		id: 'color-converter',
+		title: 'Color Converter',
+		icon: Palette,
+		description: 'Convert between color formats'
+	},
+	{
+		id: 'bezier-curve',
+		title: 'Bezier Curve Generator',
+		icon: Spline,
+		description: 'Create custom easing curves'
 	}
 ]
 
@@ -146,7 +159,7 @@ export function ProjectsSidebar() {
 								<h3 className="mb-2 px-3 text-xs font-medium text-muted-foreground uppercase tracking-wider">
 									CSS Tools
 								</h3>
-								{projects.filter(p => ['clamp-calculator', 'flexbox-generator', 'grid-generator', 'css-specificity'].includes(p.id)).map((project) => {
+								{projects.filter(p => ['clamp-calculator', 'flexbox-generator', 'grid-generator', 'css-specificity', 'bezier-curve'].includes(p.id)).map((project) => {
 									const isActive = pathname === `/${locale}/projects/${project.id}`
 									return (
 										<Link
@@ -170,7 +183,7 @@ export function ProjectsSidebar() {
 								<h3 className="mb-2 px-3 text-xs font-medium text-muted-foreground uppercase tracking-wider">
 									Media & Content
 								</h3>
-								{projects.filter(p => ['svg-encoder', 'youtube-thumbnail', 'qr-generator'].includes(p.id)).map((project) => {
+								{projects.filter(p => ['svg-encoder', 'youtube-thumbnail', 'qr-generator', 'color-converter'].includes(p.id)).map((project) => {
 									const isActive = pathname === `/${locale}/projects/${project.id}`
 									return (
 										<Link

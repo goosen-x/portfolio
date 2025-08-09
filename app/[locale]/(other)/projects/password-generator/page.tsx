@@ -313,6 +313,7 @@ export default function PasswordGeneratorPage() {
 									variant="ghost"
 									onClick={copyToClipboard}
 									disabled={!password}
+									className="hover:bg-accent hover:text-white"
 								>
 									<Copy className="w-4 h-4" />
 								</Button>
@@ -343,6 +344,7 @@ export default function PasswordGeneratorPage() {
 								variant="outline"
 								onClick={copyToClipboard}
 								disabled={!password}
+								className="hover:bg-accent hover:text-white"
 							>
 								<Copy className="w-4 h-4 mr-2" />
 								{t('copy')}
@@ -580,7 +582,7 @@ export default function PasswordGeneratorPage() {
 													<Button
 														size="icon"
 														variant="ghost"
-														className="h-8 w-8"
+														className="h-8 w-8 hover:bg-accent hover:text-white"
 														onClick={async () => {
 															await navigator.clipboard.writeText(item.password)
 															toast.success(t('toast.copied'))

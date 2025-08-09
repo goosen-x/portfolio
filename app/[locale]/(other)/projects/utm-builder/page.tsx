@@ -380,7 +380,7 @@ export default function UTMBuilderPage() {
 										</div>
 
 										<div className="grid grid-cols-2 gap-2">
-											<Button onClick={copyToClipboard} variant="outline">
+											<Button onClick={copyToClipboard} variant="outline" className="hover:bg-accent hover:text-white">
 												<Copy className="w-4 h-4 mr-2" />
 												{t('result.copy')}
 											</Button>
@@ -556,6 +556,7 @@ export default function UTMBuilderPage() {
 												<Button
 													size="icon"
 													variant="ghost"
+													className="hover:bg-accent hover:text-white"
 													onClick={async () => {
 														await navigator.clipboard.writeText(item.url)
 														toast.success(t('toast.copied'))

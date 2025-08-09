@@ -134,7 +134,7 @@ export default function ColorConverterPage() {
                 />
                 <button
                   onClick={() => copyToClipboard(hexValue.toUpperCase(), 'HEX')}
-                  className="p-2 hover:bg-muted rounded-md transition-colors"
+                  className="p-2 hover:bg-accent hover:text-white rounded-md transition-colors"
                   title="Copy HEX"
                 >
                   <Copy className="w-4 h-4" />
@@ -189,7 +189,7 @@ export default function ColorConverterPage() {
                 </div>
                 <button
                   onClick={() => copyToClipboard(formatRgb(rgbValue), 'RGB')}
-                  className="p-2 hover:bg-muted rounded-md transition-colors"
+                  className="p-2 hover:bg-accent hover:text-white rounded-md transition-colors"
                   title="Copy RGB"
                 >
                   <Copy className="w-4 h-4" />
@@ -244,7 +244,7 @@ export default function ColorConverterPage() {
                 </div>
                 <button
                   onClick={() => copyToClipboard(formatHsl(hslValue), 'HSL')}
-                  className="p-2 hover:bg-muted rounded-md transition-colors"
+                  className="p-2 hover:bg-accent hover:text-white rounded-md transition-colors"
                   title="Copy HSL"
                 >
                   <Copy className="w-4 h-4" />
@@ -312,7 +312,7 @@ export default function ColorConverterPage() {
                 </div>
                 <button
                   onClick={() => copyToClipboard(formatCmyk(cmykValue), 'CMYK')}
-                  className="p-2 hover:bg-muted rounded-md transition-colors"
+                  className="p-2 hover:bg-accent hover:text-white rounded-md transition-colors"
                   title="Copy CMYK"
                 >
                   <Copy className="w-4 h-4" />
@@ -367,7 +367,7 @@ export default function ColorConverterPage() {
                 </div>
                 <button
                   onClick={() => copyToClipboard(formatLab(labValue, precision), 'LAB')}
-                  className="p-2 hover:bg-muted rounded-md transition-colors"
+                  className="p-2 hover:bg-accent hover:text-white rounded-md transition-colors"
                   title="Copy LAB"
                 >
                   <Copy className="w-4 h-4" />
@@ -421,7 +421,7 @@ export default function ColorConverterPage() {
                     <code className="font-mono text-sm">{hexValue.toUpperCase()}</code>
                     <button
                       onClick={() => copyToClipboard(hexValue.toUpperCase(), 'HEX')}
-                      className="opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-background rounded"
+                      className="opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-accent hover:text-white rounded"
                     >
                       <Copy className="w-3 h-3" />
                     </button>
@@ -430,7 +430,7 @@ export default function ColorConverterPage() {
                     <code className="font-mono text-sm">Websafe: {websafe.toUpperCase()}</code>
                     <button
                       onClick={() => copyToClipboard(websafe.toUpperCase(), 'Websafe')}
-                      className="opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-background rounded"
+                      className="opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-accent hover:text-white rounded"
                     >
                       <Copy className="w-3 h-3" />
                     </button>
@@ -446,7 +446,7 @@ export default function ColorConverterPage() {
                     <code className="font-mono text-sm">{formatRgb(rgbValue)}</code>
                     <button
                       onClick={() => copyToClipboard(formatRgb(rgbValue), 'RGB')}
-                      className="opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-background rounded"
+                      className="opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-accent hover:text-white rounded"
                     >
                       <Copy className="w-3 h-3" />
                     </button>
@@ -455,7 +455,7 @@ export default function ColorConverterPage() {
                     <code className="font-mono text-sm">{formatRgba(rgba, precision)}</code>
                     <button
                       onClick={() => copyToClipboard(formatRgba(rgba, precision), 'RGBA')}
-                      className="opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-background rounded"
+                      className="opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-accent hover:text-white rounded"
                     >
                       <Copy className="w-3 h-3" />
                     </button>
@@ -464,7 +464,7 @@ export default function ColorConverterPage() {
                     <code className="font-mono text-sm">{formatRgbPercent(rgbValue, precision)}</code>
                     <button
                       onClick={() => copyToClipboard(formatRgbPercent(rgbValue, precision), 'RGB %')}
-                      className="opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-background rounded"
+                      className="opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-accent hover:text-white rounded"
                     >
                       <Copy className="w-3 h-3" />
                     </button>
@@ -480,7 +480,7 @@ export default function ColorConverterPage() {
                     <code className="font-mono text-sm">{formatHsl(hslValue)}</code>
                     <button
                       onClick={() => copyToClipboard(formatHsl(hslValue), 'HSL')}
-                      className="opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-background rounded"
+                      className="opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-accent hover:text-white rounded"
                     >
                       <Copy className="w-3 h-3" />
                     </button>
@@ -489,7 +489,7 @@ export default function ColorConverterPage() {
                     <code className="font-mono text-sm">{formatHsla({ ...hslValue, a: alpha }, precision)}</code>
                     <button
                       onClick={() => copyToClipboard(formatHsla({ ...hslValue, a: alpha }, precision), 'HSLA')}
-                      className="opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-background rounded"
+                      className="opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-accent hover:text-white rounded"
                     >
                       <Copy className="w-3 h-3" />
                     </button>
@@ -498,7 +498,7 @@ export default function ColorConverterPage() {
                     <code className="font-mono text-sm">HSB/HSV: {formatHsb(hsb)}</code>
                     <button
                       onClick={() => copyToClipboard(formatHsb(hsb), 'HSB')}
-                      className="opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-background rounded"
+                      className="opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-accent hover:text-white rounded"
                     >
                       <Copy className="w-3 h-3" />
                     </button>
@@ -514,7 +514,7 @@ export default function ColorConverterPage() {
                     <code className="font-mono text-sm">{formatCmyk(cmykValue)}</code>
                     <button
                       onClick={() => copyToClipboard(formatCmyk(cmykValue), 'CMYK')}
-                      className="opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-background rounded"
+                      className="opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-accent hover:text-white rounded"
                     >
                       <Copy className="w-3 h-3" />
                     </button>
@@ -530,7 +530,7 @@ export default function ColorConverterPage() {
                     <code className="font-mono text-sm">{formatLab(labValue, precision)}</code>
                     <button
                       onClick={() => copyToClipboard(formatLab(labValue, precision), 'LAB')}
-                      className="opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-background rounded"
+                      className="opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-accent hover:text-white rounded"
                     >
                       <Copy className="w-3 h-3" />
                     </button>
@@ -546,7 +546,7 @@ export default function ColorConverterPage() {
                     <code className="font-mono text-sm">{formatXyz(xyz, precision)}</code>
                     <button
                       onClick={() => copyToClipboard(formatXyz(xyz, precision), 'XYZ')}
-                      className="opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-background rounded"
+                      className="opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-accent hover:text-white rounded"
                     >
                       <Copy className="w-3 h-3" />
                     </button>
@@ -607,7 +607,7 @@ export default function ColorConverterPage() {
                 <code className="font-mono text-sm">{formatRgb(rgbWithBg)}</code>
                 <button
                   onClick={() => copyToClipboard(formatRgb(rgbWithBg), 'RGB with BG')}
-                  className="opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-background rounded"
+                  className="opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-accent hover:text-white rounded"
                 >
                   <Copy className="w-3 h-3" />
                 </button>

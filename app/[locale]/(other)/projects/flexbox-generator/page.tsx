@@ -7,9 +7,10 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Slider } from '@/components/ui/slider'
 import { Switch } from '@/components/ui/switch'
 import { Button } from '@/components/ui/button'
-import { Copy, RotateCcw } from 'lucide-react'
+import { Copy, RotateCcw, HelpCircle } from 'lucide-react'
 import { toast } from 'sonner'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
 
 interface FlexboxProps {
 	flexDirection: string
@@ -31,6 +32,7 @@ const defaultProps: FlexboxProps = {
 
 export default function FlexboxGeneratorPage() {
 	const t = useTranslations('widgets.flexboxGenerator')
+	const locale = useLocale()
 	const [props, setProps] = useState<FlexboxProps>(defaultProps)
 	const [itemCount, setItemCount] = useState(3)
 	const [showItemNumbers, setShowItemNumbers] = useState(true)
@@ -65,6 +67,28 @@ export default function FlexboxGeneratorPage() {
 		setProps(defaultProps)
 	}
 
+	const renderLabel = (key: string, englishLabel: string) => {
+		if (locale !== 'ru') {
+			return <Label className="text-xs">{t(key)}</Label>
+		}
+		
+		return (
+			<div className="flex items-center gap-1">
+				<Label className="text-xs">{englishLabel}</Label>
+				<TooltipProvider>
+					<Tooltip>
+						<TooltipTrigger asChild>
+							<HelpCircle className="h-3 w-3 text-muted-foreground" />
+						</TooltipTrigger>
+						<TooltipContent>
+							<p className="text-xs">{t(key)}</p>
+						</TooltipContent>
+					</Tooltip>
+				</TooltipProvider>
+			</div>
+		)
+	}
+
 	const containerStyle: React.CSSProperties = {
 		display: 'flex',
 		flexDirection: props.flexDirection as any,
@@ -77,7 +101,8 @@ export default function FlexboxGeneratorPage() {
 		backgroundColor: 'hsl(var(--muted))',
 		borderRadius: '8px',
 		padding: '20px',
-		border: '2px dashed hsl(var(--border))'
+		border: '2px dashed hsl(var(--border))',
+		overflow: 'hidden'
 	}
 
 	return (
@@ -99,121 +124,147 @@ export default function FlexboxGeneratorPage() {
 								variant="ghost"
 								size="sm"
 								onClick={resetProps}
-								className="h-8"
+								className="h-8 hover:bg-accent hover:text-white"
 							>
 								<RotateCcw className="w-4 h-4 mr-1" />
 								{t('reset')}
 							</Button>
 						</CardTitle>
 					</CardHeader>
-					<CardContent className="space-y-4">
-						<div className="space-y-2">
-							<Label>{t('direction')}</Label>
-							<Select value={props.flexDirection} onValueChange={(value) => updateProp('flexDirection', value)}>
-								<SelectTrigger>
-									<SelectValue />
-								</SelectTrigger>
-								<SelectContent>
-									<SelectItem value="row">row</SelectItem>
-									<SelectItem value="row-reverse">row-reverse</SelectItem>
-									<SelectItem value="column">column</SelectItem>
-									<SelectItem value="column-reverse">column-reverse</SelectItem>
-								</SelectContent>
-							</Select>
+					<CardContent className="space-y-3">
+						<div className="grid grid-cols-2 gap-3">
+							<div className="space-y-1">
+								{renderLabel('direction', 'flex-direction')}
+								<Select value={props.flexDirection} onValueChange={(value) => updateProp('flexDirection', value)}>
+									<SelectTrigger className="h-9">
+										<SelectValue />
+									</SelectTrigger>
+									<SelectContent>
+										<SelectItem value="row">row</SelectItem>
+										<SelectItem value="row-reverse">row-reverse</SelectItem>
+										<SelectItem value="column">column</SelectItem>
+										<SelectItem value="column-reverse">column-reverse</SelectItem>
+									</SelectContent>
+								</Select>
+							</div>
+
+							<div className="space-y-1">
+								{renderLabel('flexWrap', 'flex-wrap')}
+								<Select value={props.flexWrap} onValueChange={(value) => updateProp('flexWrap', value)}>
+									<SelectTrigger className="h-9">
+										<SelectValue />
+									</SelectTrigger>
+									<SelectContent>
+										<SelectItem value="nowrap">nowrap</SelectItem>
+										<SelectItem value="wrap">wrap</SelectItem>
+										<SelectItem value="wrap-reverse">wrap-reverse</SelectItem>
+									</SelectContent>
+								</Select>
+							</div>
+
+							<div className="space-y-1">
+								{renderLabel('justifyContent', 'justify-content')}
+								<Select value={props.justifyContent} onValueChange={(value) => updateProp('justifyContent', value)}>
+									<SelectTrigger className="h-9">
+										<SelectValue />
+									</SelectTrigger>
+									<SelectContent>
+										<SelectItem value="flex-start">flex-start</SelectItem>
+										<SelectItem value="flex-end">flex-end</SelectItem>
+										<SelectItem value="center">center</SelectItem>
+										<SelectItem value="space-between">space-between</SelectItem>
+										<SelectItem value="space-around">space-around</SelectItem>
+										<SelectItem value="space-evenly">space-evenly</SelectItem>
+									</SelectContent>
+								</Select>
+							</div>
+
+							<div className="space-y-1">
+								{renderLabel('alignItems', 'align-items')}
+								<Select value={props.alignItems} onValueChange={(value) => updateProp('alignItems', value)}>
+									<SelectTrigger className="h-9">
+										<SelectValue />
+									</SelectTrigger>
+									<SelectContent>
+										<SelectItem value="flex-start">flex-start</SelectItem>
+										<SelectItem value="flex-end">flex-end</SelectItem>
+										<SelectItem value="center">center</SelectItem>
+										<SelectItem value="stretch">stretch</SelectItem>
+										<SelectItem value="baseline">baseline</SelectItem>
+									</SelectContent>
+								</Select>
+							</div>
 						</div>
 
-						<div className="space-y-2">
-							<Label>{t('justifyContent')}</Label>
-							<Select value={props.justifyContent} onValueChange={(value) => updateProp('justifyContent', value)}>
-								<SelectTrigger>
-									<SelectValue />
-								</SelectTrigger>
-								<SelectContent>
-									<SelectItem value="flex-start">flex-start</SelectItem>
-									<SelectItem value="flex-end">flex-end</SelectItem>
-									<SelectItem value="center">center</SelectItem>
-									<SelectItem value="space-between">space-between</SelectItem>
-									<SelectItem value="space-around">space-around</SelectItem>
-									<SelectItem value="space-evenly">space-evenly</SelectItem>
-								</SelectContent>
-							</Select>
+						<div className="grid grid-cols-2 gap-3">
+							<div className="space-y-1">
+								{renderLabel('alignContent', 'align-content')}
+								<Select value={props.alignContent} onValueChange={(value) => updateProp('alignContent', value)}>
+									<SelectTrigger className="h-9">
+										<SelectValue />
+									</SelectTrigger>
+									<SelectContent>
+										<SelectItem value="flex-start">flex-start</SelectItem>
+										<SelectItem value="flex-end">flex-end</SelectItem>
+										<SelectItem value="center">center</SelectItem>
+										<SelectItem value="stretch">stretch</SelectItem>
+										<SelectItem value="space-between">space-between</SelectItem>
+										<SelectItem value="space-around">space-around</SelectItem>
+									</SelectContent>
+								</Select>
+							</div>
+
+							<div className="space-y-1">
+								<Label className="text-xs">{t('showNumbers')}</Label>
+								<div className="h-9 flex items-center">
+									<Switch
+										checked={showItemNumbers}
+										onCheckedChange={setShowItemNumbers}
+									/>
+								</div>
+							</div>
 						</div>
 
-						<div className="space-y-2">
-							<Label>{t('alignItems')}</Label>
-							<Select value={props.alignItems} onValueChange={(value) => updateProp('alignItems', value)}>
-								<SelectTrigger>
-									<SelectValue />
-								</SelectTrigger>
-								<SelectContent>
-									<SelectItem value="flex-start">flex-start</SelectItem>
-									<SelectItem value="flex-end">flex-end</SelectItem>
-									<SelectItem value="center">center</SelectItem>
-									<SelectItem value="stretch">stretch</SelectItem>
-									<SelectItem value="baseline">baseline</SelectItem>
-								</SelectContent>
-							</Select>
-						</div>
+						<div className="grid grid-cols-2 gap-3">
+							<div className="space-y-1">
+								{locale === 'ru' ? (
+									<div className="flex items-center gap-1">
+										<Label className="text-xs">gap: {props.gap}px</Label>
+										<TooltipProvider>
+											<Tooltip>
+												<TooltipTrigger asChild>
+													<HelpCircle className="h-3 w-3 text-muted-foreground" />
+												</TooltipTrigger>
+												<TooltipContent>
+													<p className="text-xs">{t('gap')}</p>
+												</TooltipContent>
+											</Tooltip>
+										</TooltipProvider>
+									</div>
+								) : (
+									<Label className="text-xs">{t('gap')}: {props.gap}px</Label>
+								)}
+								<Slider
+									value={[props.gap]}
+									onValueChange={([value]) => updateProp('gap', value)}
+									min={0}
+									max={50}
+									step={1}
+									className="h-8"
+								/>
+							</div>
 
-						<div className="space-y-2">
-							<Label>{t('flexWrap')}</Label>
-							<Select value={props.flexWrap} onValueChange={(value) => updateProp('flexWrap', value)}>
-								<SelectTrigger>
-									<SelectValue />
-								</SelectTrigger>
-								<SelectContent>
-									<SelectItem value="nowrap">nowrap</SelectItem>
-									<SelectItem value="wrap">wrap</SelectItem>
-									<SelectItem value="wrap-reverse">wrap-reverse</SelectItem>
-								</SelectContent>
-							</Select>
-						</div>
-
-						<div className="space-y-2">
-							<Label>{t('alignContent')}</Label>
-							<Select value={props.alignContent} onValueChange={(value) => updateProp('alignContent', value)}>
-								<SelectTrigger>
-									<SelectValue />
-								</SelectTrigger>
-								<SelectContent>
-									<SelectItem value="flex-start">flex-start</SelectItem>
-									<SelectItem value="flex-end">flex-end</SelectItem>
-									<SelectItem value="center">center</SelectItem>
-									<SelectItem value="stretch">stretch</SelectItem>
-									<SelectItem value="space-between">space-between</SelectItem>
-									<SelectItem value="space-around">space-around</SelectItem>
-								</SelectContent>
-							</Select>
-						</div>
-
-						<div className="space-y-2">
-							<Label>{t('gap')}: {props.gap}px</Label>
-							<Slider
-								value={[props.gap]}
-								onValueChange={([value]) => updateProp('gap', value)}
-								min={0}
-								max={50}
-								step={1}
-							/>
-						</div>
-
-						<div className="space-y-2">
-							<Label>{t('items')}: {itemCount}</Label>
-							<Slider
-								value={[itemCount]}
-								onValueChange={([value]) => setItemCount(value)}
-								min={1}
-								max={12}
-								step={1}
-							/>
-						</div>
-
-						<div className="flex items-center justify-between">
-							<Label>{t('showNumbers')}</Label>
-							<Switch
-								checked={showItemNumbers}
-								onCheckedChange={setShowItemNumbers}
-							/>
+							<div className="space-y-1">
+								<Label className="text-xs">{t('items')}: {itemCount}</Label>
+								<Slider
+									value={[itemCount]}
+									onValueChange={([value]) => setItemCount(value)}
+									min={1}
+									max={12}
+									step={1}
+									className="h-8"
+								/>
+							</div>
 						</div>
 					</CardContent>
 				</Card>
@@ -246,6 +297,7 @@ export default function FlexboxGeneratorPage() {
 								variant="outline"
 								size="sm"
 								onClick={copyToClipboard}
+								className="hover:bg-accent hover:text-white"
 							>
 								<Copy className="w-4 h-4 mr-1" />
 								{t('copy')}

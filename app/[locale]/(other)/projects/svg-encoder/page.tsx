@@ -207,6 +207,7 @@ export default function SVGEncoderPage() {
 							variant="outline"
 							onClick={() => copyToClipboard(encodedResult, 'encoded')}
 							disabled={!encodedResult}
+							className="hover:bg-accent hover:text-white"
 						>
 							{copiedField === 'encoded' ? (
 								<Check className="h-4 w-4 text-green-500" />
@@ -235,6 +236,7 @@ export default function SVGEncoderPage() {
 							variant="outline"
 							onClick={() => copyToClipboard(cssResult, 'css')}
 							disabled={!cssResult}
+							className="hover:bg-accent hover:text-white"
 						>
 							{copiedField === 'css' ? (
 								<Check className="h-4 w-4 text-green-500" />

@@ -183,8 +183,13 @@ export default function CSSSpecificityPage() {
 		for (const line of lines) {
 			const trimmed = line.trim()
 			
-			// Skip empty lines and comments
-			if (!trimmed || trimmed.startsWith('//') || trimmed.startsWith('/*')) {
+			// Skip empty lines
+			if (!trimmed) {
+				continue
+			}
+
+			// Skip comments
+			if (trimmed.startsWith('//') || trimmed.startsWith('/*') || trimmed.includes('*/')) {
 				continue
 			}
 
@@ -193,18 +198,10 @@ export default function CSSSpecificityPage() {
 				inRule = true
 				// Extract selector before the opening brace
 				const selectorPart = trimmed.split('{')[0].trim()
-				if (selectorPart && !currentSelector) {
-					currentSelector = selectorPart
-				} else if (selectorPart && currentSelector) {
-					currentSelector += ' ' + selectorPart
+				if (selectorPart) {
+					selectors.push(selectorPart)
 				}
-				
-				// If selector is complete, add it
-				if (currentSelector && !trimmed.startsWith('{')) {
-					selectors.push(currentSelector)
-					currentSelector = ''
-				}
-			} else if (trimmed === '}') {
+			} else if (trimmed === '}' || trimmed.includes('}')) {
 				// Exiting a rule block
 				inRule = false
 				currentSelector = ''
@@ -213,30 +210,30 @@ export default function CSSSpecificityPage() {
 				if (trimmed.endsWith(',')) {
 					// Multi-line selector with comma
 					selectors.push(trimmed.slice(0, -1).trim())
-				} else if (!trimmed.includes(':') || trimmed.includes('::') || trimmed.includes(':hover') || trimmed.includes(':not') || trimmed.includes(':nth')) {
-					// This is likely a selector (not a property)
-					currentSelector = trimmed
+				} else {
+					// Check if this line looks like a CSS property
+					const looksLikeProperty = trimmed.includes(': ') || 
+						trimmed.match(/^\d/) || 
+						trimmed.match(/^(margin|padding|border|background|color|font|width|height|display|position|top|left|right|bottom)/i) ||
+						trimmed.endsWith(';')
+					
+					if (!looksLikeProperty) {
+						// This is a selector on its own line
+						selectors.push(trimmed)
+					}
 				}
 			}
 		}
 
-		// Add any remaining selector
-		if (currentSelector && !inRule) {
-			selectors.push(currentSelector)
-		}
+		// Remove duplicates and empty selectors
+		const uniqueSelectors = [...new Set(selectors.filter(sel => sel.length > 0))]
 
-		// Filter out any accidental properties
-		const validSelectors = selectors.filter(sel => {
-			// Basic check to exclude CSS properties
-			return !sel.includes(': ') && !sel.match(/^\d/) && !sel.match(/^(margin|padding|border|background|color|font|width|height|display|position)/i)
-		})
-
-		if (validSelectors.length === 0) {
+		if (uniqueSelectors.length === 0) {
 			toast.error(t('toast.noSelectors'))
 			return
 		}
 
-		const newResults = validSelectors.map(selector => calculateSpecificity(selector))
+		const newResults = uniqueSelectors.map(selector => calculateSpecificity(selector))
 		
 		// Sort results
 		if (sortBy === 'weight') {
@@ -350,6 +347,7 @@ div.container > p::first-line
 										variant="outline"
 										size="sm"
 										onClick={copyResults}
+										className="hover:bg-accent hover:text-white"
 									>
 										<Copy className="w-4 h-4" />
 									</Button>

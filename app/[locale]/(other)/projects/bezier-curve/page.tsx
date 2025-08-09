@@ -501,7 +501,7 @@ export default function BezierCurvePage() {
                     <code className="font-mono text-sm">{cssOutput}</code>
                     <button
                       onClick={() => copyToClipboard(cssOutput)}
-                      className="opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-background rounded"
+                      className="opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-accent hover:text-white rounded"
                     >
                       <Copy className="w-4 h-4" />
                     </button>
@@ -511,7 +511,7 @@ export default function BezierCurvePage() {
                     <code className="font-mono text-sm">{cssTransition}</code>
                     <button
                       onClick={() => copyToClipboard(cssTransition)}
-                      className="opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-background rounded"
+                      className="opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-accent hover:text-white rounded"
                     >
                       <Copy className="w-4 h-4" />
                     </button>
@@ -521,7 +521,7 @@ export default function BezierCurvePage() {
                     <code className="font-mono text-sm">{cssAnimation}</code>
                     <button
                       onClick={() => copyToClipboard(cssAnimation)}
-                      className="opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-background rounded"
+                      className="opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-accent hover:text-white rounded"
                     >
                       <Copy className="w-4 h-4" />
                     </button>
