@@ -1,4 +1,4 @@
-import { Ruler, FileImage, Youtube, GitBranch, Box, Grid3X3, QrCode, Gauge, Key, Link as LinkIcon, BarChart3, Palette, Settings, Languages, SunMoon } from 'lucide-react'
+import { Ruler, FileImage, Youtube, GitBranch, Box, Grid3X3, QrCode, Gauge, Key, Link as LinkIcon, BarChart3, Palette, Settings, Languages, SunMoon, Sparkles } from 'lucide-react'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
@@ -58,6 +58,13 @@ const categories: Category[] = [
 				description: 'Convert colors between HEX, RGB, HSL, CMYK, LAB, and other color models with alpha support.',
 				icon: <Palette className="w-8 h-8" />,
 				gradient: 'from-pink-500 to-purple-500'
+			},
+			{
+				id: 'bezier-curve',
+				title: 'Bezier Curve Generator',
+				description: 'Create custom cubic-bezier easing functions for CSS animations with visual editor and presets.',
+				icon: <Sparkles className="w-8 h-8" />,
+				gradient: 'from-purple-500 to-indigo-500'
 			}
 		]
 	},

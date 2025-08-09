@@ -708,6 +708,23 @@
 			"toast": {
 				"copied": "Color value copied to clipboard"
 			}
+		},
+		"bezierCurve": {
+			"title": "Bezier Curve Generator",
+			"description": "Create custom cubic-bezier easing functions for CSS animations and transitions",
+			"curveEditor": "Curve Editor",
+			"play": "Play",
+			"pause": "Pause",
+			"reset": "Reset",
+			"duration": "Duration",
+			"presets": "Presets",
+			"custom": "Custom",
+			"controlPoints": "Control Points",
+			"cssOutput": "CSS Output",
+			"preview": "Animation Preview",
+			"toast": {
+				"copied": "CSS value copied to clipboard"
+			}
 		}
 	},
 	"settings": {

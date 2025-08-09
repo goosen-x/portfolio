@@ -122,7 +122,7 @@ export default function HTMLTreePage() {
 		}
 	}
 
-	const renderTree = (node: TreeNode): JSX.Element | null => {
+	const renderTree = (node: TreeNode): React.ReactElement | null => {
 		if (node.level > visibleDepth) return null
 
 		return (
