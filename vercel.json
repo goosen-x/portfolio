@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.goosen.pro"
+        }
+      ],
+      "destination": "https://goosen.pro",
+      "permanent": true
+    }
+  ]
+}
