@@ -27,7 +27,7 @@ async function testConnection() {
 		`
 		
 		console.log('\nExisting tables:')
-		tables.forEach(table => {
+		tables.forEach((table: any) => {
 			console.log(`- ${table.tablename}`)
 		})
 		

@@ -8,6 +8,7 @@ import { SectionTitle } from '@/components/global/SectionTitle'
 import Link from 'next/link'
 import { ArrowRight, Mail, MessageSquare, Send } from 'lucide-react'
 
+
 export const SectionContact = ({
 	className,
 	...rest

@@ -51,6 +51,13 @@ const categories: Category[] = [
 				description: 'Analyze CSS selector specificity, understand cascade rules, and optimize your stylesheets.',
 				icon: <BarChart3 className="w-8 h-8" />,
 				gradient: 'from-indigo-500 to-blue-600'
+			},
+			{
+				id: 'color-converter',
+				title: 'Color Converter',
+				description: 'Convert colors between HEX, RGB, HSL, CMYK, LAB, and other color models with alpha support.',
+				icon: <Palette className="w-8 h-8" />,
+				gradient: 'from-pink-500 to-purple-500'
 			}
 		]
 	},

@@ -8,7 +8,14 @@ type Props = {
 
 export const SectionBlog = async ({ locale }: Props) => {
 	const t = await getTranslations('SectionBlog')
-	const posts = await getLatestPosts({ limit: 6, locale })
+	
+	let posts: any[] = []
+	try {
+		posts = await getLatestPosts({ limit: 6, locale })
+	} catch (error) {
+		console.warn('Failed to fetch blog posts:', error)
+		// Continue with empty posts array
+	}
 
 	if (!posts || posts.length === 0) {
 		return null

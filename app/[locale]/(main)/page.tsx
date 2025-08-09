@@ -1,6 +1,5 @@
 import { Container } from '@/components/layout/Container/container'
 import { ScrollSpy } from '@/components/global/ScrollSpy'
-import { AnimatedSection } from '@/components/global/AnimatedSection'
 import {
 	ContactSection,
 	SectionExperience,
@@ -26,27 +25,11 @@ export default async function Home(props: Props) {
 			<ScrollSpy />
 			<Container>
 				<SectionMain id='main' />
-				
-				<AnimatedSection delay={0.1} animation="scale">
-					<SectionTechStack id='techstack' />
-				</AnimatedSection>
-				
-				<AnimatedSection delay={0.15} animation="slide">
-					<SectionProjects id='projects' />
-				</AnimatedSection>
-				
-				<AnimatedSection delay={0.2} animation="blur">
-					<SectionExperience id='experience' />
-				</AnimatedSection>
-				
-				<AnimatedSection delay={0.25} animation="slide">
-					<SectionBlog locale={params.locale} />
-				</AnimatedSection>
-				
-				<AnimatedSection delay={0.3} animation="scale">
-					<SectionContact id='contact' />
-				</AnimatedSection>
-				
+				<SectionTechStack id='techstack' />
+				<SectionProjects id='projects' />
+				<SectionExperience id='experience' />
+				<SectionBlog locale={params.locale} />
+				<SectionContact id='contact' />
 				<BackgroundBeamsWrapper />
 			</Container>
 		</>

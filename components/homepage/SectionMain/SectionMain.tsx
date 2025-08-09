@@ -12,6 +12,7 @@ import {
 	SocialsBlock
 } from './widgets'
 
+
 const container = {
 	hidden: { opacity: 0 },
 	show: {
@@ -36,15 +37,18 @@ const item = {
 
 export const SectionMain = ({
 	className,
-	...rest
-}: ComponentPropsWithoutRef<'section'>) => {
+	id
+}: {
+	className?: string
+	id?: string
+}) => {
 	return (
 		<motion.section
+			id={id}
 			className={cn('grid grid-cols-12 gap-4 mb-24', className)}
 			initial="hidden"
 			animate="show"
 			variants={container}
-			{...rest}
 		>
 			<motion.div variants={item} className="contents">
 				<HeaderBlock />

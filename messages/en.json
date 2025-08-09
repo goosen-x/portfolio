@@ -685,6 +685,29 @@
 		"themeTransitions": {
 			"title": "Theme Transitions",
 			"description": "Experiment with different theme transition animations"
+		},
+		"colorConverter": {
+			"title": "Color Converter",
+			"description": "Convert colors between HEX, RGB, HSL, CMYK, LAB, and other color models",
+			"colorModel": "Color Model",
+			"alphaChannel": "Alpha Channel",
+			"backgroundColor": "Background Color (for RGBA → RGB)",
+			"precision": "Decimal Precision",
+			"preview": "Preview",
+			"previewWithAlpha": "Preview with Alpha",
+			"allConversions": "All Conversions",
+			"helpTitle": "Color Models Explained",
+			"help": {
+				"hex": "Hexadecimal color notation used in web development. Format: #RRGGBB where each pair represents Red, Green, and Blue values from 00 to FF.",
+				"rgb": "Red, Green, Blue color model. Each channel ranges from 0 to 255, representing the intensity of each primary color.",
+				"rgba": "RGB with Alpha channel for transparency. Alpha ranges from 0 (transparent) to 1 (opaque).",
+				"hsl": "Hue, Saturation, Lightness. Hue is a degree on the color wheel (0-360°), Saturation and Lightness are percentages.",
+				"cmyk": "Cyan, Magenta, Yellow, Key (Black). Used in print design, values are percentages of each ink color.",
+				"lab": "Lightness, A (green-red), B (blue-yellow). Device-independent color model based on human perception."
+			},
+			"toast": {
+				"copied": "Color value copied to clipboard"
+			}
 		}
 	},
 	"settings": {

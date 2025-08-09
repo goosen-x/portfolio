@@ -15,8 +15,8 @@ async function listAllPosts() {
 			ORDER BY locale, created_at DESC
 		`
 		
-		const englishPosts = posts.filter(p => p.locale === 'en')
-		const russianPosts = posts.filter(p => p.locale === 'ru')
+		const englishPosts = posts.filter((p: any) => p.locale === 'en')
+		const russianPosts = posts.filter((p: any) => p.locale === 'ru')
 		
 		console.log(`\n📚 Total posts in database: ${posts.length}`)
 		console.log(`🇬🇧 English posts: ${englishPosts.length}`)
@@ -24,7 +24,7 @@ async function listAllPosts() {
 		
 		if (englishPosts.length > 0) {
 			console.log('=== English Posts ===')
-			englishPosts.forEach((post, index) => {
+			englishPosts.forEach((post: any, index: number) => {
 				console.log(`${index + 1}. ${post.title}`)
 				console.log(`   Slug: ${post.slug}`)
 				console.log(`   Published: ${post.published ? 'Yes' : 'No'}\n`)
@@ -33,7 +33,7 @@ async function listAllPosts() {
 		
 		if (russianPosts.length > 0) {
 			console.log('\n=== Russian Posts ===')
-			russianPosts.forEach((post, index) => {
+			russianPosts.forEach((post: any, index: number) => {
 				console.log(`${index + 1}. ${post.title}`)
 				console.log(`   Slug: ${post.slug}`)
 				console.log(`   Published: ${post.published ? 'Yes' : 'No'}\n`)

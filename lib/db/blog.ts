@@ -1,4 +1,5 @@
 import { sql } from './connection'
+import { safeQuery } from './safe-query'
 import type { BlogPost, Author, CreateBlogPostData, UpdateBlogPostData } from '../types/database'
 
 // Get all published blog posts with authors
@@ -24,7 +25,7 @@ export async function getAllPublishedPosts(locale: string = 'en'): Promise<BlogP
 			ORDER BY bp.published_at DESC, bp.created_at DESC
 		`
 
-		return posts.map(post => ({
+		return posts.map((post: any) => ({
 			...post,
 			authors: post.authors?.filter(Boolean) || []
 		})) as BlogPost[]
@@ -64,12 +65,16 @@ export async function getLatestPublishedPosts(locale: string = 'en', limit: numb
 			LIMIT ${limit}
 		`
 
-		return posts.map(post => ({
+		return posts.map((post: any) => ({
 			...post,
 			authors: post.authors?.filter(Boolean) || []
 		})) as BlogPost[]
-	} catch (error) {
-		console.error('Error fetching latest posts:', error)
+	} catch (error: any) {
+		if (error?.message?.includes('timeout') || error?.message?.includes('TimeoutError')) {
+			console.warn('Database connection timeout - returning empty posts')
+		} else {
+			console.error('Error fetching latest posts:', error)
+		}
 		return []
 	}
 }
