@@ -38,6 +38,50 @@
 		"addressCopied": "Address copied to clipboard",
 		"manualTransfer": "Or send directly to this address:"
 	},
+	"Feedback": {
+		"title": "Feedback",
+		"description": "Help us improve by reporting bugs, suggesting features, or sharing your thoughts.",
+		"tabs": {
+			"bug": "Bug Report",
+			"feature": "Feature Request",
+			"general": "General"
+		},
+		"descriptions": {
+			"bug": "Found a bug? Help us fix it by providing details about the issue.",
+			"feature": "Have an idea for improvement? We'd love to hear your suggestions!",
+			"general": "Any other feedback or questions? Let us know!"
+		},
+		"placeholders": {
+			"bug": {
+				"title": "Brief description of the bug",
+				"description": "Steps to reproduce the bug, expected vs actual behavior, browser info..."
+			},
+			"feature": {
+				"title": "Feature title",
+				"description": "Describe your feature idea, use cases, and how it would benefit users..."
+			},
+			"general": {
+				"title": "Subject",
+				"description": "Your message, questions, or feedback..."
+			},
+			"email": "Your email (optional, for follow-up)"
+		},
+		"actions": {
+			"submit": "Submit Feedback"
+		},
+		"states": {
+			"sending": "Sending..."
+		},
+		"validation": {
+			"required": "Please fill in the title and description"
+		},
+		"success": {
+			"submitted": "Thank you! Your feedback has been submitted."
+		},
+		"error": {
+			"failed": "Failed to submit feedback. Please try again."
+		}
+	},
 	"SectionMain": {
 		"language": "en",
 		"job": "Fullstack Developer",

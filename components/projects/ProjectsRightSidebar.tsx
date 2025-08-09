@@ -14,12 +14,14 @@ import {
   BookOpen,
   Lightbulb,
   Heart,
-  Coffee
+  Coffee,
+  MessageSquare
 } from 'lucide-react'
 import { getWidgetById, getWidgetByPath } from '@/lib/constants/widgets'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { CryptoDonationModal } from '@/components/global'
+import { FeedbackModal } from '@/components/feedback'
 
 export function ProjectsRightSidebar() {
   const pathname = usePathname()
@@ -151,6 +153,22 @@ export function ProjectsRightSidebar() {
             <span className="text-sm text-muted-foreground">Avg. session</span>
             <span className="text-sm font-medium">2m 34s</span>
           </div>
+        </CardContent>
+      </Card>
+
+      {/* Feedback Card */}
+      <Card>
+        <CardHeader className="pb-3">
+          <CardTitle className="text-sm flex items-center gap-2">
+            <MessageSquare className="w-4 h-4" />
+            Feedback
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-2">
+          <FeedbackModal variant="sidebar" />
+          <p className="text-xs text-muted-foreground text-center">
+            Help us improve this tool
+          </p>
         </CardContent>
       </Card>
 
