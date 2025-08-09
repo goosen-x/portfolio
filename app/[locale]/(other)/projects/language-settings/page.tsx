@@ -7,7 +7,17 @@ import { Languages, Check } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Card, CardContent } from '@/components/ui/card'
 
-const languages = [
+interface Language {
+  code: string
+  name: string
+  nativeName: string
+  flag: string
+  description: string
+  rtl?: boolean
+  inDevelopment?: boolean
+}
+
+const languages: Language[] = [
   {
     code: 'en',
     name: 'English',
@@ -28,7 +38,8 @@ const languages = [
     nativeName: 'עברית',
     flag: '🇮🇱',
     description: 'ישראל',
-    rtl: true
+    rtl: true,
+    inDevelopment: true
   }
 ]
 
@@ -88,12 +99,15 @@ export default function LanguageSettingsPage() {
               <Card
                 key={language.code}
                 className={cn(
-                  "cursor-pointer transition-all hover:shadow-md",
+                  "transition-all",
+                  language.inDevelopment 
+                    ? "opacity-50 cursor-not-allowed" 
+                    : "cursor-pointer hover:shadow-md",
                   isActive && "ring-2 ring-accent"
                 )}
-                onClick={() => handleLanguageChange(language.code)}
+                onClick={() => !language.inDevelopment && handleLanguageChange(language.code)}
               >
-                <CardContent className="p-6">
+                <CardContent className="p-6 relative">
                   <div className="flex flex-col items-center text-center space-y-4">
                     <div className="text-4xl">
                       {language.flag}
@@ -107,12 +121,16 @@ export default function LanguageSettingsPage() {
                         {language.description}
                       </p>
                     </div>
-                    {isActive && (
+                    {language.inDevelopment ? (
+                      <div className="text-xs text-muted-foreground font-medium">
+                        In Development
+                      </div>
+                    ) : isActive ? (
                       <div className="flex items-center space-x-1 text-accent">
                         <Check className="w-4 h-4" />
                         <span className="text-xs font-medium">Current</span>
                       </div>
-                    )}
+                    ) : null}
                   </div>
                 </CardContent>
               </Card>

@@ -118,9 +118,9 @@ export function ProjectsSidebar() {
 	const widgetT = useTranslations('widgets')
 
 	return (
-		<aside className="w-64 border-r bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+		<aside className="w-64 border-r bg-muted/30 backdrop-blur-sm">
 			<div className="flex h-full flex-col">
-				<div className="border-b px-6 py-4">
+				<div className="border-b bg-background/50 px-6 py-4">
 					<h2 className="text-lg font-semibold">{t('title')}</h2>
 					<p className="text-sm text-muted-foreground mt-1">
 						{t('description')}
@@ -132,11 +132,11 @@ export function ProjectsSidebar() {
 						<Link
 							href={`/${locale}/projects`}
 							className={cn(
-								"flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-colors hover:bg-accent hover:text-accent-foreground",
-								pathname === `/${locale}/projects` && "bg-accent !text-white"
+								"flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-all hover:bg-accent/10 hover:text-foreground",
+								pathname === `/${locale}/projects` && "bg-accent text-white"
 							)}
 						>
-							<Home className={cn("w-4 h-4", pathname === `/${locale}/projects` && "text-white")} />
+							<Home className="w-4 h-4" />
 							<span>Overview</span>
 						</Link>
 
@@ -153,13 +153,13 @@ export function ProjectsSidebar() {
 											key={project.id}
 											href={`/${locale}/projects/${project.id}`}
 											className={cn(
-												"flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-colors hover:bg-accent hover:text-accent-foreground",
-												isActive && "bg-accent !text-white"
+												"flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-all hover:bg-accent/10 hover:text-foreground",
+												isActive && "bg-accent text-white"
 											)}
 										>
-											<project.icon className={cn("w-4 h-4", isActive && "text-white")} />
+											<project.icon className="w-4 h-4" />
 											<span className="flex-1">{widgetT(`${project.id.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase())}.title`)}</span>
-											{isActive && <ChevronRight className="w-4 h-4 text-white" />}
+											{isActive && <ChevronRight className="w-4 h-4" />}
 										</Link>
 									)
 								})}
@@ -177,13 +177,13 @@ export function ProjectsSidebar() {
 											key={project.id}
 											href={`/${locale}/projects/${project.id}`}
 											className={cn(
-												"flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-colors hover:bg-accent hover:text-accent-foreground",
-												isActive && "bg-accent !text-white"
+												"flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-all hover:bg-accent/10 hover:text-foreground",
+												isActive && "bg-accent text-white"
 											)}
 										>
-											<project.icon className={cn("w-4 h-4", isActive && "text-white")} />
+											<project.icon className="w-4 h-4" />
 											<span className="flex-1">{widgetT(`${project.id.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase())}.title`)}</span>
-											{isActive && <ChevronRight className="w-4 h-4 text-white" />}
+											{isActive && <ChevronRight className="w-4 h-4" />}
 										</Link>
 									)
 								})}
@@ -201,13 +201,13 @@ export function ProjectsSidebar() {
 											key={project.id}
 											href={`/${locale}/projects/${project.id}`}
 											className={cn(
-												"flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-colors hover:bg-accent hover:text-accent-foreground",
-												isActive && "bg-accent !text-white"
+												"flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-all hover:bg-accent/10 hover:text-foreground",
+												isActive && "bg-accent text-white"
 											)}
 										>
-											<project.icon className={cn("w-4 h-4", isActive && "text-white")} />
+											<project.icon className="w-4 h-4" />
 											<span className="flex-1">{widgetT(`${project.id.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase())}.title`)}</span>
-											{isActive && <ChevronRight className="w-4 h-4 text-white" />}
+											{isActive && <ChevronRight className="w-4 h-4" />}
 										</Link>
 									)
 								})}
@@ -225,13 +225,13 @@ export function ProjectsSidebar() {
 											key={project.id}
 											href={`/${locale}/projects/${project.id}`}
 											className={cn(
-												"flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-colors hover:bg-accent hover:text-accent-foreground",
-												isActive && "bg-accent !text-white"
+												"flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-all hover:bg-accent/10 hover:text-foreground",
+												isActive && "bg-accent text-white"
 											)}
 										>
-											<project.icon className={cn("w-4 h-4", isActive && "text-white")} />
+											<project.icon className="w-4 h-4" />
 											<span className="flex-1">{widgetT(`${project.id.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase())}.title`)}</span>
-											{isActive && <ChevronRight className="w-4 h-4 text-white" />}
+											{isActive && <ChevronRight className="w-4 h-4" />}
 										</Link>
 									)
 								})}
@@ -249,13 +249,13 @@ export function ProjectsSidebar() {
 											key={project.id}
 											href={`/${locale}/projects/${project.id}`}
 											className={cn(
-												"flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-colors hover:bg-accent hover:text-accent-foreground",
-												isActive && "bg-accent !text-white"
+												"flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-all hover:bg-accent/10 hover:text-foreground",
+												isActive && "bg-accent text-white"
 											)}
 										>
-											<project.icon className={cn("w-4 h-4", isActive && "text-white")} />
+											<project.icon className="w-4 h-4" />
 											<span className="flex-1">{widgetT(`${project.id.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase())}.title`)}</span>
-											{isActive && <ChevronRight className="w-4 h-4 text-white" />}
+											{isActive && <ChevronRight className="w-4 h-4" />}
 										</Link>
 									)
 								})}

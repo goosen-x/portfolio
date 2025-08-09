@@ -9,16 +9,26 @@ export const Footer = async () => {
 
 	return (
 		<footer className='bg-background mx-auto max-w-(--breakpoint-xl) px-4 pb-8 pt-16 sm:px-6 lg:px-8'>
-			<div className='mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-32'>
-				<div className='mx-auto max-w-sm lg:max-w-none'>
-					<p className='mt-4 text-center text-gray-500 lg:text-left lg:text-lg'>
-						{t('slogan')}
-					</p>
+			<div className='grid grid-cols-1 gap-12 lg:grid-cols-2'>
+				<div className='space-y-6'>
+					<div>
+						<h2 className='text-2xl font-bold text-foreground'>goosen.pro</h2>
+						<p className='mt-2 text-muted-foreground lg:text-lg'>
+							{t('slogan')}
+						</p>
+					</div>
 
-					<div className='mt-6 flex justify-center gap-4 lg:justify-start'>
+					<div className='flex gap-4'>
 						{socials.map((social, idx) => (
-							<Link href={social.href} key={idx}>
-								{social.icon}
+							<Link 
+								href={social.href} 
+								key={idx}
+								className='group relative'
+							>
+								<div className='absolute inset-0 rounded-lg bg-accent/20 scale-0 group-hover:scale-100 transition-transform duration-300' />
+								<div className='relative p-2 text-muted-foreground group-hover:text-accent transition-colors duration-300'>
+									{social.icon}
+								</div>
 							</Link>
 						))}
 					</div>

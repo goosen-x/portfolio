@@ -233,7 +233,7 @@
 	},
 	"projectsPage": {
 		"title": "Mini Projects",
-		"description": "A collection of interactive tools and demos built with modern web technologies.",
+		"description": "A collection of interactive tools and demos built with modern web technologies",
 		"mainPageSections": "Main Page",
 		"categories": {
 			"css-tools": {
@@ -268,7 +268,7 @@
 		},
 		"clampCalculator": {
 			"title": "CSS Clamp Calculator",
-			"description": "Create fluid typography and spacing that scales smoothly between viewport sizes.",
+			"description": "Create fluid typography and spacing that scales smoothly between viewport sizes",
 			"values": "Values",
 			"min": "Min",
 			"max": "Max",
@@ -293,7 +293,7 @@
 		},
 		"svgEncoder": {
 			"title": "SVG URL Encoder",
-			"description": "Encode SVG for use in CSS background-image property. Drag & drop SVG files or paste code.",
+			"description": "Encode SVG for use in CSS background-image property. Drag & drop SVG files or paste code",
 			"quotes": "Quotes",
 			"single": "Single",
 			"double": "Double",
@@ -321,7 +321,7 @@
 		},
 		"youtubeThumbnail": {
 			"title": "YouTube Thumbnail Grabber",
-			"description": "Extract thumbnail images from any YouTube video in various resolutions.",
+			"description": "Extract thumbnail images from any YouTube video in various resolutions",
 			"inputLabel": "Enter YouTube URL or Video ID",
 			"example": "Example",
 			"videoId": "Video ID:",
@@ -414,7 +414,7 @@
 		},
 		"qrGenerator": {
 			"title": "QR Code Generator",
-			"description": "Generate QR codes for URLs, App Store links, and WiFi passwords with customizable colors and sizes.",
+			"description": "Generate QR codes for URLs, App Store links, and WiFi passwords with customizable colors and sizes",
 			"settings": "Settings",
 			"preview": "Preview",
 			"download": "Download",
@@ -469,7 +469,7 @@
 		},
 		"speedTest": {
 			"title": "Internet Speed Test",
-			"description": "Test your internet connection speed. Press Enter or Space to start the test.",
+			"description": "Test your internet connection speed. Press Enter or Space to start the test",
 			"download": "Download",
 			"upload": "Upload",
 			"ping": "Latency",
@@ -491,7 +491,7 @@
 			},
 			"info": {
 				"title": "How it works",
-				"description": "This web app measures your internet speed without any software installation. It automatically adjusts test size based on your connection speed.",
+				"description": "This web app measures your internet speed without any software installation. It automatically adjusts test size based on your connection speed",
 				"recommendations": "Speed recommendations for streaming"
 			},
 			"status": {
@@ -525,7 +525,7 @@
 		},
 		"passwordGenerator": {
 			"title": "Password Generator",
-			"description": "Generate strong, secure passwords with customizable options and strength analysis.",
+			"description": "Generate strong, secure passwords with customizable options and strength analysis",
 			"placeholder": "Your generated password",
 			"generate": "Generate New",
 			"copy": "Copy",
@@ -556,7 +556,7 @@
 			},
 			"passphrase": {
 				"title": "Passphrase Generator",
-				"description": "Create memorable passphrases from custom words. Passphrases are easier to remember but still secure.",
+				"description": "Create memorable passphrases from custom words. Passphrases are easier to remember but still secure",
 				"words": "Word List",
 				"placeholder": "coffee mountain bicycle sunset ocean thunder",
 				"hint": "Enter at least 4 words. The generator will randomly select and combine them.",
@@ -591,7 +591,7 @@
 		},
 		"utmBuilder": {
 			"title": "UTM Link Builder",
-			"description": "Create tracking links with UTM parameters for your marketing campaigns.",
+			"description": "Create tracking links with UTM parameters for your marketing campaigns",
 			"tabs": {
 				"builder": "Builder",
 				"parameters": "Parameters",
@@ -643,15 +643,15 @@
 		},
 		"themeSettings": {
 			"title": "Theme Settings",
-			"description": "Customize the appearance of the site with theme preferences and color modes."
+			"description": "Customize the appearance of the site with theme preferences and color modes"
 		},
 		"languageSettings": {
 			"title": "Language Settings",
-			"description": "Change the display language and regional preferences for the interface."
+			"description": "Change the display language and regional preferences for the interface"
 		},
 		"cssSpecificity": {
 			"title": "CSS Specificity Calculator",
-			"description": "Analyze CSS selector specificity to understand cascade rules and optimize your stylesheets.",
+			"description": "Analyze CSS selector specificity to understand cascade rules and optimize your stylesheets",
 			"input": "CSS Selectors",
 			"results": "Specificity Analysis",
 			"placeholder": "Enter CSS selectors, one per line or paste complete CSS rules...\n\nExamples:\nbody\n.header\n#main-content\nnav ul li a\n\nOr paste CSS:\n.card '{ color: red; }'\n#header > nav '{ ... }'",
@@ -663,7 +663,7 @@
 			"emptyState": "Enter CSS selectors to analyze their specificity",
 			"howItWorks": {
 				"title": "How CSS Specificity Works",
-				"description": "CSS specificity determines which styles are applied when multiple rules target the same element. It's calculated using a four-part value: inline styles, IDs, classes/attributes/pseudo-classes, and elements.",
+				"description": "CSS specificity determines which styles are applied when multiple rules target the same element. It's calculated using a four-part value: inline styles, IDs, classes/attributes/pseudo-classes, and elements",
 				"calculation": "Specificity Calculation",
 				"inline": "Inline styles",
 				"id": "ID selectors (#id)",

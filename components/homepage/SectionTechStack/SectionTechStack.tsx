@@ -154,7 +154,6 @@ export const SectionTechStack = ({
 								"absolute top-0 right-0 w-20 h-20 opacity-0 transition-opacity duration-300",
 								activeCategory === category.name && "opacity-100"
 							)}>
-								<div className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-accent/20 to-transparent rounded-tr-2xl" />
 								<div className="absolute top-2 right-2 w-2 h-2 bg-accent rounded-full animate-pulse" />
 							</div>
 						</div>
