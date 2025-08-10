@@ -569,3 +569,33 @@ pre[class*='language-'] {
 .scrollbar-hide::-webkit-scrollbar {
 	display: none; /* Chrome, Safari and Opera */
 }
+
+/* Sonner Toast Styles - Fix transparency issue */
+[data-sonner-toast] {
+	background: hsl(var(--card)) !important;
+	border: 1px solid hsl(var(--border)) !important;
+	box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1) !important;
+}
+
+[data-sonner-toast] [data-content] {
+	color: hsl(var(--card-foreground)) !important;
+	opacity: 1 !important;
+}
+
+[data-sonner-toast][data-type="success"] [data-icon] svg {
+	color: hsl(142.1 76.2% 36.3%) !important;
+}
+
+[data-sonner-toast][data-type="error"] [data-icon] svg {
+	color: hsl(0 84.2% 60.2%) !important;
+}
+
+/* Dark mode adjustments */
+.dark [data-sonner-toast] {
+	background: hsl(var(--card)) !important;
+	border: 1px solid hsl(var(--border)) !important;
+}
+
+.dark [data-sonner-toast] [data-content] {
+	color: hsl(var(--card-foreground)) !important;
+}

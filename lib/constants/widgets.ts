@@ -17,7 +17,45 @@ import {
   Languages,
   Hash,
   Users,
-  Timer
+  Timer,
+  Mail,
+  Database,
+  Type,
+  Dices,
+  Percent,
+  Monitor,
+  Shuffle,
+  List,
+  Coins,
+  Globe,
+  Braces,
+  MessageSquare,
+  Smile,
+  Volume2,
+  Zap,
+  Bug,
+  Calculator,
+  Thermometer,
+  Weight,
+  FileSearch,
+  Clock,
+  DollarSign,
+  GitCompare,
+  Code,
+  Search,
+  TestTube,
+  Binary,
+  Droplet,
+  Square,
+  Layers,
+  Circle,
+  Sparkles,
+  FileJson,
+  Lock,
+  Fingerprint,
+  TrendingUp,
+  CreditCard,
+  Fuel
 } from 'lucide-react'
 export interface WidgetFAQ {
   question: string
@@ -27,7 +65,7 @@ export interface WidgetFAQ {
 export interface Widget {
   id: string
   icon: React.ComponentType<{ className?: string }>
-  category: 'css' | 'media' | 'dev' | 'productivity' | 'settings'
+  category: 'css' | 'media' | 'dev' | 'productivity'
   translationKey: string
   path: string
   gradient: string
@@ -50,7 +88,7 @@ export const widgets: Widget[] = [
     icon: Ruler,
     category: 'css',
     translationKey: 'clampCalculator',
-    path: 'clamp-calculator',
+    path: 'css-clamp-calculator',
     gradient: 'from-amber-500 to-orange-500',
     recommendedTools: ['flexbox-generator', 'grid-generator', 'bezier-curve'],
     difficulty: 'intermediate',
@@ -209,7 +247,7 @@ export const widgets: Widget[] = [
     icon: Hash,
     category: 'css',
     translationKey: 'cssSpecificity',
-    path: 'css-specificity',
+    path: 'css-specificity-calculator',
     gradient: 'from-indigo-500 to-blue-600',
     recommendedTools: ['html-tree', 'flexbox-generator', 'grid-generator'],
     difficulty: 'advanced',
@@ -266,7 +304,7 @@ export const widgets: Widget[] = [
     icon: Spline,
     category: 'css',
     translationKey: 'bezierCurve',
-    path: 'bezier-curve',
+    path: 'css-bezier-curve-generator',
     gradient: 'from-purple-500 to-indigo-500',
     recommendedTools: ['css-clamp-calculator', 'flexbox-generator'],
     difficulty: 'intermediate',
@@ -325,7 +363,7 @@ export const widgets: Widget[] = [
     icon: FileImage,
     category: 'media',
     translationKey: 'svgEncoder',
-    path: 'svg-encoder',
+    path: 'svg-to-base64-encoder',
     gradient: 'from-teal-500 to-cyan-500',
     recommendedTools: ['qr-generator', 'color-converter', 'youtube-thumbnail'],
     difficulty: 'beginner',
@@ -382,7 +420,7 @@ export const widgets: Widget[] = [
     icon: Youtube,
     category: 'media',
     translationKey: 'youtubeThumbnail',
-    path: 'youtube-thumbnail',
+    path: 'youtube-thumbnail-downloader',
     gradient: 'from-red-500 to-pink-500',
     recommendedTools: ['qr-generator', 'svg-encoder', 'utm-builder'],
     difficulty: 'beginner',
@@ -555,7 +593,7 @@ export const widgets: Widget[] = [
     icon: GitBranch,
     category: 'dev',
     translationKey: 'htmlTree',
-    path: 'html-tree',
+    path: 'html-tree-visualizer',
     gradient: 'from-purple-500 to-indigo-500',
     recommendedTools: ['css-specificity', 'speed-test', 'flexbox-generator'],
     difficulty: 'intermediate',
@@ -612,7 +650,7 @@ export const widgets: Widget[] = [
     icon: Gauge,
     category: 'dev',
     translationKey: 'speedTest',
-    path: 'speed-test',
+    path: 'internet-speed-test',
     gradient: 'from-slate-500 to-gray-600',
     recommendedTools: ['html-tree', 'css-specificity', 'svg-encoder'],
     difficulty: 'beginner',
@@ -660,6 +698,63 @@ export const widgets: Widget[] = [
         {
           question: 'איזו מהירות אני צריך?',
           answer: 'גלישה בסיסית צריכה 5-10 Mbps, סטרימינג HD דורש 25 Mbps, סטרימינג 4K צריך 50+ Mbps, ומשחקים אונליין נהנים יותר מהשהיה נמוכה מאשר רוחב פס גבוה.'
+        }
+      ]
+    }
+  },
+  {
+    id: 'mock-data-generator',
+    icon: Database,
+    category: 'dev',
+    translationKey: 'mockDataGenerator',
+    path: 'mock-data-generator',
+    gradient: 'from-emerald-500 to-teal-600',
+    recommendedTools: ['html-tree', 'speed-test', 'qr-generator'],
+    difficulty: 'beginner',
+    tags: ['api', 'mock', 'data', 'json', 'testing', 'development'],
+    useCase: 'Fetch sample data from popular free public APIs for testing and prototyping',
+    metaDescription: 'Mock data generator using free public APIs. Get sample users, posts, products, and more.',
+    faqs: {
+      en: [
+        {
+          question: 'What APIs are included?',
+          answer: 'Popular free APIs like JSONPlaceholder, RandomUser, FakeStore API, PokeAPI, and more. All are CORS-enabled and require no authentication.'
+        },
+        {
+          question: 'Can I use this data in production?',
+          answer: 'These APIs provide mock data for testing and development. For production, you should use your own data sources or check each API\'s terms of service.'
+        },
+        {
+          question: 'Are there rate limits?',
+          answer: 'Most APIs have generous or unlimited rate limits for basic usage. Specific limits are shown for each API endpoint.'
+        }
+      ],
+      ru: [
+        {
+          question: 'Какие API включены?',
+          answer: 'Популярные бесплатные API, такие как JSONPlaceholder, RandomUser, FakeStore API, PokeAPI и другие. Все поддерживают CORS и не требуют аутентификации.'
+        },
+        {
+          question: 'Можно ли использовать эти данные в продакшене?',
+          answer: 'Эти API предоставляют моковые данные для тестирования и разработки. Для продакшена используйте собственные источники данных или проверьте условия использования каждого API.'
+        },
+        {
+          question: 'Есть ли ограничения по запросам?',
+          answer: 'Большинство API имеют щедрые или неограниченные лимиты для базового использования. Конкретные лимиты показаны для каждой конечной точки API.'
+        }
+      ],
+      he: [
+        {
+          question: 'אילו APIs כלולים?',
+          answer: 'APIs חינמיים פופולריים כמו JSONPlaceholder, RandomUser, FakeStore API, PokeAPI ועוד. כולם תומכים ב-CORS ולא דורשים אימות.'
+        },
+        {
+          question: 'האם אפשר להשתמש בנתונים האלה בייצור?',
+          answer: 'ה-APIs האלה מספקים נתוני דמה לבדיקות ופיתוח. לייצור, השתמשו במקורות נתונים משלכם או בדקו את תנאי השימוש של כל API.'
+        },
+        {
+          question: 'האם יש מגבלות קצב?',
+          answer: 'לרוב ה-APIs יש מגבלות נדיבות או בלתי מוגבלות לשימוש בסיסי. מגבלות ספציפיות מוצגות לכל נקודת קצה של API.'
         }
       ]
     }
@@ -728,7 +823,7 @@ export const widgets: Widget[] = [
     icon: LinkIcon,
     category: 'productivity',
     translationKey: 'utmBuilder',
-    path: 'utm-builder',
+    path: 'utm-link-builder',
     gradient: 'from-pink-500 to-rose-500',
     recommendedTools: ['qr-generator', 'seo-markdown-generator', 'youtube-thumbnail'],
     difficulty: 'beginner',
@@ -756,7 +851,7 @@ export const widgets: Widget[] = [
     translationKey: 'teamRandomizer',
     path: 'team-randomizer',
     gradient: 'from-indigo-500 to-purple-600',
-    recommendedTools: ['password-generator', 'qr-generator', 'utm-builder'],
+    recommendedTools: ['password-generator', 'qr-generator', 'utm-builder', 'draw-lots'],
     difficulty: 'beginner',
     tags: ['team', 'random', 'groups', 'picker', 'fair'],
     useCase: 'Randomly distribute people into balanced teams for games, work or activities',
@@ -802,6 +897,63 @@ export const widgets: Widget[] = [
         {
           question: 'מה המספר המקסימלי של אנשים?',
           answer: 'הכלי יכול לטפל במאות משתתפים ביעילות. לתוצאות טובות יותר, שמרו על שמות עד 50 תווים.'
+        }
+      ]
+    }
+  },
+  {
+    id: 'draw-lots',
+    icon: Shuffle,
+    category: 'productivity',
+    translationKey: 'drawLots',
+    path: 'draw-lots',
+    gradient: 'from-purple-500 to-pink-600',
+    recommendedTools: ['team-randomizer', 'random-number-generator', 'password-generator'],
+    difficulty: 'beginner',
+    tags: ['random', 'draw', 'lots', 'picker', 'selection', 'straws'],
+    useCase: 'Draw lots digitally - pick names, make decisions, or select winners fairly',
+    metaDescription: 'Digital draw lots tool. Draw straws, pick cards randomly for fair selection and decision making.',
+    faqs: {
+      en: [
+        {
+          question: 'How does the draw lots system work?',
+          answer: 'Items are converted into cards and shuffled using the Fisher-Yates algorithm. You can then click any card to reveal your random selection.'
+        },
+        {
+          question: 'Can I draw multiple lots?',
+          answer: 'No, only one card can be selected per draw to ensure fairness. Reset and draw again for multiple selections.'
+        },
+        {
+          question: 'Is this truly random?',
+          answer: 'Yes! The Fisher-Yates shuffle algorithm provides mathematically proven random distribution, ensuring every item has an equal chance of being selected.'
+        }
+      ],
+      ru: [
+        {
+          question: 'Как работает система жеребьёвки?',
+          answer: 'Элементы преобразуются в карточки и перемешиваются с использованием алгоритма Фишера-Йетса. Затем вы можете нажать на любую карточку, чтобы открыть случайный выбор.'
+        },
+        {
+          question: 'Можно ли вытянуть несколько жребиев?',
+          answer: 'Нет, за один раз можно выбрать только одну карточку для обеспечения справедливости. Сбросьте и тяните снова для множественного выбора.'
+        },
+        {
+          question: 'Это действительно случайно?',
+          answer: 'Да! Алгоритм перемешивания Фишера-Йетса обеспечивает математически доказанное случайное распределение, гарантируя, что каждый элемент имеет равные шансы быть выбранным.'
+        }
+      ],
+      he: [
+        {
+          question: 'איך מערכת ההגרלה עובדת?',
+          answer: 'פריטים הופכים לכרטיסים ומעורבבים באמצעות אלגוריתם פישר-יטס. אז אתם יכולים ללחוץ על כל כרטיס כדי לחשוף את הבחירה האקראית שלכם.'
+        },
+        {
+          question: 'האם אפשר למשוך כמה גורלות?',
+          answer: 'לא, ניתן לבחור רק כרטיס אחד בכל הגרלה כדי להבטיח הוגנות. אפסו והגרילו שוב לבחירות מרובות.'
+        },
+        {
+          question: 'האם זה באמת אקראי?',
+          answer: 'כן! אלגוריתם הערבוב פישר-יטס מספק חלוקה אקראית מוכחת מתמטית, מבטיח שלכל פריט יש סיכוי שווה להיבחר.'
         }
       ]
     }
@@ -863,33 +1015,1429 @@ export const widgets: Widget[] = [
       ]
     }
   },
-
-  // Settings
   {
-    id: 'theme-settings',
-    icon: SunMoon,
-    category: 'settings',
-    translationKey: 'themeSettings',
-    path: 'theme-settings',
-    gradient: 'from-gray-500 to-slate-600',
-    recommendedTools: ['language-settings', 'color-converter'],
+    id: 'special-symbols-picker',
+    icon: Type,
+    category: 'productivity',
+    translationKey: 'specialSymbolsPicker',
+    path: 'special-symbols-picker',
+    gradient: 'from-violet-500 to-indigo-600',
+    recommendedTools: ['password-generator', 'qr-generator', 'utm-builder', 'fancy-text-generator'],
     difficulty: 'beginner',
-    tags: ['theme', 'dark', 'light', 'settings', 'preferences'],
-    useCase: 'Switch between light and dark theme modes',
-    metaDescription: 'Theme switcher for light and dark modes. Customize your viewing experience.'
+    tags: ['symbols', 'unicode', 'characters', 'copy', 'paste'],
+    useCase: 'Quickly copy special symbols and Unicode characters for use in any text',
+    metaDescription: 'Special symbols picker with one-click copy. Access Unicode symbols, emojis, and special characters.',
+    faqs: {
+      en: [
+        {
+          question: 'What are Unicode symbols?',
+          answer: 'Unicode symbols are standardized characters that work across different platforms and applications. They include mathematical symbols, arrows, currency signs, and decorative characters.'
+        },
+        {
+          question: 'How do I use these symbols?',
+          answer: 'Simply click any symbol to copy it to your clipboard, then paste it anywhere you need it - in documents, social media, emails, or any text field.'
+        },
+        {
+          question: 'Will these symbols work everywhere?',
+          answer: 'Most modern applications support Unicode symbols. However, display may vary depending on the font and platform being used.'
+        }
+      ],
+      ru: [
+        {
+          question: 'Что такое символы Unicode?',
+          answer: 'Символы Unicode - это стандартизированные символы, которые работают на разных платформах и в приложениях. Они включают математические символы, стрелки, знаки валют и декоративные символы.'
+        },
+        {
+          question: 'Как использовать эти символы?',
+          answer: 'Просто нажмите на любой символ, чтобы скопировать его в буфер обмена, затем вставьте его где угодно - в документах, социальных сетях, электронной почте или любом текстовом поле.'
+        },
+        {
+          question: 'Будут ли эти символы работать везде?',
+          answer: 'Большинство современных приложений поддерживают символы Unicode. Однако отображение может отличаться в зависимости от используемого шрифта и платформы.'
+        }
+      ],
+      he: [
+        {
+          question: 'מה הם סמלי Unicode?',
+          answer: 'סמלי Unicode הם תווים סטנדרטיים שעובדים על פני פלטפורמות ויישומים שונים. הם כוללים סמלים מתמטיים, חצים, סימני מטבע ותווים דקורטיביים.'
+        },
+        {
+          question: 'איך משתמשים בסמלים האלה?',
+          answer: 'פשוט לחצו על כל סמל כדי להעתיק אותו ללוח, ואז הדביקו אותו בכל מקום שאתם צריכים - במסמכים, רשתות חברתיות, אימיילים או כל שדה טקסט.'
+        },
+        {
+          question: 'האם הסמלים האלה יעבדו בכל מקום?',
+          answer: 'רוב היישומים המודרניים תומכים בסמלי Unicode. עם זאת, התצוגה עשויה להשתנות בהתאם לגופן ולפלטפורמה בשימוש.'
+        }
+      ]
+    }
   },
   {
-    id: 'language-settings',
-    icon: Languages,
-    category: 'settings',
-    translationKey: 'languageSettings',
-    path: 'language-settings',
-    gradient: 'from-blue-500 to-cyan-500',
-    recommendedTools: ['theme-settings'],
+    id: 'fancy-text-generator',
+    icon: Type,
+    category: 'productivity',
+    translationKey: 'fancyTextGenerator',
+    path: 'fancy-text-generator',
+    gradient: 'from-fuchsia-500 to-pink-600',
+    recommendedTools: ['special-symbols-picker', 'password-generator', 'seo-markdown-generator'],
     difficulty: 'beginner',
-    tags: ['language', 'i18n', 'locale', 'settings', 'translation'],
-    useCase: 'Change interface language between English, Russian, and Hebrew',
-    metaDescription: 'Language settings for multilingual support. Switch between English, Russian, and Hebrew.'
+    tags: ['text', 'unicode', 'fonts', 'style', 'generator'],
+    useCase: 'Transform plain text into stylish Unicode fonts for social media and creative projects',
+    metaDescription: 'Fancy text generator with Unicode fonts. Convert text to bold, italic, script, and decorative styles.',
+    faqs: {
+      en: [
+        {
+          question: 'How do fancy text fonts work?',
+          answer: 'These aren\'t actual fonts but Unicode characters that look like different font styles. They work anywhere Unicode is supported without installing fonts.'
+        },
+        {
+          question: 'Where can I use fancy text?',
+          answer: 'Use fancy text on social media (Instagram, Twitter, Facebook), messaging apps, usernames, bios, and anywhere that supports Unicode text input.'
+        },
+        {
+          question: 'Why do some styles look broken?',
+          answer: 'Not all platforms support every Unicode character. If a style appears broken, try a different one or use it on a platform with better Unicode support.'
+        }
+      ],
+      ru: [
+        {
+          question: 'Как работают красивые шрифты?',
+          answer: 'Это не настоящие шрифты, а символы Unicode, которые выглядят как разные стили шрифтов. Они работают везде, где поддерживается Unicode, без установки шрифтов.'
+        },
+        {
+          question: 'Где можно использовать красивый текст?',
+          answer: 'Используйте красивый текст в социальных сетях (Instagram, Twitter, Facebook), мессенджерах, именах пользователей, био и везде, где поддерживается ввод Unicode.'
+        },
+        {
+          question: 'Почему некоторые стили выглядят сломанными?',
+          answer: 'Не все платформы поддерживают каждый символ Unicode. Если стиль выглядит сломанным, попробуйте другой или используйте на платформе с лучшей поддержкой Unicode.'
+        }
+      ],
+      he: [
+        {
+          question: 'איך עובדים פונטים מעוצבים?',
+          answer: 'אלה לא פונטים אמיתיים אלא תווי Unicode שנראים כמו סגנונות פונט שונים. הם עובדים בכל מקום שתומך ב-Unicode ללא התקנת פונטים.'
+        },
+        {
+          question: 'איפה אפשר להשתמש בטקסט מעוצב?',
+          answer: 'השתמשו בטקסט מעוצב ברשתות חברתיות (אינסטגרם, טוויטר, פייסבוק), אפליקציות הודעות, שמות משתמש, ביו ובכל מקום שתומך בקלט טקסט Unicode.'
+        },
+        {
+          question: 'למה חלק מהסגנונות נראים שבורים?',
+          answer: 'לא כל הפלטפורמות תומכות בכל תו Unicode. אם סגנון נראה שבור, נסו אחר או השתמשו בפלטפורמה עם תמיכה טובה יותר ב-Unicode.'
+        }
+      ]
+    }
+  },
+  {
+    id: 'random-number-generator',
+    icon: Dices,
+    category: 'productivity',
+    translationKey: 'randomNumberGenerator',
+    path: 'random-number-generator',
+    gradient: 'from-cyan-500 to-blue-600',
+    recommendedTools: ['password-generator', 'team-randomizer', 'fancy-text-generator'],
+    difficulty: 'beginner',
+    tags: ['random', 'number', 'generator', 'crypto', 'secure'],
+    useCase: 'Generate cryptographically secure random numbers for games, lottery, or cryptographic applications',
+    metaDescription: 'Cryptographically secure random number generator. Generate random numbers with no duplicates option.',
+    faqs: {
+      en: [
+        {
+          question: 'How secure are these random numbers?',
+          answer: 'This generator uses the Web Crypto API (crypto.getRandomValues) which provides cryptographically secure random numbers suitable for most cryptographic applications.'
+        },
+        {
+          question: 'What\'s the difference from Math.random()?',
+          answer: 'Unlike Math.random() which is predictable and not secure, crypto.getRandomValues() uses the operating system\'s entropy source to generate truly random numbers.'
+        },
+        {
+          question: 'Can I use this for lottery or gambling?',
+          answer: 'While the numbers are cryptographically secure, please follow local laws and regulations. The user is responsible for any legal compliance.'
+        }
+      ],
+      ru: [
+        {
+          question: 'Насколько безопасны эти случайные числа?',
+          answer: 'Этот генератор использует Web Crypto API (crypto.getRandomValues), который предоставляет криптографически безопасные случайные числа, подходящие для большинства криптографических приложений.'
+        },
+        {
+          question: 'В чём отличие от Math.random()?',
+          answer: 'В отличие от Math.random(), который предсказуем и небезопасен, crypto.getRandomValues() использует источник энтропии операционной системы для генерации действительно случайных чисел.'
+        },
+        {
+          question: 'Можно ли использовать для лотереи или азартных игр?',
+          answer: 'Хотя числа криптографически безопасны, пожалуйста, следуйте местным законам и правилам. Пользователь несёт ответственность за соблюдение законодательства.'
+        }
+      ],
+      he: [
+        {
+          question: 'כמה מאובטחים המספרים האקראיים האלה?',
+          answer: 'מחולל זה משתמש ב-Web Crypto API (crypto.getRandomValues) המספק מספרים אקראיים מאובטחים קריפטוגרפית המתאימים לרוב היישומים הקריפטוגרפיים.'
+        },
+        {
+          question: 'מה ההבדל מ-Math.random()?',
+          answer: 'בניגוד ל-Math.random() שניתן לחיזוי ולא מאובטח, crypto.getRandomValues() משתמש במקור האנטרופיה של מערכת ההפעלה ליצירת מספרים אקראיים באמת.'
+        },
+        {
+          question: 'האם אפשר להשתמש בזה להגרלה או הימורים?',
+          answer: 'למרות שהמספרים מאובטחים קריפטוגרפית, אנא עקבו אחר החוקים והתקנות המקומיים. המשתמש אחראי לכל ציות לחוק.'
+        }
+      ]
+    }
+  },
+  {
+    id: 'percentage-calculator',
+    icon: Percent,
+    category: 'productivity',
+    translationKey: 'percentageCalculator',
+    path: 'percentage-calculator',
+    gradient: 'from-amber-500 to-orange-600',
+    recommendedTools: ['random-number-generator', 'password-generator'],
+    difficulty: 'beginner',
+    tags: ['calculator', 'percentage', 'math', 'finance', 'discount'],
+    useCase: 'Calculate percentages for discounts, taxes, tips, investments, and price changes',
+    metaDescription: 'Percentage calculator for multiple scenarios. Calculate discounts, taxes, tips, and percentage changes.',
+    faqs: {
+      en: [
+        {
+          question: 'What calculations can this tool perform?',
+          answer: 'This calculator handles 6 common percentage scenarios: finding X% of Y, finding the base number, finding 100%, calculating percentage change, and adding/subtracting percentages.'
+        },
+        {
+          question: 'How do I calculate a discount?',
+          answer: 'Use the "Subtract %" tab. Enter the original price and the discount percentage to see the final price after discount.'
+        },
+        {
+          question: 'How do I calculate tax?',
+          answer: 'Use the "Add %" tab. Enter the price and the tax percentage to see the total price including tax.'
+        }
+      ],
+      ru: [
+        {
+          question: 'Какие расчёты может выполнять этот инструмент?',
+          answer: 'Этот калькулятор обрабатывает 6 распространённых сценариев с процентами: нахождение X% от Y, нахождение базового числа, нахождение 100%, расчёт процентного изменения и добавление/вычитание процентов.'
+        },
+        {
+          question: 'Как рассчитать скидку?',
+          answer: 'Используйте вкладку "Вычесть %". Введите исходную цену и процент скидки, чтобы увидеть итоговую цену после скидки.'
+        },
+        {
+          question: 'Как рассчитать налог?',
+          answer: 'Используйте вкладку "Добавить %". Введите цену и процент налога, чтобы увидеть общую цену с учётом налога.'
+        }
+      ],
+      he: [
+        {
+          question: 'אילו חישובים הכלי הזה יכול לבצע?',
+          answer: 'מחשבון זה מטפל ב-6 תרחישי אחוזים נפוצים: מציאת X% מ-Y, מציאת המספר הבסיסי, מציאת 100%, חישוב שינוי באחוזים והוספה/הפחתת אחוזים.'
+        },
+        {
+          question: 'איך מחשבים הנחה?',
+          answer: 'השתמשו בכרטיסייה "הפחת %". הזינו את המחיר המקורי ואת אחוז ההנחה כדי לראות את המחיר הסופי אחרי ההנחה.'
+        },
+        {
+          question: 'איך מחשבים מס?',
+          answer: 'השתמשו בכרטיסייה "הוסף %". הזינו את המחיר ואת אחוז המס כדי לראות את המחיר הכולל כולל מס.'
+        }
+      ]
+    }
+  },
+  {
+    id: 'random-list-generator',
+    icon: List,
+    category: 'productivity',
+    translationKey: 'randomListGenerator',
+    path: 'random-list-generator',
+    gradient: 'from-violet-500 to-purple-600',
+    recommendedTools: ['draw-lots', 'random-number-generator', 'team-randomizer'],
+    difficulty: 'beginner',
+    tags: ['random', 'list', 'shuffle', 'sort', 'generator', 'cryptographic'],
+    useCase: 'Randomly shuffle and sort lists with cryptographically secure randomization',
+    metaDescription: 'Random list generator using crypto.getRandomValues. Shuffle names, items, or numbers with true randomness.',
+    faqs: {
+      en: [
+        {
+          question: 'How does the randomization work?',
+          answer: 'The tool uses the Fisher-Yates shuffle algorithm with crypto.getRandomValues() for cryptographically secure randomness, which is more random than Math.random().'
+        },
+        {
+          question: 'Is my data safe?',
+          answer: 'Yes! All processing happens in your browser. No data is sent to any server. Your lists remain completely private.'
+        },
+        {
+          question: 'What\'s the maximum number of items?',
+          answer: 'You can shuffle up to 10,000 items at once. For larger lists, consider splitting them into smaller batches for better performance.'
+        },
+        {
+          question: 'Can I save my shuffled lists?',
+          answer: 'Yes, you can download the shuffled results as a text file or copy them to your clipboard for use in other applications.'
+        }
+      ],
+      ru: [
+        {
+          question: 'Как работает рандомизация?',
+          answer: 'Инструмент использует алгоритм перемешивания Фишера-Йетса с crypto.getRandomValues() для криптографически безопасной случайности, что более случайно, чем Math.random().'
+        },
+        {
+          question: 'Безопасны ли мои данные?',
+          answer: 'Да! Вся обработка происходит в вашем браузере. Никакие данные не отправляются на сервер. Ваши списки остаются полностью конфиденциальными.'
+        },
+        {
+          question: 'Какое максимальное количество элементов?',
+          answer: 'Вы можете перемешать до 10 000 элементов за раз. Для больших списков рекомендуется разделить их на меньшие части для лучшей производительности.'
+        },
+        {
+          question: 'Могу ли я сохранить перемешанные списки?',
+          answer: 'Да, вы можете скачать результаты как текстовый файл или скопировать их в буфер обмена для использования в других приложениях.'
+        }
+      ],
+      he: [
+        {
+          question: 'איך האקראיות עובדת?',
+          answer: 'הכלי משתמש באלגוריתם הערבוב פישר-יטס עם crypto.getRandomValues() לאקראיות קריפטוגרפית מאובטחת, שהיא יותר אקראית מ-Math.random().'
+        },
+        {
+          question: 'האם הנתונים שלי בטוחים?',
+          answer: 'כן! כל העיבוד מתרחש בדפדפן שלך. שום נתונים לא נשלחים לשרת. הרשימות שלך נשארות פרטיות לחלוטין.'
+        },
+        {
+          question: 'מה המספר המקסימלי של פריטים?',
+          answer: 'ניתן לערבב עד 10,000 פריטים בבת אחת. לרשימות גדולות יותר, שקלו לחלק אותן לקבוצות קטנות יותר לביצועים טובים יותר.'
+        },
+        {
+          question: 'האם אני יכול לשמור רשימות מעורבבות?',
+          answer: 'כן, אתם יכולים להוריד את התוצאות כקובץ טקסט או להעתיק אותן ללוח העריכה לשימוש ביישומים אחרים.'
+        }
+      ]
+    }
+  },
+  {
+    id: 'coin-flip',
+    icon: Coins,
+    category: 'productivity',
+    translationKey: 'coinFlip',
+    path: 'coin-flip',
+    gradient: 'from-amber-500 to-yellow-600',
+    recommendedTools: ['draw-lots', 'random-number-generator', 'random-list-generator'],
+    difficulty: 'beginner',
+    tags: ['coin', 'flip', 'random', 'decision', 'heads', 'tails', '3d'],
+    useCase: 'Flip a coin online with realistic 3D animation for making quick decisions',
+    metaDescription: 'Online coin flip with 3D animation. Heads or tails with multiple coin types and statistics.',
+    faqs: {
+      en: [
+        {
+          question: 'Is the coin flip truly random?',
+          answer: 'Yes! The tool uses crypto.getRandomValues() for cryptographically secure randomness, ensuring each flip has exactly 50% chance for heads or tails.'
+        },
+        {
+          question: 'Can I use different types of coins?',
+          answer: 'Yes, you can choose from US Dollar, Euro, Russian Ruble, or a generic coin. Each has authentic heads and tails designs.'
+        },
+        {
+          question: 'Is my flip history saved?',
+          answer: 'Your flip history is saved locally in your browser. It persists between sessions but is never sent to any server.'
+        },
+        {
+          question: 'What do the statistics show?',
+          answer: 'The statistics display the total number and percentage of heads vs tails outcomes, helping you verify the randomness over many flips.'
+        }
+      ],
+      ru: [
+        {
+          question: 'Действительно ли бросок монеты случайный?',
+          answer: 'Да! Инструмент использует crypto.getRandomValues() для криптографически безопасной случайности, обеспечивая ровно 50% шанс для орла или решки.'
+        },
+        {
+          question: 'Могу ли я использовать разные типы монет?',
+          answer: 'Да, вы можете выбрать доллар США, евро, российский рубль или обычную монету. У каждой есть аутентичный дизайн орла и решки.'
+        },
+        {
+          question: 'Сохраняется ли история бросков?',
+          answer: 'История бросков сохраняется локально в вашем браузере. Она сохраняется между сеансами, но никогда не отправляется на сервер.'
+        },
+        {
+          question: 'Что показывает статистика?',
+          answer: 'Статистика отображает общее количество и процент выпадений орла против решки, помогая проверить случайность на множестве бросков.'
+        }
+      ],
+      he: [
+        {
+          question: 'האם הטלת המטבע באמת אקראית?',
+          answer: 'כן! הכלי משתמש ב-crypto.getRandomValues() לאקראיות קריפטוגרפית מאובטחת, מבטיח שלכל הטלה יש בדיוק 50% סיכוי לעץ או פלי.'
+        },
+        {
+          question: 'האם אני יכול להשתמש בסוגי מטבעות שונים?',
+          answer: 'כן, אתם יכולים לבחור מדולר אמריקאי, יורו, רובל רוסי, או מטבע כללי. לכל אחד יש עיצוב אותנטי של עץ ופלי.'
+        },
+        {
+          question: 'האם היסטוריית ההטלות נשמרת?',
+          answer: 'היסטוריית ההטלות נשמרת מקומית בדפדפן שלך. היא נשמרת בין הפעלות אך לעולם לא נשלחת לשרת כלשהו.'
+        },
+        {
+          question: 'מה הסטטיסטיקה מראה?',
+          answer: 'הסטטיסטיקה מציגה את המספר הכולל והאחוז של תוצאות עץ מול פלי, עוזרת לאמת את האקראיות על פני הטלות רבות.'
+        }
+      ]
+    }
+  },
+  {
+    id: 'world-time',
+    icon: Globe,
+    category: 'productivity',
+    translationKey: 'worldTime',
+    path: 'world-time',
+    gradient: 'from-blue-500 to-cyan-600',
+    recommendedTools: ['pomodoro-timer', 'unit-converter', 'speed-test'],
+    difficulty: 'beginner',
+    tags: ['time', 'timezone', 'world', 'clock', 'converter', 'dst'],
+    useCase: 'Track time across multiple cities and convert between timezones',
+    metaDescription: 'World time converter with live clocks for multiple cities. Convert times between any timezone.',
+    faqs: {
+      en: [
+        {
+          question: 'How accurate are the timezone calculations?',
+          answer: 'The tool uses the IANA timezone database through the browser\'s Intl API, providing accurate times that automatically account for daylight saving time changes.'
+        },
+        {
+          question: 'Can I add custom cities?',
+          answer: 'Yes! You can add any city from the dropdown menu. The tool includes major cities worldwide and supports all standard timezones.'
+        },
+        {
+          question: 'What does the DST badge mean?',
+          answer: 'DST stands for Daylight Saving Time. The badge appears when a location is currently observing daylight saving time.'
+        },
+        {
+          question: 'Are my selected cities saved?',
+          answer: 'Yes, your selected cities are saved in your browser\'s local storage and will persist between visits.'
+        }
+      ],
+      ru: [
+        {
+          question: 'Насколько точны расчёты часовых поясов?',
+          answer: 'Инструмент использует базу данных часовых поясов IANA через API браузера Intl, обеспечивая точное время с автоматическим учётом перехода на летнее время.'
+        },
+        {
+          question: 'Могу ли я добавить свои города?',
+          answer: 'Да! Вы можете добавить любой город из выпадающего меню. Инструмент включает крупные города по всему миру и поддерживает все стандартные часовые пояса.'
+        },
+        {
+          question: 'Что означает значок DST?',
+          answer: 'DST означает летнее время. Значок появляется, когда в данном месте действует летнее время.'
+        },
+        {
+          question: 'Сохраняются ли выбранные города?',
+          answer: 'Да, выбранные города сохраняются в локальном хранилище браузера и сохраняются между посещениями.'
+        }
+      ],
+      he: [
+        {
+          question: 'עד כמה חישובי אזורי הזמן מדויקים?',
+          answer: 'הכלי משתמש במסד הנתונים של אזורי זמן IANA דרך ה-API של הדפדפן Intl, מספק זמנים מדויקים שמתחשבים אוטומטית בשינויי שעון קיץ.'
+        },
+        {
+          question: 'האם אני יכול להוסיף ערים מותאמות אישית?',
+          answer: 'כן! ניתן להוסיף כל עיר מהתפריט הנפתח. הכלי כולל ערים מרכזיות ברחבי העולם ותומך בכל אזורי הזמן הסטנדרטיים.'
+        },
+        {
+          question: 'מה משמעות התג DST?',
+          answer: 'DST מייצג שעון קיץ. התג מופיע כאשר מיקום נמצא כעת בשעון קיץ.'
+        },
+        {
+          question: 'האם הערים שבחרתי נשמרות?',
+          answer: 'כן, הערים שנבחרו נשמרות באחסון המקומי של הדפדפן שלך וישארו בין ביקורים.'
+        }
+      ]
+    }
+  },
+  {
+    id: 'dice-roller',
+    icon: Dices,
+    category: 'productivity',
+    translationKey: 'diceRoller',
+    path: 'dice-roller',
+    gradient: 'from-red-500 to-pink-600',
+    recommendedTools: ['coin-flip', 'draw-lots', 'random-number-generator'],
+    difficulty: 'beginner',
+    tags: ['dice', 'random', 'game', '3d', 'probability', 'roll'],
+    useCase: 'Roll virtual dice with 3D animation for games and decision making',
+    metaDescription: 'Online dice roller with 3D animation. Roll up to 6 dice with true random numbers.',
+    faqs: {
+      en: [
+        {
+          question: 'Are the dice rolls truly random?',
+          answer: 'Yes! The tool uses crypto.getRandomValues() which provides cryptographically secure random numbers, ensuring each roll is truly random and unpredictable.'
+        },
+        {
+          question: 'What is the probability of rolling doubles?',
+          answer: 'With 2 dice, the probability of doubles is 16.67% (1 in 6). With 3 dice, the probability of triples is 2.78% (1 in 36).'
+        },
+        {
+          question: 'Does the 3D animation work on all browsers?',
+          answer: 'The 3D animation uses CSS3 transforms and works on modern browsers (Chrome, Edge, Firefox). Older browsers automatically fall back to 2D animation.'
+        },
+        {
+          question: 'Can I use this for board games?',
+          answer: 'Absolutely! This tool is perfect for any game requiring dice rolls. The history feature helps track rolls during gameplay.'
+        }
+      ],
+      ru: [
+        {
+          question: 'Действительно ли броски костей случайны?',
+          answer: 'Да! Инструмент использует crypto.getRandomValues(), который обеспечивает криптографически безопасные случайные числа, гарантируя истинную случайность каждого броска.'
+        },
+        {
+          question: 'Какова вероятность выпадения дубля?',
+          answer: 'С 2 костями вероятность дубля составляет 16,67% (1 из 6). С 3 костями вероятность тройки составляет 2,78% (1 из 36).'
+        },
+        {
+          question: 'Работает ли 3D анимация во всех браузерах?',
+          answer: '3D анимация использует CSS3 трансформации и работает в современных браузерах (Chrome, Edge, Firefox). Старые браузеры автоматически переключаются на 2D анимацию.'
+        },
+        {
+          question: 'Можно ли использовать для настольных игр?',
+          answer: 'Конечно! Этот инструмент идеально подходит для любой игры, требующей бросков костей. Функция истории помогает отслеживать броски во время игры.'
+        }
+      ],
+      he: [
+        {
+          question: 'האם הטלות הקוביות באמת אקראיות?',
+          answer: 'כן! הכלי משתמש ב-crypto.getRandomValues() שמספק מספרים אקראיים מאובטחים קריפטוגרפית, מבטיח שכל הטלה היא באמת אקראית ובלתי צפויה.'
+        },
+        {
+          question: 'מה ההסתברות לזרוק דאבלס?',
+          answer: 'עם 2 קוביות, ההסתברות לדאבלס היא 16.67% (1 מתוך 6). עם 3 קוביות, ההסתברות לטריפלס היא 2.78% (1 מתוך 36).'
+        },
+        {
+          question: 'האם האנימציה התלת-ממדית עובדת בכל הדפדפנים?',
+          answer: 'האנימציה התלת-ממדית משתמשת בטרנספורמציות CSS3 ועובדת בדפדפנים מודרניים (Chrome, Edge, Firefox). דפדפנים ישנים עוברים אוטומטית לאנימציה דו-ממדית.'
+        },
+        {
+          question: 'האם אפשר להשתמש בזה למשחקי לוח?',
+          answer: 'בהחלט! הכלי הזה מושלם לכל משחק הדורש הטלת קוביות. תכונת ההיסטוריה עוזרת לעקוב אחר הטלות במהלך המשחק.'
+        }
+      ]
+    }
+  },
+  {
+    id: 'social-media-formatter',
+    icon: MessageSquare,
+    category: 'media',
+    translationKey: 'socialMediaFormatter',
+    path: 'social-media-formatter',
+    gradient: 'from-blue-500 to-purple-600',
+    recommendedTools: ['fancy-text-generator', 'special-symbols-picker', 'emoji-list'],
+    difficulty: 'beginner',
+    tags: ['social', 'media', 'facebook', 'instagram', 'format', 'spaces', 'text'],
+    useCase: 'Format text with multiple spaces and line breaks for social media posts',
+    metaDescription: 'Social media text formatter. Add multiple spaces and line breaks for Facebook, Instagram posts.',
+    faqs: {
+      en: [
+        {
+          question: 'How does this formatter work?',
+          answer: 'The tool inserts invisible Unicode characters (zero-width spaces) between regular spaces and line breaks, preventing social media platforms from removing them.'
+        },
+        {
+          question: 'Which platforms does this work on?',
+          answer: 'It works on Facebook posts and comments, Instagram captions and bio, Twitter/X, LinkedIn, WordPress, and most other social platforms that support Unicode.'
+        },
+        {
+          question: 'Will the formatting be visible to everyone?',
+          answer: 'Yes, the formatting will be preserved and visible to anyone viewing your post, regardless of their device or app version.'
+        },
+        {
+          question: 'Are there any limitations?',
+          answer: 'Some platforms may have character limits that include invisible characters. The formatting works best with Latin text and may vary with different fonts.'
+        }
+      ],
+      ru: [
+        {
+          question: 'Как работает этот форматировщик?',
+          answer: 'Инструмент вставляет невидимые символы Unicode (пробелы нулевой ширины) между обычными пробелами и переводами строк, не позволяя соцсетям их удалять.'
+        },
+        {
+          question: 'На каких платформах это работает?',
+          answer: 'Работает в постах и комментариях Facebook, подписях и био Instagram, Twitter/X, LinkedIn, WordPress и большинстве других соцсетей с поддержкой Unicode.'
+        },
+        {
+          question: 'Будет ли форматирование видно всем?',
+          answer: 'Да, форматирование сохранится и будет видно всем, кто просматривает ваш пост, независимо от устройства или версии приложения.'
+        },
+        {
+          question: 'Есть ли ограничения?',
+          answer: 'Некоторые платформы имеют лимиты символов, включающие невидимые символы. Форматирование лучше работает с латинским текстом и может отличаться при разных шрифтах.'
+        }
+      ],
+      he: [
+        {
+          question: 'איך הפורמטר הזה עובד?',
+          answer: 'הכלי מוסיף תווי יוניקוד בלתי נראים (רווחים ברוחב אפס) בין רווחים רגילים ומעברי שורה, מונע מרשתות חברתיות להסיר אותם.'
+        },
+        {
+          question: 'באילו פלטפורמות זה עובד?',
+          answer: 'עובד בפוסטים ותגובות בפייסבוק, כיתובים וביו באינסטגרם, טוויטר/X, לינקדאין, וורדפרס ורוב הרשתות החברתיות האחרות עם תמיכת יוניקוד.'
+        },
+        {
+          question: 'האם העיצוב יהיה גלוי לכולם?',
+          answer: 'כן, העיצוב יישמר ויהיה גלוי לכל מי שצופה בפוסט שלך, ללא קשר למכשיר או גרסת האפליקציה.'
+        },
+        {
+          question: 'האם יש מגבלות?',
+          answer: 'חלק מהפלטפורמות יש להן מגבלות תווים הכוללות תווים בלתי נראים. העיצוב עובד הכי טוב עם טקסט לטיני ועשוי להשתנות עם גופנים שונים.'
+        }
+      ]
+    }
+  },
+  {
+    id: 'emoji-list',
+    icon: Smile,
+    category: 'media',
+    translationKey: 'emojiList',
+    path: 'emoji-list',
+    gradient: 'from-yellow-400 to-orange-500',
+    recommendedTools: ['special-symbols-picker', 'fancy-text-generator', 'social-media-formatter'],
+    difficulty: 'beginner',
+    tags: ['emoji', 'emoticons', 'unicode', 'copy', 'paste', 'symbols'],
+    useCase: 'Browse and copy 1800+ emojis organized by categories',
+    metaDescription: 'Complete emoji list with instant copy. Browse 1800+ emojis in 8 categories.',
+    faqs: {
+      en: [
+        {
+          question: 'How many emojis are available?',
+          answer: 'The tool includes 1,800+ emojis from Unicode 14.0, organized into 8 categories: Smileys & People, People & Body, Animals & Nature, Food & Drink, Activities, Travel & Places, Objects, Symbols, and Flags.'
+        },
+        {
+          question: 'Will emojis display correctly on all devices?',
+          answer: 'Most modern devices (iOS, Android 4.4+, Windows 8.1+) support colorful emojis. If your device doesn\'t support certain emojis, they may appear as boxes or question marks.'
+        },
+        {
+          question: 'Are my recent emojis saved?',
+          answer: 'Yes, the tool automatically saves your last 30 used emojis locally in your browser for quick access.'
+        },
+        {
+          question: 'Can I search for specific emojis?',
+          answer: 'Yes, use the search bar to find emojis quickly. The search works across all categories.'
+        }
+      ],
+      ru: [
+        {
+          question: 'Сколько эмодзи доступно?',
+          answer: 'Инструмент включает более 1800 эмодзи из Unicode 14.0, организованных в 8 категорий: Смайлики и люди, Люди и тело, Животные и природа, Еда и напитки, Активности, Путешествия и места, Объекты, Символы и Флаги.'
+        },
+        {
+          question: 'Будут ли эмодзи корректно отображаться на всех устройствах?',
+          answer: 'Большинство современных устройств (iOS, Android 4.4+, Windows 8.1+) поддерживают цветные эмодзи. Если ваше устройство не поддерживает определенные эмодзи, они могут отображаться как квадраты или знаки вопроса.'
+        },
+        {
+          question: 'Сохраняются ли недавние эмодзи?',
+          answer: 'Да, инструмент автоматически сохраняет последние 30 использованных эмодзи локально в вашем браузере для быстрого доступа.'
+        },
+        {
+          question: 'Можно ли искать конкретные эмодзи?',
+          answer: 'Да, используйте строку поиска для быстрого поиска эмодзи. Поиск работает по всем категориям.'
+        }
+      ],
+      he: [
+        {
+          question: 'כמה אימוג\'ים זמינים?',
+          answer: 'הכלי כולל 1,800+ אימוג\'ים מ-Unicode 14.0, מאורגנים ב-8 קטגוריות: סמיילים ואנשים, אנשים וגוף, חיות וטבע, אוכל ומשקאות, פעילויות, נסיעות ומקומות, אובייקטים, סמלים ודגלים.'
+        },
+        {
+          question: 'האם אימוג\'ים יוצגו נכון בכל המכשירים?',
+          answer: 'רוב המכשירים המודרניים (iOS, Android 4.4+, Windows 8.1+) תומכים באימוג\'ים צבעוניים. אם המכשיר שלך לא תומך באימוג\'ים מסוימים, הם עשויים להופיע כקופסאות או סימני שאלה.'
+        },
+        {
+          question: 'האם האימוג\'ים האחרונים נשמרים?',
+          answer: 'כן, הכלי שומר אוטומטית את 30 האימוג\'ים האחרונים ששימשו מקומית בדפדפן שלך לגישה מהירה.'
+        },
+        {
+          question: 'האם אפשר לחפש אימוג\'ים ספציפיים?',
+          answer: 'כן, השתמשו בשורת החיפוש כדי למצוא אימוג\'ים במהירות. החיפוש עובד על פני כל הקטגוריות.'
+        }
+      ]
+    }
+  },
+  {
+    id: 'text-emoticons',
+    icon: Type,
+    category: 'media',
+    translationKey: 'textEmoticons',
+    path: 'text-emoticons',
+    gradient: 'from-purple-500 to-pink-600',
+    recommendedTools: ['emoji-list', 'special-symbols-picker', 'social-media-formatter'],
+    difficulty: 'beginner',
+    tags: ['emoticons', 'ascii', 'kaomoji', 'text', 'expressions', 'japanese'],
+    useCase: 'Collection of ASCII emoticons and Japanese kaomoji for text expressions',
+    metaDescription: 'Text emoticons and kaomoji collection. Copy ASCII art faces and Japanese emoticons.',
+    faqs: {
+      en: [
+        {
+          question: 'What are emoticons and kaomoji?',
+          answer: 'Emoticons are text-based expressions using ASCII characters to show emotions. Kaomoji (顔文字) are Japanese emoticons that don\'t need to be rotated sideways to be read, like (^_^) or ¯\\_(ツ)_/¯.'
+        },
+        {
+          question: 'Will these work on all platforms?',
+          answer: 'Most basic emoticons work everywhere, but complex kaomoji using Unicode characters may not display correctly on older systems or platforms that don\'t support Unicode.'
+        },
+        {
+          question: 'What\'s the difference between emoticons and emojis?',
+          answer: 'Emoticons are made from keyboard characters and punctuation marks (like :-) ), while emojis are actual pictographic symbols (like 😊). Emoticons were invented first in 1982.'
+        },
+        {
+          question: 'Can I create my own emoticons?',
+          answer: 'Yes! Emoticons are created by combining keyboard characters creatively. Popular ones evolved naturally through internet culture and became widely recognized.'
+        }
+      ],
+      ru: [
+        {
+          question: 'Что такое эмотиконы и каомодзи?',
+          answer: 'Эмотиконы - это текстовые выражения из ASCII символов для показа эмоций. Каомодзи (顔文字) - японские эмотиконы, которые не нужно поворачивать на бок, как (^_^) или ¯\\_(ツ)_/¯.'
+        },
+        {
+          question: 'Будут ли они работать на всех платформах?',
+          answer: 'Большинство базовых эмотиконов работают везде, но сложные каомодзи с Unicode символами могут неправильно отображаться на старых системах без поддержки Unicode.'
+        },
+        {
+          question: 'В чём разница между эмотиконами и эмодзи?',
+          answer: 'Эмотиконы создаются из символов клавиатуры (как :-) ), а эмодзи - это настоящие пиктографические символы (как 😊). Эмотиконы изобрели первыми в 1982 году.'
+        },
+        {
+          question: 'Могу ли я создать свои эмотиконы?',
+          answer: 'Да! Эмотиконы создаются творческим сочетанием символов клавиатуры. Популярные возникли естественно в интернет-культуре и стали широко узнаваемыми.'
+        }
+      ],
+      he: [
+        {
+          question: 'מה זה אמוטיקונים וקאומוג\'י?',
+          answer: 'אמוטיקונים הם ביטויים טקסטואליים המשתמשים בתווי ASCII להצגת רגשות. קאומוג\'י (顔文字) הם אמוטיקונים יפניים שלא צריך לסובב אותם הצידה לקריאה, כמו (^_^) או ¯\\_(ツ)_/¯.'
+        },
+        {
+          question: 'האם אלה יעבדו בכל הפלטפורמות?',
+          answer: 'רוב האמוטיקונים הבסיסיים עובדים בכל מקום, אבל קאומוג\'י מורכבים עם תווי Unicode עשויים לא להציג נכון במערכות ישנות או פלטפורמות ללא תמיכת Unicode.'
+        },
+        {
+          question: 'מה ההבדל בין אמוטיקונים לאמוג\'ים?',
+          answer: 'אמוטיקונים נוצרים מתווי מקלדת וסימני פיסוק (כמו :-) ), בעוד אמוג\'ים הם סמלים פיקטוגרפיים אמיתיים (כמו 😊). אמוטיקונים הומצאו ראשונים ב-1982.'
+        },
+        {
+          question: 'האם אני יכול ליצור אמוטיקונים משלי?',
+          answer: 'כן! אמוטיקונים נוצרים על ידי שילוב יצירתי של תווי מקלדת. הפופולריים התפתחו באופן טבעי דרך תרבות האינטרנט והפכו מוכרים באופן נרחב.'
+        }
+      ]
+    }
+  },
+  {
+    id: 'text-to-speech',
+    icon: Volume2,
+    category: 'media',
+    translationKey: 'textToSpeech',
+    path: 'text-to-speech',
+    gradient: 'from-green-500 to-teal-600',
+    recommendedTools: ['special-symbols-picker', 'social-media-formatter', 'fancy-text-generator'],
+    difficulty: 'beginner',
+    tags: ['tts', 'speech', 'voice', 'audio', 'accessibility', 'synthesis'],
+    useCase: 'Convert text to speech with customizable voice settings and multiple languages',
+    metaDescription: 'Text to speech converter with voice customization. Convert any text to audio with different voices.',
+    faqs: {
+      en: [
+        {
+          question: 'How does text-to-speech work?',
+          answer: 'The tool uses your browser\'s Speech Synthesis API to convert text into spoken audio. The available voices depend on your operating system and installed language packs.'
+        },
+        {
+          question: 'Can I use different languages?',
+          answer: 'Yes! The tool supports multiple languages based on the voices installed on your system. You can select voices for different languages from the dropdown menu.'
+        },
+        {
+          question: 'Are there any text length limits?',
+          answer: 'Most browsers can handle long texts, but very long passages may be split into chunks. For best performance, keep individual texts under 1000 words.'
+        },
+        {
+          question: 'Can I save the audio output?',
+          answer: 'The Speech Synthesis API generates audio in real-time and doesn\'t provide direct download functionality. You can use system audio recording software to capture the output.'
+        }
+      ],
+      ru: [
+        {
+          question: 'Как работает синтез речи?',
+          answer: 'Инструмент использует Speech Synthesis API браузера для преобразования текста в звук. Доступные голоса зависят от вашей операционной системы и установленных языковых пакетов.'
+        },
+        {
+          question: 'Можно ли использовать разные языки?',
+          answer: 'Да! Инструмент поддерживает несколько языков в зависимости от голосов, установленных в системе. Вы можете выбрать голоса для разных языков из выпадающего меню.'
+        },
+        {
+          question: 'Есть ли ограничения по длине текста?',
+          answer: 'Большинство браузеров могут обрабатывать длинные тексты, но очень длинные отрывки могут быть разделены на части. Для лучшей производительности держите тексты до 1000 слов.'
+        },
+        {
+          question: 'Можно ли сохранить аудиовывод?',
+          answer: 'Speech Synthesis API генерирует аудио в реальном времени и не предоставляет прямую возможность загрузки. Можно использовать системное ПО для записи звука.'
+        }
+      ],
+      he: [
+        {
+          question: 'איך סינתזת הדיבור עובדת?',
+          answer: 'הכלי משתמש ב-Speech Synthesis API של הדפדפן כדי להמיר טקסט לאודיו. הקולות הזמינים תלויים במערכת ההפעלה ובחבילות השפה המותקנות.'
+        },
+        {
+          question: 'האם אפשר להשתמש בשפות שונות?',
+          answer: 'כן! הכלי תומך במספר שפות בהתבסס על הקולות המותקנים במערכת שלך. אתם יכולים לבחור קולות לשפות שונות מהתפריט הנפתח.'
+        },
+        {
+          question: 'האם יש מגבלות על אורך הטקסט?',
+          answer: 'רוב הדפדפנים יכולים לטפל בטקסטים ארוכים, אבל קטעים ארוכים מאוד עשויים להתחלק לחלקים. לביצועים טובים יותר, שמרו על טקסטים עד 1000 מילים.'
+        },
+        {
+          question: 'האם אפשר לשמור את פלט האודיו?',
+          answer: 'ה-Speech Synthesis API מייצר אודיו בזמן אמת ולא מספק אפשרות הורדה ישירה. ניתן להשתמש בתוכנת הקלטת שמע של המערכת כדי ללכוד את הפלט.'
+        }
+      ]
+    }
+  },
+  {
+    id: 'email-html',
+    icon: Mail,
+    category: 'dev',
+    translationKey: 'emailHtml',
+    path: 'email-html',
+    gradient: 'from-blue-500 to-indigo-600',
+    recommendedTools: ['qr-code-generator', 'url-shortener', 'html-css-formatter'],
+    difficulty: 'beginner',
+    tags: ['email', 'html', 'mailto', 'clipboard', 'link', 'generator'],
+    useCase: 'Generate modern email links with automatic copying instead of outdated mailto: format',
+    metaDescription: 'Create modern email links with auto-copy functionality. Better than mailto: links for modern web.',
+    faqs: {
+      en: [
+        {
+          question: 'Why not use mailto: links?',
+          answer: 'Mailto: links only work if users have a local email client configured. Many users rely on web-based email, making mailto: links ineffective.'
+        },
+        {
+          question: 'How does auto-copy work?',
+          answer: 'The generated links open a page that displays the email address and automatically copies it to the clipboard when clicked, providing better user experience.'
+        },
+        {
+          question: 'Do these links work on mobile?',
+          answer: 'Yes! The auto-copy functionality works across all devices and doesn\'t depend on having email apps installed.'
+        },
+        {
+          question: 'Can I customize the link appearance?',
+          answer: 'Yes, you can set custom link text and title attributes. The generator creates clean HTML that you can style with CSS.'
+        }
+      ],
+      ru: [
+        {
+          question: 'Почему не использовать mailto: ссылки?',
+          answer: 'Ссылки mailto: работают только если у пользователей есть настроенный локальный почтовый клиент. Многие используют веб-почту, что делает mailto: ссылки неэффективными.'
+        },
+        {
+          question: 'Как работает автокопирование?',
+          answer: 'Сгенерированные ссылки открывают страницу, которая показывает email-адрес и автоматически копирует его в буфер при клике, обеспечивая лучший UX.'
+        },
+        {
+          question: 'Работают ли эти ссылки на мобильных?',
+          answer: 'Да! Функция автокопирования работает на всех устройствах и не зависит от установленных почтовых приложений.'
+        },
+        {
+          question: 'Можно ли настроить внешний вид ссылки?',
+          answer: 'Да, можно задать произвольный текст ссылки и атрибуты title. Генератор создает чистый HTML, который можно стилизовать с помощью CSS.'
+        }
+      ],
+      he: [
+        {
+          question: 'למה לא להשתמש בקישורי mailto:?',
+          answer: 'קישורי mailto: עובדים רק אם למשתמשים יש לקוח דואר מקומי מוגדר. משתמשים רבים מסתמכים על דואר מבוסס-ווב, מה שהופך קישורי mailto: לא יעילים.'
+        },
+        {
+          question: 'איך עובד העתקה אוטומטית?',
+          answer: 'הקישורים שנוצרו פותחים דף המציג את כתובת האימייל ומעתיק אותה אוטומטית ללוח בעת לחיצה, מספק חוויית משתמש טובה יותר.'
+        },
+        {
+          question: 'האם הקישורים עובדים במובייל?',
+          answer: 'כן! פונקציית ההעתקה האוטומטית עובדת על כל המכשירים ולא תלויה בהתקנת אפליקציות דואר.'
+        },
+        {
+          question: 'האם אפשר להתאים את מראה הקישור?',
+          answer: 'כן, אפשר להגדיר טקסט קישור מותאם אישית ותכונות title. הגנרטור יוצר HTML נקי שאפשר לעצב עם CSS.'
+        }
+      ]
+    }
+  },
+  {
+    id: 'system-info',
+    icon: Monitor,
+    category: 'dev',
+    translationKey: 'systemInfo',
+    path: 'system-info',
+    gradient: 'from-indigo-500 to-purple-600',
+    recommendedTools: ['color-converter', 'qr-code-generator', 'css-specificity'],
+    difficulty: 'beginner',
+    tags: ['system', 'hardware', 'monitor', 'resolution', 'architecture', 'device'],
+    useCase: 'Instantly detect system architecture (32/64-bit), screen resolution, and device specifications',
+    metaDescription: 'System information detector. Check if your computer is 32-bit or 64-bit, get screen resolution and device specs.',
+    faqs: {
+      en: [
+        {
+          question: 'Why do I need to know if my system is 32-bit or 64-bit?',
+          answer: 'When downloading software, you need to choose the correct version. 64-bit systems can run both 32-bit and 64-bit programs, but 32-bit systems can only run 32-bit software.'
+        },
+        {
+          question: 'What is screen resolution and why does it matter?',
+          answer: 'Screen resolution is the number of pixels displayed on your screen. It\'s important for web design, choosing wallpapers, gaming settings, and buying compatible accessories.'
+        },
+        {
+          question: 'How accurate is the device detection?',
+          answer: 'We maintain a database of thousands of popular devices for accurate detection. However, some newer or less common devices might not be perfectly identified.'
+        },
+        {
+          question: 'Is this information collection safe?',
+          answer: 'Yes, all information is gathered locally in your browser using standard web APIs. No data is sent to any server - everything stays on your device.'
+        }
+      ],
+      ru: [
+        {
+          question: 'Зачем знать разрядность системы (32/64-бит)?',
+          answer: 'При загрузке программ нужно выбирать правильную версию. 64-битные системы могут запускать как 32-битные, так и 64-битные программы, но 32-битные системы работают только с 32-битным ПО.'
+        },
+        {
+          question: 'Что такое разрешение экрана и почему это важно?',
+          answer: 'Разрешение экрана - количество пикселей на дисплее. Важно для веб-дизайна, выбора обоев, настроек игр и покупки совместимых аксессуаров.'
+        },
+        {
+          question: 'Насколько точно определяется устройство?',
+          answer: 'У нас есть база данных тысяч популярных устройств для точного определения. Однако некоторые новые или редкие устройства могут определяться неточно.'
+        },
+        {
+          question: 'Безопасен ли сбор этой информации?',
+          answer: 'Да, вся информация собирается локально в браузере через стандартные веб-API. Никаких данных не отправляется на сервер - всё остается на вашем устройстве.'
+        }
+      ],
+      he: [
+        {
+          question: 'למה צריך לדעת אם המערכת 32-ביט או 64-ביט?',
+          answer: 'בעת הורדת תוכנות, צריך לבחור את הגרסה הנכונה. מערכות 64-ביט יכולות להריץ תוכנות 32-ביט ו-64-ביט, אבל מערכות 32-ביט יכולות רק תוכנות 32-ביט.'
+        },
+        {
+          question: 'מהי רזולוציית מסך ולמה זה חשוב?',
+          answer: 'רזולוציית מסך היא מספר הפיקסלים המוצגים על המסך. חשוב לעיצוב ווב, בחירת רקעים, הגדרות משחקים וקניית אביזרים תואמים.'
+        },
+        {
+          question: 'עד כמה מדויק זיהוי המכשיר?',
+          answer: 'יש לנו מאגר נתונים של אלפי מכשירים פופולריים לזיהוי מדויק. עם זאת, מכשירים חדשים או נדירים עלולים שלא להיות מזוהים במדויק.'
+        },
+        {
+          question: 'האם איסוף המידע הזה בטוח?',
+          answer: 'כן, כל המידע נאסף מקומית בדפדפן באמצעות APIs סטנדרטיים. שום נתונים לא נשלחים לשרת - הכל נשאר על המכשיר שלך.'
+        }
+      ]
+    }
+  },
+  {
+    id: 'json-tools',
+    icon: Braces,
+    category: 'dev',
+    translationKey: 'jsonTools',
+    path: 'json-tools',
+    gradient: 'from-orange-500 to-red-600',
+    recommendedTools: ['html-css-formatter', 'base64-converter', 'url-encoder'],
+    difficulty: 'beginner',
+    tags: ['json', 'validator', 'formatter', 'beautifier', 'minifier', 'parser'],
+    useCase: 'Validate, format, and analyze JSON data with detailed error reporting and structure analysis',
+    metaDescription: 'JSON validator and formatter tool. Validate JSON syntax, format/beautify code, minify for production.',
+    faqs: {
+      en: [
+        {
+          question: 'What is JSON validation?',
+          answer: 'JSON validation checks if your JSON data follows the correct syntax rules. Invalid JSON can cause errors in applications, so validation helps catch issues early.'
+        },
+        {
+          question: 'What\'s the difference between formatting and minifying?',
+          answer: 'Formatting adds indentation and line breaks for readability, while minifying removes all unnecessary whitespace to reduce file size for production use.'
+        },
+        {
+          question: 'How accurate is the error detection?',
+          answer: 'The tool uses JavaScript\'s native JSON parser, providing exact error messages with line and column numbers when syntax errors are found.'
+        },
+        {
+          question: 'Can I upload large JSON files?',
+          answer: 'Yes, you can upload JSON files directly. The tool handles large files efficiently and provides detailed structure analysis.'
+        }
+      ],
+      ru: [
+        {
+          question: 'Что такое валидация JSON?',
+          answer: 'Валидация JSON проверяет, соответствуют ли ваши JSON данные правилам синтаксиса. Невалидный JSON может вызвать ошибки в приложениях, поэтому валидация помогает выявить проблемы заранее.'
+        },
+        {
+          question: 'В чем разница между форматированием и сжатием?',
+          answer: 'Форматирование добавляет отступы и переносы строк для читаемости, а сжатие удаляет все лишние пробелы для уменьшения размера файла в production.'
+        },
+        {
+          question: 'Насколько точно определяются ошибки?',
+          answer: 'Инструмент использует встроенный JSON парсер JavaScript, предоставляя точные сообщения об ошибках с номерами строк и колонок при обнаружении синтаксических ошибок.'
+        },
+        {
+          question: 'Можно ли загружать большие JSON файлы?',
+          answer: 'Да, вы можете загружать JSON файлы напрямую. Инструмент эффективно обрабатывает большие файлы и предоставляет детальный анализ структуры.'
+        }
+      ],
+      he: [
+        {
+          question: 'מהי אימות JSON?',
+          answer: 'אימות JSON בודק אם נתוני ה-JSON שלך עוקבים אחר כללי התחביר הנכונים. JSON לא תקין יכול לגרום לשגיאות ביישומים, כך שאימות עוזר לתפוס בעיות מוקדם.'
+        },
+        {
+          question: 'מה ההבדל בין עיצוב לכיווץ?',
+          answer: 'עיצוב מוסיף הזחה ושורות חדשות לקריאות, בעוד כיווץ מסיר את כל הרווחים הלא נחוצים כדי להקטין את גודל הקובץ לשימוש בייצור.'
+        },
+        {
+          question: 'עד כמה מדויק זיהוי השגיאות?',
+          answer: 'הכלי משתמש במפרש JSON המובנה של JavaScript, מספק הודעות שגיאה מדויקות עם מספרי שורות ועמודות כאשר נמצאות שגיאות תחביר.'
+        },
+        {
+          question: 'האם אפשר להעלות קבצי JSON גדולים?',
+          answer: 'כן, אתם יכולים להעלות קבצי JSON ישירות. הכלי מטפל בקבצים גדולים ביעילות ומספק ניתוח מבנה מפורט.'
+        }
+      ]
+    }
+  },
+  {
+    id: 'js-css-compressor',
+    icon: Zap,
+    category: 'dev',
+    translationKey: 'jsCssCompressor',
+    path: 'js-css-compressor',
+    gradient: 'from-yellow-500 to-orange-600',
+    recommendedTools: ['json-tools', 'html-css-formatter', 'base64-converter'],
+    difficulty: 'beginner',
+    tags: ['minify', 'compress', 'javascript', 'css', 'optimization', 'performance'],
+    useCase: 'Compress and minify JavaScript and CSS code to reduce file sizes for production',
+    metaDescription: 'JavaScript and CSS compressor tool. Minify JS/CSS code, reduce file sizes, optimize for production.',
+    faqs: {
+      en: [
+        {
+          question: 'What is code compression and minification?',
+          answer: 'Code compression removes unnecessary characters like whitespace, comments, and line breaks. Minification also shortens variable names and optimizes code structure to reduce file size.'
+        },
+        {
+          question: 'Is compressed code safe to use?',
+          answer: 'Yes, when done correctly. The tool preserves code functionality while only removing unnecessary elements. However, always test compressed code before deploying to production.'
+        },
+        {
+          question: 'How much space can I save?',
+          answer: 'Typical savings range from 20-70% depending on code style. JavaScript with many comments can see higher compression ratios than already optimized code.'
+        },
+        {
+          question: 'Can I compress already minified code?',
+          answer: 'Yes, but savings will be minimal since minified code already has most optimizations applied. The tool will still remove any remaining whitespace and comments.'
+        }
+      ],
+      ru: [
+        {
+          question: 'Что такое сжатие и минификация кода?',
+          answer: 'Сжатие кода удаляет ненужные символы как пробелы, комментарии и переносы строк. Минификация также сокращает имена переменных и оптимизирует структуру кода для уменьшения размера файла.'
+        },
+        {
+          question: 'Безопасно ли использовать сжатый код?',
+          answer: 'Да, при правильном выполнении. Инструмент сохраняет функциональность кода, удаляя только ненужные элементы. Однако всегда тестируйте сжатый код перед развертыванием в production.'
+        },
+        {
+          question: 'Сколько места можно сэкономить?',
+          answer: 'Типичная экономия составляет 20-70% в зависимости от стиля кода. JavaScript с множеством комментариев может показать большую степень сжатия, чем уже оптимизированный код.'
+        },
+        {
+          question: 'Можно ли сжимать уже минифицированный код?',
+          answer: 'Да, но экономия будет минимальной, поскольку минифицированный код уже имеет большинство оптимизаций. Инструмент всё равно удалит оставшиеся пробелы и комментарии.'
+        }
+      ],
+      he: [
+        {
+          question: 'מה זה דחיסת קוד ומינימיזציה?',
+          answer: 'דחיסת קוד מסירה תווים מיותרים כמו רווחים, הערות ושבירות שורה. מינימיזציה גם מקצרת שמות משתנים ומייעלת את מבנה הקוד כדי להקטין את גודל הקובץ.'
+        },
+        {
+          question: 'האם בטוח להשתמש בקוד דחוס?',
+          answer: 'כן, כשזה נעשה נכון. הכלי שומר על פונקציונליות הקוד תוך הסרת רק אלמנטים מיותרים. עם זאת, תמיד בדקו קוד דחוס לפני פריסה לייצור.'
+        },
+        {
+          question: 'כמה מקום אפשר לחסוך?',
+          answer: 'חיסכון טיפוסי נע בין 20-70% בהתאם לסגנון הקוד. JavaScript עם הרבה הערות יכול להראות יחס דחיסה גבוה יותר מקוד שכבר מותאם.'
+        },
+        {
+          question: 'האם אפשר לדחוס קוד שכבר מוקטן?',
+          answer: 'כן, אבל החיסכון יהיה מינימלי כיון שלקוד מוקטן כבר יש את רוב האופטימיזציות. הכלי עדיין יסיר רווחים והערות שנותרו.'
+        }
+      ]
+    }
+  },
+  {
+    id: 'js-validator',
+    icon: Bug,
+    category: 'dev',
+    translationKey: 'jsValidator',
+    path: 'js-validator',
+    gradient: 'from-red-500 to-pink-600',
+    recommendedTools: ['js-css-compressor', 'json-tools', 'html-css-formatter'],
+    difficulty: 'beginner',
+    tags: ['javascript', 'validator', 'syntax', 'linter', 'debugging', 'quality'],
+    useCase: 'Static analysis tool for JavaScript code to check for syntax errors and quality issues',
+    metaDescription: 'JavaScript validator and syntax checker. Detect JS errors, validate code quality, debug syntax issues.',
+    faqs: {
+      en: [
+        {
+          question: 'What does the JavaScript validator check?',
+          answer: 'The validator checks for syntax errors, undefined variables, missing semicolons, assignment in conditions, unclosed brackets, and other common JavaScript issues.'
+        },
+        {
+          question: 'Which JavaScript versions are supported?',
+          answer: 'The tool supports ES5, ES2015, ES2017, ES2020, and ES2022, including modern features like async/await, classes, and modules.'
+        },
+        {
+          question: 'What is the difference between errors and warnings?',
+          answer: 'Errors are syntax issues that prevent code from running. Warnings are style/quality issues that may cause problems or make code harder to maintain.'
+        },
+        {
+          question: 'Can I use this for React or Node.js code?',
+          answer: 'Yes, the validator works with any JavaScript code including React JSX, Node.js modules, and modern ES6+ syntax.'
+        }
+      ],
+      ru: [
+        {
+          question: 'Что проверяет JavaScript валидатор?',
+          answer: 'Валидатор проверяет синтаксические ошибки, неопределенные переменные, пропущенные точки с запятой, присваивание в условиях, незакрытые скобки и другие распространенные проблемы JavaScript.'
+        },
+        {
+          question: 'Какие версии JavaScript поддерживаются?',
+          answer: 'Инструмент поддерживает ES5, ES2015, ES2017, ES2020 и ES2022, включая современные возможности как async/await, классы и модули.'
+        },
+        {
+          question: 'В чем разница между ошибками и предупреждениями?',
+          answer: 'Ошибки - это синтаксические проблемы, которые не позволяют коду работать. Предупреждения - это проблемы стиля/качества, которые могут вызвать проблемы или усложнить поддержку кода.'
+        },
+        {
+          question: 'Можно ли использовать для React или Node.js кода?',
+          answer: 'Да, валидатор работает с любым JavaScript кодом, включая React JSX, модули Node.js и современный синтаксис ES6+.'
+        }
+      ],
+      he: [
+        {
+          question: 'מה בודק מאמת JavaScript?',
+          answer: 'המאמת בודק שגיאות תחביר, משתנים לא מוגדרים, נקודה-פסיק חסרה, השמה בתנאים, סוגריים לא סגורים ובעיות JavaScript נפוצות אחרות.'
+        },
+        {
+          question: 'אילו גרסאות JavaScript נתמכות?',
+          answer: 'הכלי תומך ב-ES5, ES2015, ES2017, ES2020 ו-ES2022, כולל תכונות מודרניות כמו async/await, מחלקות ומודולים.'
+        },
+        {
+          question: 'מה ההבדל בין שגיאות לאזהרות?',
+          answer: 'שגיאות הן בעיות תחביר שמונעות מהקוד לרוץ. אזהרות הן בעיות סגנון/איכות שעלולות לגרום לבעיות או להקשות על תחזוקת הקוד.'
+        },
+        {
+          question: 'האם אפשר להשתמש בזה עבור קוד React או Node.js?',
+          answer: 'כן, המאמת עובד עם כל קוד JavaScript כולל React JSX, מודולי Node.js ותחביר ES6+ מודרני.'
+        }
+      ]
+    }
+  },
+  {
+    id: 'age-calculator',
+    icon: Calculator,
+    category: 'productivity',
+    translationKey: 'ageCalculator',
+    path: 'age-calculator',
+    gradient: 'from-purple-500 to-pink-600',
+    recommendedTools: ['temperature-converter', 'bmi-calculator', 'timer-countdown'],
+    difficulty: 'beginner',
+    tags: ['age', 'calculator', 'birthday', 'date', 'time'],
+    useCase: 'Calculate exact age in years, months, days, hours, and minutes from birthdate',
+    metaDescription: 'Age calculator with precise calculations. Get your exact age in years, months, days, hours.'
+  },
+  {
+    id: 'temperature-converter',
+    icon: Thermometer,
+    category: 'productivity',
+    translationKey: 'temperatureConverter',
+    path: 'temperature-converter',
+    gradient: 'from-blue-500 to-cyan-600',
+    recommendedTools: ['age-calculator', 'bmi-calculator', 'currency-converter'],
+    difficulty: 'beginner',
+    tags: ['temperature', 'converter', 'celsius', 'fahrenheit', 'kelvin'],
+    useCase: 'Convert between Celsius, Fahrenheit, and Kelvin temperature scales instantly',
+    metaDescription: 'Temperature converter for Celsius, Fahrenheit, and Kelvin. Convert temperatures between scales.'
+  },
+  {
+    id: 'bmi-calculator',
+    icon: Weight,
+    category: 'productivity',
+    translationKey: 'bmiCalculator',
+    path: 'bmi-calculator',
+    gradient: 'from-green-500 to-emerald-600',
+    recommendedTools: ['age-calculator', 'temperature-converter', 'percentage-calculator'],
+    difficulty: 'beginner',
+    tags: ['bmi', 'health', 'weight', 'calculator', 'fitness'],
+    useCase: 'Calculate Body Mass Index (BMI) with health status interpretation',
+    metaDescription: 'BMI calculator with health interpretation. Calculate your Body Mass Index and health status.'
+  },
+  {
+    id: 'text-counter',
+    icon: FileSearch,
+    category: 'productivity',
+    translationKey: 'textCounter',
+    path: 'text-counter',
+    gradient: 'from-indigo-500 to-purple-600',
+    recommendedTools: ['social-media-formatter', 'text-to-speech', 'fancy-text-generator'],
+    difficulty: 'beginner',
+    tags: ['text', 'counter', 'seo', 'words', 'characters', 'social-media'],
+    useCase: 'Count characters, words, sentences, and paragraphs for SEO and social media',
+    metaDescription: 'Text counter for SEO and social media. Count characters, words, sentences with platform limits.'
+  },
+  {
+    id: 'timer-countdown',
+    icon: Clock,
+    category: 'productivity',
+    translationKey: 'timerCountdown',
+    path: 'timer-countdown',
+    gradient: 'from-orange-500 to-red-600',
+    recommendedTools: ['pomodoro-timer', 'world-time', 'age-calculator'],
+    difficulty: 'beginner',
+    tags: ['timer', 'countdown', 'stopwatch', 'time', 'productivity'],
+    useCase: 'Timer, countdown, and stopwatch with notifications for time management',
+    metaDescription: 'Timer and countdown tool with notifications. Stopwatch, timer, and countdown in one tool.'
+  },
+  {
+    id: 'currency-converter',
+    icon: DollarSign,
+    category: 'productivity',
+    translationKey: 'currencyConverter',
+    path: 'currency-converter',
+    gradient: 'from-yellow-500 to-orange-600',
+    recommendedTools: ['percentage-calculator', 'temperature-converter', 'compound-interest'],
+    difficulty: 'beginner',
+    tags: ['currency', 'converter', 'exchange', 'money', 'finance'],
+    useCase: 'Convert between currencies with fixed exchange rates',
+    metaDescription: 'Currency converter with fixed rates. Convert between 10 major world currencies.'
+  },
+  {
+    id: 'text-diff',
+    icon: GitCompare,
+    category: 'dev',
+    translationKey: 'textDiff',
+    path: 'text-diff',
+    gradient: 'from-purple-500 to-indigo-600',
+    recommendedTools: ['json-tools', 'html-css-formatter', 'js-validator'],
+    difficulty: 'intermediate',
+    tags: ['diff', 'compare', 'text', 'code', 'changes'],
+    useCase: 'Compare two texts and highlight differences line by line',
+    metaDescription: 'Text difference tool. Compare two texts and see changes highlighted line by line.'
+  },
+  {
+    id: 'php-syntax-checker',
+    icon: Code,
+    category: 'dev',
+    translationKey: 'phpSyntaxChecker',
+    path: 'php-syntax-checker',
+    gradient: 'from-indigo-500 to-blue-600',
+    recommendedTools: ['mysql-syntax-checker', 'javascript-syntax-checker', 'regex-tester'],
+    difficulty: 'intermediate',
+    tags: ['php', 'syntax', 'checker', 'validator', 'code'],
+    useCase: 'Check PHP syntax for errors with support for PHP 5, 7, and 8',
+    metaDescription: 'PHP syntax checker for PHP 5/7/8. Validate PHP code and find syntax errors.'
+  },
+  {
+    id: 'mysql-syntax-checker',
+    icon: Database,
+    category: 'dev',
+    translationKey: 'mysqlSyntaxChecker',
+    path: 'mysql-syntax-checker',
+    gradient: 'from-blue-500 to-teal-600',
+    recommendedTools: ['php-syntax-checker', 'json-tools', 'regex-tester'],
+    difficulty: 'intermediate',
+    tags: ['mysql', 'sql', 'database', 'syntax', 'validator'],
+    useCase: 'Validate MySQL queries and check for syntax errors',
+    metaDescription: 'MySQL syntax checker and validator. Check SQL queries for syntax errors.'
+  },
+  {
+    id: 'regex-tester',
+    icon: Search,
+    category: 'dev',
+    translationKey: 'regexTester',
+    path: 'regex-tester',
+    gradient: 'from-green-500 to-teal-600',
+    recommendedTools: ['javascript-syntax-checker', 'php-syntax-checker', 'text-diff'],
+    difficulty: 'advanced',
+    tags: ['regex', 'regular-expression', 'pattern', 'test', 'match'],
+    useCase: 'Test regular expressions with support for JavaScript, PHP, and Python',
+    metaDescription: 'Regex tester for JavaScript, PHP, Python. Test and debug regular expressions.'
+  },
+  {
+    id: 'javascript-syntax-checker',
+    icon: Code,
+    category: 'dev',
+    translationKey: 'javascriptSyntaxChecker',
+    path: 'javascript-syntax-checker',
+    gradient: 'from-yellow-500 to-red-600',
+    recommendedTools: ['json-tools', 'js-css-compressor', 'regex-tester'],
+    difficulty: 'intermediate',
+    tags: ['javascript', 'es6', 'syntax', 'checker', 'validator'],
+    useCase: 'Check JavaScript/ES6/ES2020+ syntax with JSX support',
+    metaDescription: 'JavaScript syntax checker for ES6/ES2020+. Validate JS code with JSX support.'
+  },
+  {
+    id: 'px-rem-converter',
+    icon: Ruler,
+    category: 'css',
+    translationKey: 'pxRemConverter',
+    path: 'px-rem-converter',
+    gradient: 'from-pink-500 to-rose-600',
+    recommendedTools: ['css-gradient', 'css-box-shadow', 'color-converter'],
+    difficulty: 'beginner',
+    tags: ['px', 'rem', 'em', 'converter', 'css', 'units'],
+    useCase: 'Convert between px, rem, and em CSS units with custom base font size',
+    metaDescription: 'PX to REM/EM converter for CSS. Convert between pixel, rem, and em units.'
+  },
+  {
+    id: 'css-box-shadow',
+    icon: Square,
+    category: 'css',
+    translationKey: 'cssBoxShadow',
+    path: 'css-box-shadow-generator',
+    gradient: 'from-gray-600 to-gray-800',
+    recommendedTools: ['css-gradient', 'px-rem-converter', 'color-converter'],
+    difficulty: 'intermediate',
+    tags: ['css', 'box-shadow', 'shadow', 'generator', 'design'],
+    useCase: 'Generate CSS box-shadow with visual preview and multiple shadows',
+    metaDescription: 'CSS box-shadow generator with preview. Create custom shadows for your designs.'
+  },
+  {
+    id: 'css-gradient',
+    icon: Layers,
+    category: 'css',
+    translationKey: 'cssGradient',
+    path: 'css-gradient-generator',
+    gradient: 'from-purple-500 via-pink-500 to-red-500',
+    recommendedTools: ['css-box-shadow', 'color-converter', 'px-rem-converter'],
+    difficulty: 'intermediate',
+    tags: ['css', 'gradient', 'linear', 'radial', 'conic', 'generator'],
+    useCase: 'Create linear, radial, and conic CSS gradients with visual editor',
+    metaDescription: 'CSS gradient generator for linear, radial, conic gradients. Visual gradient editor.'
+  },
+  {
+    id: 'color-contrast',
+    icon: Circle,
+    category: 'css',
+    translationKey: 'colorContrast',
+    path: 'color-contrast',
+    gradient: 'from-black to-white',
+    recommendedTools: ['color-converter', 'css-gradient', 'css-box-shadow'],
+    difficulty: 'intermediate',
+    tags: ['color', 'contrast', 'wcag', 'accessibility', 'a11y'],
+    useCase: 'Check color contrast ratios for WCAG accessibility compliance',
+    metaDescription: 'Color contrast checker for WCAG. Test color combinations for accessibility.'
+  },
+  {
+    id: 'css-keyframes',
+    icon: Sparkles,
+    category: 'css',
+    translationKey: 'cssKeyframes',
+    path: 'css-keyframes-generator',
+    gradient: 'from-blue-500 to-purple-600',
+    recommendedTools: ['css-gradient', 'css-box-shadow', 'px-rem-converter'],
+    difficulty: 'advanced',
+    tags: ['css', 'animation', 'keyframes', 'generator', 'motion'],
+    useCase: 'Generate CSS @keyframes animations with visual editor',
+    metaDescription: 'CSS keyframes animation generator. Create custom animations visually.'
+  },
+  {
+    id: 'json-yaml-formatter',
+    icon: FileJson,
+    category: 'dev',
+    translationKey: 'jsonYamlFormatter',
+    path: 'json-yaml-formatter',
+    gradient: 'from-orange-500 to-yellow-600',
+    recommendedTools: ['json-tools', 'base64-encoder', 'javascript-syntax-checker'],
+    difficulty: 'beginner',
+    tags: ['json', 'yaml', 'formatter', 'validator', 'converter'],
+    useCase: 'Format, validate, and convert between JSON and YAML formats',
+    metaDescription: 'JSON/YAML formatter and converter. Validate and convert between formats.'
+  },
+  {
+    id: 'base64-encoder',
+    icon: Lock,
+    category: 'dev',
+    translationKey: 'base64Encoder',
+    path: 'base64-encoder',
+    gradient: 'from-green-500 to-teal-600',
+    recommendedTools: ['jwt-decoder', 'hash-generator', 'json-tools'],
+    difficulty: 'beginner',
+    tags: ['base64', 'encode', 'decode', 'converter', 'encryption'],
+    useCase: 'Encode and decode data in Base64 format with file support',
+    metaDescription: 'Base64 encoder/decoder with file support. Encode and decode Base64 data.'
+  },
+  {
+    id: 'jwt-decoder',
+    icon: Key,
+    category: 'dev',
+    translationKey: 'jwtDecoder',
+    path: 'jwt-decoder',
+    gradient: 'from-purple-500 to-pink-600',
+    recommendedTools: ['base64-encoder', 'json-tools', 'uuid-generator'],
+    difficulty: 'intermediate',
+    tags: ['jwt', 'json', 'token', 'decoder', 'authentication'],
+    useCase: 'Decode and analyze JSON Web Tokens (JWT) structure',
+    metaDescription: 'JWT decoder and analyzer. Decode JSON Web Tokens and inspect claims.'
+  },
+  {
+    id: 'uuid-generator',
+    icon: Fingerprint,
+    category: 'dev',
+    translationKey: 'uuidGenerator',
+    path: 'uuid-generator',
+    gradient: 'from-indigo-500 to-blue-600',
+    recommendedTools: ['hash-generator', 'password-generator', 'jwt-decoder'],
+    difficulty: 'beginner',
+    tags: ['uuid', 'guid', 'generator', 'unique', 'identifier'],
+    useCase: 'Generate UUID/GUID in various versions (v1, v3, v4, v5)',
+    metaDescription: 'UUID generator for all versions. Generate unique identifiers (UUID/GUID).'
+  },
+  {
+    id: 'compound-interest',
+    icon: TrendingUp,
+    category: 'productivity',
+    translationKey: 'compoundInterest',
+    path: 'compound-interest',
+    gradient: 'from-green-500 to-emerald-600',
+    recommendedTools: ['loan-calculator', 'percentage-calculator', 'currency-converter'],
+    difficulty: 'intermediate',
+    tags: ['compound', 'interest', 'finance', 'calculator', 'investment'],
+    useCase: 'Calculate compound interest with detailed breakdown and charts',
+    metaDescription: 'Compound interest calculator with charts. Calculate investment growth over time.'
+  },
+  {
+    id: 'loan-calculator',
+    icon: CreditCard,
+    category: 'productivity',
+    translationKey: 'loanCalculator',
+    path: 'loan-calculator',
+    gradient: 'from-red-500 to-pink-600',
+    recommendedTools: ['compound-interest', 'percentage-calculator', 'currency-converter'],
+    difficulty: 'intermediate',
+    tags: ['loan', 'mortgage', 'calculator', 'finance', 'annuity'],
+    useCase: 'Calculate loan/mortgage payments with amortization schedule',
+    metaDescription: 'Loan and mortgage calculator. Calculate monthly payments and amortization.'
+  },
+  {
+    id: 'fuel-calculator',
+    icon: Fuel,
+    category: 'productivity',
+    translationKey: 'fuelCalculator',
+    path: 'fuel-consumption-calculator',
+    gradient: 'from-blue-500 to-green-600',
+    recommendedTools: ['currency-converter', 'percentage-calculator', 'temperature-converter'],
+    difficulty: 'beginner',
+    tags: ['fuel', 'consumption', 'calculator', 'car', 'gas', 'mileage'],
+    useCase: 'Calculate fuel consumption, cost, and average consumption per 100 km',
+    metaDescription: 'Fuel consumption calculator. Calculate fuel costs and consumption per 100 km.'
   }
 ]
 
@@ -897,8 +2445,7 @@ export const widgetCategories = {
   css: 'CSS Tools',
   media: 'Media & Content',
   dev: 'Dev Tools',
-  productivity: 'Productivity',
-  settings: 'Settings'
+  productivity: 'Productivity'
 } as const
 
 export function getWidgetsByCategory(category: Widget['category']): Widget[] {

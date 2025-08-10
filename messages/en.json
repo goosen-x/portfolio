@@ -721,6 +721,26 @@
 				"qrError": "Failed to generate QR code"
 			}
 		},
+		"textToSpeech": {
+			"title": "Text to Speech",
+			"description": "Convert any text to speech with customizable voice settings and multiple languages"
+		},
+		"emailHtml": {
+			"title": "Email HTML",
+			"description": "Create modern email links with automatic copying instead of outdated mailto: format"
+		},
+		"systemInfo": {
+			"title": "System Info",
+			"description": "Instantly detect system architecture (32/64-bit), screen resolution, and device specifications"
+		},
+		"jsonTools": {
+			"title": "JSON Tools",
+			"description": "Validate, format, and analyze JSON data with detailed error reporting and structure analysis"
+		},
+		"jsCssCompressor": {
+			"title": "JS/CSS Compressor",
+			"description": "Online JavaScript and CSS code compression to reduce file sizes for production"
+		},
 		"themeSettings": {
 			"title": "Theme Settings",
 			"description": "Customize the appearance of the site with theme preferences and color modes"
@@ -942,6 +962,154 @@
 				"tip3": "Stay focused on one task during each pomodoro",
 				"tip4": "Use breaks to stretch, hydrate, and rest your eyes"
 			}
+		},
+		"specialSymbolsPicker": {
+			"title": "Special Symbols Picker",
+			"description": "Click to copy special characters and Unicode symbols for any text"
+		},
+		"fancyTextGenerator": {
+			"title": "Fancy Text Generator",
+			"description": "Transform your text into beautiful Unicode styles for social media"
+		},
+		"randomNumberGenerator": {
+			"title": "Random Number Generator",
+			"description": "Generate cryptographically secure random numbers with no duplicates option"
+		},
+		"percentageCalculator": {
+			"title": "Percentage Calculator",
+			"description": "Calculate percentages for discounts, taxes, tips, and investments"
+		},
+		"drawLots": {
+			"title": "Draw Lots",
+			"description": "Digital draw straws - pick names or make random selections fairly"
+		},
+		"mockDataGenerator": {
+			"title": "Mock Data Generator",
+			"description": "Fetch sample data from popular free public APIs for testing"
+		},
+		"randomListGenerator": {
+			"title": "Random List Generator",
+			"description": "Randomly shuffle lists with cryptographically secure randomization"
+		},
+		"coinFlip": {
+			"title": "Coin Flip",
+			"description": "Flip a coin online with realistic 3D animation"
+		},
+		"worldTime": {
+			"title": "World Time",
+			"description": "Track time across cities and convert between timezones"
+		},
+		"diceRoller": {
+			"title": "Dice Roller",
+			"description": "Roll virtual dice with realistic 3D animation"
+		},
+		"socialMediaFormatter": {
+			"title": "Social Media Formatter",
+			"description": "Format text with spaces and line breaks for social media"
+		},
+		"emojiList": {
+			"title": "Emoji List",
+			"description": "Browse and copy 1800+ emojis organized by categories"
+		},
+		"textEmoticons": {
+			"title": "Text Emoticons",
+			"description": "ASCII emoticons and Japanese kaomoji for text expressions"
+		},
+		"jsValidator": {
+			"title": "JavaScript Validator",
+			"description": "Static JavaScript code analysis for syntax errors and quality issues detection"
+		},
+		"ageCalculator": {
+			"title": "Age Calculator",
+			"description": "Calculate exact age in years, months, days, hours, and minutes from birthdate"
+		},
+		"temperatureConverter": {
+			"title": "Temperature Converter",
+			"description": "Convert between Celsius, Fahrenheit, and Kelvin temperature scales instantly"
+		},
+		"bmiCalculator": {
+			"title": "BMI Calculator",
+			"description": "Calculate Body Mass Index (BMI) with health status interpretation"
+		},
+		"textCounter": {
+			"title": "Text Counter",
+			"description": "Count characters, words, sentences, and paragraphs for SEO and social media"
+		},
+		"timerCountdown": {
+			"title": "Timer & Countdown",
+			"description": "Timer, countdown, and stopwatch with notifications for time management"
+		},
+		"currencyConverter": {
+			"title": "Currency Converter",
+			"description": "Convert between currencies with fixed exchange rates"
+		},
+		"textDiff": {
+			"title": "Text Difference Tool",
+			"description": "Compare two texts and highlight differences line by line"
+		},
+		"phpSyntaxChecker": {
+			"title": "PHP Syntax Checker",
+			"description": "Check PHP syntax for errors with support for PHP 5, 7, and 8"
+		},
+		"mysqlSyntaxChecker": {
+			"title": "MySQL Syntax Checker",
+			"description": "Validate MySQL queries and check for syntax errors"
+		},
+		"regexTester": {
+			"title": "Regex Tester",
+			"description": "Test regular expressions with support for JavaScript, PHP, and Python"
+		},
+		"javascriptSyntaxChecker": {
+			"title": "JavaScript Syntax Checker",
+			"description": "Check JavaScript/ES6/ES2020+ syntax with JSX support"
+		},
+		"pxRemConverter": {
+			"title": "PX to REM/EM Converter",
+			"description": "Convert between px, rem, and em CSS units with custom base font size"
+		},
+		"cssBoxShadow": {
+			"title": "CSS Box Shadow Generator",
+			"description": "Generate CSS box-shadow with visual preview and multiple shadows"
+		},
+		"cssGradient": {
+			"title": "CSS Gradient Generator",
+			"description": "Create linear, radial, and conic CSS gradients with visual editor"
+		},
+		"colorContrast": {
+			"title": "Color Contrast Checker",
+			"description": "Check color contrast ratios for WCAG accessibility compliance"
+		},
+		"cssKeyframes": {
+			"title": "CSS Keyframes Generator",
+			"description": "Generate CSS @keyframes animations with visual editor"
+		},
+		"jsonYamlFormatter": {
+			"title": "JSON/YAML Formatter",
+			"description": "Format, validate, and convert between JSON and YAML formats"
+		},
+		"base64Encoder": {
+			"title": "Base64 Encoder/Decoder",
+			"description": "Encode and decode data in Base64 format with file support"
+		},
+		"jwtDecoder": {
+			"title": "JWT Decoder",
+			"description": "Decode and analyze JSON Web Tokens (JWT) structure"
+		},
+		"uuidGenerator": {
+			"title": "UUID Generator",
+			"description": "Generate UUID/GUID in various versions (v1, v3, v4, v5)"
+		},
+		"compoundInterest": {
+			"title": "Compound Interest Calculator",
+			"description": "Calculate compound interest with detailed breakdown and charts"
+		},
+		"loanCalculator": {
+			"title": "Loan Calculator",
+			"description": "Calculate loan/mortgage payments with amortization schedule"
+		},
+		"fuelCalculator": {
+			"title": "Fuel Consumption Calculator",
+			"description": "Calculate fuel consumption, cost, and average consumption per 100 km"
 		}
 	},
 	"settings": {
@@ -956,5 +1124,115 @@
 				"none": "None"
 			}
 		}
+	},
+	"Settings": {
+		"title": "Settings",
+		"description": "Customize your experience with appearance and language preferences",
+		"tabs": {
+			"appearance": "Appearance",
+			"language": "Language"
+		},
+		"theme": {
+			"title": "Theme",
+			"description": "Choose your preferred color theme",
+			"options": {
+				"light": {
+					"label": "Light",
+					"description": "Bright theme for daytime use"
+				},
+				"dark": {
+					"label": "Dark",
+					"description": "Dark theme for nighttime use"
+				},
+				"system": {
+					"label": "System",
+					"description": "Follow system preference"
+				}
+			}
+		},
+		"transition": {
+			"title": "Transition Effect",
+			"description": "Choose how the theme changes",
+			"notSupported": "View Transitions API is not supported in your browser. The transitions will fall back to instant switching.",
+			"options": {
+				"fade": "Fade",
+				"scale": "Scale",
+				"slide": "Slide",
+				"circle": "Circle",
+				"none": "None"
+			}
+		},
+		"language": {
+			"title": "Language",
+			"description": "Choose your preferred language for the interface",
+			"inDevelopment": "In Development",
+			"features": {
+				"title": "Language Features",
+				"autoTranslation": {
+					"title": "Automatic Content Translation",
+					"description": "All interface elements are automatically translated to your selected language"
+				},
+				"rtlSupport": {
+					"title": "RTL Support",
+					"description": "Full right-to-left layout support for Hebrew and Arabic languages"
+				},
+				"persistent": {
+					"title": "Persistent Selection",
+					"description": "Your language preference is saved and remembered for future visits"
+				}
+			}
+		},
+		"footer": "Your preferences are saved locally and will persist across sessions"
+	},
+	"textToSpeech": {
+		"title": "Text to Speech",
+		"description": "Convert any text to speech with customizable voice settings",
+		"enterText": "Enter text to speak",
+		"placeholder": "Type or paste your text here, then press ENTER or click Speak...",
+		"speak": "Speak",
+		"resume": "Resume", 
+		"pause": "Pause",
+		"stop": "Stop",
+		"settings": "Voice Settings",
+		"voice": "Voice",
+		"selectVoice": "Select a voice",
+		"speed": "Speed",
+		"pitch": "Pitch",
+		"volume": "Volume",
+		"currentVoice": "Current voice",
+		"local": "Local",
+		"history": "History",
+		"recentlyUsed": "Recently Used",
+		"clear": "Clear",
+		"clearAll": "Clear All",
+		"bookmarks": "Bookmarks",
+		"quickExamples": "Quick Examples",
+		"about": "About Text to Speech",
+		"aboutDescription": "Text-to-Speech (TTS) uses the browser's Speech Synthesis API to convert written text into spoken words. The available voices depend on your operating system and language settings.",
+		"whenToUse": "When to Use",
+		"platformSupport": "Platform Support",
+		"tip": "Press Ctrl/Cmd + Enter while typing to speak the text quickly. Local voices provide better quality and work offline.",
+		"toast": {
+			"enterText": "Please enter some text to speak",
+			"speechFailed": "Speech synthesis failed",
+			"enterTextBookmark": "Please enter some text to bookmark",
+			"bookmarkAdded": "Bookmark added!",
+			"historyCleared": "History cleared",
+			"bookmarkDeleted": "Bookmark deleted",
+			"copied": "Copied to clipboard!"
+		},
+		"uses": [
+			"Accessibility for visually impaired users",
+			"Language learning and pronunciation",
+			"Voice acting and content creation",
+			"When you have a sore throat",
+			"Creating voice assistants or bots"
+		],
+		"platforms": [
+			"Windows 7/10+ (built-in voices)",
+			"macOS/iOS (high-quality voices)",
+			"Android (Google voices)",
+			"Modern browsers (Chrome, Safari, Firefox)"
+		]
 	}
 }

@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useLocale, useTranslations } from 'next-intl'
 import { cn } from '@/lib/utils'
-import { Home, ChevronRight } from 'lucide-react'
+import { Home, ChevronRight, Settings } from 'lucide-react'
 import { widgets, widgetCategories, getWidgetsByCategory } from '@/lib/constants/widgets'
 
 export function ProjectsSidebar() {
@@ -37,9 +37,8 @@ export function ProjectsSidebar() {
 						</Link>
 
 						<div className="my-4 space-y-4">
-							{/* Render categories dynamically (excluding settings) */}
+							{/* Render categories dynamically */}
 							{Object.entries(widgetCategories)
-								.filter(([categoryKey]) => categoryKey !== 'settings')
 								.map(([categoryKey, categoryName]) => {
 									const categoryWidgets = getWidgetsByCategory(categoryKey as keyof typeof widgetCategories)
 									
@@ -78,28 +77,17 @@ export function ProjectsSidebar() {
 
 				{/* Settings section at the bottom */}
 				<div className="border-t p-4">
-					<h3 className="mb-2 px-3 text-xs font-medium text-muted-foreground uppercase tracking-wider">
-						{widgetCategories.settings}
-					</h3>
-					{getWidgetsByCategory('settings').map((widget) => {
-						const isActive = pathname === `/${locale}/projects/${widget.path}`
-						const Icon = widget.icon
-						
-						return (
-							<Link
-								key={widget.id}
-								href={`/${locale}/projects/${widget.path}`}
-								className={cn(
-									"flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-all hover:bg-accent/10 hover:text-foreground",
-									isActive && "bg-accent text-white"
-								)}
-							>
-								<Icon className="w-4 h-4" />
-								<span className="flex-1">{widgetT(`${widget.translationKey}.title`)}</span>
-								{isActive && <ChevronRight className="w-4 h-4" />}
-							</Link>
-						)
-					})}
+					<Link
+						href={`/${locale}/settings`}
+						className={cn(
+							"flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-all hover:bg-accent/10 hover:text-foreground",
+							pathname === `/${locale}/settings` && "bg-accent text-white"
+						)}
+					>
+						<Settings className="w-4 h-4" />
+						<span className="flex-1">{t('categories.settings.title')}</span>
+						{pathname === `/${locale}/settings` && <ChevronRight className="w-4 h-4" />}
+					</Link>
 				</div>
 			</div>
 		</aside>
