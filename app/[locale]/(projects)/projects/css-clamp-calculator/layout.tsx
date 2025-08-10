@@ -3,7 +3,7 @@ import { WidgetSchema } from '@/components/seo/WidgetSchema'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
-  return generateWidgetMetadata('css-clamp-calculator', locale as 'en' | 'ru' | 'he')
+  return generateWidgetMetadata('css-clamp-calculator', locale as 'en' | 'ru')
 }
 
 export default async function ClampCalculatorLayout({

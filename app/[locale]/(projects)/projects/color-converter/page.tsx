@@ -40,7 +40,7 @@ import {
 
 export default function ColorConverterPage() {
   const t = useTranslations('widgets.colorConverter')
-  const locale = useLocale() as 'en' | 'ru' | 'he'
+  const locale = useLocale() as 'en' | 'ru'
   
   // State
   const [hexValue, setHexValue] = useState('#FF9999')

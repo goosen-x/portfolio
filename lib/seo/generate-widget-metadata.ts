@@ -5,7 +5,7 @@ const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://portfolio.vercel.a
 
 export function generateWidgetMetadata(
   widgetKey: string,
-  locale: 'en' | 'ru' | 'he'
+  locale: 'en' | 'ru'
 ): Metadata {
   const metadata = widgetMetadata[widgetKey]?.[locale]
   
@@ -25,7 +25,6 @@ export function generateWidgetMetadata(
       languages: {
         'en': `${BASE_URL}/en/projects/${widgetKey}`,
         'ru': `${BASE_URL}/ru/projects/${widgetKey}`,
-        'he': `${BASE_URL}/he/projects/${widgetKey}`,
       }
     },
     openGraph: {

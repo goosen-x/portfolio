@@ -109,15 +109,6 @@ const languages: Language[] = [
     nativeName: 'Русский',
     flag: '🇷🇺',
     description: 'Россия'
-  },
-  {
-    code: 'he',
-    name: 'Hebrew',
-    nativeName: 'עברית',
-    flag: '🇮🇱',
-    description: 'ישראל',
-    rtl: true,
-    inDevelopment: true
   }
 ]
 

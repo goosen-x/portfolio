@@ -39,7 +39,7 @@ export function RelatedTools({ currentTool, category = 'css' }: RelatedToolsProp
     <Card className="mt-8">
       <CardHeader>
         <CardTitle className="text-lg">
-          {locale === 'ru' ? 'Похожие инструменты' : locale === 'he' ? 'כלים דומים' : 'Related Tools'}
+          {locale === 'ru' ? 'Похожие инструменты' : 'Related Tools'}
         </CardTitle>
       </CardHeader>
       <CardContent>

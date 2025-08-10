@@ -4,7 +4,7 @@ import { getAllPostsFromFiles } from '@/lib/api-file'
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://portfolio.vercel.app'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const locales = ['en', 'ru', 'he']
+  const locales = ['en', 'ru']
   
   // Get all blog posts
   const posts = getAllPostsFromFiles()

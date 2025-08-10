@@ -2477,7 +2477,7 @@ export function getWidgetsByTag(tag: string): Widget[] {
   return widgets.filter(widget => widget.tags?.includes(tag))
 }
 
-export function getWidgetFAQs(widgetId: string, locale: 'en' | 'ru' | 'he'): WidgetFAQ[] {
+export function getWidgetFAQs(widgetId: string, locale: 'en' | 'ru'): WidgetFAQ[] {
   const widget = getWidgetById(widgetId)
   return widget?.faqs?.[locale] || []
 }

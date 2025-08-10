@@ -14,7 +14,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/comp
 import { useLocale } from 'next-intl'
 
 export default function ClampCalculatorPage() {
-	const locale = useLocale() as 'en' | 'ru' | 'he'
+	const locale = useLocale() as 'en' | 'ru'
 	const t = useTranslations('widgets.clampCalculator')
 	const [unit, setUnit] = useState<'px' | 'rem'>('rem')
 	const [minValue, setMinValue] = useState<number | ''>('')

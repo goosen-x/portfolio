@@ -22,7 +22,7 @@ const createLayoutFile = (widgetFolder: string, metadataKey: string) => {
 import { WidgetSchema } from '@/components/seo/WidgetSchema'
 
 export function generateMetadata({ params }: { params: { locale: string } }) {
-  return generateWidgetMetadata('${metadataKey}', params.locale as 'en' | 'ru' | 'he')
+  return generateWidgetMetadata('${metadataKey}', params.locale as 'en' | 'ru')
 }
 
 export default function Layout({
