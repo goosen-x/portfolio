@@ -45,15 +45,20 @@ export async function generateMetadata(props: Params): Promise<Metadata> {
 	const post = await getPostBySlug(params.slug, params.locale)
 
 	if (!post) {
-		return notFound()
+		return {
+			title: 'Post Not Found | Dmitry Borisenko Blog',
+			description: 'The requested blog post could not be found.'
+		}
 	}
 
 	const title = `${post.title} | Dmitry Borisenko Blog`
 
 	return {
 		title,
+		description: post.excerpt,
 		openGraph: {
 			title,
+			description: post.excerpt,
 			images: [post.ogImage.url]
 		}
 	}

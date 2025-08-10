@@ -50,7 +50,13 @@ export async function getPostBySlug(slug: string, locale: string = 'en'): Promis
 	try {
 		const dbPost = await getDbPostBySlug(slug, locale)
 		if (!dbPost) {
-			return null
+			// If not found in DB, try fallback to file system
+			try {
+				return getPostBySlugFromFile(slug)
+			} catch (fileError) {
+				console.error('Error fetching post from file:', fileError)
+				return null
+			}
 		}
 		return convertDbPostToLegacy(dbPost)
 	} catch (error) {

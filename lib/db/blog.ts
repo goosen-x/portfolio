@@ -82,6 +82,12 @@ export async function getLatestPublishedPosts(locale: string = 'en', limit: numb
 // Get blog post by slug
 export async function getPostBySlug(slug: string, locale: string = 'en'): Promise<BlogPost | null> {
 	try {
+		// Check if database is configured
+		if (!process.env.DATABASE_URL && !process.env.POSTGRES_URL) {
+			console.warn('Database URL not configured, returning null for post')
+			return null
+		}
+		
 		const result = await sql`
 			SELECT 
 				bp.*,
@@ -112,8 +118,12 @@ export async function getPostBySlug(slug: string, locale: string = 'en'): Promis
 			...post,
 			authors: post.authors?.filter(Boolean) || []
 		} as BlogPost
-	} catch (error) {
-		console.error('Error fetching post by slug:', error)
+	} catch (error: any) {
+		if (error?.message?.includes('timeout') || error?.message?.includes('TimeoutError')) {
+			console.warn('Database connection timeout when fetching post by slug')
+		} else {
+			console.error('Error fetching post by slug:', error)
+		}
 		return null
 	}
 }
