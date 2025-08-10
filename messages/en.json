@@ -880,6 +880,56 @@
 				"remainders": "If participants don't divide evenly, extra members are distributed across teams",
 				"regenerate": "Click 'Regenerate' to create new random combinations"
 			}
+		},
+		"pomodoroTimer": {
+			"title": "Pomodoro Timer",
+			"description": "Boost your productivity with the Pomodoro Technique - work in focused intervals with regular breaks",
+			"timerSettings": "Timer Settings",
+			"workDuration": "Work Duration",
+			"shortBreak": "Short Break",
+			"longBreak": "Long Break",
+			"pomodorosUntilLongBreak": "Pomodoros until long break",
+			"minutes": "minutes",
+			"currentSession": "Current Session",
+			"work": "Work",
+			"break": "Break",
+			"longBreakSession": "Long Break",
+			"start": "Start",
+			"pause": "Pause",
+			"resume": "Resume",
+			"reset": "Reset",
+			"skip": "Skip",
+			"sessionComplete": "Session Complete!",
+			"takeABreak": "Time for a break!",
+			"backToWork": "Break's over! Time to focus.",
+			"statistics": "Statistics",
+			"todayStats": "Today's Stats",
+			"completedPomodoros": "Completed Pomodoros",
+			"totalFocusTime": "Total Focus Time",
+			"totalBreakTime": "Total Break Time",
+			"currentStreak": "Current Streak",
+			"hours": "hours",
+			"hour": "hour",
+			"minute": "minute",
+			"settings": {
+				"title": "Settings",
+				"soundEnabled": "Sound notifications",
+				"autoStartBreaks": "Auto-start breaks",
+				"autoStartPomodoros": "Auto-start work sessions",
+				"showNotifications": "Desktop notifications"
+			},
+			"goals": {
+				"title": "Daily Goal",
+				"setGoal": "Set daily pomodoro goal",
+				"goal": "Goal",
+				"progress": "Progress"
+			},
+			"notifications": {
+				"workComplete": "Great work! Time for a break.",
+				"breakComplete": "Break's over! Ready to focus?",
+				"longBreakComplete": "Long break complete! Let's get back to it.",
+				"goalReached": "Congratulations! You've reached your daily goal!"
+			}
 		}
 	},
 	"settings": {
