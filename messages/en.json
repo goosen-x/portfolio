@@ -883,7 +883,7 @@
 		},
 		"pomodoroTimer": {
 			"title": "Pomodoro Timer",
-			"description": "Boost your productivity with the Pomodoro Technique - work in focused intervals with regular breaks",
+			"description": "Master time management with proven technique. 25 minutes work, 5 minutes rest",
 			"timerSettings": "Timer Settings",
 			"workDuration": "Work Duration",
 			"shortBreak": "Short Break",
