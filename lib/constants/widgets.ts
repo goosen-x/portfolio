@@ -73,7 +73,7 @@ export interface Widget {
   faqs?: {
     en: WidgetFAQ[]
     ru: WidgetFAQ[]
-    he: WidgetFAQ[]
+    he?: WidgetFAQ[]
   }
   tags?: string[] // For SEO and search
   difficulty?: 'beginner' | 'intermediate' | 'advanced'
