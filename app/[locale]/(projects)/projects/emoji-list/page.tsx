@@ -2226,7 +2226,7 @@ export default function EmojiListPage() {
 						</div>
 					) : (
 						<p className='text-center text-muted-foreground py-8'>
-							No emojis found for "{searchTerm}"
+							No emojis found for &quot;{searchTerm}&quot;
 						</p>
 					)}
 				</Card>
@@ -2258,7 +2258,7 @@ export default function EmojiListPage() {
 					</div>
 				</div>
 				<p className='text-xs mt-4'>
-					If your device doesn't support certain emojis, they may appear as
+					If your device doesn&apos;t support certain emojis, they may appear as
 					boxes or question marks. Update your system for the latest emoji
 					support.
 				</p>
@@ -2270,7 +2270,7 @@ export default function EmojiListPage() {
 						For social media platforms like Facebook, Twitter, and Instagram,
 						simply copy the emoji and paste it directly into your posts,
 						comments, or bio. The download feature is useful when you need emoji
-						images for blogs, websites, or applications that don't support
+						images for blogs, websites, or applications that don&apos;t support
 						Unicode emojis directly.
 					</p>
 				</div>

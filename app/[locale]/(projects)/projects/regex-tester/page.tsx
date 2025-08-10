@@ -455,14 +455,14 @@ export default function RegexTesterPage() {
                       </Badge>
                     </div>
                     <div className="text-green-600 dark:text-green-400">
-                      "{match.match}"
+                      &quot;{match.match}&quot;
                     </div>
                     {match.groups && Object.keys(match.groups).length > 0 && (
                       <div className="mt-2 pt-2 border-t">
                         <div className="text-xs text-muted-foreground mb-1">Группы:</div>
                         {Object.entries(match.groups).map(([key, value]) => (
                           <div key={key} className="text-xs">
-                            <span className="text-muted-foreground">{key}:</span> "{value}"
+                            <span className="text-muted-foreground">{key}:</span> &quot;{value}&quot;
                           </div>
                         ))}
                       </div>
@@ -566,7 +566,7 @@ export default function RegexTesterPage() {
             </h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>• Используйте группы для извлечения частей текста</li>
-              <li>• Флаг 'g' для поиска всех совпадений</li>
+              <li>• Флаг &apos;g&apos; для поиска всех совпадений</li>
               <li>• Экранируйте спецсимволы: . * + ? [ ] ( ) { } ^ $ \ |</li>
               <li>• Тестируйте на разных примерах текста</li>
               <li>• Именованные группы упрощают работу с результатами</li>

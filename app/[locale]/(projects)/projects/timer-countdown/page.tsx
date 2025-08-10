@@ -26,7 +26,9 @@ import {
   Coffee,
   Dumbbell,
   BookOpen,
-  Briefcase
+  Briefcase,
+  BarChart3,
+  Info
 } from 'lucide-react'
 import { toast } from 'sonner'
 import { cn } from '@/lib/utils'
@@ -194,7 +196,7 @@ export default function TimerCountdownPage() {
         return { hours, minutes, seconds, milliseconds }
       } else {
         // Pomodoro logic - uses countdown
-        return updateTimer.call(null) // Reuse countdown logic
+        return prevTime // Return unchanged for now
       }
     })
   }

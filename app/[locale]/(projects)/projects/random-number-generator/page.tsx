@@ -340,7 +340,7 @@ export default function RandomNumberGeneratorPage() {
 					<p>
 						Unlike Math.random() or the Mersenne Twister algorithm,
 						crypto.getRandomValues() provides true randomness from the operating
-						system's entropy source.
+						system&apos;s entropy source.
 					</p>
 					<ul className='list-disc list-inside space-y-1 mt-2'>
 						<li>Range: 0 to 999,999</li>

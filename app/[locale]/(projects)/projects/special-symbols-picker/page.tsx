@@ -1163,7 +1163,7 @@ export default function SpecialSymbolsPickerPage() {
 	const filteredCategories = Object.entries(symbolCategories).reduce(
 		(acc, [key, category]) => {
 			if (!searchQuery) {
-				acc[key] = category
+				(acc as any)[key] = category
 			} else {
 				const filteredSymbols = category.symbols.filter(
 					symbol =>
@@ -1171,7 +1171,7 @@ export default function SpecialSymbolsPickerPage() {
 						category.name.toLowerCase().includes(searchQuery.toLowerCase())
 				)
 				if (filteredSymbols.length > 0) {
-					acc[key] = { ...category, symbols: filteredSymbols }
+					(acc as any)[key] = { ...category, symbols: filteredSymbols }
 				}
 			}
 			return acc

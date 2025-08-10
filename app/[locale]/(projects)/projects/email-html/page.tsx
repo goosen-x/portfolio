@@ -238,14 +238,14 @@ export default function EmailHtmlPage() {
 							<div className='flex items-center gap-2 text-xs'>
 								<Badge variant='secondary'>Старый способ</Badge>
 								<code className='text-red-600'>
-									&lt;a href="mailto:example@gmail.com"&gt;Контакты&lt;/a&gt;
+									&lt;a href=&quot;mailto:example@gmail.com&quot;&gt;Контакты&lt;/a&gt;
 								</code>
 							</div>
 							<div className='flex items-center gap-2 text-xs'>
 								<Badge variant='default'>Новый способ</Badge>
 								<code className='text-green-600'>
 									&lt;a
-									href="/email-html/show/?text=example%40gmail.com"&gt;Контакты&lt;/a&gt;
+									href=&quot;/email-html/show/?text=example%40gmail.com&quot;&gt;Контакты&lt;/a&gt;
 								</code>
 							</div>
 						</div>

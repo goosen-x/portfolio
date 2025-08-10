@@ -728,7 +728,7 @@ export default function JavaScriptSyntaxCheckerPage() {
               Советы
             </h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>• Используйте 'use strict' для строгого режима</li>
+              <li>• Используйте &apos;use strict&apos; для строгого режима</li>
               <li>• Предпочитайте const для неизменяемых значений</li>
               <li>• Используйте === вместо ==</li>
               <li>• Объявляйте переменные перед использованием</li>

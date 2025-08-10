@@ -770,7 +770,7 @@ export default function TextEmoticonsPage() {
 						</div>
 					) : (
 						<p className='text-center text-muted-foreground py-8'>
-							No emoticons found for "{searchTerm}"
+							No emoticons found for &quot;{searchTerm}&quot;
 						</p>
 					)}
 				</Card>

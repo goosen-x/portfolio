@@ -513,7 +513,7 @@ export default function UUIDGeneratorPage() {
               </div>
             ) : (
               <div className="text-center py-8 text-muted-foreground">
-                Нажмите "Генерировать" для создания UUID
+                Нажмите &quot;Генерировать&quot; для создания UUID
               </div>
             )}
 

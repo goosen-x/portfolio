@@ -497,7 +497,7 @@ export default function MockDataGeneratorPage() {
 					<div>
 						<h4 className='font-medium text-foreground mb-2'>Free & Open</h4>
 						<p>
-							All APIs listed here are free to use and don't require
+							All APIs listed here are free to use and don&apos;t require
 							authentication keys for basic requests.
 						</p>
 					</div>

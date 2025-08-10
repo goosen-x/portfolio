@@ -533,7 +533,7 @@ export default function LoanCalculatorPage() {
             
             <div className="space-y-3">
               {result.pieChartData.map((item, index) => {
-                const percentage = ((item.value / result.totalPayments) * 100).toFixed(1)
+                const percentage = ((item.value / result.totalPayment) * 100).toFixed(1)
                 return (
                   <div key={index} className="space-y-2">
                     <div className="flex justify-between items-center">

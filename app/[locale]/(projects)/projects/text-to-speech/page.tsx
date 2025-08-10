@@ -568,7 +568,7 @@ export default function TextToSpeechPage() {
 				<h3 className='font-semibold mb-3'>About Text to Speech</h3>
 				<div className='space-y-3 text-sm text-muted-foreground'>
 					<p>
-						Text-to-Speech (TTS) uses the browser's Speech Synthesis API to
+						Text-to-Speech (TTS) uses the browser&apos;s Speech Synthesis API to
 						convert written text into spoken words. The available voices depend
 						on your operating system and language settings.
 					</p>

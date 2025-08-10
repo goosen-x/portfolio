@@ -356,7 +356,7 @@ export default function RandomListGeneratorPage() {
 							This application uses crypto.getRandomValues() for enhanced
 							randomness instead of Math.random(). Please comply with local
 							laws. Users are responsible for any violations. This service is
-							provided "as is" without any warranties, express or implied.
+							provided &quot;as is&quot; without any warranties, express or implied.
 						</AlertDescription>
 					</Alert>
 				</div>

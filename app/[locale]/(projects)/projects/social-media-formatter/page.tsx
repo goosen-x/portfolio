@@ -359,7 +359,7 @@ export default function SocialMediaFormatterPage() {
 					</li>
 					<li className='flex gap-2'>
 						<span className='font-medium'>3.</span>
-						<span>Click "Format Text" to apply the formatting</span>
+						<span>Click &quot;Format Text&quot; to apply the formatting</span>
 					</li>
 					<li className='flex gap-2'>
 						<span className='font-medium'>4.</span>

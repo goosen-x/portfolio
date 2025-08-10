@@ -165,7 +165,7 @@ export default function DrawLotsPage() {
 						<h3 className='font-semibold mb-3'>How to Use</h3>
 						<ol className='space-y-2 text-sm text-muted-foreground'>
 							<li>1. Enter items (names, options, tasks, etc.) one per line</li>
-							<li>2. Click "Start Drawing" to create randomized cards</li>
+							<li>2. Click &quot;Start Drawing&quot; to create randomized cards</li>
 							<li>3. Click any card to reveal what was drawn</li>
 							<li>4. Only one card can be selected per draw</li>
 						</ol>
@@ -302,7 +302,7 @@ export default function DrawLotsPage() {
 						tasks, or any situation where you need an unbiased random selection.
 					</p>
 					<p className='text-xs mt-4'>
-						This tool is provided "as is" without warranties. Please follow
+						This tool is provided &quot;as is&quot; without warranties. Please follow
 						local laws and regulations. Users are responsible for their use of
 						this tool.
 					</p>

@@ -560,7 +560,7 @@ export default function DiceRollerPage() {
 						</div>
 					</div>
 					<p className='text-xs mt-4'>
-						This tool is provided "as is" without any warranties. Please follow
+						This tool is provided &quot;as is&quot; without any warranties. Please follow
 						local laws regarding online gaming. Good luck! 🎲
 					</p>
 				</div>

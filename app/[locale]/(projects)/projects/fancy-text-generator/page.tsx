@@ -1223,7 +1223,7 @@ export default function FancyTextGeneratorPage() {
 				</h3>
 				<div className='space-y-3 text-sm text-muted-foreground'>
 					<p>
-						Zalgo text, also known as "creepy text" or "glitch text", uses
+						Zalgo text, also known as &quot;creepy text&quot; or &quot;glitch text&quot;, uses
 						combining Unicode characters (U+0300~U+036F range) to create a
 						corrupted, chaotic appearance. Named after the creepypasta character
 						Zalgo, it represents digital horror and corruption.
@@ -1237,7 +1237,7 @@ export default function FancyTextGeneratorPage() {
 					<p>
 						The intensity slider controls how many combining marks are added to
 						each character. Higher intensity creates more chaotic and
-						"corrupted" text, perfect for horror-themed content or creepypasta
+						&quot;corrupted&quot; text, perfect for horror-themed content or creepypasta
 						stories.
 					</p>
 				</div>
