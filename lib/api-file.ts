@@ -48,11 +48,29 @@ export function getPostBySlugFromFile(slug: string, locale: string = 'en'): Post
   }
 }
 
-export function getAllPostsFromFiles(): Post[] {
+export function getAllPostsFromFiles(locale: string = 'en'): Post[] {
   const slugs = getPostSlugs()
-  const posts = slugs
-    .filter(slug => slug.endsWith('.md'))
-    .map((slug) => getPostBySlugFromFile(slug))
+  const uniqueSlugs = new Set<string>()
+  
+  // Extract unique base slugs (without locale suffix)
+  slugs.forEach(fileName => {
+    if (fileName.endsWith('.md')) {
+      const baseName = fileName.replace('.md', '')
+      // Remove locale suffix if present (-en, -ru)
+      const baseSlug = baseName.replace(/-(?:en|ru)$/, '')
+      uniqueSlugs.add(baseSlug)
+    }
+  })
+  
+  const posts = Array.from(uniqueSlugs)
+    .map((slug) => {
+      try {
+        return getPostBySlugFromFile(slug, locale)
+      } catch {
+        return null
+      }
+    })
+    .filter((post): post is Post => post !== null)
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
   return posts
 }

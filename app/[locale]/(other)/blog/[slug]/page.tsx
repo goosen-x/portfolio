@@ -65,7 +65,30 @@ export async function generateMetadata(props: Params): Promise<Metadata> {
 }
 
 export async function generateStaticParams() {
-	// For now, we'll generate params at runtime
-	// You could cache this or make it more efficient based on your needs
-	return []
+	try {
+		// Generate static params for both locales
+		const englishPosts = await getAllPosts('en')
+		const russianPosts = await getAllPosts('ru')
+		
+		const params = [
+			...englishPosts.map(post => ({ 
+				locale: 'en', 
+				slug: post.slug 
+			})),
+			...russianPosts.map(post => ({ 
+				locale: 'ru', 
+				slug: post.slug 
+			}))
+		]
+		
+		console.log(`Generated static params for ${params.length} blog posts`)
+		return params
+	} catch (error) {
+		console.error('Error generating static params for blog posts:', error)
+		// Return empty array if there's an error - pages will be generated on-demand
+		return []
+	}
 }
+
+// Enable ISR with 1 hour revalidation
+export const revalidate = 3600

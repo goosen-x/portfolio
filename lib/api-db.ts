@@ -32,12 +32,20 @@ function convertDbPostToLegacy(dbPost: BlogPost): Post {
 export async function getAllPosts(locale: string = 'en'): Promise<Post[]> {
 	try {
 		const dbPosts = await getAllPublishedPosts(locale)
-		return dbPosts.map(convertDbPostToLegacy)
+		
+		// If we get posts from DB, use them
+		if (dbPosts && dbPosts.length > 0) {
+			return dbPosts.map(convertDbPostToLegacy)
+		}
+		
+		// If no posts from DB (but no error), fallback to files
+		console.warn('No posts found in database, falling back to file system')
+		return getAllPostsFromFiles(locale)
 	} catch (error) {
 		console.error('Error fetching posts from database:', error)
 		// Fallback to file system
 		try {
-			return getAllPostsFromFiles()
+			return getAllPostsFromFiles(locale)
 		} catch (fileError) {
 			console.error('Error fetching posts from files:', fileError)
 			return []

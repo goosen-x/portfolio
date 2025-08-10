@@ -35,3 +35,6 @@ export default async function Home(props: Props) {
 		</>
 	)
 }
+
+// Enable ISR with 30 minutes revalidation for homepage
+export const revalidate = 1800

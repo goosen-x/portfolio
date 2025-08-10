@@ -42,3 +42,14 @@ export default async function Blog(props: Props) {
 		</main>
 	)
 }
+
+// Generate static params for both locales
+export async function generateStaticParams() {
+	return [
+		{ locale: 'en' },
+		{ locale: 'ru' }
+	]
+}
+
+// Enable ISR with 30 minutes revalidation for blog listing
+export const revalidate = 1800
