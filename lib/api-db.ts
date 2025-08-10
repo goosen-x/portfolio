@@ -63,7 +63,7 @@ export async function getPostBySlug(slug: string, locale: string = 'en'): Promis
 		console.error('Error fetching post by slug from database:', error)
 		// Fallback to file system
 		try {
-			return getPostBySlugFromFile(slug)
+			return getPostBySlugFromFile(slug, locale)
 		} catch (fileError) {
 			console.error('Error fetching post from file:', fileError)
 			return null

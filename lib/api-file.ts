@@ -13,10 +13,21 @@ export function getPostSlugs() {
   }
 }
 
-export function getPostBySlugFromFile(slug: string): Post {
+export function getPostBySlugFromFile(slug: string, locale: string = 'en'): Post {
   const realSlug = slug.replace(/\.md$/, '')
-  const fullPath = join(postsDirectory, `${realSlug}.md`)
-  const fileContents = fs.readFileSync(fullPath, 'utf8')
+  
+  // Try locale-specific file first
+  let fullPath = join(postsDirectory, `${realSlug}-${locale}.md`)
+  let fileContents: string
+  
+  try {
+    fileContents = fs.readFileSync(fullPath, 'utf8')
+  } catch {
+    // Fallback to non-localized file
+    fullPath = join(postsDirectory, `${realSlug}.md`)
+    fileContents = fs.readFileSync(fullPath, 'utf8')
+  }
+  
   const { data, content } = matter(fileContents)
 
   return {

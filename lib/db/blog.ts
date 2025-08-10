@@ -5,7 +5,18 @@ import type { BlogPost, Author, CreateBlogPostData, UpdateBlogPostData } from '.
 // Get all published blog posts with authors
 export async function getAllPublishedPosts(locale: string = 'en'): Promise<BlogPost[]> {
 	try {
-		const posts = await sql`
+		// Check if database is configured
+		if (!process.env.DATABASE_URL && !process.env.POSTGRES_URL) {
+			console.warn('Database URL not configured, returning empty posts')
+			return []
+		}
+		
+		// Add timeout wrapper
+		const timeoutPromise = new Promise<never>((_, reject) => {
+			setTimeout(() => reject(new Error('Query timeout')), 2000)
+		})
+		
+		const queryPromise = sql`
 			SELECT 
 				bp.*,
 				json_agg(
@@ -25,12 +36,18 @@ export async function getAllPublishedPosts(locale: string = 'en'): Promise<BlogP
 			ORDER BY bp.published_at DESC, bp.created_at DESC
 		`
 
+		const posts = await Promise.race([queryPromise, timeoutPromise])
+
 		return posts.map((post: any) => ({
 			...post,
 			authors: post.authors?.filter(Boolean) || []
 		})) as BlogPost[]
-	} catch (error) {
-		console.error('Error fetching published posts:', error)
+	} catch (error: any) {
+		if (error?.message?.includes('timeout') || error?.message?.includes('TimeoutError') || error?.message?.includes('Query timeout')) {
+			console.warn('Database connection timeout - returning empty posts')
+		} else {
+			console.error('Error fetching published posts:', error)
+		}
 		return []
 	}
 }
@@ -44,7 +61,12 @@ export async function getLatestPublishedPosts(locale: string = 'en', limit: numb
 			return []
 		}
 		
-		const posts = await sql`
+		// Add timeout wrapper
+		const timeoutPromise = new Promise<never>((_, reject) => {
+			setTimeout(() => reject(new Error('Query timeout')), 2000)
+		})
+		
+		const queryPromise = sql`
 			SELECT 
 				bp.*,
 				json_agg(
@@ -65,12 +87,14 @@ export async function getLatestPublishedPosts(locale: string = 'en', limit: numb
 			LIMIT ${limit}
 		`
 
+		const posts = await Promise.race([queryPromise, timeoutPromise])
+
 		return posts.map((post: any) => ({
 			...post,
 			authors: post.authors?.filter(Boolean) || []
 		})) as BlogPost[]
 	} catch (error: any) {
-		if (error?.message?.includes('timeout') || error?.message?.includes('TimeoutError')) {
+		if (error?.message?.includes('timeout') || error?.message?.includes('TimeoutError') || error?.message?.includes('Query timeout')) {
 			console.warn('Database connection timeout - returning empty posts')
 		} else {
 			console.error('Error fetching latest posts:', error)
@@ -88,7 +112,12 @@ export async function getPostBySlug(slug: string, locale: string = 'en'): Promis
 			return null
 		}
 		
-		const result = await sql`
+		// Add timeout wrapper
+		const timeoutPromise = new Promise<never>((_, reject) => {
+			setTimeout(() => reject(new Error('Query timeout')), 2000)
+		})
+		
+		const queryPromise = sql`
 			SELECT 
 				bp.*,
 				json_agg(
@@ -109,6 +138,8 @@ export async function getPostBySlug(slug: string, locale: string = 'en'): Promis
 			LIMIT 1
 		`
 
+		const result = await Promise.race([queryPromise, timeoutPromise])
+
 		if (result.length === 0) {
 			return null
 		}
@@ -119,7 +150,7 @@ export async function getPostBySlug(slug: string, locale: string = 'en'): Promis
 			authors: post.authors?.filter(Boolean) || []
 		} as BlogPost
 	} catch (error: any) {
-		if (error?.message?.includes('timeout') || error?.message?.includes('TimeoutError')) {
+		if (error?.message?.includes('timeout') || error?.message?.includes('TimeoutError') || error?.message?.includes('Query timeout')) {
 			console.warn('Database connection timeout when fetching post by slug')
 		} else {
 			console.error('Error fetching post by slug:', error)

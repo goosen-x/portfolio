@@ -23,7 +23,7 @@ try {
 	sql = databaseUrl ? neon(databaseUrl, {
 		fetchOptions: {
 			// Add timeout to prevent hanging
-			signal: AbortSignal.timeout(10000), // Increased timeout
+			signal: AbortSignal.timeout(3000), // Shorter timeout for faster fallback
 		}
 	}) : mockSql
 } catch (error) {
