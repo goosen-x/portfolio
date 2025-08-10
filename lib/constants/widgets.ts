@@ -829,7 +829,53 @@ export const widgets: Widget[] = [
     difficulty: 'beginner',
     tags: ['utm', 'marketing', 'analytics', 'tracking', 'campaign'],
     useCase: 'Build UTM-tagged URLs for marketing campaign tracking',
-    metaDescription: 'UTM link builder for marketing campaigns. Track traffic sources in Google Analytics.'
+    metaDescription: 'UTM link builder for marketing campaigns. Track traffic sources in Google Analytics.',
+    faqs: {
+      en: [
+        {
+          question: 'What are UTM parameters and why use them?',
+          answer: 'UTM parameters are tags added to URLs that help track the effectiveness of marketing campaigns in Google Analytics by identifying traffic sources, mediums, and campaigns.'
+        },
+        {
+          question: 'What\'s the difference between utm_source and utm_medium?',
+          answer: 'utm_source identifies where traffic originates (google, facebook, newsletter), while utm_medium identifies the marketing medium (cpc, social, email).'
+        },
+        {
+          question: 'Are UTM parameters case-sensitive?',
+          answer: 'Yes! Use consistent lowercase naming to avoid duplicate entries in analytics. "Email" and "email" are treated as separate sources.'
+        },
+        {
+          question: 'How do I track UTM performance in Google Analytics?',
+          answer: 'Go to Acquisition > Campaigns > All Campaigns in Google Analytics to see detailed performance data for your UTM-tagged campaigns.'
+        },
+        {
+          question: 'Should I use UTM parameters for internal links?',
+          answer: 'No, avoid UTM parameters on internal links as they can reset session data and create inaccurate analytics reports within your website.'
+        }
+      ],
+      ru: [
+        {
+          question: 'Что такое UTM параметры и зачем их использовать?',
+          answer: 'UTM параметры - это метки, добавляемые к URL, которые помогают отслеживать эффективность маркетинговых кампаний в Google Analytics, идентифицируя источники трафика, каналы и кампании.'
+        },
+        {
+          question: 'В чём разница между utm_source и utm_medium?',
+          answer: 'utm_source определяет источник трафика (google, facebook, newsletter), а utm_medium определяет маркетинговый канал (cpc, social, email).'
+        },
+        {
+          question: 'Чувствительны ли UTM параметры к регистру?',
+          answer: 'Да! Используйте последовательное именование в нижнем регистре, чтобы избежать дублирования записей в аналитике. "Email" и "email" рассматриваются как разные источники.'
+        },
+        {
+          question: 'Как отслеживать производительность UTM в Google Analytics?',
+          answer: 'Перейдите в Привлечение > Кампании > Все кампании в Google Analytics, чтобы увидеть детальные данные о производительности ваших UTM-меченых кампаний.'
+        },
+        {
+          question: 'Следует ли использовать UTM параметры для внутренних ссылок?',
+          answer: 'Нет, избегайте UTM параметров на внутренних ссылках, так как они могут сбросить данные сеанса и создать неточные отчёты аналитики внутри вашего сайта.'
+        }
+      ]
+    }
   },
   {
     id: 'seo-markdown-generator',
@@ -842,7 +888,53 @@ export const widgets: Widget[] = [
     difficulty: 'intermediate',
     tags: ['seo', 'markdown', 'blog', 'content', 'generator'],
     useCase: 'Generate SEO-optimized markdown files for blog posts',
-    metaDescription: 'SEO markdown generator for blogs. Create optimized blog post templates with metadata.'
+    metaDescription: 'SEO markdown generator for blogs. Create optimized blog post templates with metadata.',
+    faqs: {
+      en: [
+        {
+          question: 'What is SEO markdown and why is it important?',
+          answer: 'SEO markdown includes metadata like title tags, descriptions, and structured data that help search engines understand and rank your content better.'
+        },
+        {
+          question: 'What metadata fields should I include?',
+          answer: 'Essential fields include title, description, keywords, author, publish date, and Open Graph tags for social media sharing.'
+        },
+        {
+          question: 'How do I optimize for featured snippets?',
+          answer: 'Use proper heading structure (H1-H6), include FAQ sections, create numbered lists, and answer common questions concisely.'
+        },
+        {
+          question: 'Can I use this for different CMS platforms?',
+          answer: 'Yes! The generated markdown works with Jekyll, Hugo, Gatsby, Next.js, and most static site generators that support frontmatter.'
+        },
+        {
+          question: 'What\'s the ideal description length?',
+          answer: 'Keep meta descriptions between 150-160 characters for optimal display in search results without truncation.'
+        }
+      ],
+      ru: [
+        {
+          question: 'Что такое SEO markdown и почему это важно?',
+          answer: 'SEO markdown включает метаданные, такие как теги заголовков, описания и структурированные данные, которые помогают поисковым системам лучше понимать и ранжировать ваш контент.'
+        },
+        {
+          question: 'Какие поля метаданных следует включить?',
+          answer: 'Основные поля включают заголовок, описание, ключевые слова, автора, дату публикации и теги Open Graph для обмена в социальных сетях.'
+        },
+        {
+          question: 'Как оптимизировать для расширенных сниппетов?',
+          answer: 'Используйте правильную структуру заголовков (H1-H6), включайте разделы FAQ, создавайте нумерованные списки и кратко отвечайте на общие вопросы.'
+        },
+        {
+          question: 'Можно ли использовать это для разных CMS платформ?',
+          answer: 'Да! Сгенерированный markdown работает с Jekyll, Hugo, Gatsby, Next.js и большинством генераторов статических сайтов, поддерживающих frontmatter.'
+        },
+        {
+          question: 'Какая идеальная длина описания?',
+          answer: 'Держите мета-описания в пределах 150-160 символов для оптимального отображения в результатах поиска без обрезания.'
+        }
+      ]
+    }
   },
   {
     id: 'team-randomizer',
@@ -2151,7 +2243,54 @@ export const widgets: Widget[] = [
     difficulty: 'beginner',
     tags: ['age', 'calculator', 'birthday', 'date', 'time'],
     useCase: 'Calculate exact age in years, months, days, hours, and minutes from birthdate',
-    metaDescription: 'Age calculator with precise calculations. Get your exact age in years, months, days, hours.'
+    metaDescription: 'Age calculator with precise calculations. Get your exact age in years, months, days, hours.',
+    faqs: {
+      en: [
+        {
+          question: 'How accurate is the age calculator?',
+          answer: 'The calculator is extremely accurate, providing precise calculations down to the hour and minute. It accounts for leap years and varying month lengths automatically.'
+        },
+        {
+          question: 'Can I calculate age for future dates?',
+          answer: 'Yes, you can calculate age until a future date. Simply enter the target date instead of today\'s date to see how old you\'ll be on that date.'
+        },
+        {
+          question: 'Does the calculator work with different date formats?',
+          answer: 'Yes, the calculator supports various date input formats and automatically adjusts for your local timezone and date preferences.'
+        },
+        {
+          question: 'What is the maximum age range supported?',
+          answer: 'The calculator can handle birth dates from 1900 to the current year, supporting ages up to 150+ years with full accuracy.'
+        },
+        {
+          question: 'Can I save or share my age calculation results?',
+          answer: 'You can copy the detailed results to share. The calculation includes breakdown by years, months, days, hours, and total days lived.'
+        }
+      ],
+      ru: [
+        {
+          question: 'Насколько точен калькулятор возраста?',
+          answer: 'Калькулятор чрезвычайно точен, обеспечивая точные вычисления вплоть до часа и минуты. Он автоматически учитывает високосные годы и различную продолжительность месяцев.'
+        },
+        {
+          question: 'Могу ли я рассчитать возраст на будущую дату?',
+          answer: 'Да, вы можете рассчитать возраст до будущей даты. Просто введите целевую дату вместо сегодняшней, чтобы узнать, сколько вам будет лет в эту дату.'
+        },
+        {
+          question: 'Работает ли калькулятор с разными форматами дат?',
+          answer: 'Да, калькулятор поддерживает различные форматы ввода дат и автоматически подстраивается под ваш местный часовой пояс и предпочтения дат.'
+        },
+        {
+          question: 'Какой максимальный диапазон возраста поддерживается?',
+          answer: 'Калькулятор может обрабатывать даты рождения с 1900 года по текущий год, поддерживая возраст до 150+ лет с полной точностью.'
+        },
+        {
+          question: 'Могу ли я сохранить или поделиться результатами расчёта возраста?',
+          answer: 'Вы можете скопировать подробные результаты для обмена. Расчёт включает разбивку по годам, месяцам, дням, часам и общему количеству прожитых дней.'
+        }
+      ],
+      he: []
+    }
   },
   {
     id: 'temperature-converter',
@@ -2164,7 +2303,54 @@ export const widgets: Widget[] = [
     difficulty: 'beginner',
     tags: ['temperature', 'converter', 'celsius', 'fahrenheit', 'kelvin'],
     useCase: 'Convert between Celsius, Fahrenheit, and Kelvin temperature scales instantly',
-    metaDescription: 'Temperature converter for Celsius, Fahrenheit, and Kelvin. Convert temperatures between scales.'
+    metaDescription: 'Temperature converter for Celsius, Fahrenheit, and Kelvin. Convert temperatures between scales.',
+    faqs: {
+      en: [
+        {
+          question: 'What are the most common temperature scales?',
+          answer: 'Celsius (°C) is used worldwide for daily temperatures and science, Fahrenheit (°F) is primarily used in the United States, and Kelvin (K) is the scientific standard starting from absolute zero (-273.15°C).'
+        },
+        {
+          question: 'How do I remember the conversion formulas?',
+          answer: 'Key reference points: Water freezes at 0°C = 32°F = 273.15K, and boils at 100°C = 212°F = 373.15K. For quick estimates, °C to °F: multiply by 2 and add 30 (rough approximation).'
+        },
+        {
+          question: 'What is absolute zero and why is Kelvin important?',
+          answer: 'Absolute zero (0K = -273.15°C = -459.67°F) is the theoretical temperature where all molecular motion stops. Kelvin is crucial for scientific calculations because it starts from this absolute minimum.'
+        },
+        {
+          question: 'When should I use each temperature scale?',
+          answer: 'Use Celsius for daily weather, cooking, and most global contexts. Use Fahrenheit if you\'re in the US. Use Kelvin for scientific calculations, chemistry, and physics where absolute temperature matters.'
+        },
+        {
+          question: 'Are the conversions mathematically precise?',
+          answer: 'Yes, the converter uses exact formulas: C = (F-32)×5/9, F = C×9/5+32, K = C+273.15. All conversions are mathematically accurate to many decimal places for scientific precision.'
+        }
+      ],
+      ru: [
+        {
+          question: 'Какие наиболее распространенные температурные шкалы?',
+          answer: 'Цельсий (°C) используется по всему миру для повседневных температур и в науке, Фаренгейт (°F) в основном используется в США, а Кельвин (K) - научный стандарт, начинающийся с абсолютного нуля (-273.15°C).'
+        },
+        {
+          question: 'Как запомнить формулы преобразования?',
+          answer: 'Ключевые точки: вода замерзает при 0°C = 32°F = 273.15K, и кипит при 100°C = 212°F = 373.15K. Для быстрой оценки °C в °F: умножить на 2 и прибавить 30 (приблизительно).'
+        },
+        {
+          question: 'Что такое абсолютный ноль и почему Кельвин важен?',
+          answer: 'Абсолютный ноль (0K = -273.15°C = -459.67°F) - это теоретическая температура, при которой прекращается всё молекулярное движение. Кельвин важен для научных расчетов, так как начинается с этого абсолютного минимума.'
+        },
+        {
+          question: 'Когда следует использовать каждую температурную шкалу?',
+          answer: 'Используйте Цельсий для ежедневной погоды, готовки и большинства глобальных контекстов. Используйте Фаренгейт, если вы в США. Используйте Кельвин для научных расчетов, химии и физики, где важна абсолютная температура.'
+        },
+        {
+          question: 'Математически ли точны преобразования?',
+          answer: 'Да, конвертер использует точные формулы: C = (F-32)×5/9, F = C×9/5+32, K = C+273.15. Все преобразования математически точны до многих десятичных знаков для научной точности.'
+        }
+      ],
+      he: []
+    }
   },
   {
     id: 'bmi-calculator',
@@ -2177,7 +2363,54 @@ export const widgets: Widget[] = [
     difficulty: 'beginner',
     tags: ['bmi', 'health', 'weight', 'calculator', 'fitness'],
     useCase: 'Calculate Body Mass Index (BMI) with health status interpretation',
-    metaDescription: 'BMI calculator with health interpretation. Calculate your Body Mass Index and health status.'
+    metaDescription: 'BMI calculator with health interpretation. Calculate your Body Mass Index and health status.',
+    faqs: {
+      en: [
+        {
+          question: 'What is BMI and why is it important?',
+          answer: 'BMI (Body Mass Index) is a measure that uses your height and weight to work out if your weight is healthy. It\'s a useful screening tool to identify potential weight-related health problems.'
+        },
+        {
+          question: 'How accurate is the BMI calculation?',
+          answer: 'The BMI calculation follows the standard formula: weight (kg) / height (m)². Our calculator provides precise results and includes health status interpretation based on WHO guidelines.'
+        },
+        {
+          question: 'What BMI ranges are considered healthy?',
+          answer: 'Normal weight: 18.5-24.9, Underweight: below 18.5, Overweight: 25-29.9, Obese: 30 and above. However, BMI doesn\'t account for muscle mass, bone density, or body composition.'
+        },
+        {
+          question: 'Can I use both metric and imperial units?',
+          answer: 'Yes, the calculator supports both metric (kg, cm) and imperial (lbs, ft/in) units. You can switch between units easily and get accurate results in your preferred measurement system.'
+        },
+        {
+          question: 'Are there limitations to using BMI?',
+          answer: 'BMI doesn\'t distinguish between muscle and fat mass, so athletes with high muscle mass may have high BMI but low body fat. It\'s best used as a general screening tool alongside other health assessments.'
+        }
+      ],
+      ru: [
+        {
+          question: 'Что такое ИМТ и почему это важно?',
+          answer: 'ИМТ (Индекс Массы Тела) — это показатель, который использует ваш рост и вес для определения здорового веса. Это полезный инструмент скрининга для выявления потенциальных проблем со здоровьем, связанных с весом.'
+        },
+        {
+          question: 'Насколько точен расчёт ИМТ?',
+          answer: 'Расчёт ИМТ следует стандартной формуле: вес (кг) / рост (м)². Наш калькулятор предоставляет точные результаты и включает интерпретацию состояния здоровья на основе рекомендаций ВОЗ.'
+        },
+        {
+          question: 'Какие диапазоны ИМТ считаются здоровыми?',
+          answer: 'Нормальный вес: 18.5-24.9, Недостаточный вес: ниже 18.5, Избыточный вес: 25-29.9, Ожирение: 30 и выше. Однако ИМТ не учитывает мышечную массу, плотность костей или состав тела.'
+        },
+        {
+          question: 'Можно ли использовать метрические и имперские единицы?',
+          answer: 'Да, калькулятор поддерживает как метрические (кг, см), так и имперские (фунты, футы/дюймы) единицы. Вы можете легко переключаться между единицами и получать точные результаты в предпочитаемой системе измерений.'
+        },
+        {
+          question: 'Есть ли ограничения в использовании ИМТ?',
+          answer: 'ИМТ не различает мышечную и жировую массу, поэтому спортсмены с высокой мышечной массой могут иметь высокий ИМТ при низком содержании жира. Лучше всего использовать как общий инструмент скрининга наряду с другими оценками здоровья.'
+        }
+      ],
+      he: []
+    }
   },
   {
     id: 'text-counter',
@@ -2190,7 +2423,53 @@ export const widgets: Widget[] = [
     difficulty: 'beginner',
     tags: ['text', 'counter', 'seo', 'words', 'characters', 'social-media'],
     useCase: 'Count characters, words, sentences, and paragraphs for SEO and social media',
-    metaDescription: 'Text counter for SEO and social media. Count characters, words, sentences with platform limits.'
+    metaDescription: 'Text counter for SEO and social media. Count characters, words, sentences with platform limits.',
+    faqs: {
+      en: [
+        {
+          question: 'What counts as a word in the counter?',
+          answer: 'Words are defined as sequences of characters separated by spaces. Hyphenated words count as single words, while contractions like "don\'t" are counted as one word.'
+        },
+        {
+          question: 'Why are character limits important for social media?',
+          answer: 'Each platform has specific limits: Twitter posts (280 chars), Instagram captions (2,200 chars), Facebook posts (63,206 chars). Staying within limits ensures your content displays properly.'
+        },
+        {
+          question: 'Does the counter include spaces and punctuation?',
+          answer: 'Yes! Character count includes all spaces, punctuation, and special characters. Word count excludes spaces and punctuation, focusing only on actual words.'
+        },
+        {
+          question: 'How accurate is the reading time estimate?',
+          answer: 'Reading time is calculated using the average reading speed of 200-250 words per minute for adults. Actual reading speed varies based on text complexity and individual reading ability.'
+        },
+        {
+          question: 'Can I use this for SEO optimization?',
+          answer: 'Absolutely! Meta descriptions should be 150-160 characters, title tags 50-60 characters, and blog posts typically 300+ words for better SEO performance.'
+        }
+      ],
+      ru: [
+        {
+          question: 'Что считается словом в счётчике?',
+          answer: 'Слова определяются как последовательности символов, разделённые пробелами. Слова через дефис считаются одним словом, а сокращения вроде "don\'t" считаются одним словом.'
+        },
+        {
+          question: 'Почему ограничения по символам важны для социальных сетей?',
+          answer: 'У каждой платформы есть специфические ограничения: посты Twitter (280 символов), подписи Instagram (2,200 символов), посты Facebook (63,206 символов). Соблюдение лимитов обеспечивает правильное отображение контента.'
+        },
+        {
+          question: 'Включает ли счётчик пробелы и пунктуацию?',
+          answer: 'Да! Подсчёт символов включает все пробелы, знаки пунктуации и специальные символы. Подсчёт слов исключает пробелы и пунктуацию, фокусируясь только на реальных словах.'
+        },
+        {
+          question: 'Насколько точна оценка времени чтения?',
+          answer: 'Время чтения рассчитывается на основе средней скорости чтения взрослых 200-250 слов в минуту. Фактическая скорость чтения варьируется в зависимости от сложности текста и индивидуальных способностей.'
+        },
+        {
+          question: 'Можно ли использовать это для SEO оптимизации?',
+          answer: 'Конечно! Мета-описания должны быть 150-160 символов, теги заголовков 50-60 символов, а посты блога обычно 300+ слов для лучшей SEO производительности.'
+        }
+      ]
+    }
   },
   {
     id: 'timer-countdown',
@@ -2203,7 +2482,53 @@ export const widgets: Widget[] = [
     difficulty: 'beginner',
     tags: ['timer', 'countdown', 'stopwatch', 'time', 'productivity'],
     useCase: 'Timer, countdown, and stopwatch with notifications for time management',
-    metaDescription: 'Timer and countdown tool with notifications. Stopwatch, timer, and countdown in one tool.'
+    metaDescription: 'Timer and countdown tool with notifications. Stopwatch, timer, and countdown in one tool.',
+    faqs: {
+      en: [
+        {
+          question: 'What\'s the difference between timer and countdown modes?',
+          answer: 'Timer counts up from zero to track elapsed time, while countdown counts down from a set time to zero. Both include audio and visual notifications when complete.'
+        },
+        {
+          question: 'Will the timer continue if I close the browser tab?',
+          answer: 'No, the timer runs in your browser and will stop if you close the tab. Keep the tab open or use browser notifications to stay aware of timer completion.'
+        },
+        {
+          question: 'Can I set multiple timers at once?',
+          answer: 'This tool supports one active timer at a time. To run multiple timers, open the tool in separate browser tabs or windows.'
+        },
+        {
+          question: 'What notification options are available?',
+          answer: 'You can enable browser notifications, audio alerts, and visual alerts. The timer will flash and play a sound when time expires, even if the tab is in the background.'
+        },
+        {
+          question: 'How precise are the timer calculations?',
+          answer: 'The timer uses JavaScript\'s high-resolution time API for accuracy within milliseconds. However, browser performance may slightly affect precision during heavy system load.'
+        }
+      ],
+      ru: [
+        {
+          question: 'В чём разница между режимами таймера и обратного отсчёта?',
+          answer: 'Таймер считает вверх от нуля, чтобы отслеживать прошедшее время, а обратный отсчёт считает вниз от установленного времени до нуля. Оба включают звуковые и визуальные уведомления по завершении.'
+        },
+        {
+          question: 'Будет ли таймер продолжать работать, если я закрою вкладку браузера?',
+          answer: 'Нет, таймер работает в вашем браузере и остановится, если вы закроете вкладку. Держите вкладку открытой или используйте уведомления браузера, чтобы знать о завершении таймера.'
+        },
+        {
+          question: 'Можно ли установить несколько таймеров одновременно?',
+          answer: 'Этот инструмент поддерживает один активный таймер за раз. Для запуска нескольких таймеров откройте инструмент в отдельных вкладках или окнах браузера.'
+        },
+        {
+          question: 'Какие опции уведомлений доступны?',
+          answer: 'Можно включить уведомления браузера, звуковые сигналы и визуальные предупреждения. Таймер будет мигать и воспроизводить звук при истечении времени, даже если вкладка в фоне.'
+        },
+        {
+          question: 'Насколько точны вычисления таймера?',
+          answer: 'Таймер использует высокоточный API времени JavaScript с точностью до миллисекунд. Однако производительность браузера может немного влиять на точность при высокой нагрузке системы.'
+        }
+      ]
+    }
   },
   {
     id: 'currency-converter',
@@ -2216,7 +2541,54 @@ export const widgets: Widget[] = [
     difficulty: 'beginner',
     tags: ['currency', 'converter', 'exchange', 'money', 'finance'],
     useCase: 'Convert between currencies with fixed exchange rates',
-    metaDescription: 'Currency converter with fixed rates. Convert between 10 major world currencies.'
+    metaDescription: 'Currency converter with fixed rates. Convert between 10 major world currencies.',
+    faqs: {
+      en: [
+        {
+          question: 'Are the exchange rates real-time?',
+          answer: 'This converter uses fixed exchange rates for demonstration purposes. For real-time rates, use a dedicated financial service. The rates are based on approximate values and should not be used for actual trading or financial decisions.'
+        },
+        {
+          question: 'Which currencies are supported?',
+          answer: 'The converter supports 10 major world currencies: USD, EUR, GBP, JPY, CHF, CAD, AUD, CNY, INR, and RUB. These cover the most commonly traded currencies globally.'
+        },
+        {
+          question: 'How accurate are the conversions for planning purposes?',
+          answer: 'The conversions use standard mathematical calculations and are accurate for the fixed rates provided. However, real exchange rates fluctuate constantly, so always check current rates for actual transactions.'
+        },
+        {
+          question: 'Can I convert between any two currencies directly?',
+          answer: 'Yes! The converter allows direct conversion between any of the supported currencies. You can convert from any currency to any other without needing to go through a base currency like USD.'
+        },
+        {
+          question: 'What should I consider when planning international expenses?',
+          answer: 'Besides exchange rates, consider bank fees, credit card foreign transaction fees, and rate fluctuations over time. Use this tool for rough estimates, then check with your bank for actual costs.'
+        }
+      ],
+      ru: [
+        {
+          question: 'Являются ли обменные курсы актуальными?',
+          answer: 'Этот конвертер использует фиксированные обменные курсы в демонстрационных целях. Для получения актуальных курсов используйте специализированные финансовые сервисы. Курсы основаны на приблизительных значениях и не должны использоваться для реальных торговых или финансовых решений.'
+        },
+        {
+          question: 'Какие валюты поддерживаются?',
+          answer: 'Конвертер поддерживает 10 основных мировых валют: USD, EUR, GBP, JPY, CHF, CAD, AUD, CNY, INR и RUB. Они охватывают наиболее часто торгуемые валюты в мире.'
+        },
+        {
+          question: 'Насколько точны конверсии для целей планирования?',
+          answer: 'Конверсии используют стандартные математические расчеты и точны для предоставленных фиксированных курсов. Однако реальные обменные курсы постоянно колеблются, поэтому всегда проверяйте текущие курсы для фактических транзакций.'
+        },
+        {
+          question: 'Могу ли я напрямую конвертировать между любыми двумя валютами?',
+          answer: 'Да! Конвертер позволяет прямую конверсию между любыми поддерживаемыми валютами. Вы можете конвертировать из любой валюты в любую другую без необходимости использовать базовую валюту, такую как USD.'
+        },
+        {
+          question: 'Что следует учитывать при планировании международных расходов?',
+          answer: 'Помимо обменных курсов, учитывайте банковские комиссии, комиссии за валютные операции по кредитным картам и колебания курсов во времени. Используйте этот инструмент для приблизительных оценок, затем уточняйте фактические затраты в своем банке.'
+        }
+      ],
+      he: []
+    }
   },
   {
     id: 'text-diff',
@@ -2229,7 +2601,53 @@ export const widgets: Widget[] = [
     difficulty: 'intermediate',
     tags: ['diff', 'compare', 'text', 'code', 'changes'],
     useCase: 'Compare two texts and highlight differences line by line',
-    metaDescription: 'Text difference tool. Compare two texts and see changes highlighted line by line.'
+    metaDescription: 'Text difference tool. Compare two texts and see changes highlighted line by line.',
+    faqs: {
+      en: [
+        {
+          question: 'What types of differences does the tool detect?',
+          answer: 'The tool detects line additions (green), deletions (red), and modifications (yellow). It performs character-level comparison within changed lines for precise highlighting.'
+        },
+        {
+          question: 'Can I compare code files with this tool?',
+          answer: 'Yes! The diff tool works great for comparing code, JSON, HTML, CSS, and any text-based files. It preserves formatting and indentation for accurate comparison.'
+        },
+        {
+          question: 'How does the comparison algorithm work?',
+          answer: 'The tool uses the Myers diff algorithm, the same used by Git, to find the optimal set of changes between two texts with minimal differences.'
+        },
+        {
+          question: 'Is there a file size limit for comparison?',
+          answer: 'For best performance, keep files under 1MB. Very large files may slow down the comparison process or cause browser performance issues.'
+        },
+        {
+          question: 'Can I ignore whitespace differences?',
+          answer: 'The tool includes options to ignore trailing whitespace, leading whitespace, or normalize all whitespace differences for cleaner comparisons.'
+        }
+      ],
+      ru: [
+        {
+          question: 'Какие типы различий обнаруживает инструмент?',
+          answer: 'Инструмент обнаруживает добавления строк (зелёный), удаления (красный) и изменения (жёлтый). Он выполняет сравнение на уровне символов в изменённых строках для точного выделения.'
+        },
+        {
+          question: 'Можно ли сравнивать файлы с кодом этим инструментом?',
+          answer: 'Да! Инструмент diff отлично подходит для сравнения кода, JSON, HTML, CSS и любых текстовых файлов. Он сохраняет форматирование и отступы для точного сравнения.'
+        },
+        {
+          question: 'Как работает алгоритм сравнения?',
+          answer: 'Инструмент использует алгоритм diff Майерса, тот же, что используется в Git, для поиска оптимального набора изменений между двумя текстами с минимальными различиями.'
+        },
+        {
+          question: 'Есть ли ограничение на размер файла для сравнения?',
+          answer: 'Для лучшей производительности держите файлы до 1 МБ. Очень большие файлы могут замедлить процесс сравнения или вызвать проблемы с производительностью браузера.'
+        },
+        {
+          question: 'Можно ли игнорировать различия в пробелах?',
+          answer: 'Инструмент включает опции для игнорирования конечных пробелов, начальных пробелов или нормализации всех различий в пробелах для более чистого сравнения.'
+        }
+      ]
+    }
   },
   {
     id: 'php-syntax-checker',
@@ -2242,7 +2660,53 @@ export const widgets: Widget[] = [
     difficulty: 'intermediate',
     tags: ['php', 'syntax', 'checker', 'validator', 'code'],
     useCase: 'Check PHP syntax for errors with support for PHP 5, 7, and 8',
-    metaDescription: 'PHP syntax checker for PHP 5/7/8. Validate PHP code and find syntax errors.'
+    metaDescription: 'PHP syntax checker for PHP 5/7/8. Validate PHP code and find syntax errors.',
+    faqs: {
+      en: [
+        {
+          question: 'Which PHP versions are supported?',
+          answer: 'The syntax checker supports PHP 5.6, 7.0, 7.1, 7.2, 7.3, 7.4, 8.0, 8.1, 8.2, and 8.3, allowing you to validate code against specific PHP version syntax rules.'
+        },
+        {
+          question: 'What types of errors does it detect?',
+          answer: 'The checker detects syntax errors, missing semicolons, unmatched brackets, invalid variable names, deprecated functions, and version-specific syntax issues.'
+        },
+        {
+          question: 'Does it check for logical errors or just syntax?',
+          answer: 'This tool focuses on syntax validation only. It won\'t detect logical errors, undefined variables at runtime, or type mismatches - only PHP parsing errors.'
+        },
+        {
+          question: 'Can I check partial PHP code snippets?',
+          answer: 'Yes! You can validate code fragments, functions, classes, or complete PHP files. The tool handles both opening <?php tags and standalone code blocks.'
+        },
+        {
+          question: 'How accurate is the error reporting?',
+          answer: 'The checker uses PHP\'s actual parser, providing the same error messages and line numbers you\'d see when running php -l on your server.'
+        }
+      ],
+      ru: [
+        {
+          question: 'Какие версии PHP поддерживаются?',
+          answer: 'Проверка синтаксиса поддерживает PHP 5.6, 7.0, 7.1, 7.2, 7.3, 7.4, 8.0, 8.1, 8.2 и 8.3, позволяя проверять код по правилам синтаксиса конкретной версии PHP.'
+        },
+        {
+          question: 'Какие типы ошибок он обнаруживает?',
+          answer: 'Проверяющий обнаруживает синтаксические ошибки, пропущенные точки с запятой, несоответствующие скобки, неправильные имена переменных, устаревшие функции и проблемы синтаксиса, специфичные для версии.'
+        },
+        {
+          question: 'Проверяет ли он логические ошибки или только синтаксис?',
+          answer: 'Этот инструмент фокусируется только на проверке синтаксиса. Он не обнаружит логические ошибки, неопределённые переменные во время выполнения или несоответствия типов - только ошибки парсинга PHP.'
+        },
+        {
+          question: 'Можно ли проверять частичные фрагменты PHP кода?',
+          answer: 'Да! Можно проверять фрагменты кода, функции, классы или полные PHP файлы. Инструмент обрабатывает как открывающие теги <?php, так и автономные блоки кода.'
+        },
+        {
+          question: 'Насколько точна отчётность об ошибках?',
+          answer: 'Проверяющий использует реальный парсер PHP, предоставляя те же сообщения об ошибках и номера строк, которые вы увидели бы при запуске php -l на своём сервере.'
+        }
+      ]
+    }
   },
   {
     id: 'mysql-syntax-checker',
@@ -2255,7 +2719,53 @@ export const widgets: Widget[] = [
     difficulty: 'intermediate',
     tags: ['mysql', 'sql', 'database', 'syntax', 'validator'],
     useCase: 'Validate MySQL queries and check for syntax errors',
-    metaDescription: 'MySQL syntax checker and validator. Check SQL queries for syntax errors.'
+    metaDescription: 'MySQL syntax checker and validator. Check SQL queries for syntax errors.',
+    faqs: {
+      en: [
+        {
+          question: 'Which SQL dialects are supported?',
+          answer: 'The checker primarily supports MySQL 5.7 and 8.0 syntax, including stored procedures, triggers, functions, and advanced features like CTEs, window functions, and JSON operations.'
+        },
+        {
+          question: 'Can I validate complex multi-statement queries?',
+          answer: 'Yes! The tool handles multiple statements, stored procedures, triggers, functions, and complex nested queries. Each statement is validated individually with detailed error reporting.'
+        },
+        {
+          question: 'Does it check for logical errors or performance issues?',
+          answer: 'This tool focuses on syntax validation only. It won\'t detect logical errors, performance issues, or check if tables/columns exist - only SQL parsing errors.'
+        },
+        {
+          question: 'What types of SQL statements can I check?',
+          answer: 'All MySQL statement types: SELECT, INSERT, UPDATE, DELETE, CREATE, ALTER, DROP, stored procedures, triggers, functions, and DDL statements.'
+        },
+        {
+          question: 'How does it handle MySQL-specific features?',
+          answer: 'The checker recognizes MySQL-specific syntax including backtick identifiers, MySQL functions, engine specifications, and unique MySQL data types like JSON and GEOMETRY.'
+        }
+      ],
+      ru: [
+        {
+          question: 'Какие диалекты SQL поддерживаются?',
+          answer: 'Проверяющий в основном поддерживает синтаксис MySQL 5.7 и 8.0, включая хранимые процедуры, триггеры, функции и продвинутые функции, такие как CTE, оконные функции и JSON операции.'
+        },
+        {
+          question: 'Можно ли проверять сложные многооператорные запросы?',
+          answer: 'Да! Инструмент обрабатывает множественные операторы, хранимые процедуры, триггеры, функции и сложные вложенные запросы. Каждый оператор проверяется индивидуально с детальной отчётностью об ошибках.'
+        },
+        {
+          question: 'Проверяет ли он логические ошибки или проблемы производительности?',
+          answer: 'Этот инструмент фокусируется только на проверке синтаксиса. Он не обнаружит логические ошибки, проблемы производительности или не проверит, существуют ли таблицы/колонки - только ошибки парсинга SQL.'
+        },
+        {
+          question: 'Какие типы SQL операторов можно проверять?',
+          answer: 'Все типы операторов MySQL: SELECT, INSERT, UPDATE, DELETE, CREATE, ALTER, DROP, хранимые процедуры, триггеры, функции и DDL операторы.'
+        },
+        {
+          question: 'Как он обрабатывает специфичные для MySQL функции?',
+          answer: 'Проверяющий распознаёт специфичный для MySQL синтаксис, включая идентификаторы в обратных кавычках, функции MySQL, спецификации движков и уникальные типы данных MySQL, такие как JSON и GEOMETRY.'
+        }
+      ]
+    }
   },
   {
     id: 'regex-tester',
@@ -2268,7 +2778,53 @@ export const widgets: Widget[] = [
     difficulty: 'advanced',
     tags: ['regex', 'regular-expression', 'pattern', 'test', 'match'],
     useCase: 'Test regular expressions with support for JavaScript, PHP, and Python',
-    metaDescription: 'Regex tester for JavaScript, PHP, Python. Test and debug regular expressions.'
+    metaDescription: 'Regex tester for JavaScript, PHP, Python. Test and debug regular expressions.',
+    faqs: {
+      en: [
+        {
+          question: 'Which regex flavors are supported?',
+          answer: 'The tester supports JavaScript (ECMAScript), PHP (PCRE), Python (re module), and .NET regex flavors, each with their specific syntax and features.'
+        },
+        {
+          question: 'What are the common regex flags and their meanings?',
+          answer: 'Common flags include: g (global match all), i (case insensitive), m (multiline), s (dotall), u (unicode), and x (extended/verbose). Each flavor may support different flags.'
+        },
+        {
+          question: 'How do I test for email or URL patterns?',
+          answer: 'The tool includes common preset patterns for emails, URLs, phone numbers, and dates. You can also build custom patterns using the interactive regex builder.'
+        },
+        {
+          question: 'Can I see which parts of my text match?',
+          answer: 'Yes! The tester highlights all matches in your test text and shows capture groups, making it easy to visualize what your regex is matching.'
+        },
+        {
+          question: 'What\'s the difference between greedy and non-greedy matching?',
+          answer: 'Greedy quantifiers (*, +, ?) match as much as possible, while non-greedy (??, *?, +?) match as little as possible. Use non-greedy for precise matching between delimiters.'
+        }
+      ],
+      ru: [
+        {
+          question: 'Какие типы regex поддерживаются?',
+          answer: 'Тестер поддерживает JavaScript (ECMAScript), PHP (PCRE), Python (модуль re) и .NET regex, каждый со своим специфическим синтаксисом и функциями.'
+        },
+        {
+          question: 'Что означают распространённые флаги regex?',
+          answer: 'Общие флаги включают: g (глобальное совпадение всех), i (без учёта регистра), m (многострочный), s (dotall), u (unicode) и x (расширенный/подробный). Каждый тип может поддерживать разные флаги.'
+        },
+        {
+          question: 'Как тестировать паттерны для email или URL?',
+          answer: 'Инструмент включает распространённые предустановленные паттерны для email, URL, номеров телефонов и дат. Также можно создавать пользовательские паттерны с помощью интерактивного конструктора regex.'
+        },
+        {
+          question: 'Могу ли я видеть, какие части моего текста совпадают?',
+          answer: 'Да! Тестер выделяет все совпадения в вашем тестовом тексте и показывает группы захвата, упрощая визуализацию того, что ваш regex находит.'
+        },
+        {
+          question: 'В чём разница между жадным и нежадным сопоставлением?',
+          answer: 'Жадные квантификаторы (*, +, ?) сопоставляют как можно больше, а нежадные (??, *?, +?) сопоставляют как можно меньше. Используйте нежадные для точного сопоставления между разделителями.'
+        }
+      ]
+    }
   },
   {
     id: 'javascript-syntax-checker',
@@ -2281,7 +2837,54 @@ export const widgets: Widget[] = [
     difficulty: 'intermediate',
     tags: ['javascript', 'es6', 'syntax', 'checker', 'validator'],
     useCase: 'Check JavaScript/ES6/ES2020+ syntax with JSX support',
-    metaDescription: 'JavaScript syntax checker for ES6/ES2020+. Validate JS code with JSX support.'
+    metaDescription: 'JavaScript syntax checker for ES6/ES2020+. Validate JS code with JSX support.',
+    faqs: {
+      en: [
+        {
+          question: 'What JavaScript versions does this support?',
+          answer: 'The checker supports modern JavaScript including ES6/ES2015, ES2017, ES2020, and beyond. It recognizes arrow functions, async/await, destructuring, modules, classes, template literals, and all modern syntax features.'
+        },
+        {
+          question: 'Can I check React JSX code?',
+          answer: 'Yes! The syntax checker has built-in JSX support, so you can validate React components, JSX syntax, and mixed JavaScript/JSX code. It understands JSX elements, props, fragments, and React-specific patterns.'
+        },
+        {
+          question: 'Does this execute my code?',
+          answer: 'No, this is purely a syntax checker - it only analyzes code structure and grammar without executing anything. Your code is safe and never runs, making it secure for checking any JavaScript, even potentially harmful code.'
+        },
+        {
+          question: 'What types of errors does it catch?',
+          answer: 'It catches syntax errors like missing semicolons/brackets, typos in keywords, malformed functions, invalid JSX, unclosed strings, and structural problems. It won\'t catch runtime errors or logical issues.'
+        },
+        {
+          question: 'Why use this instead of my IDE?',
+          answer: 'Great for quick validation without opening an IDE, sharing code snippets with others, checking code on mobile devices, or when you need a second opinion on syntax. It\'s also useful for teaching and learning JavaScript syntax.'
+        }
+      ],
+      ru: [
+        {
+          question: 'Какие версии JavaScript это поддерживает?',
+          answer: 'Проверка поддерживает современный JavaScript, включая ES6/ES2015, ES2017, ES2020 и новее. Распознает стрелочные функции, async/await, деструктуризацию, модули, классы, шаблонные строки и все современные синтаксические возможности.'
+        },
+        {
+          question: 'Могу ли я проверить код React JSX?',
+          answer: 'Да! Проверка синтаксиса имеет встроенную поддержку JSX, поэтому вы можете проверять React компоненты, синтаксис JSX и смешанный код JavaScript/JSX. Понимает JSX элементы, props, фрагменты и React-специфичные паттерны.'
+        },
+        {
+          question: 'Выполняется ли мой код?',
+          answer: 'Нет, это исключительно проверка синтаксиса - анализирует только структуру и грамматику кода без выполнения. Ваш код безопасен и никогда не запускается, что делает инструмент безопасным для проверки любого JavaScript, даже потенциально вредного кода.'
+        },
+        {
+          question: 'Какие типы ошибок он обнаруживает?',
+          answer: 'Обнаруживает синтаксические ошибки, такие как пропущенные точки с запятой/скобки, опечатки в ключевых словах, неправильные функции, недопустимый JSX, незакрытые строки и структурные проблемы. Не обнаружит ошибки времени выполнения или логические проблемы.'
+        },
+        {
+          question: 'Зачем использовать это вместо моей IDE?',
+          answer: 'Отлично для быстрой проверки без открытия IDE, обмена фрагментами кода с другими, проверки кода на мобильных устройствах или когда нужно второе мнение о синтаксисе. Также полезно для обучения синтаксису JavaScript.'
+        }
+      ],
+      he: []
+    }
   },
   {
     id: 'px-rem-converter',
@@ -2294,7 +2897,53 @@ export const widgets: Widget[] = [
     difficulty: 'beginner',
     tags: ['px', 'rem', 'em', 'converter', 'css', 'units'],
     useCase: 'Convert between px, rem, and em CSS units with custom base font size',
-    metaDescription: 'PX to REM/EM converter for CSS. Convert between pixel, rem, and em units.'
+    metaDescription: 'PX to REM/EM converter for CSS. Convert between pixel, rem, and em units.',
+    faqs: {
+      en: [
+        {
+          question: 'What\'s the difference between rem and em units?',
+          answer: 'rem units are relative to the root element\'s font size (usually 16px), while em units are relative to the parent element\'s font size. rem provides more predictable sizing.'
+        },
+        {
+          question: 'What should I use as the base font size?',
+          answer: 'Most browsers default to 16px. However, you can customize this based on your design system. Common alternatives are 14px, 15px, or 18px depending on accessibility needs.'
+        },
+        {
+          question: 'When should I use pixels vs rem?',
+          answer: 'Use rem for scalable layouts, typography, and spacing. Use pixels for precise measurements like borders (1px), small icons, or when exact sizing is critical.'
+        },
+        {
+          question: 'How do rem units improve accessibility?',
+          answer: 'rem units respect user browser font size preferences, allowing visually impaired users to scale content by adjusting their browser\'s default font size.'
+        },
+        {
+          question: 'Can I convert viewport units like vw and vh?',
+          answer: 'This converter focuses on px/rem/em conversion. Viewport units (vw, vh, vmin, vmax) are percentage-based relative to screen size, not font-based like rem/em.'
+        }
+      ],
+      ru: [
+        {
+          question: 'В чём разница между единицами rem и em?',
+          answer: 'Единицы rem относительны к размеру шрифта корневого элемента (обычно 16px), а единицы em - к размеру шрифта родительского элемента. rem обеспечивает более предсказуемое изменение размеров.'
+        },
+        {
+          question: 'Какой размер базового шрифта следует использовать?',
+          answer: 'Большинство браузеров по умолчанию используют 16px. Однако можно настроить это в зависимости от вашей дизайн-системы. Распространённые альтернативы - 14px, 15px или 18px в зависимости от потребностей доступности.'
+        },
+        {
+          question: 'Когда следует использовать пиксели против rem?',
+          answer: 'Используйте rem для масштабируемых макетов, типографики и отступов. Используйте пиксели для точных измерений, таких как границы (1px), маленькие иконки или когда критично точное размещение.'
+        },
+        {
+          question: 'Как единицы rem улучшают доступность?',
+          answer: 'Единицы rem учитывают пользовательские предпочтения размера шрифта браузера, позволяя пользователям с нарушениями зрения масштабировать контент, изменяя размер шрифта по умолчанию в браузере.'
+        },
+        {
+          question: 'Могу ли я конвертировать единицы viewport, такие как vw и vh?',
+          answer: 'Этот конвертер фокусируется на конверсии px/rem/em. Единицы viewport (vw, vh, vmin, vmax) основаны на процентах относительно размера экрана, а не на шрифте, как rem/em.'
+        }
+      ]
+    }
   },
   {
     id: 'css-box-shadow',
@@ -2307,7 +2956,53 @@ export const widgets: Widget[] = [
     difficulty: 'intermediate',
     tags: ['css', 'box-shadow', 'shadow', 'generator', 'design'],
     useCase: 'Generate CSS box-shadow with visual preview and multiple shadows',
-    metaDescription: 'CSS box-shadow generator with preview. Create custom shadows for your designs.'
+    metaDescription: 'CSS box-shadow generator with preview. Create custom shadows for your designs.',
+    faqs: {
+      en: [
+        {
+          question: 'What are the different box-shadow parameters?',
+          answer: 'Box-shadow uses: horizontal offset, vertical offset, blur radius, spread radius, color, and inset (optional). Each controls different shadow aspects like position, softness, and size.'
+        },
+        {
+          question: 'What\'s the difference between outset and inset shadows?',
+          answer: 'Outset shadows appear outside the element (default), creating depth and elevation. Inset shadows appear inside the element, creating a recessed or pressed effect.'
+        },
+        {
+          question: 'Can I apply multiple shadows to one element?',
+          answer: 'Yes! Separate multiple shadows with commas. The first shadow appears on top, with subsequent shadows layered underneath. This allows complex shadow effects.'
+        },
+        {
+          question: 'How do I create realistic drop shadows?',
+          answer: 'Use subtle offsets (2-8px), moderate blur (4-20px), minimal spread (0-2px), and low opacity colors (rgba with 0.1-0.3 alpha). Avoid harsh black shadows.'
+        },
+        {
+          question: 'Do box-shadows affect layout and performance?',
+          answer: 'Box-shadows don\'t affect layout flow but can impact performance with many elements or complex shadows. Consider using transform: translateZ(0) for hardware acceleration on animated shadows.'
+        }
+      ],
+      ru: [
+        {
+          question: 'Какие есть параметры box-shadow?',
+          answer: 'Box-shadow использует: горизонтальное смещение, вертикальное смещение, радиус размытия, радиус распространения, цвет и inset (опционально). Каждый контролирует разные аспекты тени, такие как позиция, мягкость и размер.'
+        },
+        {
+          question: 'В чём разница между внешними и внутренними тенями?',
+          answer: 'Внешние тени появляются снаружи элемента (по умолчанию), создавая глубину и возвышение. Внутренние тени появляются внутри элемента, создавая углублённый или нажатый эффект.'
+        },
+        {
+          question: 'Могу ли я применить несколько теней к одному элементу?',
+          answer: 'Да! Разделяйте несколько теней запятыми. Первая тень появляется сверху, с последующими тенями, размещёнными снизу. Это позволяет создавать сложные эффекты теней.'
+        },
+        {
+          question: 'Как создать реалистичные тени?',
+          answer: 'Используйте тонкие смещения (2-8px), умеренное размытие (4-20px), минимальное распространение (0-2px) и цвета с низкой непрозрачностью (rgba с альфа 0.1-0.3). Избегайте резких чёрных теней.'
+        },
+        {
+          question: 'Влияют ли box-shadows на макет и производительность?',
+          answer: 'Box-shadows не влияют на поток макета, но могут влиять на производительность при множестве элементов или сложных теней. Рассмотрите использование transform: translateZ(0) для аппаратного ускорения анимированных теней.'
+        }
+      ]
+    }
   },
   {
     id: 'css-gradient',
@@ -2320,7 +3015,53 @@ export const widgets: Widget[] = [
     difficulty: 'intermediate',
     tags: ['css', 'gradient', 'linear', 'radial', 'conic', 'generator'],
     useCase: 'Create linear, radial, and conic CSS gradients with visual editor',
-    metaDescription: 'CSS gradient generator for linear, radial, conic gradients. Visual gradient editor.'
+    metaDescription: 'CSS gradient generator for linear, radial, conic gradients. Visual gradient editor.',
+    faqs: {
+      en: [
+        {
+          question: 'What\'s the difference between linear, radial, and conic gradients?',
+          answer: 'Linear gradients transition colors along a straight line, radial gradients emanate from a center point outward in a circle/ellipse, and conic gradients rotate around a center point like a color wheel.'
+        },
+        {
+          question: 'How do I control gradient direction?',
+          answer: 'For linear gradients, use angles (45deg) or keywords (to right, to bottom). For radial gradients, specify position (center, top left). Conic gradients use from angles to set the starting position.'
+        },
+        {
+          question: 'Can I add multiple color stops?',
+          answer: 'Yes! Add as many color stops as needed. Each can have a specific position (red 0%, blue 50%, green 100%) to control exactly where colors appear in the gradient.'
+        },
+        {
+          question: 'How do I create smooth vs sharp transitions?',
+          answer: 'Smooth transitions use distant color stops (red 0%, blue 100%). Sharp transitions place color stops close together (red 49%, blue 51%) for abrupt color changes.'
+        },
+        {
+          question: 'Are CSS gradients better than images for performance?',
+          answer: 'Yes! CSS gradients are vectors, scale perfectly, have smaller file sizes than images, and don\'t require HTTP requests. They\'re also easily customizable and animatable.'
+        }
+      ],
+      ru: [
+        {
+          question: 'В чём разница между линейными, радиальными и коническими градиентами?',
+          answer: 'Линейные градиенты переходят цвета вдоль прямой линии, радиальные градиенты исходят от центральной точки наружу в виде круга/эллипса, а конические градиенты вращаются вокруг центральной точки как цветовое колесо.'
+        },
+        {
+          question: 'Как контролировать направление градиента?',
+          answer: 'Для линейных градиентов используйте углы (45deg) или ключевые слова (to right, to bottom). Для радиальных градиентов укажите позицию (center, top left). Конические градиенты используют углы from для установки начальной позиции.'
+        },
+        {
+          question: 'Могу ли я добавить несколько цветовых остановок?',
+          answer: 'Да! Добавляйте столько цветовых остановок, сколько нужно. Каждая может иметь определённую позицию (red 0%, blue 50%, green 100%) для точного контроля того, где цвета появляются в градиенте.'
+        },
+        {
+          question: 'Как создать плавные против резких переходов?',
+          answer: 'Плавные переходы используют отдалённые цветовые остановки (red 0%, blue 100%). Резкие переходы размещают цветовые остановки близко друг к другу (red 49%, blue 51%) для резких изменений цвета.'
+        },
+        {
+          question: 'Лучше ли CSS градиенты изображений для производительности?',
+          answer: 'Да! CSS градиенты - это векторы, идеально масштабируются, имеют меньший размер файла, чем изображения, и не требуют HTTP запросов. Они также легко настраиваемые и анимируемые.'
+        }
+      ]
+    }
   },
   {
     id: 'color-contrast',
@@ -2333,7 +3074,53 @@ export const widgets: Widget[] = [
     difficulty: 'intermediate',
     tags: ['color', 'contrast', 'wcag', 'accessibility', 'a11y'],
     useCase: 'Check color contrast ratios for WCAG accessibility compliance',
-    metaDescription: 'Color contrast checker for WCAG. Test color combinations for accessibility.'
+    metaDescription: 'Color contrast checker for WCAG. Test color combinations for accessibility.',
+    faqs: {
+      en: [
+        {
+          question: 'What are the WCAG contrast ratio requirements?',
+          answer: 'WCAG requires minimum 4.5:1 contrast for normal text and 3:1 for large text (AA level). For AAA level, ratios are 7:1 for normal text and 4.5:1 for large text.'
+        },
+        {
+          question: 'What qualifies as "large text" in accessibility?',
+          answer: 'Large text is defined as 18pt (24px) or larger in regular weight, or 14pt (18.66px) or larger in bold weight according to WCAG guidelines.'
+        },
+        {
+          question: 'How is contrast ratio calculated?',
+          answer: 'Contrast ratio uses the formula (L1 + 0.05) / (L2 + 0.05), where L1 is the relative luminance of the lighter color and L2 is the relative luminance of the darker color.'
+        },
+        {
+          question: 'Do I need to check contrast for non-text elements?',
+          answer: 'Yes! WCAG 2.1 requires 3:1 contrast for UI components like buttons, form controls, and focus indicators. Decorative elements are exempt from contrast requirements.'
+        },
+        {
+          question: 'What colors should I avoid for accessibility?',
+          answer: 'Avoid red/green combinations (color blindness), low contrast gray combinations, and relying solely on color to convey information. Always provide additional visual cues.'
+        }
+      ],
+      ru: [
+        {
+          question: 'Каковы требования WCAG к контрастности?',
+          answer: 'WCAG требует минимум 4.5:1 контраста для обычного текста и 3:1 для крупного текста (уровень AA). Для уровня AAA соотношения составляют 7:1 для обычного текста и 4.5:1 для крупного текста.'
+        },
+        {
+          question: 'Что считается "крупным текстом" в доступности?',
+          answer: 'Крупный текст определяется как 18pt (24px) или больше в обычном весе, или 14pt (18.66px) или больше в жирном весе согласно руководящим принципам WCAG.'
+        },
+        {
+          question: 'Как вычисляется коэффициент контрастности?',
+          answer: 'Коэффициент контрастности использует формулу (L1 + 0.05) / (L2 + 0.05), где L1 - относительная яркость более светлого цвета, а L2 - относительная яркость более тёмного цвета.'
+        },
+        {
+          question: 'Нужно ли проверять контраст для нетекстовых элементов?',
+          answer: 'Да! WCAG 2.1 требует контраст 3:1 для компонентов интерфейса, таких как кнопки, элементы форм и индикаторы фокуса. Декоративные элементы освобождены от требований контрастности.'
+        },
+        {
+          question: 'Каких цветов следует избегать для доступности?',
+          answer: 'Избегайте комбинаций красного/зелёного (дальтонизм), низкоконтрастных серых комбинаций и полагания только на цвет для передачи информации. Всегда предоставляйте дополнительные визуальные сигналы.'
+        }
+      ]
+    }
   },
   {
     id: 'css-keyframes',
@@ -2346,7 +3133,53 @@ export const widgets: Widget[] = [
     difficulty: 'advanced',
     tags: ['css', 'animation', 'keyframes', 'generator', 'motion'],
     useCase: 'Generate CSS @keyframes animations with visual editor',
-    metaDescription: 'CSS keyframes animation generator. Create custom animations visually.'
+    metaDescription: 'CSS keyframes animation generator. Create custom animations visually.',
+    faqs: {
+      en: [
+        {
+          question: 'What are CSS @keyframes and how do they work?',
+          answer: '@keyframes define animation sequences by specifying CSS properties at different percentages (0%, 25%, 100%) of the animation timeline. Browsers smoothly interpolate between these keyframes.'
+        },
+        {
+          question: 'What\'s the difference between keyframe percentages and timing functions?',
+          answer: 'Keyframe percentages (0%, 50%, 100%) define when properties change during the animation. Timing functions (ease, linear, cubic-bezier) control the speed curve between keyframes.'
+        },
+        {
+          question: 'How do I create smooth vs jerky animations?',
+          answer: 'Smooth animations use many keyframes with small property changes and appropriate timing functions. Jerky animations use few keyframes with large property jumps or linear timing.'
+        },
+        {
+          question: 'What properties can I animate with keyframes?',
+          answer: 'You can animate most CSS properties: transform, opacity, colors, dimensions, positions. Avoid animating layout properties (width, height, padding) as they trigger expensive reflows.'
+        },
+        {
+          question: 'How do I optimize animations for performance?',
+          answer: 'Stick to animating transform and opacity properties, which are GPU-accelerated. Use will-change property sparingly, and prefer transform: translate3d() over changing left/top positions.'
+        }
+      ],
+      ru: [
+        {
+          question: 'Что такое CSS @keyframes и как они работают?',
+          answer: '@keyframes определяют последовательности анимации, указывая CSS свойства в разных процентах (0%, 25%, 100%) временной шкалы анимации. Браузеры плавно интерполируют между этими ключевыми кадрами.'
+        },
+        {
+          question: 'В чём разница между процентами ключевых кадров и функциями времени?',
+          answer: 'Проценты ключевых кадров (0%, 50%, 100%) определяют, когда свойства изменяются во время анимации. Функции времени (ease, linear, cubic-bezier) контролируют кривую скорости между ключевыми кадрами.'
+        },
+        {
+          question: 'Как создать плавные против резких анимаций?',
+          answer: 'Плавные анимации используют много ключевых кадров с небольшими изменениями свойств и подходящими функциями времени. Резкие анимации используют мало ключевых кадров с большими скачками свойств или линейное время.'
+        },
+        {
+          question: 'Какие свойства можно анимировать с ключевыми кадрами?',
+          answer: 'Можно анимировать большинство CSS свойств: transform, opacity, цвета, размеры, позиции. Избегайте анимации свойств макета (width, height, padding), так как они вызывают дорогие пересчёты.'
+        },
+        {
+          question: 'Как оптимизировать анимации для производительности?',
+          answer: 'Придерживайтесь анимации свойств transform и opacity, которые ускоряются GPU. Используйте свойство will-change экономно и предпочитайте transform: translate3d() изменению позиций left/top.'
+        }
+      ]
+    }
   },
   {
     id: 'json-yaml-formatter',
@@ -2359,7 +3192,54 @@ export const widgets: Widget[] = [
     difficulty: 'beginner',
     tags: ['json', 'yaml', 'formatter', 'validator', 'converter'],
     useCase: 'Format, validate, and convert between JSON and YAML formats',
-    metaDescription: 'JSON/YAML formatter and converter. Validate and convert between formats.'
+    metaDescription: 'JSON/YAML formatter and converter. Validate and convert between formats.',
+    faqs: {
+      en: [
+        {
+          question: 'What\'s the difference between JSON and YAML?',
+          answer: 'JSON uses brackets and quotes, making it compact but less readable. YAML uses indentation and is more human-readable. Both represent the same data structures (objects, arrays, strings, numbers), but YAML is easier to read and edit manually.'
+        },
+        {
+          question: 'When should I use JSON vs YAML?',
+          answer: 'Use JSON for APIs, web applications, and when size matters. Use YAML for configuration files, documentation, and when human readability is important. JSON is faster to parse, YAML is easier to write and maintain.'
+        },
+        {
+          question: 'Will converting between formats lose data?',
+          answer: 'No, both formats support the same data types (strings, numbers, booleans, arrays, objects, null). Conversion is lossless - your data structure and values remain identical, only the syntax changes.'
+        },
+        {
+          question: 'How does the formatter handle invalid syntax?',
+          answer: 'The tool will show clear error messages pointing to the problematic line and character. For JSON, it catches missing quotes, trailing commas, and bracket mismatches. For YAML, it detects indentation and structure errors.'
+        },
+        {
+          question: 'Can I format minified or compact data?',
+          answer: 'Yes! The formatter can take minified/compressed JSON or compact YAML and expand it with proper indentation and line breaks, making it much easier to read and debug.'
+        }
+      ],
+      ru: [
+        {
+          question: 'В чем разница между JSON и YAML?',
+          answer: 'JSON использует скобки и кавычки, что делает его компактным, но менее читаемым. YAML использует отступы и более читаем для человека. Оба представляют одинаковые структуры данных (объекты, массивы, строки, числа), но YAML легче читать и редактировать вручную.'
+        },
+        {
+          question: 'Когда использовать JSON против YAML?',
+          answer: 'Используйте JSON для API, веб-приложений и когда размер имеет значение. Используйте YAML для конфигурационных файлов, документации и когда важна читаемость для человека. JSON быстрее парсится, YAML легче писать и поддерживать.'
+        },
+        {
+          question: 'Будут ли потеряны данные при конверсии между форматами?',
+          answer: 'Нет, оба формата поддерживают одинаковые типы данных (строки, числа, булевы значения, массивы, объекты, null). Конверсия без потерь - структура данных и значения остаются идентичными, изменяется только синтаксис.'
+        },
+        {
+          question: 'Как форматтер обрабатывает неверный синтаксис?',
+          answer: 'Инструмент покажет четкие сообщения об ошибках, указывающие на проблемную строку и символ. Для JSON обнаруживает пропущенные кавычки, завершающие запятые и несовпадения скобок. Для YAML обнаруживает ошибки отступов и структуры.'
+        },
+        {
+          question: 'Могу ли я форматировать минифицированные или компактные данные?',
+          answer: 'Да! Форматтер может взять минифицированный/сжатый JSON или компактный YAML и развернуть его с правильными отступами и переносами строк, что значительно облегчает чтение и отладку.'
+        }
+      ],
+      he: []
+    }
   },
   {
     id: 'base64-encoder',
@@ -2372,7 +3252,54 @@ export const widgets: Widget[] = [
     difficulty: 'beginner',
     tags: ['base64', 'encode', 'decode', 'converter', 'encryption'],
     useCase: 'Encode and decode data in Base64 format with file support',
-    metaDescription: 'Base64 encoder/decoder with file support. Encode and decode Base64 data.'
+    metaDescription: 'Base64 encoder/decoder with file support. Encode and decode Base64 data.',
+    faqs: {
+      en: [
+        {
+          question: 'What is Base64 encoding and why is it used?',
+          answer: 'Base64 is a method to convert binary data into ASCII text using 64 characters (A-Z, a-z, 0-9, +, /). It\'s commonly used in web development, email attachments, data URLs, and APIs where binary data needs to be transmitted as text.'
+        },
+        {
+          question: 'Is Base64 encoding secure?',
+          answer: 'No, Base64 is NOT encryption or security - it\'s just encoding. Anyone can easily decode Base64 data. Never use it to hide sensitive information. It\'s designed for data transmission, not security.'
+        },
+        {
+          question: 'What file types can I encode?',
+          answer: 'You can encode any file type: images (PNG, JPG), documents (PDF, DOC), text files, executables, etc. The tool converts the binary content to Base64 text, regardless of file format.'
+        },
+        {
+          question: 'Why does encoded data look longer than original?',
+          answer: 'Base64 encoding increases data size by approximately 33% because it uses 4 ASCII characters to represent every 3 bytes of original data. This overhead is the trade-off for text-safe transmission.'
+        },
+        {
+          question: 'When should I use Base64 encoding?',
+          answer: 'Use Base64 for embedding small images in CSS/HTML as data URLs, encoding binary data for JSON APIs, preparing file uploads for web forms, and any situation where you need to transmit binary data through text-only channels.'
+        }
+      ],
+      ru: [
+        {
+          question: 'Что такое кодирование Base64 и зачем оно используется?',
+          answer: 'Base64 - это метод преобразования двоичных данных в ASCII-текст с использованием 64 символов (A-Z, a-z, 0-9, +, /). Широко используется в веб-разработке, вложениях электронной почты, data URL и API, где двоичные данные нужно передавать как текст.'
+        },
+        {
+          question: 'Является ли кодирование Base64 безопасным?',
+          answer: 'Нет, Base64 - это НЕ шифрование или защита, это просто кодирование. Любой может легко декодировать данные Base64. Никогда не используйте его для скрытия конфиденциальной информации. Он предназначен для передачи данных, а не для безопасности.'
+        },
+        {
+          question: 'Какие типы файлов можно кодировать?',
+          answer: 'Можно кодировать файлы любого типа: изображения (PNG, JPG), документы (PDF, DOC), текстовые файлы, исполняемые файлы и т.д. Инструмент конвертирует двоичное содержимое в текст Base64, независимо от формата файла.'
+        },
+        {
+          question: 'Почему закодированные данные выглядят длиннее оригинала?',
+          answer: 'Кодирование Base64 увеличивает размер данных примерно на 33%, поскольку использует 4 ASCII-символа для представления каждых 3 байтов исходных данных. Эти накладные расходы - компромисс за безопасную передачу через текст.'
+        },
+        {
+          question: 'Когда следует использовать кодирование Base64?',
+          answer: 'Используйте Base64 для встраивания небольших изображений в CSS/HTML как data URLs, кодирования двоичных данных для JSON API, подготовки загрузки файлов для веб-форм и в любых ситуациях, где нужно передавать двоичные данные через текстовые каналы.'
+        }
+      ],
+      he: []
+    }
   },
   {
     id: 'jwt-decoder',
@@ -2385,7 +3312,54 @@ export const widgets: Widget[] = [
     difficulty: 'intermediate',
     tags: ['jwt', 'json', 'token', 'decoder', 'authentication'],
     useCase: 'Decode and analyze JSON Web Tokens (JWT) structure',
-    metaDescription: 'JWT decoder and analyzer. Decode JSON Web Tokens and inspect claims.'
+    metaDescription: 'JWT decoder and analyzer. Decode JSON Web Tokens and inspect claims.',
+    faqs: {
+      en: [
+        {
+          question: 'What is a JWT and how is it structured?',
+          answer: 'JWT (JSON Web Token) is a secure way to transmit information as a JSON object. It consists of three Base64-encoded parts separated by dots: Header (algorithm info), Payload (claims/data), and Signature (verification).'
+        },
+        {
+          question: 'Is it safe to decode JWTs client-side?',
+          answer: 'Yes, decoding is safe - JWTs are designed to be readable by clients. However, never expose sensitive data in JWT claims since anyone can decode them. The signature verifies authenticity, but payload data is not encrypted.'
+        },
+        {
+          question: 'What are JWT claims and how do I read them?',
+          answer: 'Claims are statements about an entity (usually the user). Standard claims include "iss" (issuer), "exp" (expiration), "sub" (subject), and "aud" (audience). Custom claims can contain any JSON data your application needs.'
+        },
+        {
+          question: 'How do I verify if a JWT is valid?',
+          answer: 'This tool only decodes JWTs - it doesn\'t verify signatures. To verify validity, you need the secret key or public key used for signing. Check expiration dates, issuer, and other claims in your application logic.'
+        },
+        {
+          question: 'Why might JWT decoding fail?',
+          answer: 'Common reasons include: malformed token structure (not 3 parts), invalid Base64 encoding, corrupted characters, or tokens that aren\'t actually JWTs. Ensure you\'re pasting the complete token including all dots.'
+        }
+      ],
+      ru: [
+        {
+          question: 'Что такое JWT и как он структурирован?',
+          answer: 'JWT (JSON Web Token) - это безопасный способ передачи информации в виде JSON объекта. Состоит из трех частей, закодированных в Base64 и разделенных точками: Заголовок (информация об алгоритме), Полезная нагрузка (утверждения/данные) и Подпись (проверка).'
+        },
+        {
+          question: 'Безопасно ли декодировать JWT на стороне клиента?',
+          answer: 'Да, декодирование безопасно - JWT созданы для чтения клиентами. Однако никогда не размещайте чувствительные данные в утверждениях JWT, поскольку любой может их декодировать. Подпись проверяет подлинность, но данные полезной нагрузки не зашифрованы.'
+        },
+        {
+          question: 'Что такое утверждения JWT и как их читать?',
+          answer: 'Утверждения - это заявления о сущности (обычно пользователе). Стандартные утверждения включают "iss" (издатель), "exp" (истечение), "sub" (субъект) и "aud" (аудитория). Пользовательские утверждения могут содержать любые JSON данные, необходимые вашему приложению.'
+        },
+        {
+          question: 'Как проверить, действителен ли JWT?',
+          answer: 'Этот инструмент только декодирует JWT - он не проверяет подписи. Для проверки действительности нужен секретный ключ или открытый ключ, использованный для подписи. Проверяйте даты истечения, издателя и другие утверждения в логике приложения.'
+        },
+        {
+          question: 'Почему может не удаться декодирование JWT?',
+          answer: 'Частые причины: неправильная структура токена (не 3 части), недопустимое кодирование Base64, поврежденные символы или токены, которые на самом деле не являются JWT. Убедитесь, что вставляете полный токен, включая все точки.'
+        }
+      ],
+      he: []
+    }
   },
   {
     id: 'uuid-generator',
@@ -2398,7 +3372,53 @@ export const widgets: Widget[] = [
     difficulty: 'beginner',
     tags: ['uuid', 'guid', 'generator', 'unique', 'identifier'],
     useCase: 'Generate UUID/GUID in various versions (v1, v3, v4, v5)',
-    metaDescription: 'UUID generator for all versions. Generate unique identifiers (UUID/GUID).'
+    metaDescription: 'UUID generator for all versions. Generate unique identifiers (UUID/GUID).',
+    faqs: {
+      en: [
+        {
+          question: 'What\'s the difference between UUID versions?',
+          answer: 'UUID v1 uses timestamp + MAC address, v3/v5 use name-based hashing (MD5/SHA-1), v4 uses random data. v4 is most common for general use, v1 for time-ordered IDs.'
+        },
+        {
+          question: 'Are UUIDs truly unique and collision-proof?',
+          answer: 'UUID v4 has extremely low collision probability (1 in 5.3×10^36). While not mathematically impossible, collisions are practically impossible in real-world applications.'
+        },
+        {
+          question: 'When should I use UUID vs auto-incrementing IDs?',
+          answer: 'Use UUIDs for distributed systems, public APIs, or when you need non-sequential IDs for security. Use auto-increment for simple databases with single servers.'
+        },
+        {
+          question: 'Can UUIDs be used as database primary keys?',
+          answer: 'Yes, but consider performance implications. UUIDs are larger (36 chars vs 4-8 bytes) and non-sequential, which can affect index performance. UUID v1 or ULID might be better for databases.'
+        },
+        {
+          question: 'What\'s the standard UUID format?',
+          answer: 'Standard UUID format is 8-4-4-4-12 hex digits: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx. Some systems use variations like removing hyphens or using uppercase.'
+        }
+      ],
+      ru: [
+        {
+          question: 'В чём разница между версиями UUID?',
+          answer: 'UUID v1 использует временную метку + MAC адрес, v3/v5 используют хеширование на основе имени (MD5/SHA-1), v4 использует случайные данные. v4 наиболее распространён для общего использования, v1 для временно упорядоченных ID.'
+        },
+        {
+          question: 'Действительно ли UUID уникальны и защищены от коллизий?',
+          answer: 'UUID v4 имеет крайне низкую вероятность коллизий (1 к 5.3×10^36). Хотя математически это не невозможно, коллизии практически невозможны в реальных приложениях.'
+        },
+        {
+          question: 'Когда следует использовать UUID против автоинкрементных ID?',
+          answer: 'Используйте UUID для распределённых систем, публичных API или когда нужны непоследовательные ID для безопасности. Используйте автоинкремент для простых баз данных с одним сервером.'
+        },
+        {
+          question: 'Можно ли использовать UUID как первичные ключи базы данных?',
+          answer: 'Да, но учитывайте влияние на производительность. UUID больше (36 символов против 4-8 байт) и непоследовательны, что может влиять на производительность индекса. UUID v1 или ULID могут быть лучше для баз данных.'
+        },
+        {
+          question: 'Какой стандартный формат UUID?',
+          answer: 'Стандартный формат UUID: 8-4-4-4-12 шестнадцатеричных цифр: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx. Некоторые системы используют варианты, такие как удаление дефисов или использование заглавных букв.'
+        }
+      ]
+    }
   },
   {
     id: 'compound-interest',
@@ -2411,7 +3431,54 @@ export const widgets: Widget[] = [
     difficulty: 'intermediate',
     tags: ['compound', 'interest', 'finance', 'calculator', 'investment'],
     useCase: 'Calculate compound interest with detailed breakdown and charts',
-    metaDescription: 'Compound interest calculator with charts. Calculate investment growth over time.'
+    metaDescription: 'Compound interest calculator with charts. Calculate investment growth over time.',
+    faqs: {
+      en: [
+        {
+          question: 'What is compound interest and how does it work?',
+          answer: 'Compound interest is interest calculated on the initial principal plus all accumulated interest from previous periods. It grows exponentially because you earn interest on your interest, making it one of the most powerful wealth-building tools.'
+        },
+        {
+          question: 'How accurate are the calculations?',
+          answer: 'The calculator uses precise financial formulas: A = P(1 + r/n)^(nt). Results are accurate for planning purposes, but real investments may vary due to market fluctuations, fees, and tax implications.'
+        },
+        {
+          question: 'What\'s the difference between annual and monthly compounding?',
+          answer: 'More frequent compounding means higher returns. Monthly compounding calculates interest 12 times per year versus once for annual, resulting in slightly higher total returns due to earning interest on interest more frequently.'
+        },
+        {
+          question: 'Can I calculate the time needed to reach a goal?',
+          answer: 'Yes! Enter your target amount and the calculator will show you exactly how long it takes to reach your goal with different contribution amounts and interest rates, helping you plan your investment strategy.'
+        },
+        {
+          question: 'Should I focus on higher interest rates or regular contributions?',
+          answer: 'Both matter, but regular contributions often have more impact than chasing higher rates. Even small monthly additions can significantly boost your final amount due to the power of time and compounding.'
+        }
+      ],
+      ru: [
+        {
+          question: 'Что такое сложный процент и как он работает?',
+          answer: 'Сложный процент - это проценты, начисляемые на первоначальную сумму плюс все накопленные проценты за предыдущие периоды. Он растет экспоненциально, поскольку вы зарабатываете проценты с процентов, что делает его одним из самых мощных инструментов накопления богатства.'
+        },
+        {
+          question: 'Насколько точны расчеты?',
+          answer: 'Калькулятор использует точные финансовые формулы: A = P(1 + r/n)^(nt). Результаты точны для планирования, но реальные инвестиции могут отличаться из-за колебаний рынка, комиссий и налоговых последствий.'
+        },
+        {
+          question: 'В чем разница между годовым и месячным начислением процентов?',
+          answer: 'Более частое начисление означает более высокую доходность. Месячное начисление рассчитывает проценты 12 раз в год против одного раза при годовом, что приводит к немного более высокой общей доходности.'
+        },
+        {
+          question: 'Могу ли я рассчитать время, необходимое для достижения цели?',
+          answer: 'Да! Введите целевую сумму, и калькулятор покажет, сколько времени потребуется для достижения вашей цели с различными суммами взносов и процентными ставками, помогая планировать инвестиционную стратегию.'
+        },
+        {
+          question: 'Стоит ли сосредоточиться на более высоких процентных ставках или регулярных взносах?',
+          answer: 'Важно и то, и другое, но регулярные взносы часто оказывают большее влияние, чем погоня за высокими ставками. Даже небольшие ежемесячные добавления могут значительно увеличить итоговую сумму благодаря силе времени и сложного процента.'
+        }
+      ],
+      he: []
+    }
   },
   {
     id: 'loan-calculator',
@@ -2424,7 +3491,54 @@ export const widgets: Widget[] = [
     difficulty: 'intermediate',
     tags: ['loan', 'mortgage', 'calculator', 'finance', 'annuity'],
     useCase: 'Calculate loan/mortgage payments with amortization schedule',
-    metaDescription: 'Loan and mortgage calculator. Calculate monthly payments and amortization.'
+    metaDescription: 'Loan and mortgage calculator. Calculate monthly payments and amortization.',
+    faqs: {
+      en: [
+        {
+          question: 'How are monthly loan payments calculated?',
+          answer: 'The calculator uses the standard loan payment formula: M = P[r(1+r)^n]/[(1+r)^n-1], where M is monthly payment, P is principal, r is monthly interest rate, and n is number of payments. This ensures accurate payment amounts.'
+        },
+        {
+          question: 'What is an amortization schedule?',
+          answer: 'An amortization schedule shows how each payment is split between principal and interest over the life of the loan. Early payments have more interest, while later payments have more principal. This helps you see how equity builds over time.'
+        },
+        {
+          question: 'Should I make extra payments on my loan?',
+          answer: 'Extra principal payments can significantly reduce total interest paid and loan term. However, consider your other debts and investments first - sometimes investing extra money elsewhere provides better returns than loan interest saved.'
+        },
+        {
+          question: 'How does loan term affect my payments?',
+          answer: 'Longer terms mean lower monthly payments but more total interest paid. Shorter terms mean higher monthly payments but less total interest. Choose based on your budget and how long you want to be in debt.'
+        },
+        {
+          question: 'What interest rate should I expect?',
+          answer: 'Interest rates vary based on credit score, loan type, market conditions, and down payment. Mortgages typically have lower rates than personal loans. Shop around with multiple lenders to find the best rate for your situation.'
+        }
+      ],
+      ru: [
+        {
+          question: 'Как рассчитываются ежемесячные платежи по кредиту?',
+          answer: 'Калькулятор использует стандартную формулу расчета платежей по кредиту: M = P[r(1+r)^n]/[(1+r)^n-1], где M - ежемесячный платеж, P - основная сумма, r - месячная процентная ставка, n - количество платежей. Это обеспечивает точные суммы платежей.'
+        },
+        {
+          question: 'Что такое график погашения?',
+          answer: 'График погашения показывает, как каждый платеж разделяется между основной суммой и процентами на протяжении всего срока кредита. Ранние платежи содержат больше процентов, поздние - больше основной суммы. Это помогает видеть, как накапливается собственный капитал.'
+        },
+        {
+          question: 'Стоит ли делать дополнительные платежи по кредиту?',
+          answer: 'Дополнительные платежи по основной сумме могут значительно сократить общую сумму процентов и срок кредита. Однако сначала рассмотрите другие долги и инвестиции - иногда вложение дополнительных денег в другие активы дает лучшую доходность.'
+        },
+        {
+          question: 'Как срок кредита влияет на мои платежи?',
+          answer: 'Более длительные сроки означают меньшие ежемесячные платежи, но больше общих процентов. Более короткие сроки означают большие ежемесячные платежи, но меньше общих процентов. Выбирайте исходя из своего бюджета и того, как долго вы хотите быть в долгах.'
+        },
+        {
+          question: 'Какую процентную ставку мне ожидать?',
+          answer: 'Процентные ставки варьируются в зависимости от кредитного рейтинга, типа кредита, рыночных условий и первоначального взноса. Ипотека обычно имеет более низкие ставки, чем потребительские кредиты. Сравните предложения нескольких кредиторов.'
+        }
+      ],
+      he: []
+    }
   },
   {
     id: 'fuel-calculator',
@@ -2437,7 +3551,54 @@ export const widgets: Widget[] = [
     difficulty: 'beginner',
     tags: ['fuel', 'consumption', 'calculator', 'car', 'gas', 'mileage'],
     useCase: 'Calculate fuel consumption, cost, and average consumption per 100 km',
-    metaDescription: 'Fuel consumption calculator. Calculate fuel costs and consumption per 100 km.'
+    metaDescription: 'Fuel consumption calculator. Calculate fuel costs and consumption per 100 km.',
+    faqs: {
+      en: [
+        {
+          question: 'How do I calculate my car\'s fuel consumption?',
+          answer: 'Enter the distance you traveled and the amount of fuel used. The calculator will show consumption in liters per 100 km (L/100km) and miles per gallon (MPG), helping you monitor your vehicle\'s efficiency.'
+        },
+        {
+          question: 'What\'s the difference between L/100km and MPG?',
+          answer: 'L/100km (liters per 100 kilometers) is the metric standard where lower numbers indicate better efficiency. MPG (miles per gallon) is used in the US/UK where higher numbers indicate better efficiency. Both measure fuel economy but in opposite scales.'
+        },
+        {
+          question: 'How can I improve my fuel consumption?',
+          answer: 'Drive smoothly at consistent speeds, maintain proper tire pressure, remove excess weight, combine errands into one trip, and keep up with regular maintenance. Highway driving is typically more efficient than city driving.'
+        },
+        {
+          question: 'Are the fuel cost calculations accurate?',
+          answer: 'Cost calculations are based on the fuel price you enter and are accurate for planning purposes. Actual costs may vary due to price fluctuations, different gas stations, and varying fuel grades.'
+        },
+        {
+          question: 'Should I track fuel consumption regularly?',
+          answer: 'Yes! Regular tracking helps identify issues early (sudden increases may indicate mechanical problems), plan travel budgets, compare different routes, and monitor the effectiveness of fuel-saving techniques.'
+        }
+      ],
+      ru: [
+        {
+          question: 'Как рассчитать расход топлива моего автомобиля?',
+          answer: 'Введите пройденное расстояние и количество использованного топлива. Калькулятор покажет расход в литрах на 100 км (Л/100км) и милях на галлон (MPG), помогая контролировать эффективность вашего автомобиля.'
+        },
+        {
+          question: 'В чем разница между Л/100км и MPG?',
+          answer: 'Л/100км (литры на 100 километров) - это метрическая система, где меньшие числа означают лучшую эффективность. MPG (мили на галлон) используется в США/Великобритании, где большие числа означают лучшую эффективность. Обе единицы измеряют экономичность топлива, но в противоположных шкалах.'
+        },
+        {
+          question: 'Как я могу улучшить расход топлива?',
+          answer: 'Ездите плавно на постоянной скорости, поддерживайте правильное давление в шинах, убирайте лишний вес, объединяйте поездки, регулярно проводите техобслуживание. Езда по шоссе обычно более экономична, чем по городу.'
+        },
+        {
+          question: 'Точны ли расчеты стоимости топлива?',
+          answer: 'Расчеты стоимости основаны на введенной вами цене топлива и точны для планирования. Фактические затраты могут варьироваться из-за колебаний цен, разных заправок и различных сортов топлива.'
+        },
+        {
+          question: 'Стоит ли регулярно отслеживать расход топлива?',
+          answer: 'Да! Регулярное отслеживание помогает рано выявить проблемы (резкое увеличение может указывать на механические проблемы), планировать бюджет на поездки, сравнивать разные маршруты и контролировать эффективность методов экономии топлива.'
+        }
+      ],
+      he: []
+    }
   }
 ]
 
