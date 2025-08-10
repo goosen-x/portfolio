@@ -2327,7 +2327,7 @@ export const widgets: Widget[] = [
     icon: Circle,
     category: 'css',
     translationKey: 'colorContrast',
-    path: 'color-contrast',
+    path: 'color-contrast-checker',
     gradient: 'from-black to-white',
     recommendedTools: ['color-converter', 'css-gradient', 'css-box-shadow'],
     difficulty: 'intermediate',
