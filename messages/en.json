@@ -843,6 +843,43 @@
 				"q3": "What metadata is included?",
 				"a3": "The generator includes title, excerpt, date, author info, categories, keywords, and Open Graph images for social media sharing."
 			}
+		},
+		"teamRandomizer": {
+			"title": "Team Randomizer",
+			"description": "Create random teams quickly and fairly. Great for games, work, or fun activities",
+			"participantsList": "Participants List",
+			"participantsDesc": "Enter names of all participants (one name per line)",
+			"participantsPlaceholder": "Alice\nBob\nCharlie\nDiana\nEve\nFrank",
+			"teamSettings": "Team Settings",
+			"numberOfTeams": "Number of Teams",
+			"teamSize": "Preferred Team Size",
+			"teamSizeDesc": "Leave empty for automatic balancing",
+			"generateTeams": "Generate Teams",
+			"regenerateTeams": "Regenerate Teams",
+			"resetAll": "Reset All",
+			"results": "Generated Teams",
+			"noResults": "Enter participants and generate teams to see results",
+			"team": "Team",
+			"member": "member",
+			"members": "members",
+			"totalParticipants": "Total participants:",
+			"emptyTeam": "Empty team",
+			"exportTeams": "Export Teams",
+			"copyToClipboard": "Copy to Clipboard",
+			"teamsExported": "Teams copied to clipboard",
+			"validationErrors": {
+				"minParticipants": "Add at least 2 participants",
+				"minTeams": "Number of teams must be at least 2",
+				"maxTeams": "Number of teams cannot exceed number of participants",
+				"teamSizeInvalid": "Team size must be a positive number",
+				"teamSizeTooLarge": "Team size is too large for the number of participants"
+			},
+			"tips": {
+				"title": "Tips",
+				"fairDistribution": "The algorithm ensures fair distribution with minimal size differences",
+				"remainders": "If participants don't divide evenly, extra members are distributed across teams",
+				"regenerate": "Click 'Regenerate' to create new random combinations"
+			}
 		}
 	},
 	"settings": {

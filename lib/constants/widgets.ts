@@ -15,7 +15,8 @@ import {
   FileText,
   SunMoon,
   Languages,
-  Hash
+  Hash,
+  Users
 } from 'lucide-react'
 export interface WidgetFAQ {
   question: string
@@ -746,6 +747,63 @@ export const widgets: Widget[] = [
     tags: ['seo', 'markdown', 'blog', 'content', 'generator'],
     useCase: 'Generate SEO-optimized markdown files for blog posts',
     metaDescription: 'SEO markdown generator for blogs. Create optimized blog post templates with metadata.'
+  },
+  {
+    id: 'team-randomizer',
+    icon: Users,
+    category: 'productivity',
+    translationKey: 'teamRandomizer',
+    path: 'team-randomizer',
+    gradient: 'from-indigo-500 to-purple-600',
+    recommendedTools: ['password-generator', 'qr-generator', 'utm-builder'],
+    difficulty: 'beginner',
+    tags: ['team', 'random', 'groups', 'picker', 'fair'],
+    useCase: 'Randomly distribute people into balanced teams for games, work or activities',
+    metaDescription: 'Random team generator. Create fair and balanced teams from a list of names.',
+    faqs: {
+      en: [
+        {
+          question: 'How does the random distribution work?',
+          answer: 'The tool uses a Fisher-Yates shuffle algorithm to ensure truly random and fair team distribution, preventing bias in team selection.'
+        },
+        {
+          question: 'Can I create uneven teams?',
+          answer: 'Yes! The tool handles remainder members by distributing them as evenly as possible across teams, ensuring no team is significantly larger.'
+        },
+        {
+          question: 'What\'s the maximum number of people?',
+          answer: 'The tool can handle hundreds of participants efficiently. For best results, keep individual names under 50 characters.'
+        }
+      ],
+      ru: [
+        {
+          question: 'Как работает случайное распределение?',
+          answer: 'Инструмент использует алгоритм перемешивания Фишера-Йетса для обеспечения действительно случайного и справедливого распределения команд, предотвращая предвзятость в выборе команд.'
+        },
+        {
+          question: 'Можно ли создать неравные команды?',
+          answer: 'Да! Инструмент обрабатывает оставшихся участников, распределяя их максимально равномерно по командам, гарантируя, что ни одна команда не будет значительно больше.'
+        },
+        {
+          question: 'Какое максимальное количество людей?',
+          answer: 'Инструмент может эффективно обрабатывать сотни участников. Для лучших результатов держите имена до 50 символов.'
+        }
+      ],
+      he: [
+        {
+          question: 'איך עובד החלוקה האקראית?',
+          answer: 'הכלי משתמש באלגוריתם ערבוב פישר-יטס להבטחת חלוקת צוותים אקראית והוגנת באמת, למניעת הטיה בבחירת הצוותים.'
+        },
+        {
+          question: 'האם אפשר ליצור צוותים לא שווים?',
+          answer: 'כן! הכלי מטפל בחברים הנותרים על ידי חלוקתם בצורה שווה ככל האפשר בין הצוותים, מבטיח שאף צוות לא יהיה גדול משמעותית.'
+        },
+        {
+          question: 'מה המספר המקסימלי של אנשים?',
+          answer: 'הכלי יכול לטפל במאות משתתפים ביעילות. לתוצאות טובות יותר, שמרו על שמות עד 50 תווים.'
+        }
+      ]
+    }
   },
 
   // Settings
