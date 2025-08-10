@@ -80,39 +80,53 @@ export function ProjectsSidebar() {
 										<div key={categoryKey}>
 											<button
 												onClick={() => toggleCategory(categoryKey)}
-												className="w-full flex items-center justify-between mb-2 px-3 py-1 text-xs font-medium text-muted-foreground uppercase tracking-wider hover:text-foreground transition-colors rounded"
+												className="w-full flex items-center justify-between mb-2 px-3 py-2 text-xs font-medium text-muted-foreground uppercase tracking-wider hover:text-foreground hover:bg-accent/5 transition-all duration-200 rounded-md group"
 											>
-												<span>{categoryName}</span>
+												<span className="group-hover:translate-x-1 transition-transform duration-200">{categoryName}</span>
 												<ChevronDown 
 													className={cn(
-														"w-3 h-3 transition-transform duration-200",
-														isCollapsed && "rotate-180"
+														"w-3 h-3 transition-all duration-300 ease-out group-hover:scale-110",
+														isCollapsed ? "rotate-180" : "rotate-0"
 													)} 
 												/>
 											</button>
 											<div 
 												className={cn(
-													"overflow-hidden transition-all duration-200 ease-in-out",
-													isCollapsed ? "max-h-0 opacity-0" : "max-h-none opacity-100"
+													"overflow-hidden transition-all duration-300 ease-out",
+													isCollapsed 
+														? "max-h-0 opacity-0 transform -translate-y-2" 
+														: "max-h-[1000px] opacity-100 transform translate-y-0"
 												)}
 											>
-												{categoryWidgets.map((widget) => {
+												{categoryWidgets.map((widget, index) => {
 												const isActive = pathname === `/${locale}/projects/${widget.path}`
 												const Icon = widget.icon
 												
 												return (
-													<Link
+													<div
 														key={widget.id}
-														href={`/${locale}/projects/${widget.path}`}
 														className={cn(
-															"flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-all hover:bg-accent/10 hover:text-foreground",
-															isActive && "bg-accent text-white"
+															"transition-all duration-300 ease-out",
+															isCollapsed 
+																? "opacity-0 transform translate-x-4 scale-95" 
+																: "opacity-100 transform translate-x-0 scale-100"
 														)}
+														style={{
+															transitionDelay: isCollapsed ? '0ms' : `${index * 50}ms`
+														}}
 													>
-														<Icon className="w-4 h-4" />
-														<span className="flex-1">{widgetT(`${widget.translationKey}.title`)}</span>
-														{isActive && <ChevronRight className="w-4 h-4" />}
-													</Link>
+														<Link
+															href={`/${locale}/projects/${widget.path}`}
+															className={cn(
+																"flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-all duration-200 hover:bg-accent/10 hover:text-foreground hover:translate-x-1",
+																isActive && "bg-accent text-white"
+															)}
+														>
+															<Icon className="w-4 h-4" />
+															<span className="flex-1">{widgetT(`${widget.translationKey}.title`)}</span>
+															{isActive && <ChevronRight className="w-4 h-4" />}
+														</Link>
+													</div>
 												)
 											})}
 											</div>
