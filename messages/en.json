@@ -916,7 +916,12 @@
 				"soundEnabled": "Sound notifications",
 				"autoStartBreaks": "Auto-start breaks",
 				"autoStartPomodoros": "Auto-start work sessions",
-				"showNotifications": "Desktop notifications"
+				"showNotifications": "Desktop notifications",
+				"save": "Save Settings",
+				"cancel": "Cancel",
+				"show": "Show Settings",
+				"hide": "Hide Settings",
+				"saved": "Settings saved"
 			},
 			"goals": {
 				"title": "Daily Goal",
@@ -929,6 +934,13 @@
 				"breakComplete": "Break's over! Ready to focus?",
 				"longBreakComplete": "Long break complete! Let's get back to it.",
 				"goalReached": "Congratulations! You've reached your daily goal!"
+			},
+			"tips": {
+				"title": "Pomodoro Tips",
+				"tip1": "Work for 25 minutes, then take a 5-minute break",
+				"tip2": "After 4 pomodoros, take a longer 15-30 minute break",
+				"tip3": "Stay focused on one task during each pomodoro",
+				"tip4": "Use breaks to stretch, hydrate, and rest your eyes"
 			}
 		}
 	},

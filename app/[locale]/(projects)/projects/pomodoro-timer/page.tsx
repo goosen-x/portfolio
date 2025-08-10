@@ -295,7 +295,7 @@ export default function PomodoroTimerPage() {
       )
     }
     
-    toast.success('Settings saved')
+    toast.success(t('settings.saved'))
   }
 
   // Format time display
@@ -565,7 +565,7 @@ export default function PomodoroTimerPage() {
 
                 <div className="flex gap-2">
                   <Button onClick={saveSettings}>
-                    Save Settings
+                    {t('settings.save')}
                   </Button>
                   <Button 
                     variant="outline" 
@@ -574,7 +574,7 @@ export default function PomodoroTimerPage() {
                       setShowSettings(false)
                     }}
                   >
-                    Cancel
+                    {t('settings.cancel')}
                   </Button>
                 </div>
               </CardContent>
@@ -661,7 +661,7 @@ export default function PomodoroTimerPage() {
                 onClick={() => setShowSettings(!showSettings)}
               >
                 <Settings className="w-4 h-4 mr-2" />
-                {showSettings ? 'Hide Settings' : 'Show Settings'}
+                {showSettings ? t('settings.hide') : t('settings.show')}
               </Button>
             </CardContent>
           </Card>
@@ -671,14 +671,14 @@ export default function PomodoroTimerPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Coffee className="w-4 h-4" />
-                Pomodoro Tips
+                {t('tips.title')}
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-2 text-sm text-muted-foreground">
-              <p>• Work for 25 minutes, then take a 5-minute break</p>
-              <p>• After 4 pomodoros, take a longer 15-30 minute break</p>
-              <p>• Stay focused on one task during each pomodoro</p>
-              <p>• Use breaks to stretch, hydrate, and rest your eyes</p>
+              <p>• {t('tips.tip1')}</p>
+              <p>• {t('tips.tip2')}</p>
+              <p>• {t('tips.tip3')}</p>
+              <p>• {t('tips.tip4')}</p>
             </CardContent>
           </Card>
         </div>
