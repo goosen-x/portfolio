@@ -65,7 +65,7 @@ export interface WidgetFAQ {
 export interface Widget {
   id: string
   icon: React.ComponentType<{ className?: string }>
-  category: 'css' | 'media' | 'dev' | 'productivity'
+  category: 'webdev' | 'business' | 'content' | 'security' | 'multimedia' | 'analytics' | 'lifestyle'
   translationKey: string
   path: string
   gradient: string
@@ -86,7 +86,7 @@ export const widgets: Widget[] = [
   {
     id: 'css-clamp-calculator',
     icon: Ruler,
-    category: 'css',
+    category: 'webdev',
     translationKey: 'clampCalculator',
     path: 'css-clamp-calculator',
     gradient: 'from-amber-500 to-orange-500',
@@ -131,7 +131,7 @@ export const widgets: Widget[] = [
   {
     id: 'flexbox-generator',
     icon: Box,
-    category: 'css',
+    category: 'webdev',
     translationKey: 'flexboxGenerator',
     path: 'flexbox-generator',
     gradient: 'from-blue-500 to-indigo-500',
@@ -188,7 +188,7 @@ export const widgets: Widget[] = [
   {
     id: 'grid-generator',
     icon: Grid3X3,
-    category: 'css',
+    category: 'webdev',
     translationKey: 'gridGenerator',
     path: 'grid-generator',
     gradient: 'from-green-500 to-emerald-500',
@@ -245,7 +245,7 @@ export const widgets: Widget[] = [
   {
     id: 'css-specificity',
     icon: Hash,
-    category: 'css',
+    category: 'webdev',
     translationKey: 'cssSpecificity',
     path: 'css-specificity-calculator',
     gradient: 'from-indigo-500 to-blue-600',
@@ -302,7 +302,7 @@ export const widgets: Widget[] = [
   {
     id: 'bezier-curve',
     icon: Spline,
-    category: 'css',
+    category: 'webdev',
     translationKey: 'bezierCurve',
     path: 'css-bezier-curve-generator',
     gradient: 'from-purple-500 to-indigo-500',
@@ -361,7 +361,7 @@ export const widgets: Widget[] = [
   {
     id: 'svg-encoder',
     icon: FileImage,
-    category: 'media',
+    category: 'multimedia',
     translationKey: 'svgEncoder',
     path: 'svg-to-base64-encoder',
     gradient: 'from-teal-500 to-cyan-500',
@@ -418,7 +418,7 @@ export const widgets: Widget[] = [
   {
     id: 'youtube-thumbnail',
     icon: Youtube,
-    category: 'media',
+    category: 'multimedia',
     translationKey: 'youtubeThumbnail',
     path: 'youtube-thumbnail-downloader',
     gradient: 'from-red-500 to-pink-500',
@@ -475,7 +475,7 @@ export const widgets: Widget[] = [
   {
     id: 'qr-generator',
     icon: QrCode,
-    category: 'media',
+    category: 'multimedia',
     translationKey: 'qrGenerator',
     path: 'qr-generator',
     gradient: 'from-violet-500 to-purple-500',
@@ -532,7 +532,7 @@ export const widgets: Widget[] = [
   {
     id: 'color-converter',
     icon: Palette,
-    category: 'media',
+    category: 'webdev',
     translationKey: 'colorConverter',
     path: 'color-converter',
     gradient: 'from-pink-500 to-purple-500',
@@ -591,7 +591,7 @@ export const widgets: Widget[] = [
   {
     id: 'html-tree',
     icon: GitBranch,
-    category: 'dev',
+    category: 'webdev',
     translationKey: 'htmlTree',
     path: 'html-tree-visualizer',
     gradient: 'from-purple-500 to-indigo-500',
@@ -648,7 +648,7 @@ export const widgets: Widget[] = [
   {
     id: 'speed-test',
     icon: Gauge,
-    category: 'dev',
+    category: 'analytics',
     translationKey: 'speedTest',
     path: 'internet-speed-test',
     gradient: 'from-slate-500 to-gray-600',
@@ -705,7 +705,7 @@ export const widgets: Widget[] = [
   {
     id: 'mock-data-generator',
     icon: Database,
-    category: 'dev',
+    category: 'webdev',
     translationKey: 'mockDataGenerator',
     path: 'mock-data-generator',
     gradient: 'from-emerald-500 to-teal-600',
@@ -764,7 +764,7 @@ export const widgets: Widget[] = [
   {
     id: 'password-generator',
     icon: Key,
-    category: 'productivity',
+    category: 'security',
     translationKey: 'passwordGenerator',
     path: 'password-generator',
     gradient: 'from-emerald-500 to-teal-600',
@@ -821,7 +821,7 @@ export const widgets: Widget[] = [
   {
     id: 'utm-builder',
     icon: LinkIcon,
-    category: 'productivity',
+    category: 'content',
     translationKey: 'utmBuilder',
     path: 'utm-link-builder',
     gradient: 'from-pink-500 to-rose-500',
@@ -880,7 +880,7 @@ export const widgets: Widget[] = [
   {
     id: 'seo-markdown-generator',
     icon: FileText,
-    category: 'productivity',
+    category: 'content',
     translationKey: 'seoMarkdownGenerator',
     path: 'seo-markdown-generator',
     gradient: 'from-yellow-500 to-amber-500',
@@ -939,7 +939,7 @@ export const widgets: Widget[] = [
   {
     id: 'team-randomizer',
     icon: Users,
-    category: 'productivity',
+    category: 'lifestyle',
     translationKey: 'teamRandomizer',
     path: 'team-randomizer',
     gradient: 'from-indigo-500 to-purple-600',
@@ -996,7 +996,7 @@ export const widgets: Widget[] = [
   {
     id: 'draw-lots',
     icon: Shuffle,
-    category: 'productivity',
+    category: 'lifestyle',
     translationKey: 'drawLots',
     path: 'draw-lots',
     gradient: 'from-purple-500 to-pink-600',
@@ -1053,7 +1053,7 @@ export const widgets: Widget[] = [
   {
     id: 'pomodoro-timer',
     icon: Timer,
-    category: 'productivity',
+    category: 'lifestyle',
     translationKey: 'pomodoroTimer',
     path: 'pomodoro-timer',
     gradient: 'from-red-500 to-orange-600',
@@ -1110,7 +1110,7 @@ export const widgets: Widget[] = [
   {
     id: 'special-symbols-picker',
     icon: Type,
-    category: 'productivity',
+    category: 'content',
     translationKey: 'specialSymbolsPicker',
     path: 'special-symbols-picker',
     gradient: 'from-violet-500 to-indigo-600',
@@ -1167,7 +1167,7 @@ export const widgets: Widget[] = [
   {
     id: 'fancy-text-generator',
     icon: Type,
-    category: 'productivity',
+    category: 'content',
     translationKey: 'fancyTextGenerator',
     path: 'fancy-text-generator',
     gradient: 'from-fuchsia-500 to-pink-600',
@@ -1224,7 +1224,7 @@ export const widgets: Widget[] = [
   {
     id: 'random-number-generator',
     icon: Dices,
-    category: 'productivity',
+    category: 'lifestyle',
     translationKey: 'randomNumberGenerator',
     path: 'random-number-generator',
     gradient: 'from-cyan-500 to-blue-600',
@@ -1281,7 +1281,7 @@ export const widgets: Widget[] = [
   {
     id: 'percentage-calculator',
     icon: Percent,
-    category: 'productivity',
+    category: 'business',
     translationKey: 'percentageCalculator',
     path: 'percentage-calculator',
     gradient: 'from-amber-500 to-orange-600',
@@ -1338,7 +1338,7 @@ export const widgets: Widget[] = [
   {
     id: 'random-list-generator',
     icon: List,
-    category: 'productivity',
+    category: 'content',
     translationKey: 'randomListGenerator',
     path: 'random-list-generator',
     gradient: 'from-violet-500 to-purple-600',
@@ -1407,7 +1407,7 @@ export const widgets: Widget[] = [
   {
     id: 'coin-flip',
     icon: Coins,
-    category: 'productivity',
+    category: 'lifestyle',
     translationKey: 'coinFlip',
     path: 'coin-flip',
     gradient: 'from-amber-500 to-yellow-600',
@@ -1476,7 +1476,7 @@ export const widgets: Widget[] = [
   {
     id: 'world-time',
     icon: Globe,
-    category: 'productivity',
+    category: 'analytics',
     translationKey: 'worldTime',
     path: 'world-time',
     gradient: 'from-blue-500 to-cyan-600',
@@ -1545,7 +1545,7 @@ export const widgets: Widget[] = [
   {
     id: 'dice-roller',
     icon: Dices,
-    category: 'productivity',
+    category: 'lifestyle',
     translationKey: 'diceRoller',
     path: 'dice-roller',
     gradient: 'from-red-500 to-pink-600',
@@ -1614,7 +1614,7 @@ export const widgets: Widget[] = [
   {
     id: 'social-media-formatter',
     icon: MessageSquare,
-    category: 'media',
+    category: 'content',
     translationKey: 'socialMediaFormatter',
     path: 'social-media-formatter',
     gradient: 'from-blue-500 to-purple-600',
@@ -1683,7 +1683,7 @@ export const widgets: Widget[] = [
   {
     id: 'emoji-list',
     icon: Smile,
-    category: 'media',
+    category: 'content',
     translationKey: 'emojiList',
     path: 'emoji-list',
     gradient: 'from-yellow-400 to-orange-500',
@@ -1752,7 +1752,7 @@ export const widgets: Widget[] = [
   {
     id: 'text-emoticons',
     icon: Type,
-    category: 'media',
+    category: 'content',
     translationKey: 'textEmoticons',
     path: 'text-emoticons',
     gradient: 'from-purple-500 to-pink-600',
@@ -1821,7 +1821,7 @@ export const widgets: Widget[] = [
   {
     id: 'text-to-speech',
     icon: Volume2,
-    category: 'media',
+    category: 'multimedia',
     translationKey: 'textToSpeech',
     path: 'text-to-speech',
     gradient: 'from-green-500 to-teal-600',
@@ -1890,7 +1890,7 @@ export const widgets: Widget[] = [
   {
     id: 'email-html',
     icon: Mail,
-    category: 'dev',
+    category: 'webdev',
     translationKey: 'emailHtml',
     path: 'email-html',
     gradient: 'from-blue-500 to-indigo-600',
@@ -1959,7 +1959,7 @@ export const widgets: Widget[] = [
   {
     id: 'system-info',
     icon: Monitor,
-    category: 'dev',
+    category: 'analytics',
     translationKey: 'systemInfo',
     path: 'system-info',
     gradient: 'from-indigo-500 to-purple-600',
@@ -2028,7 +2028,7 @@ export const widgets: Widget[] = [
   {
     id: 'json-tools',
     icon: Braces,
-    category: 'dev',
+    category: 'webdev',
     translationKey: 'jsonTools',
     path: 'json-tools',
     gradient: 'from-orange-500 to-red-600',
@@ -2097,7 +2097,7 @@ export const widgets: Widget[] = [
   {
     id: 'js-css-compressor',
     icon: Zap,
-    category: 'dev',
+    category: 'webdev',
     translationKey: 'jsCssCompressor',
     path: 'js-css-compressor',
     gradient: 'from-yellow-500 to-orange-600',
@@ -2166,7 +2166,7 @@ export const widgets: Widget[] = [
   {
     id: 'js-validator',
     icon: Bug,
-    category: 'dev',
+    category: 'webdev',
     translationKey: 'jsValidator',
     path: 'js-validator',
     gradient: 'from-red-500 to-pink-600',
@@ -2235,7 +2235,7 @@ export const widgets: Widget[] = [
   {
     id: 'age-calculator',
     icon: Calculator,
-    category: 'productivity',
+    category: 'lifestyle',
     translationKey: 'ageCalculator',
     path: 'age-calculator',
     gradient: 'from-purple-500 to-pink-600',
@@ -2295,7 +2295,7 @@ export const widgets: Widget[] = [
   {
     id: 'temperature-converter',
     icon: Thermometer,
-    category: 'productivity',
+    category: 'business',
     translationKey: 'temperatureConverter',
     path: 'temperature-converter',
     gradient: 'from-blue-500 to-cyan-600',
@@ -2355,7 +2355,7 @@ export const widgets: Widget[] = [
   {
     id: 'bmi-calculator',
     icon: Weight,
-    category: 'productivity',
+    category: 'lifestyle',
     translationKey: 'bmiCalculator',
     path: 'bmi-calculator',
     gradient: 'from-green-500 to-emerald-600',
@@ -2415,7 +2415,7 @@ export const widgets: Widget[] = [
   {
     id: 'text-counter',
     icon: FileSearch,
-    category: 'productivity',
+    category: 'content',
     translationKey: 'textCounter',
     path: 'text-counter',
     gradient: 'from-indigo-500 to-purple-600',
@@ -2474,7 +2474,7 @@ export const widgets: Widget[] = [
   {
     id: 'timer-countdown',
     icon: Clock,
-    category: 'productivity',
+    category: 'lifestyle',
     translationKey: 'timerCountdown',
     path: 'timer-countdown',
     gradient: 'from-orange-500 to-red-600',
@@ -2533,7 +2533,7 @@ export const widgets: Widget[] = [
   {
     id: 'currency-converter',
     icon: DollarSign,
-    category: 'productivity',
+    category: 'business',
     translationKey: 'currencyConverter',
     path: 'currency-converter',
     gradient: 'from-yellow-500 to-orange-600',
@@ -2593,7 +2593,7 @@ export const widgets: Widget[] = [
   {
     id: 'text-diff',
     icon: GitCompare,
-    category: 'dev',
+    category: 'webdev',
     translationKey: 'textDiff',
     path: 'text-diff',
     gradient: 'from-purple-500 to-indigo-600',
@@ -2652,7 +2652,7 @@ export const widgets: Widget[] = [
   {
     id: 'php-syntax-checker',
     icon: Code,
-    category: 'dev',
+    category: 'webdev',
     translationKey: 'phpSyntaxChecker',
     path: 'php-syntax-checker',
     gradient: 'from-indigo-500 to-blue-600',
@@ -2711,7 +2711,7 @@ export const widgets: Widget[] = [
   {
     id: 'mysql-syntax-checker',
     icon: Database,
-    category: 'dev',
+    category: 'webdev',
     translationKey: 'mysqlSyntaxChecker',
     path: 'mysql-syntax-checker',
     gradient: 'from-blue-500 to-teal-600',
@@ -2770,7 +2770,7 @@ export const widgets: Widget[] = [
   {
     id: 'regex-tester',
     icon: Search,
-    category: 'dev',
+    category: 'webdev',
     translationKey: 'regexTester',
     path: 'regex-tester',
     gradient: 'from-green-500 to-teal-600',
@@ -2829,7 +2829,7 @@ export const widgets: Widget[] = [
   {
     id: 'javascript-syntax-checker',
     icon: Code,
-    category: 'dev',
+    category: 'webdev',
     translationKey: 'javascriptSyntaxChecker',
     path: 'javascript-syntax-checker',
     gradient: 'from-yellow-500 to-red-600',
@@ -2889,7 +2889,7 @@ export const widgets: Widget[] = [
   {
     id: 'px-rem-converter',
     icon: Ruler,
-    category: 'css',
+    category: 'webdev',
     translationKey: 'pxRemConverter',
     path: 'px-rem-converter',
     gradient: 'from-pink-500 to-rose-600',
@@ -2948,7 +2948,7 @@ export const widgets: Widget[] = [
   {
     id: 'css-box-shadow',
     icon: Square,
-    category: 'css',
+    category: 'webdev',
     translationKey: 'cssBoxShadow',
     path: 'css-box-shadow-generator',
     gradient: 'from-gray-600 to-gray-800',
@@ -3007,7 +3007,7 @@ export const widgets: Widget[] = [
   {
     id: 'css-gradient',
     icon: Layers,
-    category: 'css',
+    category: 'webdev',
     translationKey: 'cssGradient',
     path: 'css-gradient-generator',
     gradient: 'from-purple-500 via-pink-500 to-red-500',
@@ -3066,7 +3066,7 @@ export const widgets: Widget[] = [
   {
     id: 'color-contrast',
     icon: Circle,
-    category: 'css',
+    category: 'webdev',
     translationKey: 'colorContrast',
     path: 'color-contrast-checker',
     gradient: 'from-black to-white',
@@ -3125,7 +3125,7 @@ export const widgets: Widget[] = [
   {
     id: 'css-keyframes',
     icon: Sparkles,
-    category: 'css',
+    category: 'webdev',
     translationKey: 'cssKeyframes',
     path: 'css-keyframes-generator',
     gradient: 'from-blue-500 to-purple-600',
@@ -3184,7 +3184,7 @@ export const widgets: Widget[] = [
   {
     id: 'json-yaml-formatter',
     icon: FileJson,
-    category: 'dev',
+    category: 'webdev',
     translationKey: 'jsonYamlFormatter',
     path: 'json-yaml-formatter',
     gradient: 'from-orange-500 to-yellow-600',
@@ -3244,7 +3244,7 @@ export const widgets: Widget[] = [
   {
     id: 'base64-encoder',
     icon: Lock,
-    category: 'dev',
+    category: 'security',
     translationKey: 'base64Encoder',
     path: 'base64-encoder',
     gradient: 'from-green-500 to-teal-600',
@@ -3304,7 +3304,7 @@ export const widgets: Widget[] = [
   {
     id: 'jwt-decoder',
     icon: Key,
-    category: 'dev',
+    category: 'security',
     translationKey: 'jwtDecoder',
     path: 'jwt-decoder',
     gradient: 'from-purple-500 to-pink-600',
@@ -3364,7 +3364,7 @@ export const widgets: Widget[] = [
   {
     id: 'uuid-generator',
     icon: Fingerprint,
-    category: 'dev',
+    category: 'security',
     translationKey: 'uuidGenerator',
     path: 'uuid-generator',
     gradient: 'from-indigo-500 to-blue-600',
@@ -3423,7 +3423,7 @@ export const widgets: Widget[] = [
   {
     id: 'compound-interest',
     icon: TrendingUp,
-    category: 'productivity',
+    category: 'business',
     translationKey: 'compoundInterest',
     path: 'compound-interest',
     gradient: 'from-green-500 to-emerald-600',
@@ -3483,7 +3483,7 @@ export const widgets: Widget[] = [
   {
     id: 'loan-calculator',
     icon: CreditCard,
-    category: 'productivity',
+    category: 'business',
     translationKey: 'loanCalculator',
     path: 'loan-calculator',
     gradient: 'from-red-500 to-pink-600',
@@ -3543,7 +3543,7 @@ export const widgets: Widget[] = [
   {
     id: 'fuel-calculator',
     icon: Fuel,
-    category: 'productivity',
+    category: 'business',
     translationKey: 'fuelCalculator',
     path: 'fuel-consumption-calculator',
     gradient: 'from-blue-500 to-green-600',
@@ -3603,10 +3603,13 @@ export const widgets: Widget[] = [
 ]
 
 export const widgetCategories = {
-  css: 'CSS Tools',
-  media: 'Media & Content',
-  dev: 'Dev Tools',
-  productivity: 'Productivity'
+  webdev: 'Web Development',
+  business: 'Business & Finance',
+  content: 'Content Creation',
+  security: 'Security & Privacy',
+  multimedia: 'Multimedia',
+  analytics: 'Analytics & Data',
+  lifestyle: 'Health & Lifestyle'
 } as const
 
 export function getWidgetsByCategory(category: Widget['category']): Widget[] {
