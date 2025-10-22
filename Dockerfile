@@ -1,18 +1,15 @@
 # Build
 FROM node:18-alpine AS build
 WORKDIR /app
-ENV NODE_ENV=production
 
-# Копируем манифесты
-COPY package.json package-lock.json* ./
-
-# Устанавливаем зависимости
+# deps (включая devDeps)
+COPY package*.json ./
 RUN npm ci
 
-# Копируем исходники
+# source
 COPY . .
 
-# Сборка
+# build (typescript уже есть в devDeps)
 RUN npm run build
 
 # Runtime
@@ -21,7 +18,6 @@ WORKDIR /app
 ENV NODE_ENV=production
 ENV PORT=3000
 
-# Минимум для запуска
 COPY --from=build /app/package.json ./
 COPY --from=build /app/.next ./.next
 COPY --from=build /app/public ./public 2>/dev/null || true
