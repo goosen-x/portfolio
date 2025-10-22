@@ -2,24 +2,22 @@
 FROM node:18-alpine AS build
 WORKDIR /app
 
-# deps (включая devDeps)
 COPY package*.json ./
 RUN npm ci
-
-# source
 COPY . .
-
-# build (typescript уже есть в devDeps)
 RUN npm run build
 
-# Runtime
+# Runtime (standalone)
 FROM node:18-alpine AS runner
 WORKDIR /app
 ENV NODE_ENV=production
 ENV PORT=3000
 
-COPY --from=build /app/package.json ./
-COPY --from=build /app/.next ./.next
+# Копируем standalone-бандл и статик
+COPY --from=build /app/.next/standalone ./
+COPY --from=build /app/.next/static ./.next/static
+# Если есть public — раскомментируй:
+# COPY --from=build /app/public ./public
 
 EXPOSE 3000
-CMD ["node", "node_modules/next/dist/bin/next", "start", "-p", "${PORT}"]
+CMD ["node", "server.js"]
