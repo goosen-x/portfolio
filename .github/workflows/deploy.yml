@@ -44,4 +44,4 @@ jobs:
           script_stop: true
           script: |
             ~/deploy-scripts/deploy-portfolio.sh ghcr.io/${{ github.repository }}:latest
-            ~/docker-apps-manager.sh status
+            docker ps --format "table {{.Names}}\t{{.Ports}}\t{{.Status}}"
