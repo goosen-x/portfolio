@@ -49,7 +49,7 @@ export const HeaderBlock = () => {
             Борисенко Дмитрий
           </h1>
           <p className="text-xl lg:text-2xl text-muted-foreground font-medium mb-2">
-            Фуллстек разработчик
+            Fullstack разработчик
           </p>
           <p className="text-lg text-muted-foreground max-w-lg leading-relaxed">
             Создаю выдающиеся цифровые продукты с современными инструментами и
