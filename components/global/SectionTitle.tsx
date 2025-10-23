@@ -13,7 +13,7 @@ export const SectionTitle = ({
   return (
     <h2
       className={cn(
-        "text-3xl md:text-4xl font-bold text-foreground font-(family-name:--font-alt)",
+        "text-3xl md:text-4xl font-extrabold text-foreground font-(family-name:--font-montserrat-alt)",
         className,
       )}
       {...rest}

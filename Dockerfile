@@ -17,7 +17,7 @@ ENV PORT=3000
 COPY --from=build /app/.next/standalone ./
 COPY --from=build /app/.next/static ./.next/static
 # Если есть public — раскомментируй:
-# COPY --from=build /app/public ./public
+COPY --from=build /app/public ./public
 
 EXPOSE 3000
 CMD ["node", "server.js"]
