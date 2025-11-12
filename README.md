@@ -114,7 +114,7 @@ improvements. Feel free to open an issue or submit a pull request.
 Dmitry Borisenko -
 [dmitryborisenko.msk@gmail.com](mailto:dmitryborisenko.msk@gmail.com)
 
-Project Link: [https://www.goosen.pro](https://www.goosen.pro)
+Project Link: [https://www.gooselabs](https://www.gooselabs)
 
 ---
 

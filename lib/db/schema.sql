@@ -81,7 +81,7 @@ CREATE TRIGGER update_authors_updated_at
 INSERT INTO authors (name, email, picture, bio) 
 VALUES (
     'Dmitry Borisenko',
-    'hello@goosen.pro',
+    'hello@gooselabs',
     '/images/avatar.jpeg',
     'Fullstack Developer passionate about modern web technologies and creating exceptional user experiences.'
 ) ON CONFLICT DO NOTHING;

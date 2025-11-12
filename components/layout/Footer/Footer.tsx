@@ -13,7 +13,7 @@ export const Footer = async () => {
 			<div className='space-y-12'>
 				<div className='space-y-6'>
 					<div>
-						<h2 className='text-2xl font-bold text-foreground'>goosen.pro</h2>
+						<h2 className='text-2xl font-bold text-foreground'>gooselabs</h2>
 						<p className='mt-2 text-muted-foreground lg:text-lg'>
 							{t('slogan')}
 						</p>
