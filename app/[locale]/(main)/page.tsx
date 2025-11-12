@@ -7,6 +7,7 @@ import {
 	SectionProjects,
 	SectionTechStack,
 	SectionBlog,
+	SectionSpeaking,
 	SectionContact
 } from '@/components/homepage'
 import { BackgroundBeamsWrapper } from '@/components/global/BackgroundBeamsWrapper'
@@ -25,6 +26,7 @@ export default async function Home(props: Props) {
 			<ScrollSpy />
 			<Container>
 				<SectionMain id='main' />
+				<SectionSpeaking id='speaking' />
 				<SectionTechStack id='techstack' />
 				<SectionProjects id='projects' />
 				<SectionExperience id='experience' />

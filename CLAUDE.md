@@ -5,7 +5,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```bash
-npm run dev    # Start development server at http://localhost:3000
+npm run dev    # Start development server with Turbopack at http://localhost:3000
 npm run build  # Create production build
 npm run start  # Run production server
 npm run lint   # Run ESLint for code quality checks
@@ -27,42 +27,65 @@ This project uses **Neon PostgreSQL** (via Vercel Postgres) for blog data storag
    npx tsx lib/scripts/migrate-posts.ts
    ```
 
+The database includes tables for `blog_posts`, `authors`, `tags`, and their relationships. See `lib/db/schema.sql` for full schema details.
+
 ## Architecture Overview
 
-This is a modern Next.js 15 portfolio website with internationalization support for English, Russian, and Hebrew. The project uses the App Router architecture with TypeScript and Tailwind CSS v4.
+This is a modern Next.js 15 portfolio website with internationalization support for English and Russian. The project uses the App Router architecture with TypeScript, Tailwind CSS v4, and React 19.
 
 ### Key Architectural Decisions
 
-1. **Internationalization First**: All routes are prefixed with locale (`/[locale]/`). The middleware handles automatic locale detection and routing. Messages are stored in `/messages/{locale}.json`.
+1. **Internationalization First**: All routes are prefixed with locale (`/[locale]/`). The middleware uses `next-intl` for automatic locale detection and routing. Supported locales are defined in `/i18n/routing.ts` (currently `en` and `ru`). Messages are stored in `/messages/{locale}.json`.
 
-2. **Component Organization**:
-   - `/components/homepage/` - Feature-specific sections (SectionMain, SectionTechStack, etc.)
-   - `/components/global/` - Reusable components across pages
-   - `/components/ui/` - shadcn/ui design system components
+2. **Route Groups Organization**:
+   - `/app/[locale]/(main)/` - Homepage and primary landing pages
+   - `/app/[locale]/(other)/` - Secondary pages like blog, activities, contact, settings
+   - Route groups don't affect URL structure but help organize related pages
+
+3. **Component Organization**:
+   - `/components/homepage/` - Feature sections (SectionMain, SectionTechStack, SectionExperience, SectionProjects, SectionBlog, SectionContact, ContactSection)
+   - `/components/global/` - Reusable components shared across pages
+   - `/components/ui/` - shadcn/ui design system components (Radix UI based)
+   - `/components/blog/` - Blog-specific components
+   - `/components/layout/` - Layout components (Header, Footer, etc.)
+   - `/components/widgets/` - Standalone widget components
    - Each component folder typically has an `index.ts` barrel export
 
-3. **3D Visualizations**: The project uses React Three Fiber and Three.js for interactive 3D elements, particularly globe visualizations using `cobe` and `three-globe`.
+4. **3D Visualizations**: The project uses React Three Fiber (`@react-three/fiber`) and Three.js for interactive 3D elements. Key libraries:
+   - `cobe` - Interactive globe visualizations
+   - `three-globe` - Additional globe features
+   - `@react-three/drei` - Helper components for R3F
 
-4. **Styling Strategy**: 
-   - Tailwind CSS v4 (latest version) for utility-first styling
+5. **Styling Strategy**:
+   - Tailwind CSS v4 (latest) for utility-first styling
+   - `tailwindcss-animate` for animations
    - CSS variables for design tokens
-   - Dark mode support built-in
-   - Custom Tektur font family
+   - Dark mode support via `next-themes`
+   - `framer-motion` for advanced animations
 
-5. **Form Handling**: React Hook Form with Zod validation for type-safe forms.
+6. **Blog System**:
+   - Blog posts stored in Neon PostgreSQL
+   - Support for markdown content with syntax highlighting via `prismjs` and `highlight.js`
+   - Markdown processing pipeline: `gray-matter` → `remark` → `rehype` → HTML
+   - Blog utilities in `/lib/db/blog.ts`
+
+7. **Form Handling**: React Hook Form with Zod validation for type-safe forms.
 
 ### Important Patterns
 
-- **Server Components by Default**: Leverage Next.js App Router's server components
-- **Locale-Aware Components**: Always consider internationalization when modifying components
+- **Server Components by Default**: Leverage Next.js App Router's server components where possible
+- **Locale-Aware Components**: Always consider internationalization when modifying components. Use `next-intl` navigation utilities from `/i18n/routing.ts`
 - **Type Safety**: Full TypeScript coverage - avoid `any` types
 - **Component Exports**: Use barrel exports (index.ts) for cleaner imports
+- **Database Queries**: Use safe query wrappers from `/lib/db/safe-query.ts` for error handling
 
 ### Key Files to Understand
 
-- `/middleware.ts` - Handles internationalization routing
-- `/app/[locale]/layout.tsx` - Root layout with providers and i18n setup
-- `/lib/config/env.config.ts` - Environment variable configuration
+- `/middleware.ts` - Handles internationalization routing via `next-intl`
+- `/i18n/routing.ts` - Defines supported locales and creates locale-aware navigation utilities
+- `/app/[locale]/layout.tsx` - Root layout with providers, fonts, and i18n setup
+- `/lib/db/` - Database connection, schema, and blog utilities
+- `/lib/config/` - Configuration files (features, environment)
 - `/components/homepage/` - Main portfolio sections architecture
 
 ### Testing & Quality

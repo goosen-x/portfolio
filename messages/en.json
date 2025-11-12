@@ -10,6 +10,7 @@
 			"techstack": "TechStack",
 			"projects": "Projects",
 			"experience": "Experience",
+			"speaking": "Speaking",
 			"contact": "Contact",
 			"blog": "Blog",
 			"activities": "Activities"
@@ -173,6 +174,36 @@
 	"SectionBlog": {
 		"title": "Latest from the Blog",
 		"description": "Insights on web development, design patterns, and technology trends"
+	},
+	"SectionSpeaking": {
+		"title": "Conferences",
+		"description": "Sharing knowledge and experience with the developer community through talks and presentations at conferences and meetups.",
+		"buttons": {
+			"watchVideo": "Watch Video",
+			"viewPhotos": "View Photos",
+			"eventPage": "Event Page",
+			"tickets": "Tickets"
+		},
+		"status": {
+			"completed": "Completed",
+			"upcoming": "Upcoming"
+		},
+		"conferences": {
+			"moscowcss29": {
+				"event": "MoscowCSS #29",
+				"title": "The Power of Pseudo-selectors in Modern CSS",
+				"date": "November 6, 2025, 18:00-22:00 MSK",
+				"location": "Moscow, Russia",
+				"venue": "School 21, Vyatskaya St., 27, building 42",
+				"description": "An in-depth talk covering modern CSS pseudo-selectors and their current browser support. Explored practical use cases and real-world examples of how pseudo-selectors can simplify code and enhance user experience in modern web applications.",
+				"eventUrl": "https://css.moscow/29.html",
+				"ticketsUrl": "https://moscowcss.timepad.ru/event/3639677/",
+				"videoUrl": "https://vkvideo.ru/video-167479002_456239487",
+				"photosUrl": "https://disk.360.yandex.ru/d/sUKej5zC0OyjYg",
+				"format": "Hybrid: In-person + Online",
+				"status": "completed"
+			}
+		}
 	},
 	"blog": {
 		"title": "Blog",

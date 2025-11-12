@@ -48,7 +48,7 @@ export const ProjectBlock = ({ project }: Props) => {
 					src={project.image}
 					width={1000}
 					height={2000}
-					alt='Project screenshot'
+					alt={`Сайт компании ${project.title}`}
 				/>
 			</Block>
 			<div className='flex justify-between items-center gap-4 my-4'>

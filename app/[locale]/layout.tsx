@@ -14,6 +14,7 @@ import YandexMetrika from '@/components/analytics/YandexMetrika'
 import { ScrollToTop } from '@/components/global/ScrollToTop'
 import { Toaster } from '@/components/ui/sonner'
 import { ThemeProvider } from '@/components/providers/theme-provider'
+import { BreadcrumbHeader } from '@/components/global'
 
 // todo add metadata
 
@@ -41,7 +42,7 @@ export default async function RootLayout({
 	return (
 		<html
 			lang={locale}
-			className="scroll-smooth scroll-pt-24"
+			className='scroll-smooth scroll-pt-24'
 			suppressHydrationWarning
 		>
 			<NextIntlClientProvider messages={messages}>
@@ -51,11 +52,7 @@ export default async function RootLayout({
 						tekturFont.className
 					)}
 				>
-					<ThemeProvider
-						attribute="class"
-						defaultTheme="system"
-						enableSystem
-					>
+					<ThemeProvider attribute='class' defaultTheme='system' enableSystem>
 						<YandexMetrika />
 						{children}
 						<ScrollToTop />

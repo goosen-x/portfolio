@@ -5,7 +5,7 @@ import Link from 'next/link'
 import React from 'react'
 import { FiArrowRight } from 'react-icons/fi'
 
-import avatarImg from '@/public/images/avatar.jpeg'
+import avatarImg from '@/public/images/avatar.png'
 
 export const HeaderBlock = () => {
 	const t = useTranslations('SectionMain')
@@ -25,7 +25,7 @@ export const HeaderBlock = () => {
 				src={avatarImg.src}
 				width={500}
 				height={500}
-				alt='Borisenko Dmitry'
+				alt='Борисенко Дмитрий'
 			/>
 			<h1 className='mb-12 text-3xl text-foreground font-medium leading-tight'>
 				{t('job')}
