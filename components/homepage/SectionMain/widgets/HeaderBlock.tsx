@@ -25,7 +25,7 @@ export const HeaderBlock = () => {
 				src={avatarImg.src}
 				width={500}
 				height={500}
-				alt='Борисенко Дмитрий'
+				alt='Дмитрий Борисенко'
 			/>
 			<h1 className='mb-12 text-3xl text-foreground font-medium leading-tight'>
 				{t('job')}

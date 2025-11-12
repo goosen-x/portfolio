@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import { useTranslations } from 'next-intl'
-import { Home, Layers, FolderOpen, Briefcase, BookOpen, Mail } from 'lucide-react'
+import { Home, Presentation, Layers, FolderOpen, Briefcase, BookOpen } from 'lucide-react'
 
 interface ScrollSpyProps {
 	className?: string
@@ -18,11 +18,11 @@ export const ScrollSpy = ({ className }: ScrollSpyProps) => {
 
 	const sections = [
 		{ id: 'main', label: t('main'), icon: Home },
+		{ id: 'speaking', label: t('speaking'), icon: Presentation },
 		{ id: 'techstack', label: t('techstack'), icon: Layers },
 		{ id: 'projects', label: t('projects'), icon: FolderOpen },
 		{ id: 'experience', label: t('experience'), icon: Briefcase },
-		{ id: 'blog', label: t('blog'), icon: BookOpen },
-		{ id: 'contact', label: t('contact'), icon: Mail }
+		{ id: 'blog', label: t('blog'), icon: BookOpen }
 	]
 
 	useEffect(() => {
@@ -87,7 +87,7 @@ export const ScrollSpy = ({ className }: ScrollSpyProps) => {
 			{isVisible && (
 				<div
 					className={cn(
-						'fixed left-6 top-1/2 -translate-y-1/2 z-40 hidden lg:block',
+						'fixed left-6 top-1/2 -translate-y-1/2 z-50 hidden lg:block',
 						className
 					)}
 					onMouseEnter={() => setIsExpanded(true)}
