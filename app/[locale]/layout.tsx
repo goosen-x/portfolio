@@ -19,7 +19,7 @@ import { BreadcrumbHeader } from '@/components/global'
 // todo add metadata
 
 export const metadata: Metadata = {
-	title: 'Web Developer Borisenko Dmitry',
+	title: 'Web Developer Dmitry Borisenko',
 	description:
 		'Projects and experience in web development: building modern applications using Next.js, Strapi, PostgreSQL, and other technologies.'
 }

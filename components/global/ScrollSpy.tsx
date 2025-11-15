@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import { useTranslations } from 'next-intl'
-import { Home, Presentation, Layers, FolderOpen, Briefcase, BookOpen } from 'lucide-react'
+import { Home, Presentation, Layers, FolderOpen, Briefcase } from 'lucide-react'
 
 interface ScrollSpyProps {
 	className?: string
@@ -21,8 +21,7 @@ export const ScrollSpy = ({ className }: ScrollSpyProps) => {
 		{ id: 'speaking', label: t('speaking'), icon: Presentation },
 		{ id: 'techstack', label: t('techstack'), icon: Layers },
 		{ id: 'projects', label: t('projects'), icon: FolderOpen },
-		{ id: 'experience', label: t('experience'), icon: Briefcase },
-		{ id: 'blog', label: t('blog'), icon: BookOpen }
+		{ id: 'experience', label: t('experience'), icon: Briefcase }
 	]
 
 	useEffect(() => {

@@ -1,13 +1,13 @@
 ---
 title: "CSS Container Queries: The Future of Responsive Components"
 excerpt: "Learn how CSS Container Queries enable truly responsive components. Create layouts that adapt based on container size, not just viewport."
-coverImage: "/images/avatar.jpeg"
+coverImage: "/images/avatar.png"
 date: "2024-12-02T10:00:00.000Z"
 author:
   name: Dmitry Borisenko
-  picture: "/images/avatar.jpeg"
+  picture: "/images/avatar.png"
 ogImage:
-  url: "/images/avatar.jpeg"
+  url: "/images/avatar.png"
 ---
 
 CSS Container Queries are a game-changer for responsive design. Unlike media queries that respond to viewport size, container queries allow components to adapt based on their container's size, enabling truly modular and reusable components.

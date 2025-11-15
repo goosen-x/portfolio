@@ -74,7 +74,9 @@ export const SectionSpeaking = async ({
 					? null
 					: t(`conferences.${conference.name}.photosUrl`),
 			format: t(`conferences.${conference.name}.format`),
-			status: t(`conferences.${conference.name}.status`) as 'completed' | 'upcoming',
+			status: t(`conferences.${conference.name}.status`) as
+				| 'completed'
+				| 'upcoming',
 			buttons: {
 				watchVideo: t('buttons.watchVideo'),
 				viewPhotos: t('buttons.viewPhotos'),
@@ -86,10 +88,13 @@ export const SectionSpeaking = async ({
 	})
 
 	return (
-		<section className={cn('py-16 sm:py-24', className)} {...rest}>
-			<div className='mx-auto max-w-(--breakpoint-xl) px-4 sm:px-6 lg:px-8'>
-				<SectionTitle className='mb-12' title={t('title')} />
-				<p className='text-center text-gray-600 dark:text-gray-400 md:text-lg mb-16 max-w-3xl mx-auto'>
+		<section className={cn('py-12 sm:py-16 md:py-24', className)} {...rest}>
+			<div className='mx-auto max-w-(--breakpoint-xl)'>
+				<SectionTitle
+					className='mb-8 sm:mb-12 px-3 sm:px-6 lg:px-8'
+					title={t('title')}
+				/>
+				<p className='text-center text-gray-600 dark:text-gray-400 md:text-lg mb-8 sm:mb-12 md:mb-16 max-w-3xl mx-auto px-3 sm:px-6 lg:px-8'>
 					{t('description')}
 				</p>
 

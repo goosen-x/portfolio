@@ -78,10 +78,10 @@ CREATE TRIGGER update_authors_updated_at
     EXECUTE FUNCTION update_updated_at_column();
 
 -- Insert default author
-INSERT INTO authors (name, email, picture, bio) 
+INSERT INTO authors (name, email, picture, bio)
 VALUES (
     'Dmitry Borisenko',
     'hello@gooselabs',
-    '/images/avatar.jpeg',
+    '/images/avatar.png',
     'Fullstack Developer passionate about modern web technologies and creating exceptional user experiences.'
 ) ON CONFLICT DO NOTHING;

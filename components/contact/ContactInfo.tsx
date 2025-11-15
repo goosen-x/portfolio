@@ -127,7 +127,7 @@ export default function ContactInfo({ locale }: Props) {
 				</p>
 				<div className='space-y-2 text-sm text-muted-foreground'>
 					<div className='flex items-center gap-2'>
-						<div className='w-2 h-2 bg-green-500 rounded-full'></div>
+						<div className='w-2 h-2 bg-red-500 rounded-full'></div>
 						{t('availability.remote')}
 					</div>
 					<div className='flex items-center gap-2'>
@@ -135,7 +135,7 @@ export default function ContactInfo({ locale }: Props) {
 						{t('availability.freelance')}
 					</div>
 					<div className='flex items-center gap-2'>
-						<div className='w-2 h-2 bg-yellow-500 rounded-full'></div>
+						<div className='w-2 h-2 bg-red-500 rounded-full'></div>
 						{t('availability.fulltime')}
 					</div>
 				</div>

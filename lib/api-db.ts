@@ -10,18 +10,18 @@ function convertDbPostToLegacy(dbPost: BlogPost): Post {
 	
 	const author: Author = {
 		name: primaryAuthor?.name || 'Unknown Author',
-		picture: primaryAuthor?.picture || '/images/avatar.jpeg'
+		picture: primaryAuthor?.picture || '/images/avatar.png'
 	}
 
 	return {
 		slug: dbPost.slug,
 		title: dbPost.title,
 		date: new Date(dbPost.published_at || dbPost.created_at).toISOString(),
-		coverImage: dbPost.cover_image || '/images/avatar.jpeg',
+		coverImage: dbPost.cover_image || '/images/avatar.png',
 		author,
 		excerpt: dbPost.excerpt || '',
 		ogImage: {
-			url: dbPost.cover_image || '/images/avatar.jpeg'
+			url: dbPost.cover_image || '/images/avatar.png'
 		},
 		content: dbPost.content,
 		preview: false
@@ -60,7 +60,7 @@ export async function getPostBySlug(slug: string, locale: string = 'en'): Promis
 		if (!dbPost) {
 			// If not found in DB, try fallback to file system
 			try {
-				return getPostBySlugFromFile(slug)
+				return getPostBySlugFromFile(slug, locale)
 			} catch (fileError) {
 				console.error('Error fetching post from file:', fileError)
 				return null

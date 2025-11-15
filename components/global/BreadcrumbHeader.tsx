@@ -6,10 +6,18 @@ import { usePathname } from 'next/navigation'
 import ThemeToggle from '@/components/global/ThemeToggle'
 import { LanguageSelect } from '@/components/global/LanguageSelect'
 import { DownloadCV } from '@/components/global/DownloadCV'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { cn } from '@/lib/utils'
 import { tekturFont } from '@/lib/fonts/fonts'
 import Image from 'next/image'
+import {
+	Sheet,
+	SheetContent,
+	SheetHeader,
+	SheetTitle,
+	SheetTrigger
+} from '@/components/ui/sheet'
+import { Menu } from 'lucide-react'
 
 import gooselabsImg from '@/public/images/gooselabs.png'
 
@@ -17,6 +25,7 @@ const BreadcrumbHeader = () => {
 	const locale = useLocale()
 	const t = useTranslations('Header')
 	const pathname = usePathname()
+	const [isMenuOpen, setIsMenuOpen] = useState(false)
 
 	// Clean up any theme transition artifacts on route change
 	useEffect(() => {
@@ -32,7 +41,25 @@ const BreadcrumbHeader = () => {
 		document.documentElement.style.removeProperty('--theme-circle-y')
 		document.documentElement.style.removeProperty('--theme-circle-radius')
 		document.documentElement.removeAttribute('data-theme-transitioning')
+		// Close mobile menu on route change
+		setIsMenuOpen(false)
 	}, [pathname])
+
+	// Helper function to translate breadcrumb labels
+	const getLocalizedLabel = (segment: string): string => {
+		const translations: Record<string, Record<string, string>> = {
+			contact: { en: 'Contact', ru: 'Контакты' },
+			blog: { en: 'Blog', ru: 'Блог' },
+			activities: { en: 'Activities', ru: 'Активности' }
+		}
+
+		if (translations[segment] && translations[segment][locale]) {
+			return translations[segment][locale]
+		}
+
+		// Fallback to capitalized segment
+		return segment.charAt(0).toUpperCase() + segment.slice(1)
+	}
 
 	// Parse pathname to create breadcrumb items
 	const pathSegments = pathname.split('/').filter(Boolean)
@@ -45,8 +72,7 @@ const BreadcrumbHeader = () => {
 	// Create breadcrumb items
 	const breadcrumbs = segments.map((segment, index) => {
 		const path = `/${locale}/${segments.slice(0, index + 1).join('/')}`
-		// Capitalize first letter for display
-		const label = segment.charAt(0).toUpperCase() + segment.slice(1)
+		const label = getLocalizedLabel(segment)
 		return { path, label, segment }
 	})
 
@@ -79,7 +105,7 @@ const BreadcrumbHeader = () => {
 						{breadcrumbs.length > 0 && (
 							<nav className='flex items-center ml-2' aria-label='Breadcrumb'>
 								{breadcrumbs.map((crumb, index) => (
-									<div key={crumb.path} className='flex items-center'>
+									<div key={crumb.path} className={cn('flex items-center', index === breadcrumbs.length - 1 && breadcrumbs.length > 1 && 'hidden md:flex')}>
 										<span className='mx-2 text-muted-foreground'>/</span>
 										{index === breadcrumbs.length - 1 ? (
 											<span className='text-lg font-medium text-primary'>
@@ -169,24 +195,84 @@ const BreadcrumbHeader = () => {
 
 					{/* Mobile controls */}
 					<div className='flex items-center gap-2 md:hidden'>
-						<DownloadCV />{' '}
-						<LanguageSelect className='shrink-0' locale={locale} />
-						<ThemeToggle />
-						<button className='text-muted-foreground hover:text-foreground'>
-							<svg
-								className='w-6 h-6'
-								fill='none'
-								stroke='currentColor'
-								viewBox='0 0 24 24'
-							>
-								<path
-									strokeLinecap='round'
-									strokeLinejoin='round'
-									strokeWidth={2}
-									d='M4 6h16M4 12h16M4 18h16'
-								/>
-							</svg>
-						</button>
+						<Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
+							<SheetTrigger asChild>
+								<button
+									className='text-muted-foreground hover:text-foreground'
+									aria-label='Toggle menu'
+								>
+									<Menu className='w-6 h-6' />
+								</button>
+							</SheetTrigger>
+							<SheetContent side='right' className='w-[300px] sm:w-[400px]'>
+								<SheetHeader>
+									<SheetTitle>{t('nav.menu')}</SheetTitle>
+								</SheetHeader>
+								<div className='flex flex-col h-[calc(100vh-8rem)]'>
+									<nav className='mt-6 space-y-2 flex-1'>
+										<Link
+											href={`/${locale}`}
+											className={cn(
+												'block px-4 py-2 rounded-lg font-medium transition-colors',
+												pathname === `/${locale}`
+													? 'bg-accent text-white'
+													: 'text-muted-foreground hover:bg-accent/80 hover:text-white'
+											)}
+										>
+											{t('nav.main')}
+										</Link>
+										<Link
+											href={`/${locale}/activities`}
+											className={cn(
+												'block px-4 py-2 rounded-lg font-medium transition-colors',
+												pathname === `/${locale}/activities`
+													? 'bg-accent text-white'
+													: 'text-muted-foreground hover:bg-accent/80 hover:text-white'
+											)}
+										>
+											{t('nav.activities')}
+										</Link>
+										<Link
+											href={`/${locale}/blog`}
+											className={cn(
+												'block px-4 py-2 rounded-lg font-medium transition-colors',
+												pathname.startsWith(`/${locale}/blog`)
+													? 'bg-accent text-white'
+													: 'text-muted-foreground hover:bg-accent/80 hover:text-white'
+											)}
+										>
+											{t('nav.blog')}
+										</Link>
+										<Link
+											href={`/${locale}/contact`}
+											className={cn(
+												'block px-4 py-2 rounded-lg font-medium transition-colors',
+												pathname === `/${locale}/contact`
+													? 'bg-accent text-white'
+													: 'text-muted-foreground hover:bg-accent/80 hover:text-white'
+											)}
+										>
+											{t('nav.contact')}
+										</Link>
+									</nav>
+									<div className='pt-4 pb-4 border-t space-y-3'>
+										<DownloadCV className='w-full' />
+										<div className='flex items-center justify-between px-4'>
+											<span className='text-sm font-medium text-muted-foreground'>
+												{t('theme')}
+											</span>
+											<ThemeToggle />
+										</div>
+										<div className='flex items-center justify-between px-4'>
+											<span className='text-sm font-medium text-muted-foreground'>
+												{t('language')}
+											</span>
+											<LanguageSelect locale={locale} />
+										</div>
+									</div>
+								</div>
+							</SheetContent>
+						</Sheet>
 					</div>
 				</div>
 			</div>

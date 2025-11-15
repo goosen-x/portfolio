@@ -26,7 +26,7 @@ function convertDbPostToPost(dbPost: BlogPost): Post {
 		readingTime,
 		author: {
 			name: primaryAuthor?.name || 'Unknown Author',
-			picture: primaryAuthor?.picture || '/images/avatar.jpeg'
+			picture: primaryAuthor?.picture || '/images/avatar.png'
 		}
 	}
 }

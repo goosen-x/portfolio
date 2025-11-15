@@ -1,13 +1,13 @@
 ---
 title: "CSS Flexbox: The Ultimate Guide with Practical Examples"
 excerpt: "Comprehensive guide to CSS Flexbox layout. Learn flex containers, flex items, alignment, and real-world use cases with code examples."
-coverImage: "/images/avatar.jpeg"
+coverImage: "/images/avatar.png"
 date: "2024-12-08T10:00:00.000Z"
 author:
   name: Dmitry Borisenko
-  picture: "/images/avatar.jpeg"
+  picture: "/images/avatar.png"
 ogImage:
-  url: "/images/avatar.jpeg"
+  url: "/images/avatar.png"
 ---
 
 Flexbox (Flexible Box Layout) is a one-dimensional layout method that excels at distributing space and aligning items in a container. It's perfect for component layouts, navigation bars, and any scenario where you need flexible, responsive arrangements.
@@ -89,6 +89,87 @@ Understanding axes is crucial for Flexbox:
   width: 48px;
   height: 48px;
   margin-right: 1rem;
+}
+```
+
+### Interactive Flexbox Example
+
+Try this interactive flexbox card layout:
+
+```html:live
+// title: Flexbox Card Demo
+<div class="flex-container">
+  <div class="flex-card">
+    <div class="card-icon">🚀</div>
+    <div class="card-content">
+      <h3>Fast</h3>
+      <p>Lightning-fast performance</p>
+    </div>
+  </div>
+  <div class="flex-card">
+    <div class="card-icon">💎</div>
+    <div class="card-content">
+      <h3>Quality</h3>
+      <p>Premium features</p>
+    </div>
+  </div>
+  <div class="flex-card">
+    <div class="card-icon">🎨</div>
+    <div class="card-content">
+      <h3>Design</h3>
+      <p>Beautiful interfaces</p>
+    </div>
+  </div>
+</div>
+```
+
+```css:live
+.flex-container {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.flex-card {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.flex-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.card-icon {
+  width: 48px;
+  height: 48px;
+  margin-right: 1rem;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e3f2fd;
+  border-radius: 8px;
+}
+
+.card-content h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+  color: #2c3e50;
+}
+
+.card-content p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #7f8c8d;
 }
 ```
 

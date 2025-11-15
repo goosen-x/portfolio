@@ -1,14 +1,35 @@
+'use client'
+
 import { Block } from '@/components/ui/block'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { FiArrowRight } from 'react-icons/fi'
 
 import avatarImg from '@/public/images/avatar.png'
 
+const getTimeOfDay = () => {
+	const hour = new Date().getHours()
+
+	if (hour >= 5 && hour < 12) {
+		return 'morning'
+	} else if (hour >= 12 && hour < 18) {
+		return 'afternoon'
+	} else if (hour >= 18 && hour < 23) {
+		return 'evening'
+	} else {
+		return 'night'
+	}
+}
+
 export const HeaderBlock = () => {
 	const t = useTranslations('SectionMain')
+	const [timeOfDay, setTimeOfDay] = useState<string>('morning')
+
+	useEffect(() => {
+		setTimeOfDay(getTimeOfDay())
+	}, [])
 
 	const email = 'dmitryborisenko.msk@gmail.com'
 	const subject = t('email.subject')
@@ -28,10 +49,13 @@ export const HeaderBlock = () => {
 				alt='Дмитрий Борисенко'
 			/>
 			<h1 className='mb-12 text-3xl text-foreground font-medium leading-tight'>
-				{t('job')}
-				<span className='text-accent text-4xl md:group-hover/block:text-5xl font-bold block transition-all duration-500'>
-					{t('name')}
+				<span className='text-foreground/70 text-2xl block mb-2'>
+					{t(`greeting.${timeOfDay}`)}
 				</span>
+				<span className='text-accent text-4xl md:group-hover/block:text-5xl font-bold block transition-all duration-500'>
+					{t('namePrefix')} {t('name')}
+				</span>
+				{t('job')}
 			</h1>
 			<Link
 				className='group-hover/block:translate-x-2 transition w-fit flex items-center gap-2 text-accent/50 hover:underline duration-500'

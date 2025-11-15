@@ -45,7 +45,7 @@ This is a modern Next.js 15 portfolio website with internationalization support 
 3. **Component Organization**:
    - `/components/homepage/` - Feature sections (SectionMain, SectionTechStack, SectionExperience, SectionProjects, SectionBlog, SectionContact, ContactSection)
    - `/components/global/` - Reusable components shared across pages
-   - `/components/ui/` - shadcn/ui design system components (Radix UI based)
+   - `/components/ui/` - Shadcn/ui design system components (Radix UI based)
    - `/components/blog/` - Blog-specific components
    - `/components/layout/` - Layout components (Header, Footer, etc.)
    - `/components/widgets/` - Standalone widget components

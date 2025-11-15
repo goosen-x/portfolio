@@ -15,8 +15,8 @@ const coverPatterns = [
 	},
 	{
 		background: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
-		pattern: `repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.05) 10px, rgba(255,255,255,0.05) 20px),
-              repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(0,0,0,0.05) 10px, rgba(0,0,0,0.05) 20px)`
+		pattern: `linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%, transparent 75%, rgba(255,255,255,0.1) 75%),
+              linear-gradient(-45deg, rgba(0,0,0,0.05) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.05) 75%)`
 	},
 	{
 		background: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
@@ -29,8 +29,9 @@ const coverPatterns = [
 	},
 	{
 		background: 'linear-gradient(135deg, #3494E6 0%, #EC6EAD 100%)',
-		pattern: `repeating-radial-gradient(circle at 0 0, transparent 0, rgba(255,255,255,0.15) 15px, transparent 30px),
-              repeating-radial-gradient(circle at 100% 100%, transparent 0, rgba(0,0,0,0.1) 15px, transparent 30px)`
+		pattern: `radial-gradient(circle at 20% 30%, rgba(255,255,255,0.15) 0%, transparent 40%),
+              radial-gradient(circle at 80% 70%, rgba(0,0,0,0.1) 0%, transparent 40%),
+              radial-gradient(circle at 50% 50%, rgba(255,255,255,0.08) 0%, transparent 60%)`
 	},
 	{
 		background: 'linear-gradient(135deg, #ee9ca7 0%, #ffdde1 100%)',
@@ -53,8 +54,9 @@ export function PostCover({ className, title, slug }: Props) {
 	return (
 		<div
 			className={cn(
-				'relative overflow-hidden flex items-center justify-center p-8 transition-transform duration-300 group-hover:scale-[1.02]',
+				'relative overflow-hidden flex items-center justify-center p-4 sm:p-6 md:p-8 transition-transform duration-300 group-hover:scale-[1.02]',
 				'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500',
+				'rounded-lg',
 				className
 			)}
 			style={{
@@ -67,8 +69,8 @@ export function PostCover({ className, title, slug }: Props) {
 					backgroundImage: pattern.pattern
 				}}
 			/>
-			<div className='relative z-10 text-center'>
-				<h2 className='text-white text-xl md:text-2xl lg:text-3xl font-bold drop-shadow-lg line-clamp-3'>
+			<div className='relative z-10 text-center px-4'>
+				<h2 className='text-white text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold drop-shadow-lg line-clamp-3'>
 					{title}
 				</h2>
 			</div>

@@ -1,13 +1,13 @@
 ---
 title: "CSS Grid Layout: Complete Guide with Examples"
 excerpt: "Master CSS Grid Layout with practical examples. Learn how to create complex layouts with grid containers, grid items, and responsive design patterns."
-coverImage: "/images/avatar.jpeg"
+coverImage: "/images/avatar.png"
 date: "2024-12-10T10:00:00.000Z"
 author:
   name: Dmitry Borisenko
-  picture: "/images/avatar.jpeg"
+  picture: "/images/avatar.png"
 ogImage:
-  url: "/images/avatar.jpeg"
+  url: "/images/avatar.png"
 ---
 
 CSS Grid Layout is a powerful two-dimensional layout system that revolutionized how we create web layouts. Unlike Flexbox, which is primarily one-dimensional, Grid allows you to work with both rows and columns simultaneously.
@@ -61,6 +61,81 @@ One of the most intuitive features of CSS Grid is template areas:
 .footer {
   grid-area: footer;
   background: #34495e;
+}
+```
+
+### Interactive Grid Layout Example
+
+Try this interactive grid layout with template areas:
+
+```html:live
+// title: Grid Template Areas Demo
+<div class="grid-container">
+  <header class="grid-header">Header</header>
+  <aside class="grid-sidebar">Sidebar</aside>
+  <main class="grid-main">Main Content</main>
+  <footer class="grid-footer">Footer</footer>
+</div>
+```
+
+```css:live
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "sidebar main main"
+    "footer footer footer";
+  grid-template-columns: 200px 1fr 1fr;
+  grid-template-rows: 80px 1fr 60px;
+  gap: 10px;
+  min-height: 300px;
+  padding: 1rem;
+  background: #ecf0f1;
+  border-radius: 8px;
+}
+
+.grid-header {
+  grid-area: header;
+  background: #3498db;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.grid-sidebar {
+  grid-area: sidebar;
+  background: #e74c3c;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.grid-main {
+  grid-area: main;
+  background: #2ecc71;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.grid-footer {
+  grid-area: footer;
+  background: #34495e;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-weight: bold;
 }
 ```
 

@@ -41,14 +41,15 @@ export const ExperienceItem = ({ itemData }: Props) => {
 			</p>
 			{images.length > 0 &&
 				images.map((src, idx) => (
-					<Image
-						className='rounded-lg object-cover  h-52 w-full '
-						src={src}
-						alt='hero template'
-						width={500}
-						height={500}
-						key={idx}
-					/>
+					<div key={idx} className='w-full aspect-[4/3] md:h-52 md:aspect-auto'>
+						<Image
+							className='rounded-lg object-cover w-full h-full'
+							src={src}
+							alt='hero template'
+							width={500}
+							height={500}
+						/>
+					</div>
 				))}
 		</div>
 	)

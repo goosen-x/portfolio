@@ -1,6 +1,6 @@
 ---
-title: "CSS Animations: From Basics to Advanced Techniques"
-excerpt: "Learn how to create stunning animations with CSS. From simple transitions to complex keyframe animations, performance optimization, and real-world examples."
+title: "CSS Анимации: От основ до продвинутых техник"
+excerpt: "Научитесь создавать потрясающие анимации с помощью CSS. От простых переходов до сложных keyframe-анимаций, оптимизации производительности и примеров из реальной практики."
 coverImage: "/images/avatar.png"
 date: "2024-12-06T10:00:00.000Z"
 author:
@@ -10,13 +10,13 @@ ogImage:
   url: "/images/avatar.png"
 ---
 
-CSS animations bring life to web interfaces, creating engaging user experiences without JavaScript. This guide covers everything from basic transitions to advanced animation techniques.
+CSS анимации оживляют веб-интерфейсы, создавая увлекательный пользовательский опыт без JavaScript. Это руководство охватывает всё от базовых переходов до продвинутых техник анимации.
 
-## CSS Transitions
+## CSS Переходы
 
-Transitions are the simplest form of CSS animation, perfect for hover effects and state changes.
+Переходы — это простейшая форма CSS анимации, идеальная для эффектов при наведении и изменений состояния.
 
-### Basic Transition Syntax
+### Базовый синтаксис переходов
 
 ```css
 .button {
@@ -30,7 +30,7 @@ Transitions are the simplest form of CSS animation, perfect for hover effects an
   background: #2980b9;
 }
 
-/* Multiple properties */
+/* Несколько свойств */
 .card {
   transform: translateY(0);
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -43,14 +43,14 @@ Transitions are the simplest form of CSS animation, perfect for hover effects an
 }
 ```
 
-### Transition Properties
+### Свойства переходов
 
 ```css
 .element {
-  /* Shorthand */
+  /* Сокращенная запись */
   transition: property duration timing-function delay;
-  
-  /* Individual properties */
+
+  /* Индивидуальные свойства */
   transition-property: transform, opacity;
   transition-duration: 0.3s, 0.5s;
   transition-timing-function: ease-in-out, linear;
@@ -58,30 +58,30 @@ Transitions are the simplest form of CSS animation, perfect for hover effects an
 }
 ```
 
-### Timing Functions
+### Функции времени
 
 ```css
 .examples {
-  /* Predefined */
-  transition-timing-function: ease;        /* slow-fast-slow */
-  transition-timing-function: linear;      /* constant speed */
-  transition-timing-function: ease-in;     /* slow start */
-  transition-timing-function: ease-out;    /* slow end */
-  transition-timing-function: ease-in-out; /* slow start and end */
-  
-  /* Custom cubic-bezier */
-  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Bounce effect */
-  
-  /* Steps */
+  /* Предопределенные */
+  transition-timing-function: ease;        /* медленно-быстро-медленно */
+  transition-timing-function: linear;      /* постоянная скорость */
+  transition-timing-function: ease-in;     /* медленный старт */
+  transition-timing-function: ease-out;    /* медленное окончание */
+  transition-timing-function: ease-in-out; /* медленный старт и окончание */
+
+  /* Пользовательская cubic-bezier */
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Эффект отскока */
+
+  /* Шаги */
   transition-timing-function: steps(4, end);
 }
 ```
 
-## CSS Keyframe Animations
+## CSS Keyframe Анимации
 
-Keyframe animations offer more control for complex animations.
+Keyframe анимации предлагают больше контроля для сложных анимаций.
 
-### Basic @keyframes
+### Базовый @keyframes
 
 ```css
 @keyframes slide-in {
@@ -100,7 +100,7 @@ Keyframe animations offer more control for complex animations.
 }
 ```
 
-### Multiple Keyframes
+### Множественные ключевые кадры
 
 ```css
 @keyframes bounce {
@@ -126,28 +126,28 @@ Keyframe animations offer more control for complex animations.
 }
 ```
 
-### Animation Properties
+### Свойства анимации
 
 ```css
 .element {
-  /* Shorthand */
+  /* Сокращенная запись */
   animation: name duration timing-function delay iteration-count direction fill-mode play-state;
-  
-  /* Individual properties */
+
+  /* Индивидуальные свойства */
   animation-name: slide-in;
   animation-duration: 1s;
   animation-timing-function: ease-out;
   animation-delay: 0.5s;
-  animation-iteration-count: infinite; /* or number */
+  animation-iteration-count: infinite; /* или число */
   animation-direction: alternate; /* normal, reverse, alternate, alternate-reverse */
   animation-fill-mode: forwards; /* none, forwards, backwards, both */
   animation-play-state: running; /* running, paused */
 }
 ```
 
-## Practical Animation Examples
+## Практические примеры анимации
 
-### 1. Loading Spinner
+### 1. Спиннер загрузки
 
 ```css
 @keyframes spin {
@@ -166,7 +166,7 @@ Keyframe animations offer more control for complex animations.
 }
 ```
 
-### 2. Pulse Effect
+### 2. Эффект пульсации
 
 ```css
 @keyframes pulse {
@@ -195,16 +195,16 @@ Keyframe animations offer more control for complex animations.
 }
 ```
 
-### Interactive Animation Example
+### Интерактивный пример анимации
 
-Try these interactive CSS animations:
+Попробуйте эти интерактивные CSS анимации:
 
 ```html:live
-// title: CSS Animations Demo
+// title: Демо CSS Анимаций
 <div class="animation-demo">
   <div class="demo-spinner"></div>
-  <button class="demo-pulse-button">Pulse Button</button>
-  <div class="demo-bounce">Bounce</div>
+  <button class="demo-pulse-button">Кнопка с пульсацией</button>
+  <div class="demo-bounce">Прыжок</div>
 </div>
 ```
 
@@ -276,7 +276,7 @@ Try these interactive CSS animations:
 }
 ```
 
-### 3. Text Animation
+### 3. Анимация текста
 
 ```css
 @keyframes typing {
@@ -299,13 +299,13 @@ Try these interactive CSS animations:
   overflow: hidden;
   border-right: 3px solid;
   white-space: nowrap;
-  animation: 
+  animation:
     typing 3.5s steps(40, end),
     blink 0.75s step-end infinite;
 }
 ```
 
-### 4. Card Flip Animation
+### 4. Анимация переворачивания карточки
 
 ```css
 .flip-card {
@@ -346,7 +346,7 @@ Try these interactive CSS animations:
 }
 ```
 
-### 5. Staggered Animation
+### 5. Поэтапная анимация
 
 ```css
 @keyframes fade-in-up {
@@ -370,13 +370,13 @@ Try these interactive CSS animations:
 .stagger-container .item:nth-child(3) { animation-delay: 0.3s; }
 .stagger-container .item:nth-child(4) { animation-delay: 0.4s; }
 
-/* Or use CSS custom properties for dynamic delays */
+/* Или используйте CSS custom properties для динамических задержек */
 .stagger-container .item {
   animation-delay: calc(var(--i) * 0.1s);
 }
 ```
 
-### 6. Morphing Shape
+### 6. Трансформирующаяся фигура
 
 ```css
 @keyframes morph {
@@ -404,9 +404,9 @@ Try these interactive CSS animations:
 }
 ```
 
-## Advanced Techniques
+## Продвинутые техники
 
-### 1. Animation with CSS Variables
+### 1. Анимация с CSS переменными
 
 ```css
 .dynamic-animation {
@@ -416,12 +416,12 @@ Try these interactive CSS animations:
   transition: transform 0.3s ease;
 }
 
-/* Update via JavaScript */
+/* Обновление через JavaScript */
 element.style.setProperty('--rotation', '180deg');
 element.style.setProperty('--scale', '1.5');
 ```
 
-### 2. Scroll-Triggered Animations
+### 2. Анимация при прокрутке
 
 ```css
 @keyframes slide-in-left {
@@ -443,10 +443,10 @@ element.style.setProperty('--scale', '1.5');
   animation: slide-in-left 0.6s ease forwards;
 }
 
-/* Intersection Observer in JavaScript triggers .visible class */
+/* Intersection Observer в JavaScript добавляет класс .visible */
 ```
 
-### 3. SVG Path Animation
+### 3. Анимация SVG-пути
 
 ```css
 .path {
@@ -462,51 +462,51 @@ element.style.setProperty('--scale', '1.5');
 }
 ```
 
-## Performance Optimization
+## Оптимизация производительности
 
-### 1. Use Transform and Opacity
+### 1. Используйте Transform и Opacity
 
 ```css
-/* Good - GPU accelerated */
+/* Хорошо - ускоряется GPU */
 .optimized {
   transform: translateX(100px);
   opacity: 0.5;
 }
 
-/* Avoid - Triggers layout */
+/* Избегайте - вызывает пересчет макета */
 .not-optimized {
   left: 100px;
   width: 200px;
 }
 ```
 
-### 2. Will-Change Property
+### 2. Свойство Will-Change
 
 ```css
 .will-animate {
   will-change: transform, opacity;
 }
 
-/* Remove after animation */
+/* Удалите после анимации */
 .animation-done {
   will-change: auto;
 }
 ```
 
-### 3. Reduce Paint Areas
+### 3. Уменьшите области перерисовки
 
 ```css
-/* Isolate animations */
+/* Изолируйте анимации */
 .animated-element {
   will-change: transform;
-  transform: translateZ(0); /* Create new layer */
+  transform: translateZ(0); /* Создает новый слой */
 }
 ```
 
-## Animation Best Practices
+## Лучшие практики анимации
 
-1. **Keep it subtle**: Animations should enhance, not distract
-2. **Respect motion preferences**: 
+1. **Сохраняйте сдержанность**: Анимации должны улучшать, а не отвлекать
+2. **Уважайте предпочтения движения**:
    ```css
    @media (prefers-reduced-motion: reduce) {
      * {
@@ -516,21 +516,21 @@ element.style.setProperty('--scale', '1.5');
      }
    }
    ```
-3. **Test performance**: Use DevTools to check for dropped frames
-4. **Use appropriate durations**: 
-   - Micro-interactions: 100-300ms
-   - Page transitions: 300-500ms
-   - Complex animations: 500-1000ms
-5. **Provide feedback**: Ensure animations communicate state changes
+3. **Тестируйте производительность**: Используйте DevTools для проверки пропущенных кадров
+4. **Используйте подходящую длительность**:
+   - Микро-взаимодействия: 100-300мс
+   - Переходы страниц: 300-500мс
+   - Сложные анимации: 500-1000мс
+5. **Обеспечивайте обратную связь**: Убедитесь, что анимации передают изменения состояния
 
-## Debugging Animations
+## Отладка анимаций
 
 ```css
-/* Slow down all animations for debugging */
+/* Замедлите все анимации для отладки */
 * {
   animation-duration: 10s !important;
   transition-duration: 10s !important;
 }
 ```
 
-CSS animations are powerful tools for creating engaging web experiences. Use them wisely to enhance usability and delight your users!
+CSS анимации — мощные инструменты для создания увлекательного веб-опыта. Используйте их мудро, чтобы улучшить юзабилити и порадовать ваших пользователей!

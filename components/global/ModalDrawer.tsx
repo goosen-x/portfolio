@@ -111,11 +111,11 @@ export const ModalDrawer = ({ open, setOpen, project }: Props) => {
 			) : (
 				<Drawer open={open} onOpenChange={setOpen}>
 					<DrawerContent>
-						<DrawerHeader>
+						<DrawerHeader className='pb-2'>
 							<DrawerTitle className='sr-only'>{title}</DrawerTitle>
 						</DrawerHeader>
-						<ScrollArea className='overflow-auto p-4'>
-							<div className='p-4'>
+						<ScrollArea className='overflow-auto'>
+							<div className='px-4 pb-4'>
 								<div className='flex items-center gap-2 col-span-2'>
 									<p className='text-3xl font-black mb-4'>{title}</p>
 									<div className='flex gap-2 text-foreground'>
@@ -157,7 +157,7 @@ export const ModalDrawer = ({ open, setOpen, project }: Props) => {
 							</div>
 						</ScrollArea>
 						<DrawerFooter>
-							<DrawerClose>
+							<DrawerClose asChild>
 								<Button variant='outline'>
 									{t('language') === 'ru' ? 'Закрыть' : 'Close'}
 								</Button>

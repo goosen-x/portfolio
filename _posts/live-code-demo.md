@@ -1,13 +1,14 @@
 ---
 title: "Interactive Code Examples: Live Preview Demo"
 excerpt: "See how our new live code preview feature works with interactive HTML, CSS, and JavaScript examples you can edit and run in real-time."
-coverImage: "/images/avatar.jpeg"
+coverImage: "/images/avatar.png"
 date: "2025-08-07T10:00:00.000Z"
 author:
   name: Dmitry Borisenko
-  picture: "/images/avatar.jpeg"
+  picture: "/images/avatar.png"
 ogImage:
-  url: "/images/avatar.jpeg"
+  url: "/images/avatar.png"
+published: false
 ---
 
 This post demonstrates our new live code preview feature. You can now include interactive code examples that readers can see in action!

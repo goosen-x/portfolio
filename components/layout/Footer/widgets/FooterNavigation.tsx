@@ -25,7 +25,7 @@ export const FooterNavigation = () => {
 			{/* Navigation Section */}
 			<div className='flex flex-col gap-4'>
 				<h3 className='text-sm font-semibold text-foreground uppercase tracking-wider'>
-					Navigation
+					{tFooter('navigation')}
 				</h3>
 				<div className='flex flex-col gap-2'>
 					{links.map(link => {

@@ -146,7 +146,7 @@ export default async function ActivitiesPage({ params }: Props) {
 								<div className='flex items-center gap-2 text-sm'>
 									<Calendar className='w-4 h-4' />
 									<span className='text-muted-foreground'>
-										{t('february')} 2025
+										{t('november')} 2025
 									</span>
 								</div>
 							</div>
@@ -271,7 +271,7 @@ export default async function ActivitiesPage({ params }: Props) {
 							</div>
 							<h3 className='text-lg font-bold'>{t('sections.goals')}</h3>
 						</div>
-						<div className='grid grid-cols-2 gap-4'>
+						<div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
 							<div>
 								<p className='text-xs font-medium mb-1'>
 									{t('sections.goalsItems.oss')}

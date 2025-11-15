@@ -17,7 +17,7 @@ export default async function Post(props: Params) {
 	const content = await markdownToHtml(post.content || '')
 
 	return (
-		<main>
+		<main className='px-4 sm:px-6 md:px-8'>
 			{/* <Alert preview={post.preview} /> */}
 			<article className='mb-32'>
 				<PostHeader
@@ -26,6 +26,7 @@ export default async function Post(props: Params) {
 					date={post.date}
 					author={post.author}
 					slug={post.slug}
+				locale={params.locale}
 				/>
 				<PostBodyWithHighlight content={content} />
 			</article>

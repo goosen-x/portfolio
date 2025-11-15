@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef, useState } from 'react'
+import { ComponentProps, useRef, useState } from 'react'
 import { FiDownload } from 'react-icons/fi'
 import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
@@ -8,7 +8,7 @@ import { useTranslations } from 'next-intl'
 const CYCLES_PER_LETTER = 2
 const SHUFFLE_TIME = 50
 
-export const DownloadCV = () => {
+export const DownloadCV = ({ className }: ComponentProps<'div'>) => {
 	const t = useTranslations('Header.cv')
 
 	const TARGET_TEXT = t('btnText')
@@ -54,55 +54,17 @@ export const DownloadCV = () => {
 
 	return (
 		<motion.div
+			className={className}
 			style={{ display: 'inline-block' }}
-			whileHover={{
-				scale: 1.025
-			}}
-			whileTap={{
-				scale: 0.975
-			}}
 		>
-			<a
-				className='h-8 group relative overflow-hidden cursor-pointer rounded-md border border-input bg-background px-4 py-1 font-medium uppercase text-foreground hover:text-accent min-w-48 text-sm shadow-xs flex items-center'
-				href={TARGET_HREF}
-				download={TARGET_FILENAME}
-				onMouseEnter={() => {
-					scramble()
-					setIsHovered(true)
-				}}
-				onMouseLeave={() => {
-					stopScramble()
-					setIsHovered(false)
-				}}
+			<div
+				className='h-8 group relative overflow-hidden cursor-not-allowed rounded-md border border-input bg-background px-4 py-1 font-medium uppercase text-foreground/50 min-w-48 text-sm shadow-xs flex items-center opacity-50'
 			>
 				<div className='relative z-10 flex items-center gap-2'>
 					<FiDownload className='mr-2 shrink-0' />
-					<span className='text-nowrap tracking-wide'>{text}</span>
+					<span className='text-nowrap tracking-wide'>{TARGET_TEXT}</span>
 				</div>
-				<motion.span
-					initial={{ y: '100%' }}
-					animate={{
-						y: isHovered ? ['100%', '-100%', '100%'] : '100%',
-						opacity: isHovered ? 1 : 0
-					}}
-					transition={{
-						y: {
-							duration: isHovered ? 1.2 : 0.3,
-							ease: 'easeInOut',
-							times: [0, 0.5, 1]
-						},
-						opacity: {
-							duration: 0.3
-						}
-					}}
-					style={{
-						position: 'absolute',
-						inset: 0,
-						zIndex: 0,
-						background: 'linear-gradient(to top, transparent 0%, transparent 40%, hsl(var(--accent)) 50%, transparent 60%, transparent 100%)'
-					}}
-				/>
-			</a>
+			</div>
 		</motion.div>
 	)
 }

@@ -1,6 +1,18 @@
 .markdown {
-	font-size: 1.125rem;
+	font-size: 0.9375rem;
 	line-height: 1.75;
+}
+
+@media (min-width: 640px) {
+	.markdown {
+		font-size: 1rem;
+	}
+}
+
+@media (min-width: 768px) {
+	.markdown {
+		font-size: 1.125rem;
+	}
 }
 
 .markdown p,
@@ -11,19 +23,45 @@
 }
 
 .markdown h2 {
-	font-size: 1.875rem;
-	margin-top: 3rem;
+	font-size: 1.5rem;
+	margin-top: 2.5rem;
 	margin-bottom: 1rem;
 	line-height: 1.25;
 	font-weight: bold;
 }
 
+@media (min-width: 640px) {
+	.markdown h2 {
+		font-size: 1.75rem;
+		margin-top: 3rem;
+	}
+}
+
+@media (min-width: 768px) {
+	.markdown h2 {
+		font-size: 1.875rem;
+	}
+}
+
 .markdown h3 {
-	font-size: 1.5rem;
-	margin-top: 2rem;
+	font-size: 1.25rem;
+	margin-top: 1.5rem;
 	margin-bottom: 1rem;
 	line-height: 1.25;
 	font-weight: bold;
+}
+
+@media (min-width: 640px) {
+	.markdown h3 {
+		font-size: 1.375rem;
+		margin-top: 2rem;
+	}
+}
+
+@media (min-width: 768px) {
+	.markdown h3 {
+		font-size: 1.5rem;
+	}
 }
 
 /* Code blocks styling */

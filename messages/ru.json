@@ -6,6 +6,7 @@
 	},
 	"Header": {
 		"nav": {
+			"menu": "Меню",
 			"main": "Главная",
 			"techstack": "Стек технологий",
 			"projects": "Проекты",
@@ -19,7 +20,9 @@
 			"btnText": "СКАЧАТЬ РЕЗЮМЕ",
 			"href": "/cv/CV_Borisenko_Dmitry_Frontend.pdf",
 			"filename": "CV_Borisenko_Dmitry_Frontend.pdf"
-		}
+		},
+		"theme": "Тема",
+		"language": "Язык"
 	},
 	"CryptoDonation": {
 		"title": "Поддержать разработку",
@@ -85,8 +88,15 @@
 	},
 	"SectionMain": {
 		"language": "ru",
+		"greeting": {
+			"morning": "Доброе утро!",
+			"afternoon": "Добрый день!",
+			"evening": "Добрый вечер!",
+			"night": "Доброй ночи!"
+		},
 		"job": "Fullstack-разработчик",
 		"name": "Дмитрий Борисенко",
+		"namePrefix": "Я -",
 		"contact": "НАПИСАТЬ EMAIL",
 		"email": {
 			"subject": "Вакансия: Позиция Frontend-разработчика",
@@ -138,7 +148,7 @@
 		"title": "Опыт работы",
 		"companies": {
 			"mba": {
-				"title": "2023-Now",
+				"title": "2023-Сейчас",
 				"job": "Fullstack Developer",
 				"company": "MBA",
 				"city": "Москва",
@@ -150,7 +160,7 @@
 				"job": "Fullstack Developer",
 				"company": "Dobrostok",
 				"city": "Москва",
-				"companyUrl": "https://dobrostock.ru/",
+				"companyUrl": "",
 				"description": "Разработал админ-панель для авторов фотостока Dobrostok, используя T3 stack и Next.js, обеспечив удобный интерфейс для управления контентом. Реализовал систему авторизации с использованием NextAuth. Оптимизировал изображения на бэкенде, что повысило производительность сайта и ускорило время загрузки"
 			},
 			"inspro": {
@@ -256,8 +266,9 @@
 		}
 	},
 	"Footer": {
+		"navigation": "Навигация",
 		"slogan": "Каждая строка кода - это шаг к совершенству. Готов принять ваш вызов и превратить его в успешный проект",
-		"copyright": "Сайт разработан Борисенко Дмитрием",
+		"copyright": "Сайт разработан Дмитрием Борисенко",
 		"description": "Посмотреть исходный код на GitHub",
 		"shortcuts": {
 			"title": "Горячие клавиши:",
@@ -277,7 +288,7 @@
 			"opensource": "Open Source вклады",
 			"completed": "Завершенные проекты",
 			"talks": "Технические доклады",
-			"csstalk": "Планируемый доклад на конференции MoscowCSS",
+			"csstalk": "Выступление на Moscow CSS",
 			"courses": "Пройденные курсы",
 			"projects": "Активные проекты"
 		},
@@ -291,7 +302,7 @@
 		"sections": {
 			"codewars": "Прогресс Codewars",
 			"achievement": "Последнее достижение",
-			"achievementText": "Завершил курс в PurpleSchool по Neovim",
+			"achievementText": "Выступление на Moscow CSS",
 			"community": "Участие в сообществе",
 			"communityItems": {
 				"react": "Активный участник MoscowCSS сообщества",
@@ -324,6 +335,7 @@
 		"viewProfile": "Открыть профиль",
 		"december": "Декабрь",
 		"february": "Февраль",
+		"november": "Ноябрь",
 		"github": {
 			"title": "Активность GitHub",
 			"error": "Не удалось загрузить активность GitHub в данный момент.",

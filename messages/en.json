@@ -6,6 +6,7 @@
 	},
 	"Header": {
 		"nav": {
+			"menu": "Menu",
 			"main": "Main",
 			"techstack": "TechStack",
 			"projects": "Projects",
@@ -19,7 +20,9 @@
 			"btnText": "DOWNLOAD CV",
 			"href": "/cv/CV_Borisenko_Dmitry_Frontend_En.pdf",
 			"filename": "CV_Borisenko_Dmitry_Frontend_En.pdf"
-		}
+		},
+		"theme": "Theme",
+		"language": "Language"
 	},
 	"CryptoDonation": {
 		"title": "Support Development",
@@ -85,8 +88,15 @@
 	},
 	"SectionMain": {
 		"language": "en",
+		"greeting": {
+			"morning": "Good morning!",
+			"afternoon": "Good afternoon!",
+			"evening": "Good evening!",
+			"night": "Good night!"
+		},
 		"job": "Fullstack Developer",
-		"name": "Borisenko Dmitry",
+		"name": "Dmitry Borisenko",
+		"namePrefix": "I'm",
 		"contact": "EMAIL ME",
 		"email": {
 			"subject": "Job Opportunity: Frontend Developer Position",
@@ -150,7 +160,7 @@
 				"job": "Fullstack Developer",
 				"company": "Dobrostok",
 				"city": "Moscow",
-				"companyUrl": "https://dobrostock.ru/",
+				"companyUrl": "",
 				"description": "Developed the admin panel for authors of the Dobrostok photo stock using T3 stack and Next.js, providing an easy-to-use interface for content management. Implemented an authentication system using NextAuth. Optimized images on the backend, which improved site performance and reduced loading times"
 			},
 			"inspro": {
@@ -256,8 +266,9 @@
 		}
 	},
 	"Footer": {
+		"navigation": "Navigation",
 		"slogan": "Every line of code is a step towards perfection. I'm ready to take on your challenge and turn it into a successful project.",
-		"copyright": "Created by Borisenko Dmitry",
+		"copyright": "Created by Dmitry Borisenko",
 		"description": "View source code on GitHub",
 		"shortcuts": {
 			"title": "Shortcuts:",
@@ -277,7 +288,7 @@
 			"opensource": "Open Source Contributions",
 			"completed": "Completed Projects",
 			"talks": "Tech Talks",
-			"csstalk": "Planned Talk at MoscowCSS Conference",
+			"csstalk": "Speaking at Moscow CSS",
 			"courses": "Completed Courses",
 			"projects": "Active Projects"
 		},
@@ -291,7 +302,7 @@
 		"sections": {
 			"codewars": "Codewars Progress",
 			"achievement": "Latest Achievement",
-			"achievementText": "Completed Neovim course at PurpleSchool",
+			"achievementText": "Speaking at Moscow CSS",
 			"community": "Community Involvement",
 			"communityItems": {
 				"react": "Active member of MoscowCSS community",
@@ -324,6 +335,7 @@
 		"viewProfile": "View Profile",
 		"december": "December",
 		"february": "February",
+		"november": "November",
 		"github": {
 			"title": "GitHub Activity",
 			"error": "Unable to load GitHub activity at this time.",

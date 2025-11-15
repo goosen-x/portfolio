@@ -1,13 +1,13 @@
 ---
 title: "CSS Переменные (Custom Properties): Динамическая Стилизация"
 excerpt: "Изучите CSS custom properties для создания динамических, поддерживаемых стилей. Узнайте, как создавать темы, отзывчивые дизайны и интерактивные компоненты с CSS переменными."
-coverImage: "/images/avatar.jpeg"
+coverImage: "/images/avatar.png"
 date: "2024-12-04T10:00:00.000Z"
 author:
   name: Dmitry Borisenko
-  picture: "/images/avatar.jpeg"
+  picture: "/images/avatar.png"
 ogImage:
-  url: "/images/avatar.jpeg"
+  url: "/images/avatar.png"
 ---
 
 CSS Custom Properties (известные как CSS Переменные) революционизируют способ написания и поддержки CSS. Они привносят силу переменных в CSS, обеспечивая динамическую стилизацию, темизацию и более поддерживаемый код.

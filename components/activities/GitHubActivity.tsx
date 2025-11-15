@@ -103,7 +103,7 @@ export function GitHubActivity({ username }: GitHubActivityProps) {
 	if (loading) {
 		return (
 			<Card className='p-6'>
-				<div className='flex items-center justify-between mb-6'>
+				<div className='flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-3'>
 					<div className='flex items-center gap-3'>
 						<div className='p-2 rounded-lg bg-green-500/10'>
 							<Github className='w-5 h-5 text-green-700 dark:text-green-400' />
@@ -154,7 +154,7 @@ export function GitHubActivity({ username }: GitHubActivityProps) {
 	if (error || contributions.length === 0) {
 		return (
 			<Card className='p-6'>
-				<div className='flex items-center justify-between mb-6'>
+				<div className='flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-3'>
 					<div className='flex items-center gap-3'>
 						<div className='p-2 rounded-lg bg-green-500/10'>
 							<Github className='w-5 h-5 text-green-700 dark:text-green-400' />
@@ -180,7 +180,7 @@ export function GitHubActivity({ username }: GitHubActivityProps) {
 
 	return (
 		<Card className='p-6'>
-			<div className='flex items-center justify-between mb-6'>
+			<div className='flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-3'>
 				<div className='flex items-center gap-3'>
 					<div className='p-2 rounded-lg bg-green-500/10'>
 						<Github className='w-5 h-5 text-green-700 dark:text-green-400' />

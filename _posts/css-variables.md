@@ -1,13 +1,13 @@
 ---
 title: "CSS Variables (Custom Properties): Dynamic Styling Made Easy"
 excerpt: "Master CSS custom properties for dynamic, maintainable stylesheets. Learn how to create themes, responsive designs, and interactive components with CSS variables."
-coverImage: "/images/avatar.jpeg"
+coverImage: "/images/avatar.png"
 date: "2024-12-04T10:00:00.000Z"
 author:
   name: Dmitry Borisenko
-  picture: "/images/avatar.jpeg"
+  picture: "/images/avatar.png"
 ogImage:
-  url: "/images/avatar.jpeg"
+  url: "/images/avatar.png"
 ---
 
 CSS Custom Properties (commonly known as CSS Variables) revolutionize how we write and maintain CSS. They bring the power of variables to CSS, enabling dynamic styling, theming, and more maintainable code.
