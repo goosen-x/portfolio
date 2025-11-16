@@ -56,10 +56,61 @@ jobs:
     steps:
     - name: Deploy to server
       uses: appleboy/ssh-action@v1.0.0
+      env:
+        REGISTRY: ${{ env.REGISTRY }}
+        IMAGE_NAME: ${{ env.IMAGE_NAME }}
+        NEXT_PUBLIC_YANDEX_METRIKA_ID: ${{ secrets.NEXT_PUBLIC_YANDEX_METRIKA_ID }}
+        NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: ${{ secrets.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID }}
+        POSTGRES_URL: ${{ secrets.POSTGRES_URL }}
+        POSTGRES_URL_NON_POOLING: ${{ secrets.POSTGRES_URL_NON_POOLING }}
       with:
         host: ${{ secrets.SERVER_HOST }}
         username: ${{ secrets.SERVER_USER }}
         key: ${{ secrets.SERVER_SSH_KEY }}
         port: 22
+        envs: REGISTRY,IMAGE_NAME,NEXT_PUBLIC_YANDEX_METRIKA_ID,NEXT_PUBLIC_GOOGLE_ANALYTICS_ID,POSTGRES_URL,POSTGRES_URL_NON_POOLING
         script: |
-          ~/deploy-scripts/deploy-portfolio.sh
+          # Create app directory if it doesn't exist
+          mkdir -p ~/portfolio
+          cd ~/portfolio
+
+          # Create .env.production if it doesn't exist
+          if [ ! -f .env.production ]; then
+            echo "Creating .env.production file..."
+            cat > .env.production << 'ENVEOF'
+          # Production environment variables
+          POSTGRES_URL=${POSTGRES_URL}
+          POSTGRES_URL_NON_POOLING=${POSTGRES_URL_NON_POOLING}
+          NEXT_PUBLIC_YANDEX_METRIKA_ID=${NEXT_PUBLIC_YANDEX_METRIKA_ID}
+          NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=${NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}
+          NODE_ENV=production
+          PORT=3004
+          HOSTNAME=0.0.0.0
+          ENVEOF
+            echo "Created .env.production file"
+          fi
+
+          # Pull latest image
+          docker pull ${REGISTRY}/${IMAGE_NAME}:latest
+
+          # Stop existing container
+          docker stop portfolio || true
+          docker rm portfolio || true
+
+          # Start new container
+          docker run -d \
+            --name portfolio \
+            --restart unless-stopped \
+            --env-file ~/portfolio/.env.production \
+            -p 3004:3004 \
+            ${REGISTRY}/${IMAGE_NAME}:latest
+
+          # Check if container is running
+          if docker ps | grep -q portfolio; then
+            echo "Deployment successful! Container is running."
+            docker logs portfolio --tail 50
+          else
+            echo "Deployment failed! Container is not running."
+            docker logs portfolio
+            exit 1
+          fi
