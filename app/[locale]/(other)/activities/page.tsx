@@ -18,7 +18,7 @@ import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import Link from 'next/link'
 import Image from 'next/image'
-import { GitHubActivity } from '@/components/activities/GitHubActivity'
+import { ContributionGraphCard } from '@/components/activities/ContributionGraphCard'
 import { cn } from '@/lib/utils'
 
 type Props = {
@@ -39,13 +39,13 @@ export default async function ActivitiesPage({ params }: Props) {
 					<p className='text-xl text-muted-foreground'>{t('description')}</p>
 				</div>
 
+				{/* Contribution Graph */}
+				<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12'>
+					<ContributionGraphCard />
+				</div>
+
 				{/* Bento Grid Layout */}
 				<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12'>
-					{/* GitHub Activity - Large card spanning 2 columns and 2 rows */}
-					<div className='md:col-span-2 lg:row-span-2'>
-						<GitHubActivity username='goosen-x' />
-					</div>
-
 					{/* Stats Cards - 4 small cards */}
 					<Card className='p-6 bg-gradient-to-br from-blue-500/10 to-blue-600/10 border-blue-500/20'>
 						<div className='flex items-center justify-between mb-2'>

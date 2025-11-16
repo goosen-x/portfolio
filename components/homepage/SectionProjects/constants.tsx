@@ -14,7 +14,7 @@ export const ProjectsData: ProjectDataType[] = [
 	{
 		name: 'mba',
 		title: 'Moscow Business Academy',
-		image: '/images/mba-experience-3.png',
+		image: '/images/mba-preview.png',
 		link: 'https://moscow.mba/',
 		techs: [
 			{
@@ -46,7 +46,7 @@ export const ProjectsData: ProjectDataType[] = [
 	{
 		name: 'komponenta',
 		title: 'Komponenta',
-		image: '/images/komponenta.png',
+		image: '/images/komponenta-preview.png',
 		link: 'https://ub-komponenta.ru/',
 		techs: [
 			{
@@ -74,7 +74,7 @@ export const ProjectsData: ProjectDataType[] = [
 	{
 		name: 'digitalDyatel',
 		title: 'Digital Dyatel',
-		image: '/images/digital-dyatel.png',
+		image: '/images/dyatel-preview.png',
 		link: 'https://digitaldyatel.ru',
 		// github: '/',
 		techs: [
@@ -95,7 +95,7 @@ export const ProjectsData: ProjectDataType[] = [
 	{
 		name: 'healthshop',
 		title: 'HealthShop',
-		image: '/images/natures.png',
+		image: '/images/nsp-preview.png',
 		link: 'https://www.nsp-healthshop.ru/',
 		github: '',
 		techs: [

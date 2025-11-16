@@ -31,7 +31,10 @@ export const SectionExperience = ({
 			name: 'dobrostock',
 			images: ['/images/dobrostok.png', '/images/dobrostok-2.png']
 		},
-		{ name: 'inspro', images: ['/images/inspro.png'] },
+		{
+			name: 'inspro',
+			images: ['/images/inspro-main.png', '/images/inspro-projects.png']
+		},
 		{ name: 'mbloq', images: ['/images/mbloq.png'] }
 	]
 

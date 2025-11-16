@@ -14,7 +14,6 @@ export const FooterNavigation = () => {
 
 	const links = [
 		{ title: t('main'), href: `/${locale}`, icon: Home },
-		{ title: t('projects'), href: `/${locale}/projects`, icon: FolderOpen },
 		{ title: t('activities'), href: `/${locale}/activities`, icon: Activity },
 		{ title: t('blog'), href: `/${locale}/blog`, icon: BookOpen },
 		{ title: t('contact'), href: `/${locale}/contact`, icon: Mail }
@@ -27,7 +26,7 @@ export const FooterNavigation = () => {
 				<h3 className='text-sm font-semibold text-foreground uppercase tracking-wider'>
 					{tFooter('navigation')}
 				</h3>
-				<div className='flex flex-col gap-2'>
+				<div className='grid grid-cols-2 gap-2'>
 					{links.map(link => {
 						const Icon = link.icon
 						const isActive = pathname === link.href || 

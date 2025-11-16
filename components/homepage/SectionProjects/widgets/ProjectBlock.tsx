@@ -43,13 +43,15 @@ export const ProjectBlock = ({ project }: Props) => {
 				className='pb-0 rounded-t-2xl overflow-hidden relative cursor-pointer hover:bg-card/50 transition-bg duration-300'
 				onClick={() => setOpen(true)}
 			>
-				<Image
-					className='mx-auto object-cover object-top h-64 w-[85%] group p-0  rounded-t-lg group-hover/block:scale-105 group-hover/block:rotate-1 transition-all duration-300'
-					src={project.image}
-					width={1000}
-					height={2000}
-					alt={`Сайт компании ${project.title}`}
-				/>
+				<div className='relative w-full h-64 overflow-hidden rounded-t-lg mx-auto w-[85%]'>
+					<Image
+						className='object-cover object-top transition-all duration-[3000ms] ease-in-out hover:object-bottom'
+						src={project.image}
+						fill
+						sizes='(max-width: 768px) 100vw, 50vw'
+						alt={`Сайт компании ${project.title}`}
+					/>
+				</div>
 			</Block>
 			<div className='flex justify-between items-center gap-4 my-4'>
 				<p className='text-foreground text-2xl font-bold whitespace-nowrap'>

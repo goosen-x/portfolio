@@ -19,19 +19,30 @@ export default function ContactForm() {
 
 		const formData = new FormData(e.currentTarget)
 		const data = {
-			name: formData.get('name'),
-			email: formData.get('email'),
-			subject: formData.get('subject'),
-			message: formData.get('message'),
+			name: formData.get('name') as string,
+			email: formData.get('email') as string,
+			subject: formData.get('subject') as string,
+			message: formData.get('message') as string,
 		}
 
 		try {
-			// Simulate form submission
-			await new Promise(resolve => setTimeout(resolve, 1000))
-			console.log('Form data:', data)
+			const response = await fetch('/api/contact', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(data),
+			})
+
+			if (!response.ok) {
+				const error = await response.json()
+				throw new Error(error.error || 'Failed to send message')
+			}
+
 			setIsSubmitted(true)
 		} catch (error) {
 			console.error('Form submission error:', error)
+			alert(t('error') || 'Ошибка при отправке сообщения')
 		} finally {
 			setIsSubmitting(false)
 		}

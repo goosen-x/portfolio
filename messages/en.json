@@ -242,6 +242,7 @@
 			},
 			"submit": "Send Message",
 			"sending": "Sending...",
+			"error": "Failed to send message. Please try again later.",
 			"success": {
 				"title": "Message Sent!",
 				"message": "Thank you for reaching out. I'll get back to you within 24 hours."

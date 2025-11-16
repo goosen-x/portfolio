@@ -44,7 +44,7 @@ export const Footer = async () => {
 					<br />
 					<Link
 						className='text-foreground hover:underline'
-						href='https://github.com/goosen-x/next-portfolio'
+						href='https://github.com/goosen-x/portfolio'
 						target='_blank'
 					>
 						{t('description')}
