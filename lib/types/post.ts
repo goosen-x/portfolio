@@ -12,6 +12,7 @@ export type Post = {
 	}
 	content: string
 	preview?: boolean
+	published?: boolean
 }
 
 // Legacy support - mapped from database types

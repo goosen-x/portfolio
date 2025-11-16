@@ -49,11 +49,12 @@ export default function useThemeWithTransition() {
     window.addEventListener('storage', handleStorageChange)
     // Listen for custom event (same-tab)
     window.addEventListener('theme-transition-type-change', handleCustomEvent)
-    
+
     return () => {
       window.removeEventListener('storage', handleStorageChange)
       window.removeEventListener('theme-transition-type-change', handleCustomEvent)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   
   const updateTransitionType = useCallback((type: TransitionType) => {

@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import { useTranslations } from 'next-intl'
@@ -16,13 +16,13 @@ export const ScrollSpy = ({ className }: ScrollSpyProps) => {
 	const [isVisible, setIsVisible] = useState(false)
 	const [isExpanded, setIsExpanded] = useState(false)
 
-	const sections = [
+	const sections = useMemo(() => [
 		{ id: 'main', label: t('main'), icon: Home },
 		{ id: 'speaking', label: t('speaking'), icon: Presentation },
 		{ id: 'techstack', label: t('techstack'), icon: Layers },
 		{ id: 'projects', label: t('projects'), icon: FolderOpen },
 		{ id: 'experience', label: t('experience'), icon: Briefcase }
-	]
+	], [t])
 
 	useEffect(() => {
 		// Handle visibility based on scroll

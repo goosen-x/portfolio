@@ -110,6 +110,7 @@ export function LiveCodeExample({
 
 	useEffect(() => {
 		runCode()
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [html, css, js])
 
 	const copyCode = async () => {
