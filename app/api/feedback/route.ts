@@ -31,29 +31,8 @@ export async function POST(request: NextRequest) {
       url: request.headers.get('referer'),
     }
 
-    // Here you can integrate with your preferred service:
-    
-    // 1. Send to email service (like Resend, SendGrid, etc.)
-    // await sendEmail({
-    //   to: 'feedback@yoursite.com',
-    //   subject: `[${body.type.toUpperCase()}] ${body.title}`,
-    //   html: generateFeedbackEmail(feedbackData)
-    // })
-
-    // 2. Create GitHub issue
-    // await createGitHubIssue(feedbackData)
-
-    // 3. Send to Discord/Slack webhook
-    // await sendToDiscord(feedbackData)
-
-    // 4. Save to database
-    // await saveFeedbackToDatabase(feedbackData)
-
-    // 5. Send to analytics/logging service
-    // await sendToAnalytics(feedbackData)
-
-    // For now, just log it
-    console.log('Feedback received:', feedbackData)
+    // Send to Telegram
+    await sendToTelegram(feedbackData)
 
     return NextResponse.json(
       { 
@@ -72,81 +51,55 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// Helper functions (examples)
+// Send feedback to Telegram
+async function sendToTelegram(data: any) {
+  const botToken = process.env.TELEGRAM_BOT_TOKEN
+  const chatId = process.env.TELEGRAM_CHAT_ID
 
-function generateFeedbackEmail(data: any) {
-  return `
-    <h2>New ${data.type} feedback</h2>
-    <p><strong>Title:</strong> ${data.title}</p>
-    <p><strong>Description:</strong></p>
-    <p>${data.description.replace(/\n/g, '<br>')}</p>
-    ${data.email ? `<p><strong>Email:</strong> ${data.email}</p>` : ''}
-    ${data.widget ? `<p><strong>Widget:</strong> ${data.widget}</p>` : ''}
-    <p><strong>URL:</strong> ${data.url}</p>
-    <p><strong>User Agent:</strong> ${data.userAgent}</p>
-    <p><strong>Timestamp:</strong> ${data.timestamp}</p>
-  `
-}
-
-async function createGitHubIssue(data: any) {
-  // Example GitHub API integration
-  const labels = {
-    bug: ['bug'],
-    feature: ['enhancement'],
-    general: ['question']
+  if (!botToken || !chatId) {
+    console.error('Telegram credentials not configured')
+    throw new Error('Telegram integration not configured')
   }
-  
-  const issue = {
-    title: data.title,
-    body: `
-**Type:** ${data.type}
 
-**Description:**
+  const typeEmoji = {
+    bug: '🐛',
+    feature: '✨',
+    general: '💬'
+  }
+
+  const message = `
+${typeEmoji[data.type as keyof typeof typeEmoji]} <b>New ${data.type.toUpperCase()} Feedback</b>
+
+<b>Title:</b> ${data.title}
+
+<b>Description:</b>
 ${data.description}
 
-**Additional Info:**
-- Email: ${data.email || 'Not provided'}
-- Widget: ${data.widget || 'Not specified'}
-- URL: ${data.url}
-- User Agent: ${data.userAgent}
-- Timestamp: ${data.timestamp}
-    `,
-    labels: labels[data.type as keyof typeof labels]
-  }
-  
-  // Uncomment to enable GitHub integration
-  // const response = await fetch(`https://api.github.com/repos/YOUR_USERNAME/YOUR_REPO/issues`, {
-  //   method: 'POST',
-  //   headers: {
-  //     'Authorization': `token ${process.env.GITHUB_TOKEN}`,
-  //     'Content-Type': 'application/json'
-  //   },
-  //   body: JSON.stringify(issue)
-  // })
-  
-  // return response.json()
-}
+${data.email ? `<b>Email:</b> ${data.email}` : ''}
+${data.widget ? `<b>Widget:</b> ${data.widget}` : ''}
+${data.url ? `<b>URL:</b> ${data.url}` : ''}
+<b>User Agent:</b> ${data.userAgent || 'Unknown'}
+<b>Time:</b> ${new Date(data.timestamp).toLocaleString()}
+  `.trim()
 
-async function sendToDiscord(data: any) {
-  // Example Discord webhook integration
-  const webhook = {
-    embeds: [{
-      title: `New ${data.type} feedback`,
-      description: data.title,
-      fields: [
-        { name: 'Description', value: data.description.slice(0, 1024), inline: false },
-        { name: 'Email', value: data.email || 'Not provided', inline: true },
-        { name: 'Widget', value: data.widget || 'Not specified', inline: true },
-      ],
-      color: data.type === 'bug' ? 0xff0000 : data.type === 'feature' ? 0x00ff00 : 0x0099ff,
-      timestamp: data.timestamp
-    }]
+  const response = await fetch(
+    `https://api.telegram.org/bot${botToken}/sendMessage`,
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        chat_id: chatId,
+        text: message,
+        parse_mode: 'HTML',
+      }),
+    }
+  )
+
+  if (!response.ok) {
+    throw new Error(`Telegram API error: ${response.statusText}`)
   }
-  
-  // Uncomment to enable Discord integration
-  // const response = await fetch(process.env.DISCORD_WEBHOOK_URL!, {
-  //   method: 'POST',
-  //   headers: { 'Content-Type': 'application/json' },
-  //   body: JSON.stringify(webhook)
-  // })
+
+  return response.json()
 }

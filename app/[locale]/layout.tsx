@@ -16,9 +16,8 @@ import { Toaster } from '@/components/ui/sonner'
 import { ThemeProvider } from '@/components/providers/theme-provider'
 import { BreadcrumbHeader } from '@/components/global'
 
-// todo add metadata
-
 export const metadata: Metadata = {
+	metadataBase: new URL('https://portfolio.gooselabs.ru'),
 	title: 'Web Developer Dmitry Borisenko',
 	description:
 		'Projects and experience in web development: building modern applications using Next.js, Strapi, PostgreSQL, and other technologies.'
