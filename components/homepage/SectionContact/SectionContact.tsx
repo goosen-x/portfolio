@@ -14,7 +14,12 @@ export const SectionContact = ({
 	...rest
 }: ComponentPropsWithoutRef<'section'>) => {
 	const t = useTranslations('contact')
+	const tMain = useTranslations('SectionMain')
 	const locale = useLocale()
+
+	// Format email body with proper line breaks
+	const emailBody = tMain('email.body').replace(/\\n/g, '\n')
+	const emailSubject = tMain('email.subject')
 
 	return (
 		<section
@@ -61,7 +66,7 @@ export const SectionContact = ({
 							</Link>
 							
 							<a
-								href={`mailto:dmitryborisenko.msk@gmail.com?subject=${encodeURIComponent(t('email.subject'))}&body=${encodeURIComponent(t('email.body'))}`}
+								href={`mailto:dmitryborisenko.msk@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`}
 								className="group inline-flex items-center gap-2 px-6 py-3 border border-border hover:border-accent/50 rounded-xl transition-all hover:scale-105"
 							>
 								<Send className="w-5 h-5" />

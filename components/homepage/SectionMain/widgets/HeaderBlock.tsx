@@ -35,9 +35,12 @@ export const HeaderBlock = () => {
 	const subject = t('email.subject')
 	const body = t('email.body')
 
+	// Replace \n with actual line breaks for mailto
+	const formattedBody = body.replace(/\\n/g, '\n')
+
 	const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
 		subject
-	)}&body=${encodeURIComponent(body)}`
+	)}&body=${encodeURIComponent(formattedBody)}`
 
 	return (
 		<Block className='col-span-12 row-span-2 md:col-span-8'>
