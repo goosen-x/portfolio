@@ -40,14 +40,16 @@ export const HeaderBlock = () => {
 				height={500}
 				alt='Дмитрий Борисенко'
 			/>
-			<h1 className='mb-12 text-3xl text-foreground font-medium leading-tight'>
-				<span className='text-foreground/70 text-2xl block mb-2'>
+			<h1 className='mb-12 text-foreground font-medium leading-tight'>
+				<span className='text-foreground/70 text-lg sm:text-2xl block mb-2'>
 					{t(`greeting.${timeOfDay}`)}
 				</span>
-				<span className='text-accent text-4xl md:group-hover/block:text-5xl font-bold block transition-all duration-500'>
+				<span className='text-accent text-2xl sm:text-4xl md:group-hover/block:text-5xl font-bold block transition-all duration-500 whitespace-nowrap'>
 					{t('namePrefix')} {t('name')}
 				</span>
-				{t('job')}
+				<span className='block text-xl sm:text-3xl whitespace-nowrap'>
+					{t('job')}
+				</span>
 			</h1>
 			<Link
 				className='group-hover/block:translate-x-2 transition w-fit flex items-center gap-2 text-accent/50 hover:underline duration-500'
