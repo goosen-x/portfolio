@@ -224,12 +224,18 @@ export function CryptoDonation() {
 	}
 
 	return (
-		<div className='w-full max-w-md mx-auto p-6 bg-card rounded-lg border'>
-			<h3 className='text-xl font-semibold mb-4'>{t('title')}</h3>
+		<div className='w-full max-w-md mx-auto p-4 sm:p-6 bg-gradient-to-br from-card to-card/50 rounded-2xl border border-border/50 shadow-xl backdrop-blur-sm'>
+			{/* Header */}
+			<div className='mb-6'>
+				<h3 className='text-xl sm:text-2xl font-bold mb-1 bg-gradient-to-r from-accent to-accent/70 bg-clip-text text-transparent'>
+					{t('title')}
+				</h3>
+				<p className='text-xs sm:text-sm text-muted-foreground'>{t('subtitle')}</p>
+			</div>
 
 			{/* Выбор сети */}
-			<div className='mb-4'>
-				<label className='text-sm text-muted-foreground mb-2 block'>
+			<div className='mb-5'>
+				<label className='text-xs sm:text-sm font-medium text-muted-foreground mb-3 block'>
 					{t('selectNetwork')}
 				</label>
 				<div className='grid grid-cols-2 gap-2'>
@@ -243,8 +249,9 @@ export function CryptoDonation() {
 							}
 							size='sm'
 							onClick={() => switchNetwork(network)}
+							className='h-10 sm:h-11 text-xs sm:text-sm font-medium transition-all hover:scale-105'
 						>
-							{network.name}
+							<span className='truncate'>{network.name}</span>
 						</Button>
 					))}
 				</div>
@@ -252,28 +259,34 @@ export function CryptoDonation() {
 
 			{/* Ввод суммы */}
 			<div className='mb-4'>
-				<label className='text-sm text-muted-foreground mb-2 block'>
+				<label className='text-xs sm:text-sm font-medium text-muted-foreground mb-2 block'>
 					{t('amount')} ({selectedNetwork.symbol})
 				</label>
-				<input
-					type='number'
-					step='0.001'
-					min='0'
-					value={amount}
-					onChange={e => setAmount(e.target.value)}
-					className='w-full px-3 py-2 border rounded-md bg-background'
-					placeholder='0.01'
-				/>
+				<div className='relative'>
+					<input
+						type='number'
+						step='0.001'
+						min='0'
+						value={amount}
+						onChange={e => setAmount(e.target.value)}
+						className='w-full px-4 py-3 sm:py-3.5 text-base sm:text-lg font-semibold border-2 rounded-xl bg-background/50 focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all outline-none'
+						placeholder='0.01'
+					/>
+					<div className='absolute right-3 top-1/2 -translate-y-1/2 text-sm font-medium text-muted-foreground'>
+						{selectedNetwork.symbol}
+					</div>
+				</div>
 			</div>
 
 			{/* Быстрые суммы */}
-			<div className='grid grid-cols-4 gap-2 mb-4'>
+			<div className='grid grid-cols-4 gap-1.5 sm:gap-2 mb-5'>
 				{['0.01', '0.05', '0.1', '0.5'].map(value => (
 					<Button
 						key={value}
 						variant='outline'
 						size='sm'
 						onClick={() => setAmount(value)}
+						className='h-9 sm:h-10 text-xs sm:text-sm font-medium hover:bg-accent/10 hover:border-accent/50 transition-all'
 					>
 						{value}
 					</Button>
@@ -282,7 +295,7 @@ export function CryptoDonation() {
 
 			{/* Кнопка отправки */}
 			<Button
-				className='w-full mb-4'
+				className='w-full mb-5 h-11 sm:h-12 text-sm sm:text-base font-semibold bg-gradient-to-r from-accent to-accent/80 hover:from-accent/90 hover:to-accent/70 transition-all hover:scale-[1.02] shadow-lg disabled:opacity-50 disabled:cursor-not-allowed'
 				onClick={e => {
 					e.preventDefault()
 					console.log('Button clicked!')
@@ -294,19 +307,24 @@ export function CryptoDonation() {
 			</Button>
 
 			{/* Адрес для ручной отправки */}
-			<div className='border-t pt-4'>
-				<p className='text-sm text-muted-foreground mb-2'>
+			<div className='border-t border-border/50 pt-4'>
+				<p className='text-xs sm:text-sm text-muted-foreground mb-3 font-medium'>
 					{t('manualTransfer')}
 				</p>
-				<div className='flex items-center gap-2'>
-					<code className='text-xs bg-muted px-2 py-1 rounded flex-1 truncate'>
+				<div className='flex items-center gap-2 bg-muted/50 rounded-lg p-2 sm:p-3'>
+					<code className='text-[10px] sm:text-xs font-mono bg-background/80 px-2 py-1.5 rounded flex-1 truncate border border-border/30'>
 						{DONATION_ADDRESS}
 					</code>
-					<Button variant='ghost' size='sm' onClick={copyAddress}>
+					<Button
+						variant='ghost'
+						size='sm'
+						onClick={copyAddress}
+						className='h-8 w-8 sm:h-9 sm:w-9 p-0 hover:bg-accent/10 transition-all flex-shrink-0'
+					>
 						{copied ? (
-							<CheckCircle2 className='h-4 w-4' />
+							<CheckCircle2 className='h-3.5 w-3.5 sm:h-4 sm:w-4 text-green-500' />
 						) : (
-							<Copy className='h-4 w-4' />
+							<Copy className='h-3.5 w-3.5 sm:h-4 sm:w-4' />
 						)}
 					</Button>
 				</div>
