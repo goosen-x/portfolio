@@ -39,6 +39,8 @@
 		"enterAmount": "Please enter amount",
 		"donationSent": "Thank you for your donation!",
 		"transactionError": "Transaction failed",
+		"transactionCancelled": "Transaction cancelled",
+		"transactionRejected": "You rejected the transaction",
 		"addressCopied": "Address copied to clipboard",
 		"manualTransfer": "Or send directly to this address:"
 	},

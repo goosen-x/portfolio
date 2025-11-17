@@ -39,6 +39,8 @@
 		"enterAmount": "Пожалуйста, введите сумму",
 		"donationSent": "Спасибо за вашу поддержку!",
 		"transactionError": "Ошибка транзакции",
+		"transactionCancelled": "Транзакция отменена",
+		"transactionRejected": "Вы отклонили транзакцию",
 		"addressCopied": "Адрес скопирован в буфер обмена",
 		"manualTransfer": "Или отправьте напрямую на этот адрес:"
 	},

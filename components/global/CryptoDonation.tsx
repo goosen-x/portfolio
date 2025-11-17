@@ -199,6 +199,16 @@ export function CryptoDonation() {
 			setAmount('')
 		} catch (error: any) {
 			console.error('Error sending donation:', error)
+
+			// Handle user rejection
+			if (error.code === 4001 || error.message?.includes('rejected') || error.message?.includes('denied')) {
+				toast.error(t('transactionCancelled'), {
+					description: t('transactionRejected')
+				})
+				return
+			}
+
+			// Handle other errors
 			toast.error(t('transactionError'), {
 				description: error.message || 'Transaction failed'
 			})
