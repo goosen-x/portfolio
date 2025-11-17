@@ -61,7 +61,7 @@ export const SectionContact = ({
 							</Link>
 							
 							<a
-								href={`mailto:dmitryborisenko.msk@gmail.com?subject=${encodeURIComponent(t('email.subject'))}`}
+								href={`mailto:dmitryborisenko.msk@gmail.com?subject=${encodeURIComponent(t('email.subject'))}&body=${encodeURIComponent(t('email.body'))}`}
 								className="group inline-flex items-center gap-2 px-6 py-3 border border-border hover:border-accent/50 rounded-xl transition-all hover:scale-105"
 							>
 								<Send className="w-5 h-5" />
