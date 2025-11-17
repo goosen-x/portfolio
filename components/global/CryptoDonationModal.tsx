@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { useTranslations } from 'next-intl'
 import { CryptoDonation } from './CryptoDonation'
-import { Heart } from 'lucide-react'
+import { Bitcoin } from 'lucide-react'
 import {
   Dialog,
   DialogContent,
@@ -27,7 +27,7 @@ export function CryptoDonationModal({ variant = 'default' }: CryptoDonationModal
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger asChild>
           <Button variant="default" size="sm" className="w-full justify-start">
-            <Heart className="w-4 h-4 mr-2" />
+            <Bitcoin className="w-4 h-4 mr-2" />
             {t('supportWithCrypto')}
           </Button>
         </DialogTrigger>
@@ -51,7 +51,7 @@ export function CryptoDonationModal({ variant = 'default' }: CryptoDonationModal
           <div className="relative">
             <div className="absolute inset-0 rounded-lg opacity-0 scale-110 bg-gradient-to-br from-accent/20 to-accent/5 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 blur-sm" />
             <div className="relative p-1.5 rounded-lg border border-border/50 text-muted-foreground group-hover:border-accent/50 group-hover:text-accent transition-all duration-300">
-              <Heart className="w-3.5 h-3.5" />
+              <Bitcoin className="w-3.5 h-3.5" />
             </div>
           </div>
           <span className="text-xs font-medium text-muted-foreground group-hover:text-foreground transition-all duration-300 whitespace-nowrap">
