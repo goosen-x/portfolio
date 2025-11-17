@@ -1,40 +1,11 @@
-import { getLatestPublishedPosts } from '../db/blog'
-import type { Post } from '../db/schema'
-import type { BlogPost } from '../types/database'
+import { getAllPostsFromFiles } from '../api-file'
+import type { PostWithMetadata } from '../types/post'
+import { enrichPost } from '../types/post'
 
-// Convert database BlogPost to Post format
-function convertDbPostToPost(dbPost: BlogPost): Post {
-	const primaryAuthor = dbPost.authors?.[0]
-	
-	// Calculate reading time based on content length (rough estimate)
-	const wordsPerMinute = 200
-	const wordCount = dbPost.content.split(/\s+/).length
-	const readingTime = Math.ceil(wordCount / wordsPerMinute)
-
-	return {
-		id: dbPost.id,
-		slug: dbPost.slug,
-		title: dbPost.title,
-		excerpt: dbPost.excerpt || '',
-		content: dbPost.content,
-		publishedAt: new Date(dbPost.published_at || dbPost.created_at),
-		updatedAt: new Date(dbPost.updated_at),
-		published: dbPost.published,
-		coverImage: dbPost.cover_image || '',
-		locale: dbPost.locale,
-		category: 'Development', // You can add category to DB schema later
-		readingTime,
-		author: {
-			name: primaryAuthor?.name || 'Unknown Author',
-			picture: primaryAuthor?.picture || '/images/avatar.png'
-		}
-	}
-}
-
-export async function getLatestPosts({ limit = 6, locale = 'en' }: { limit?: number; locale?: string }): Promise<Post[]> {
+export async function getLatestPosts({ limit = 6, locale = 'en' }: { limit?: number; locale?: string }): Promise<PostWithMetadata[]> {
 	try {
-		const dbPosts = await getLatestPublishedPosts(locale, limit)
-		return dbPosts.map(convertDbPostToPost)
+		const allPosts = getAllPostsFromFiles(locale)
+		return allPosts.slice(0, limit).map(post => enrichPost(post, locale))
 	} catch (error) {
 		console.error('Error fetching latest posts:', error)
 		return []

@@ -2,11 +2,11 @@ import Link from 'next/link'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { PostCover } from '@/components/blog/post-cover'
-import type { Post } from '@/lib/db/schema'
+import type { PostWithMetadata } from '@/lib/types/post'
 import { formatDate } from '@/lib/utils'
 
 type Props = {
-	post: Post
+	post: PostWithMetadata
 	locale: string
 }
 

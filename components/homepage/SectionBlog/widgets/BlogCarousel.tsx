@@ -8,11 +8,11 @@ import {
 	CarouselPrevious,
 } from '@/components/ui/carousel'
 import { BlogCard } from './BlogCard'
-import type { Post } from '@/lib/db/schema'
+import type { PostWithMetadata } from '@/lib/types/post'
 import Autoplay from 'embla-carousel-autoplay'
 
 type Props = {
-	posts: Post[]
+	posts: PostWithMetadata[]
 	locale: string
 }
 
