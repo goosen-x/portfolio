@@ -24,7 +24,6 @@ export const SectionSpeaking = async ({
 	const sberFrontendNightImages = [
 		'/images/sber-frontend-night/0003-Sber-FN25_20dec2025_Buzin_resized.jpg',
 		'/images/sber-frontend-night/0008-Sber-FN25_20dec2025_Buzin_resized.jpg',
-		'/images/sber-frontend-night/0052-Sber-FN25_20dec2025_Buzin_resized.jpg',
 		'/images/sber-frontend-night/0914-Sber-FN25_20dec2025_Buzin_resized.jpg',
 		'/images/sber-frontend-night/1800-Sber-FN25_20dec2025_Buzin_resized.jpg',
 		'/images/sber-frontend-night/1806-Sber-FN25_20dec2025_Buzin_resized.jpg',
