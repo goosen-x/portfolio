@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import ActivityCalendar from 'react-activity-calendar'
+import { ActivityCalendar } from 'react-activity-calendar'
 import { Card } from '@/components/ui/card'
 import { Skeleton } from '@/components/ui/skeleton'
 import { GitBranch, Github } from 'lucide-react'
@@ -206,8 +206,6 @@ export function GitHubActivity({ username }: GitHubActivityProps) {
 						blockSize={14}
 						blockMargin={5}
 						fontSize={14}
-						hideColorLegend={false}
-						hideTotalCount={false}
 						weekStart={1}
 						labels={{
 							totalCount: `{{count}} ${t('contributionsText')}`

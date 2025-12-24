@@ -6,12 +6,12 @@ const withNextIntl = createNextIntlPlugin()
 const nextConfig = {
 	output: 'standalone',
 	images: {
-		domains: [
-			'lh3.googleusercontent.com',
-			'pbs.twimg.com',
-			'images.unsplash.com',
-			'img.youtube.com',
-			'www.codewars.com'
+		remotePatterns: [
+			{ protocol: 'https', hostname: 'lh3.googleusercontent.com' },
+			{ protocol: 'https', hostname: 'pbs.twimg.com' },
+			{ protocol: 'https', hostname: 'images.unsplash.com' },
+			{ protocol: 'https', hostname: 'img.youtube.com' },
+			{ protocol: 'https', hostname: 'www.codewars.com' }
 		]
 	}
 }

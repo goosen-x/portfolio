@@ -25,12 +25,12 @@ const container = {
 
 const item = {
 	hidden: { opacity: 0, y: 20 },
-	show: { 
-		opacity: 1, 
+	show: {
+		opacity: 1,
 		y: 0,
 		transition: {
 			duration: 0.6,
-			ease: [0.21, 1.11, 0.81, 0.99]
+			ease: [0.21, 1.11, 0.81, 0.99] as [number, number, number, number]
 		}
 	}
 }
