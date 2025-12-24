@@ -31,8 +31,8 @@ export const SectionSpeaking = async ({
 }: ComponentPropsWithoutRef<'section'>) => {
 	const t = await getTranslations('SectionSpeaking')
 
-	// Conference images array - use string paths for simplicity
-	const conferenceImages = [
+	// Conference images arrays
+	const moscowcssImages = [
 		'/images/conference/photo-01.jpg',
 		'/images/conference/photo-07.jpg',
 		'/images/conference/photo-08.jpg',
@@ -42,10 +42,32 @@ export const SectionSpeaking = async ({
 		'/images/conference/photo-15.jpg'
 	]
 
+	const sberFrontendNightImages = [
+		'/images/sber-frontend-night/0003-Sber-FN25_20dec2025_Buzin_resized.jpg',
+		'/images/sber-frontend-night/0008-Sber-FN25_20dec2025_Buzin_resized.jpg',
+		'/images/sber-frontend-night/0052-Sber-FN25_20dec2025_Buzin_resized.jpg',
+		'/images/sber-frontend-night/0914-Sber-FN25_20dec2025_Buzin_resized.jpg',
+		'/images/sber-frontend-night/1800-Sber-FN25_20dec2025_Buzin_resized.jpg',
+		'/images/sber-frontend-night/1806-Sber-FN25_20dec2025_Buzin_resized.jpg',
+		'/images/sber-frontend-night/1834-Sber-FN25_20dec2025_Buzin_resized.jpg',
+		'/images/sber-frontend-night/1873-Sber-FN25_20dec2025_Buzin_resized.jpg',
+		'/images/sber-frontend-night/1879-Sber-FN25_20dec2025_Buzin_resized.jpg',
+		'/images/sber-frontend-night/1883-Sber-FN25_20dec2025_Buzin_resized.jpg',
+		'/images/sber-frontend-night/1906-Sber-FN25_20dec2025_Buzin_resized.jpg',
+		'/images/sber-frontend-night/1931-Sber-FN25_20dec2025_Buzin_resized.jpg',
+		'/images/sber-frontend-night/1947-Sber-FN25_20dec2025_Buzin_resized.jpg',
+		'/images/sber-frontend-night/1950-Sber-FN25_20dec2025_Buzin_resized.jpg',
+		'/images/sber-frontend-night/1952-Sber-FN25_20dec2025_Buzin_resized.jpg'
+	]
+
 	const conferences = [
 		{
+			name: 'sberFrontendNight2025',
+			images: sberFrontendNightImages
+		},
+		{
 			name: 'moscowcss29',
-			images: conferenceImages
+			images: moscowcssImages
 		}
 	]
 

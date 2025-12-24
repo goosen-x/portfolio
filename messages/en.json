@@ -201,6 +201,20 @@
 			"upcoming": "Upcoming"
 		},
 		"conferences": {
+			"sberFrontendNight2025": {
+				"event": "Frontend Night: Elements of New Matter",
+				"title": "MVP in a Weekend - Vibecoding in Terminal",
+				"date": "December 20, 2025, 12:00 MSK",
+				"location": "Moscow, Russia",
+				"venue": "Sber, Kutuzovsky Prospect, 32k1",
+				"description": "A practical talk on building working products from scratch using CLI tools like Claude, Qwen, and Gemini. Demonstrated setting up a multi-agent system where each agent handles its part of the pipeline, connecting ready-made UI component libraries via MCP, and automating CI/CD deployment to a self-hosted server.",
+				"eventUrl": "https://developers.sber.ru/kak-v-sbere/events/frontend_december_2025",
+				"ticketsUrl": "",
+				"videoUrl": "https://frontendnight2025.dialog.sberbank.ru/translation",
+				"photosUrl": "https://andreibuzin.wfolio.pro/disk/20-12-2025-151_sber-fn25_20dec2025-bwhnkw",
+				"format": "Hybrid: In-person + Online",
+				"status": "completed"
+			},
 			"moscowcss29": {
 				"event": "MoscowCSS #29",
 				"title": "The Power of Pseudo-selectors in Modern CSS",

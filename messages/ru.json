@@ -201,6 +201,20 @@
 			"upcoming": "Предстоит"
 		},
 		"conferences": {
+			"sberFrontendNight2025": {
+				"event": "Frontend Night: элементы новой материи",
+				"title": "MVP за выходные — вайбкодинг в терминале",
+				"date": "20 декабря 2025, 12:00 МСК",
+				"location": "Москва, Россия",
+				"venue": "Сбер, Кутузовский проспект, 32к1",
+				"description": "Практический доклад о создании рабочих продуктов с нуля с помощью CLI-инструментов Claude, Qwen и Gemini. Показал настройку мультиагентной системы, где каждый агент отвечает за свою часть пайплайна, подключение готовых UI-компонентных библиотек через MCP и автоматизацию CI/CD с деплоем на self-hosted сервер.",
+				"eventUrl": "https://developers.sber.ru/kak-v-sbere/events/frontend_december_2025",
+				"ticketsUrl": "",
+				"videoUrl": "https://frontendnight2025.dialog.sberbank.ru/translation",
+				"photosUrl": "https://andreibuzin.wfolio.pro/disk/20-12-2025-151_sber-fn25_20dec2025-bwhnkw",
+				"format": "Гибридный: офлайн + онлайн",
+				"status": "completed"
+			},
 			"moscowcss29": {
 				"event": "MoscowCSS #29",
 				"title": "Сила псевдоселекторов в современном CSS",
