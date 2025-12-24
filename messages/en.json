@@ -191,9 +191,9 @@
 		"title": "Conferences",
 		"description": "Sharing knowledge and experience with the developer community through talks and presentations at conferences and meetups.",
 		"buttons": {
-			"watchVideo": "Watch Video",
-			"viewPhotos": "View Photos",
-			"eventPage": "Event Page",
+			"watchVideo": "Video",
+			"viewPhotos": "Photos",
+			"eventPage": "Event",
 			"tickets": "Tickets"
 		},
 		"status": {
@@ -213,7 +213,7 @@
 				"ticketsUrl": "",
 				"videoUrl": "https://frontendnight2025.dialog.sberbank.ru/translation",
 				"photosUrl": "https://andreibuzin.wfolio.pro/disk/20-12-2025-151_sber-fn25_20dec2025-bwhnkw",
-				"format": "Hybrid: In-person + Online",
+				"format": "In-person + Online",
 				"status": "completed"
 			},
 			"moscowcss29": {
@@ -228,7 +228,7 @@
 				"ticketsUrl": "https://moscowcss.timepad.ru/event/3639677/",
 				"videoUrl": "https://vkvideo.ru/video-167479002_456239487",
 				"photosUrl": "https://disk.360.yandex.ru/d/sUKej5zC0OyjYg",
-				"format": "Hybrid: In-person + Online",
+				"format": "In-person + Online",
 				"status": "completed"
 			}
 		}

@@ -15,6 +15,7 @@ import { ScrollToTop } from '@/components/global/ScrollToTop'
 import { Toaster } from '@/components/ui/sonner'
 import { ThemeProvider } from '@/components/providers/theme-provider'
 import { BreadcrumbHeader } from '@/components/global'
+import FollowCursor from '@/components/ui/follow-cursor'
 
 export const metadata: Metadata = {
 	metadataBase: new URL('https://portfolio.gooselabs.ru'),
@@ -53,6 +54,7 @@ export default async function RootLayout({
 				>
 					<ThemeProvider attribute='class' defaultTheme='system' enableSystem>
 						<YandexMetrika />
+						<FollowCursor />
 						{children}
 						<ScrollToTop />
 						<Toaster />

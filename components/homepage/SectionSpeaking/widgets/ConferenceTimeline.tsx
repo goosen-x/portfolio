@@ -61,7 +61,7 @@ export const ConferenceTimeline = ({ conferences }: Props) => {
 	return (
 		<div className="grid lg:grid-cols-[280px_1fr] xl:grid-cols-[320px_1fr] gap-6 lg:gap-8">
 			{/* Timeline */}
-			<div className="order-2 lg:order-1">
+			<div>
 				<TimelineSteps orientation="vertical" className="relative">
 					{conferences.map((conference, index) => {
 						const isActive = activeIndex === index
@@ -124,7 +124,7 @@ export const ConferenceTimeline = ({ conferences }: Props) => {
 			</div>
 
 			{/* Conference Detail Card */}
-			<div className="order-1 lg:order-2">
+			<div>
 				<AnimatePresence mode="wait">
 					<motion.div
 						key={activeConference.id}
@@ -136,33 +136,31 @@ export const ConferenceTimeline = ({ conferences }: Props) => {
 					>
 						{/* Image Carousel Section */}
 						{activeConference.images && activeConference.images.length > 0 && (
-							<div className="relative h-56 sm:h-64 md:h-80 overflow-hidden bg-gray-900">
+							<div className="relative h-56 sm:h-64 md:h-80">
 								<Carousel
-									opts={{ align: 'start', loop: true }}
+									opts={{ align: 'center', loop: true }}
 									plugins={[Autoplay({ delay: 4000 })]}
 									className="w-full h-full"
 								>
 									<CarouselContent className="h-full">
 										{activeConference.images.map((image, index) => (
-											<CarouselItem key={index} className="h-56 sm:h-64 md:h-80">
-												<div className="relative h-full w-full">
-													<Image
-														src={image}
-														alt={`${activeConference.event} - Photo ${index + 1}`}
-														fill
-														className="object-contain"
-														priority={index === 0}
-														sizes="(max-width: 1024px) 100vw, 60vw"
-													/>
-													<div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
-												</div>
+											<CarouselItem key={index} className="basis-auto px-1">
+												<Image
+													src={image}
+													alt={`${activeConference.event} - Photo ${index + 1}`}
+													width={0}
+													height={320}
+													sizes="100vw"
+													className="h-56 sm:h-64 md:h-80 w-auto"
+													priority={index === 0}
+												/>
 											</CarouselItem>
 										))}
 									</CarouselContent>
 									{activeConference.images.length > 1 && (
 										<>
-											<CarouselPrevious className="left-2 bg-background/80 backdrop-blur-sm" />
-											<CarouselNext className="right-2 bg-background/80 backdrop-blur-sm" />
+											<CarouselPrevious className="left-4 bg-background/80 backdrop-blur-sm z-20" />
+											<CarouselNext className="right-4 bg-background/80 backdrop-blur-sm z-20" />
 										</>
 									)}
 								</Carousel>
@@ -189,46 +187,52 @@ export const ConferenceTimeline = ({ conferences }: Props) => {
 
 						{/* Content Section */}
 						<div className="p-5 md:p-6">
-							{/* Title */}
-							<h3 className="text-xl md:text-2xl font-bold mb-2 text-foreground">
-								{activeConference.event}
-							</h3>
+							{/* Header Grid */}
+							<div className="grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-4 mb-5">
+								{/* Left: Title */}
+								<div>
+									<h3 className="text-xl md:text-2xl font-bold mb-2 text-foreground text-balance">
+										{activeConference.event}
+									</h3>
+									<h4 className="text-base md:text-lg font-semibold text-primary">
+										{activeConference.title}
+									</h4>
+								</div>
 
-							<h4 className="text-base md:text-lg font-semibold mb-3 text-primary">
-								{activeConference.title}
-							</h4>
+								{/* Right: Meta info */}
+								<div className="flex flex-col gap-1.5 text-sm text-muted-foreground sm:text-right">
+									<div className="flex items-center gap-2 sm:flex-row-reverse">
+										<Calendar className="w-4 h-4 flex-shrink-0 text-primary/70" />
+										<span>{activeConference.date}</span>
+									</div>
+									<div className="flex items-center gap-2 sm:flex-row-reverse">
+										<MapPin className="w-4 h-4 flex-shrink-0 text-primary/70" />
+										<span>{activeConference.location}</span>
+									</div>
+									<div className="flex items-center gap-2 sm:flex-row-reverse">
+										<Building2 className="w-4 h-4 flex-shrink-0 text-primary/70" />
+										<span>{activeConference.venue}</span>
+									</div>
+								</div>
+							</div>
 
 							{/* Description */}
 							<p className="text-sm text-muted-foreground mb-5 leading-relaxed">
 								{activeConference.description}
 							</p>
 
-							{/* Meta info */}
-							<div className="flex flex-wrap gap-x-6 gap-y-2 mb-6 text-sm text-muted-foreground">
-								<div className="flex items-center gap-2">
-									<Calendar className="w-4 h-4 flex-shrink-0 text-primary/70" />
-									<span>{activeConference.date}</span>
-								</div>
-								<div className="flex items-center gap-2">
-									<MapPin className="w-4 h-4 flex-shrink-0 text-primary/70" />
-									<span>{activeConference.location}</span>
-								</div>
-								<div className="flex items-center gap-2">
-									<Building2 className="w-4 h-4 flex-shrink-0 text-primary/70" />
-									<span>{activeConference.venue}</span>
-								</div>
-							</div>
-
 							{/* Action buttons */}
-							<div className="flex flex-wrap gap-2">
+							<div className="flex flex-wrap gap-3">
 								{activeConference.videoUrl && (
 									<a
 										href={activeConference.videoUrl}
 										target="_blank"
 										rel="noopener noreferrer"
-										className="inline-flex items-center justify-center gap-2 px-4 py-2 text-sm rounded-lg bg-blue-600 hover:bg-blue-700 !text-white font-medium transition-colors duration-200"
+										className="group inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
 									>
-										<Video className="w-4 h-4" />
+										<span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
+											<Video className="w-4 h-4 text-primary" />
+										</span>
 										{activeConference.buttons.watchVideo}
 									</a>
 								)}
@@ -238,9 +242,11 @@ export const ConferenceTimeline = ({ conferences }: Props) => {
 										href={activeConference.photosUrl}
 										target="_blank"
 										rel="noopener noreferrer"
-										className="inline-flex items-center justify-center gap-2 px-4 py-2 text-sm rounded-lg bg-purple-600 hover:bg-purple-700 !text-white font-medium transition-colors duration-200"
+										className="group inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
 									>
-										<Images className="w-4 h-4" />
+										<span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
+											<Images className="w-4 h-4 text-primary" />
+										</span>
 										{activeConference.buttons.viewPhotos}
 									</a>
 								)}
@@ -250,9 +256,11 @@ export const ConferenceTimeline = ({ conferences }: Props) => {
 										href={activeConference.eventUrl}
 										target="_blank"
 										rel="noopener noreferrer"
-										className="inline-flex items-center justify-center gap-2 px-4 py-2 text-sm rounded-lg border border-border hover:bg-accent text-foreground font-medium transition-colors duration-200"
+										className="group inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
 									>
-										<ExternalLink className="w-4 h-4" />
+										<span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
+											<ExternalLink className="w-4 h-4 text-primary" />
+										</span>
 										{activeConference.buttons.eventPage}
 									</a>
 								)}
@@ -262,9 +270,11 @@ export const ConferenceTimeline = ({ conferences }: Props) => {
 										href={activeConference.ticketsUrl}
 										target="_blank"
 										rel="noopener noreferrer"
-										className="inline-flex items-center justify-center gap-2 px-4 py-2 text-sm rounded-lg border border-border hover:bg-accent text-foreground font-medium transition-colors duration-200"
+										className="group inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
 									>
-										<ExternalLink className="w-4 h-4" />
+										<span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
+											<ExternalLink className="w-4 h-4 text-primary" />
+										</span>
 										{activeConference.buttons.tickets}
 									</a>
 								)}

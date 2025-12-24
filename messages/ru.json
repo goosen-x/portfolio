@@ -191,9 +191,9 @@
 		"title": "Конференции",
 		"description": "Делюсь знаниями и опытом с сообществом разработчиков через доклады и презентации на конференциях и митапах.",
 		"buttons": {
-			"watchVideo": "Смотреть видео",
-			"viewPhotos": "Посмотреть фото",
-			"eventPage": "Страница события",
+			"watchVideo": "Видео",
+			"viewPhotos": "Фото",
+			"eventPage": "Событие",
 			"tickets": "Билеты"
 		},
 		"status": {
@@ -213,7 +213,7 @@
 				"ticketsUrl": "",
 				"videoUrl": "https://frontendnight2025.dialog.sberbank.ru/translation",
 				"photosUrl": "https://andreibuzin.wfolio.pro/disk/20-12-2025-151_sber-fn25_20dec2025-bwhnkw",
-				"format": "Гибридный: офлайн + онлайн",
+				"format": "Офлайн + онлайн",
 				"status": "completed"
 			},
 			"moscowcss29": {
@@ -228,7 +228,7 @@
 				"ticketsUrl": "https://moscowcss.timepad.ru/event/3639677/",
 				"videoUrl": "https://vkvideo.ru/video-167479002_456239487",
 				"photosUrl": "https://disk.360.yandex.ru/d/sUKej5zC0OyjYg",
-				"format": "Гибридный: офлайн + онлайн",
+				"format": "Офлайн + онлайн",
 				"status": "completed"
 			}
 		}
