@@ -101,7 +101,7 @@ export const TechStackData: TechStackDataType = [
 				percent: 85
 			},
 			{
-				name: 'Chadcn ui',
+				name: 'shadcn/ui',
 				icon: <BsFilterCircleFill className='-rotate-45' />,
 				percent: 85
 			},

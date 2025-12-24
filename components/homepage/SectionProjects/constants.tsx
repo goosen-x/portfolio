@@ -87,7 +87,7 @@ export const ProjectsData: ProjectDataType[] = [
 				icon: <SiNextdotjs />
 			},
 			{
-				name: 'Chadcn ui',
+				name: 'shadcn/ui',
 				icon: <BsFilterCircleFill className='-rotate-45' />
 			}
 		]
@@ -108,7 +108,7 @@ export const ProjectsData: ProjectDataType[] = [
 				icon: <SiNextdotjs />
 			},
 			{
-				name: 'Chadcn ui',
+				name: 'shadcn/ui',
 				icon: <BsFilterCircleFill className='-rotate-45' />
 			},
 			{

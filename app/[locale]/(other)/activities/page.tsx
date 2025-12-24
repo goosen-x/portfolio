@@ -54,7 +54,7 @@ export default async function ActivitiesPage({ params }: Props) {
 								{t('badges.active')}
 							</Badge>
 						</div>
-						<div className='text-3xl font-bold mb-1'>9</div>
+						<div className='text-3xl font-bold mb-1'>10</div>
 						<p className='text-sm text-muted-foreground'>
 							{t('stats.completed')}
 						</p>
@@ -64,12 +64,12 @@ export default async function ActivitiesPage({ params }: Props) {
 						<div className='flex items-center justify-between mb-2'>
 							<MessageSquare className='w-8 h-8 text-purple-600' />
 							<Badge variant='secondary' className='bg-purple-500/20'>
-								{t('badges.planned')}
+								{t('badges.completed')}
 							</Badge>
 						</div>
-						<div className='text-3xl font-bold mb-1'>1</div>
+						<div className='text-3xl font-bold mb-1'>2</div>
 						<p className='text-sm text-muted-foreground'>
-							{t('stats.csstalk')}
+							{t('stats.talks')}
 						</p>
 					</Card>
 
@@ -93,7 +93,7 @@ export default async function ActivitiesPage({ params }: Props) {
 								{t('badges.live')}
 							</Badge>
 						</div>
-						<div className='text-3xl font-bold mb-1'>3</div>
+						<div className='text-3xl font-bold mb-1'>2</div>
 						<p className='text-sm text-muted-foreground'>
 							{t('stats.projects')}
 						</p>
@@ -146,7 +146,7 @@ export default async function ActivitiesPage({ params }: Props) {
 								<div className='flex items-center gap-2 text-sm'>
 									<Calendar className='w-4 h-4' />
 									<span className='text-muted-foreground'>
-										{t('november')} 2025
+										{t('december')} 2025
 									</span>
 								</div>
 							</div>
@@ -202,6 +202,17 @@ export default async function ActivitiesPage({ params }: Props) {
 										<div className='flex-1'>
 											<p className='font-medium text-sm'>
 												{t('sections.learningItems.ai')}
+											</p>
+											<p className='text-xs text-muted-foreground'>
+												{t('sections.status.progress')}
+											</p>
+										</div>
+									</div>
+									<div className='flex gap-3'>
+										<div className='w-4 h-4 rounded-full bg-purple-500 mt-1 relative z-10' />
+										<div className='flex-1'>
+											<p className='font-medium text-sm'>
+												{t('sections.learningItems.management')}
 											</p>
 											<p className='text-xs text-muted-foreground'>
 												{t('sections.status.progress')}
@@ -279,7 +290,7 @@ export default async function ActivitiesPage({ params }: Props) {
 								<div className='w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2'>
 									<div
 										className='bg-indigo-500 h-2 rounded-full'
-										style={{ width: '50%' }}
+										style={{ width: '25%' }}
 									/>
 								</div>
 							</div>
@@ -290,7 +301,7 @@ export default async function ActivitiesPage({ params }: Props) {
 								<div className='w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2'>
 									<div
 										className='bg-indigo-500 h-2 rounded-full'
-										style={{ width: '15%' }}
+										style={{ width: '20%' }}
 									/>
 								</div>
 							</div>

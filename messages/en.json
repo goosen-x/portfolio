@@ -205,6 +205,7 @@
 				"event": "Frontend Night: Elements of New Matter",
 				"title": "MVP in a Weekend - Vibecoding in Terminal",
 				"date": "December 20, 2025, 12:00 MSK",
+				"shortDate": "Dec 2025",
 				"location": "Moscow, Russia",
 				"venue": "Sber, Kutuzovsky Prospect, 32k1",
 				"description": "A practical talk on building working products from scratch using CLI tools like Claude, Qwen, and Gemini. Demonstrated setting up a multi-agent system where each agent handles its part of the pipeline, connecting ready-made UI component libraries via MCP, and automating CI/CD deployment to a self-hosted server.",
@@ -219,6 +220,7 @@
 				"event": "MoscowCSS #29",
 				"title": "The Power of Pseudo-selectors in Modern CSS",
 				"date": "November 6, 2025, 18:00-22:00 MSK",
+				"shortDate": "Nov 2025",
 				"location": "Moscow, Russia",
 				"venue": "School 21, Vyatskaya St., 27, building 42",
 				"description": "An in-depth talk covering modern CSS pseudo-selectors and their current browser support. Explored practical use cases and real-world examples of how pseudo-selectors can simplify code and enhance user experience in modern web applications.",
@@ -314,12 +316,13 @@
 			"ongoing": "Ongoing",
 			"live": "Live",
 			"year": "2024",
-			"planned": "Conferences"
+			"planned": "Conferences",
+			"completed": "Completed"
 		},
 		"sections": {
 			"codewars": "Codewars Progress",
 			"achievement": "Latest Achievement",
-			"achievementText": "Speaking at Moscow CSS",
+			"achievementText": "Speaking at Sber Frontend Night",
 			"community": "Community Involvement",
 			"communityItems": {
 				"react": "Active member of MoscowCSS community",
@@ -329,6 +332,7 @@
 			"learning": "Learning Path",
 			"learningItems": {
 				"ai": "AI/ML Fundamentals",
+				"management": "IT Project Management",
 				"system": "System Design",
 				"typescript": "Advanced TypeScript",
 				"performance": "React Performance"
@@ -338,9 +342,9 @@
 				"completed": "Completed"
 			},
 			"skills": "Top Skills",
-			"goals": "2025 Goals",
+			"goals": "2026 Goals",
 			"goalsItems": {
-				"oss": "Speaking at MoscowCSS Conference",
+				"oss": "Open Source Contributions",
 				"rust": "Advanced Linux"
 			}
 		},

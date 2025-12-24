@@ -2,28 +2,7 @@ import { ComponentPropsWithoutRef } from 'react'
 import { cn } from '@/lib/utils'
 import { SectionTitle } from '@/components/global/SectionTitle'
 import { getTranslations } from 'next-intl/server'
-import { ConferenceItem } from './widgets/ConferenceItem'
-
-export type ConferenceData = {
-	event: string
-	title: string
-	date: string
-	location: string
-	venue: string
-	description: string
-	eventUrl: string | null
-	ticketsUrl: string | null
-	videoUrl: string | null
-	photosUrl: string | null
-	format: string
-	status: 'completed' | 'upcoming'
-	buttons: {
-		watchVideo: string
-		viewPhotos: string
-		eventPage: string
-		tickets: string
-	}
-}
+import { ConferenceTimeline, type ConferenceData } from './widgets/ConferenceTimeline'
 
 export const SectionSpeaking = async ({
 	className,
@@ -62,69 +41,51 @@ export const SectionSpeaking = async ({
 
 	const conferences = [
 		{
-			name: 'sberFrontendNight2025',
+			id: 'sberFrontendNight2025',
 			images: sberFrontendNightImages
 		},
 		{
-			name: 'moscowcss29',
+			id: 'moscowcss29',
 			images: moscowcssImages
 		}
 	]
 
-	const conferencesData = conferences.map(conference => {
-		return {
-			event: t(`conferences.${conference.name}.event`),
-			title: t(`conferences.${conference.name}.title`),
-			date: t(`conferences.${conference.name}.date`),
-			location: t(`conferences.${conference.name}.location`),
-			venue: t(`conferences.${conference.name}.venue`),
-			description: t(`conferences.${conference.name}.description`),
-			eventUrl:
-				t(`conferences.${conference.name}.eventUrl`) === ''
-					? null
-					: t(`conferences.${conference.name}.eventUrl`),
-			ticketsUrl:
-				t(`conferences.${conference.name}.ticketsUrl`) === ''
-					? null
-					: t(`conferences.${conference.name}.ticketsUrl`),
-			videoUrl:
-				t(`conferences.${conference.name}.videoUrl`) === ''
-					? null
-					: t(`conferences.${conference.name}.videoUrl`),
-			photosUrl:
-				t(`conferences.${conference.name}.photosUrl`) === ''
-					? null
-					: t(`conferences.${conference.name}.photosUrl`),
-			format: t(`conferences.${conference.name}.format`),
-			status: t(`conferences.${conference.name}.status`) as
-				| 'completed'
-				| 'upcoming',
-			buttons: {
-				watchVideo: t('buttons.watchVideo'),
-				viewPhotos: t('buttons.viewPhotos'),
-				eventPage: t('buttons.eventPage'),
-				tickets: t('buttons.tickets')
-			},
-			images: conference.images
+	const conferencesData: ConferenceData[] = conferences.map(conference => ({
+		id: conference.id,
+		event: t(`conferences.${conference.id}.event`),
+		title: t(`conferences.${conference.id}.title`),
+		date: t(`conferences.${conference.id}.date`),
+		shortDate: t(`conferences.${conference.id}.shortDate`),
+		location: t(`conferences.${conference.id}.location`),
+		venue: t(`conferences.${conference.id}.venue`),
+		description: t(`conferences.${conference.id}.description`),
+		eventUrl: t(`conferences.${conference.id}.eventUrl`) || null,
+		ticketsUrl: t(`conferences.${conference.id}.ticketsUrl`) || null,
+		videoUrl: t(`conferences.${conference.id}.videoUrl`) || null,
+		photosUrl: t(`conferences.${conference.id}.photosUrl`) || null,
+		format: t(`conferences.${conference.id}.format`),
+		status: t(`conferences.${conference.id}.status`) as 'completed' | 'upcoming',
+		images: conference.images,
+		buttons: {
+			watchVideo: t('buttons.watchVideo'),
+			viewPhotos: t('buttons.viewPhotos'),
+			eventPage: t('buttons.eventPage'),
+			tickets: t('buttons.tickets')
 		}
-	})
+	}))
 
 	return (
 		<section className={cn('py-12 sm:py-16 md:py-24', className)} {...rest}>
-			<div className='mx-auto max-w-(--breakpoint-xl)'>
+			<div className='mx-auto max-w-(--breakpoint-xl) px-3 sm:px-6 lg:px-8'>
 				<SectionTitle
-					className='mb-8 sm:mb-12 px-3 sm:px-6 lg:px-8'
+					className='mb-8 sm:mb-12'
 					title={t('title')}
 				/>
-				<p className='text-center text-gray-600 dark:text-gray-400 md:text-lg mb-8 sm:mb-12 md:mb-16 max-w-3xl mx-auto px-3 sm:px-6 lg:px-8'>
+				<p className='text-center text-gray-600 dark:text-gray-400 md:text-lg mb-8 sm:mb-12 max-w-3xl mx-auto'>
 					{t('description')}
 				</p>
 
-				<div className='grid gap-8 md:grid-cols-1 lg:grid-cols-1'>
-					{conferencesData.map((conference, index) => (
-						<ConferenceItem key={index} data={conference} />
-					))}
-				</div>
+				<ConferenceTimeline conferences={conferencesData} />
 			</div>
 		</section>
 	)
