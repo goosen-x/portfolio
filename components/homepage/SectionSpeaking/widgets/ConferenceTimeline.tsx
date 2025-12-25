@@ -1,7 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import type { CarouselApi } from '@/components/ui/carousel'
 import { Calendar, MapPin, Building2, ExternalLink, Video, Images, CheckCircle2, Clock, Mic2 } from 'lucide-react'
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
@@ -57,6 +58,23 @@ export const ConferenceTimeline = ({ conferences }: Props) => {
 	const t = useTranslations('SectionSpeaking')
 	const [activeIndex, setActiveIndex] = useState(0)
 	const activeConference = conferences[activeIndex]
+	const [carouselApi, setCarouselApi] = useState<CarouselApi>()
+	const [currentSlide, setCurrentSlide] = useState(0)
+
+	useEffect(() => {
+		if (!carouselApi) return
+
+		const onSelect = () => {
+			setCurrentSlide(carouselApi.selectedScrollSnap())
+		}
+
+		carouselApi.on('select', onSelect)
+		onSelect()
+
+		return () => {
+			carouselApi.off('select', onSelect)
+		}
+	}, [carouselApi])
 
 	return (
 		<div className="grid lg:grid-cols-[280px_1fr] xl:grid-cols-[320px_1fr] gap-6 lg:gap-8">
@@ -140,20 +158,26 @@ export const ConferenceTimeline = ({ conferences }: Props) => {
 								<Carousel
 									opts={{ align: 'center', loop: true }}
 									plugins={[Autoplay({ delay: 4000 })]}
+									setApi={setCarouselApi}
 									className="w-full h-full"
 								>
 									<CarouselContent className="h-full">
 										{activeConference.images.map((image, index) => (
 											<CarouselItem key={index} className="basis-auto px-1">
-												<Image
-													src={image}
-													alt={`${activeConference.event} - Photo ${index + 1}`}
-													width={0}
-													height={320}
-													sizes="100vw"
-													className="h-56 sm:h-64 md:h-80 w-auto"
-													priority={index === 0}
-												/>
+												<div className={cn(
+													"relative transition-all duration-300",
+													currentSlide !== index && "brightness-50 blur-[1px] scale-95"
+												)}>
+													<Image
+														src={image}
+														alt={`${activeConference.event} - Photo ${index + 1}`}
+														width={0}
+														height={320}
+														sizes="100vw"
+														className="h-56 sm:h-64 md:h-80 w-auto"
+														priority={index === 0}
+													/>
+												</div>
 											</CarouselItem>
 										))}
 									</CarouselContent>
