@@ -1,18 +1,35 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import createGlobe from 'cobe'
+
+function isWebGLAvailable(): boolean {
+	try {
+		const canvas = document.createElement('canvas')
+		const gl =
+			canvas.getContext('webgl') || canvas.getContext('experimental-webgl')
+		return gl !== null && gl !== undefined
+	} catch {
+		return false
+	}
+}
 
 export const Globus = ({ className }: { className?: string }) => {
 	const canvasRef = useRef<HTMLCanvasElement>(null)
+	const [webglSupported, setWebglSupported] = useState<boolean | null>(null)
 	const darkTheme = false
 
 	useEffect(() => {
+		setWebglSupported(isWebGLAvailable())
+	}, [])
+
+	useEffect(() => {
+		if (webglSupported !== true || !canvasRef.current) return
+
 		let phi = 0
+		let globe: ReturnType<typeof createGlobe> | null = null
 
-		if (!canvasRef.current) return
-
-		const globe = createGlobe(canvasRef.current, {
+		globe = createGlobe(canvasRef.current, {
 			devicePixelRatio: 2,
 			width: 600 * 2,
 			height: 600 * 2,
@@ -32,17 +49,19 @@ export const Globus = ({ className }: { className?: string }) => {
 				{ location: [31.3, 34.45], size: 0.03 }
 			],
 			onRender: state => {
-				// Called on every animation frame.
-				// `state` will be an empty object, return updated params.
 				state.phi = phi
 				phi += 0.0025
 			}
 		})
 
 		return () => {
-			globe.destroy()
+			globe?.destroy()
 		}
-	}, [darkTheme])
+	}, [darkTheme, webglSupported])
+
+	if (webglSupported === false) {
+		return null
+	}
 
 	return (
 		<canvas
