@@ -1,9 +1,9 @@
 import Script from 'next/script'
 
 const YandexMetrika = () => {
-	const metrikaId = process.env.NEXT_PUBLIC_YANDEX_METRIKA_ID
+	const metrikaId = '105366509'
 
-	if (!metrikaId) {
+	if (process.env.NODE_ENV === 'development') {
 		return null
 	}
 
