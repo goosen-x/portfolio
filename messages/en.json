@@ -206,7 +206,7 @@
 	},
 	"SectionBlog": {
 		"title": "Latest from the Blog",
-		"description": "Insights on web development, design patterns, and technology trends"
+		"description": "Practical explainers: calculations, everyday tools, and working with data"
 	},
 	"SectionSpeaking": {
 		"title": "Conferences",
@@ -271,7 +271,7 @@
 	},
 	"blog": {
 		"title": "Blog",
-		"description": "Articles about web development, CSS techniques, and frontend engineering.",
+		"description": "Practical explainers: calculations, everyday tools, and working with data.",
 		"noPosts": "Couldn't load articles right now. Please try again later."
 	},
 	"contact": {
