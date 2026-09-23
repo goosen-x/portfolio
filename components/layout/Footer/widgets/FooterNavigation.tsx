@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { useTranslations, useLocale } from 'next-intl'
 import { usePathname } from 'next/navigation'
-import { Home, FolderOpen, Activity, BookOpen, Mail, Heart, Coffee } from 'lucide-react'
+import { Home, FolderOpen, Activity, BookOpen, Mail, Heart } from 'lucide-react'
 import { CryptoDonationModal } from '@/components/global'
 
 export const FooterNavigation = () => {
@@ -79,22 +79,6 @@ export const FooterNavigation = () => {
 				</h3>
 				<div className='flex flex-col gap-2'>
 					<CryptoDonationModal />
-					<a
-						href="https://www.buymeacoffee.com/yourname"
-						target="_blank"
-						rel="noopener noreferrer"
-						className='group flex items-center gap-2 relative'
-					>
-						<div className='relative'>
-							<div className='absolute inset-0 rounded-lg opacity-0 scale-110 bg-gradient-to-br from-accent/20 to-accent/5 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 blur-sm' />
-							<div className='relative p-1.5 rounded-lg border border-border/50 text-muted-foreground group-hover:border-accent/50 group-hover:text-accent transition-all duration-300'>
-								<Coffee className='w-3.5 h-3.5' />
-							</div>
-						</div>
-						<span className='text-xs font-medium text-muted-foreground group-hover:text-foreground transition-all duration-300 whitespace-nowrap'>
-							{tFooter('support.buyMeCoffee')}
-						</span>
-					</a>
 				</div>
 			</div>
 		</div>

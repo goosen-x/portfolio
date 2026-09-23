@@ -47,6 +47,7 @@
 		"framer-motion": "^12.23.26",
 		"gray-matter": "^4.0.3",
 		"highlight.js": "^11.11.1",
+		"https-proxy-agent": "^9.1.0",
 		"i18next": "^25.7.3",
 		"is-plain-obj": "^4.1.0",
 		"lucide-react": "^0.562.0",

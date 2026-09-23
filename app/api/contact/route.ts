@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { telegramFetch } from '@/lib/telegram/proxy-fetch'
 
 interface ContactRequest {
 	name: string
@@ -31,7 +32,7 @@ ${data.message}
 
 	const url = `https://api.telegram.org/bot${botToken}/sendMessage`
 
-	const response = await fetch(url, {
+	const response = await telegramFetch(url, {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',
