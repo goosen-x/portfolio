@@ -23,7 +23,12 @@ import {
 	SiVercel,
 	SiNginx,
 	SiGithubactions,
-	SiRedis
+	SiRedis,
+	SiClaude,
+	SiGooglegemini,
+	SiOpenai,
+	SiOllama,
+	SiPayloadcms
 } from 'react-icons/si'
 import {
 	FaGithub,
@@ -39,6 +44,7 @@ import {
 } from 'react-icons/fa'
 import { CgFigma } from 'react-icons/cg'
 import { BsFilterCircleFill } from 'react-icons/bs'
+import { CursorIcon, QwenIcon, McpIcon, AiSdkIcon } from './icons'
 
 export const TechStackData: TechStackDataType = [
 	{
@@ -154,11 +160,61 @@ export const TechStackData: TechStackDataType = [
 				name: 'Strapi',
 				icon: <SiStrapi />,
 				percent: 90
+			},
+			{
+				name: 'Payload CMS',
+				icon: <SiPayloadcms />,
+				percent: 85
 			}
 		]
 	},
 	{
-		name: 'DevOps & Cloud',
+		name: 'AI & Agents',
+		techs: [
+			{
+				name: 'Claude Code',
+				icon: <SiClaude />,
+				percent: 95
+			},
+			{
+				name: 'Codex CLI',
+				icon: <SiOpenai />,
+				percent: 80
+			},
+			{
+				name: 'Qwen Code',
+				icon: <QwenIcon />,
+				percent: 75
+			},
+			{
+				name: 'Gemini CLI',
+				icon: <SiGooglegemini />,
+				percent: 75
+			},
+			{
+				name: 'MCP',
+				icon: <McpIcon />,
+				percent: 85
+			},
+			{
+				name: 'Cursor',
+				icon: <CursorIcon />,
+				percent: 80
+			},
+			{
+				name: 'AI SDK',
+				icon: <AiSdkIcon />,
+				percent: 80
+			},
+			{
+				name: 'Ollama',
+				icon: <SiOllama />,
+				percent: 70
+			}
+		]
+	},
+	{
+		name: 'DevOps & Tools',
 		techs: [
 			{
 				name: 'Docker',
@@ -189,12 +245,7 @@ export const TechStackData: TechStackDataType = [
 				name: 'Redis',
 				icon: <SiRedis />,
 				percent: 75
-			}
-		]
-	},
-	{
-		name: 'Other Tools',
-		techs: [
+			},
 			{
 				name: 'Jest',
 				icon: <SiJest />,

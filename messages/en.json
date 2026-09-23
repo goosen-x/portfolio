@@ -117,8 +117,8 @@
 		"title": "Tech Stack",
 		"frontend": "Frontend",
 		"backend": "Backend",
-		"other": "Other tools",
-		"devops": "DevOps & Cloud"
+		"ai": "AI & Agents",
+		"devops": "DevOps & Tools"
 	},
 	"SectionProjects": {
 		"title": "Projects",
@@ -144,6 +144,26 @@
 				"name": "HealthShop",
 				"company": "HealthShop is an innovative online store specializing in health and wellness products. The company aims to provide customers with a wide range of quality products for maintaining a healthy lifestyle, including organic food, dietary supplements, sports nutrition, natural cosmetics, and fitness equipment. HealthShop is distinguished by careful product selection, cooperation with trusted manufacturers, and providing detailed information about each product.",
 				"description": "The HealthShop project is a modern e-commerce platform developed using advanced web technologies. The frontend is implemented in React using Next.js to ensure high performance, SEO optimization, and enhanced user experience. Redux is used for application state management, and styling is done using Styled Components, allowing for flexible and easily maintainable styles. The backend is built on Node.js using Express.js, and MongoDB is chosen for database operations, providing high performance and scalability. The payment system is integrated using the Stripe API, ensuring transaction security. Special attention is paid to developing a smart recommendation system that analyzes user behavior and offers personalized products. A product comparison feature is implemented, allowing customers to easily compare characteristics of different products. A review and rating system is integrated, helping users make informed purchase decisions. The project also includes an information section with expert articles on healthy lifestyles and proper use of products. To improve user experience, a machine learning-based chatbot is implemented, capable of answering frequently asked questions and assisting in product selection. HealthShop demonstrates a high level of technical implementation, combining modern development technologies with innovative solutions in the field of e-commerce and healthcare."
+			},
+			"autozorro": {
+				"name": "AutoZorro",
+				"company": "AutoZorro is a loyalty program with a personal account where users track their balance, documents, and transaction history. Login is passwordless — via a one-time code sent through Telegram or SMS",
+				"description": "The personal account is built on Next.js 16 with the App Router and shadcn/ui. Authentication is passwordless, using a one-time code delivered via the Telegram Gateway API with SMS and voice call as a fallback. User balances and documents live in a PHP backend accessed over REST; Redis handles sessions, confirmation codes, and push notification state. Content and the shop run on SQLite via Prisma ORM. Deployment uses GitHub Actions with separate production and preview environments on PM2."
+			},
+			"rentmetal": {
+				"name": "Rent Metal",
+				"company": "RENTMETALL sells rolled metal products wholesale and retail across Moscow and the region: bar, sheet, and tube stock, stainless steel, and fasteners. The company also offers laser cutting, bending, and custom metal fabrication, shipping from its own warehouses in Podolsk, Moscow, and Ivanteevka",
+				"description": "A catalog site built on Next.js with shadcn/ui, backed by Payload CMS on PostgreSQL — product categories, prices, and listings are managed through a single admin panel instead of being hardcoded. The site includes a delivery calculator with a warehouse map, a metal fabrication request form, and an order FAQ. The domain was migrated from metsetcom.ru to rt-metal.ru with 301 redirects preserving SEO."
+			},
+			"businessPartner": {
+				"name": "Business Partner",
+				"company": "Business Partner is an online business journal covering management, marketing, and finance — case studies, founder interviews, and long-form pieces for entrepreneurs and executives",
+				"description": "An editorial platform built on Next.js with shadcn/ui, with content managed through Strapi CMS across separate production and preview instances. The site features article categories, long-reads, a news block, and special projects with their own card layouts per format."
+			},
+			"pixeltool": {
+				"name": "PixelTool",
+				"company": "PixelTool is a collection of 124 free browser-based tools for everyday and work tasks — password and QR code generators, unit converters, text and image utilities — no installs or sign-ups required",
+				"description": "A personal project built on Next.js 16, shadcn/ui, and Tailwind CSS 4. Each tool is an independent widget with its own SEO page; the project has a dedicated pipeline for scaffolding new tools quickly (create-widget scripts) plus automated security, accessibility, bundle-size, and performance checks before deploy. The code is open source on GitHub."
 			}
 		}
 	},
@@ -202,6 +222,21 @@
 			"upcoming": "Upcoming"
 		},
 		"conferences": {
+			"aiOlymp2026": {
+				"event": "Vremya Tsifry 2026 — AI Olymp Award",
+				"title": "AI-Powered Personalized Learning Platform",
+				"date": "May 27, 2026",
+				"shortDate": "May 2026",
+				"location": "Moscow, Russia",
+				"venue": "RBC Event Center",
+				"description": "Built an AI-powered personalized learning platform for Moscow Business Academy. The project won the 'Company of the Year' award at AI Olymp 2026 (Personalized Learning Platforms category) at the Vremya Tsifry forum.",
+				"eventUrl": "https://forum.digital-leaders.online/",
+				"ticketsUrl": "",
+				"videoUrl": "",
+				"photosUrl": "",
+				"format": "In-person",
+				"status": "completed"
+			},
 			"sberFrontendNight2025": {
 				"event": "Frontend Night: Elements of New Matter",
 				"title": "MVP in a Weekend - Vibecoding in Terminal",

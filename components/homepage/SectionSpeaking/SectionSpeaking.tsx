@@ -38,7 +38,20 @@ export const SectionSpeaking = async ({
 		'/images/sber-frontend-night/1952-Sber-FN25_20dec2025_Buzin_resized.jpg'
 	]
 
+	const aiOlympImages = [
+		'/images/ai-olymp-2026/photo-01.jpg',
+		'/images/ai-olymp-2026/photo-02.jpg',
+		'/images/ai-olymp-2026/photo-03.jpg',
+		'/images/ai-olymp-2026/photo-04.jpg',
+		'/images/ai-olymp-2026/photo-05.jpg',
+		'/images/ai-olymp-2026/photo-06.jpg'
+	]
+
 	const conferences = [
+		{
+			id: 'aiOlymp2026',
+			images: aiOlympImages
+		},
 		{
 			id: 'sberFrontendNight2025',
 			images: sberFrontendNightImages

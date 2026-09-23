@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 	description:
 		'Projects and experience in web development: building modern applications using Next.js, Strapi, PostgreSQL, and other technologies.',
 	verification: {
-		yandex: 'd07382e3ad3d6a7a',
+		yandex: ['d07382e3ad3d6a7a', '75ece4429a08dd76'],
 		google: 'xdc-32SZXmV1Ksaje5lZls4uJChL9EgJE0Ne9QiCaqs'
 	}
 }

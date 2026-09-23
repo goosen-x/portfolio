@@ -58,8 +58,8 @@ export const SectionTechStack = ({
 								{/* Header */}
 								<div className="flex items-center justify-between mb-6 gap-2">
 									<h3 className='text-lg font-bold text-foreground flex-1'>
-										{category.name === 'DevOps & Cloud' ? t('devops') : 
-										 category.name === 'Other Tools' ? t('other') :
+										{category.name === 'DevOps & Tools' ? t('devops') :
+										 category.name === 'AI & Agents' ? t('ai') :
 										 t(category.name.toLowerCase())}
 									</h3>
 									<span className={cn(
