@@ -77,7 +77,7 @@ jobs:
 
           # Always regenerate .env.production so new/changed secrets actually reach the server
           echo "Writing .env.production file..."
-          cat > .env.production << 'ENVEOF'
+          cat > .env.production << ENVEOF
           # Production environment variables
           NEXT_PUBLIC_YANDEX_METRIKA_ID=${NEXT_PUBLIC_YANDEX_METRIKA_ID}
           NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=${NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}
