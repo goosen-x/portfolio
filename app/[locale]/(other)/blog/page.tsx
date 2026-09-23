@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
-import { getAllPosts } from '@/lib/api-db'
-import { PostPreview } from '@/components/blog/post-preview'
+import { getPixeltoolPosts } from '@/lib/blog/pixeltool-feed'
+import { ExternalPostPreview } from '@/components/blog/external-post-preview'
 import { getTranslations } from 'next-intl/server'
 import { buildAlternates } from '@/lib/seo/alternates'
 
@@ -25,7 +25,7 @@ export default async function Blog(props: Props) {
 	const params = await props.params
 	const t = await getTranslations('blog')
 
-	const posts = await getAllPosts(params.locale)
+	const posts = await getPixeltoolPosts(20)
 
 	return (
 		<main>
@@ -38,15 +38,7 @@ export default async function Blog(props: Props) {
 					) : (
 						<div className='grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-32'>
 							{posts.map(post => (
-								<PostPreview
-									key={post.slug}
-									title={post.title}
-									coverImage={post.coverImage}
-									date={post.date}
-									author={post.author}
-									slug={post.slug}
-									excerpt={post.excerpt}
-								/>
+								<ExternalPostPreview key={post.link} post={post} locale={params.locale} />
 							))}
 						</div>
 					)}

@@ -1,6 +1,6 @@
 import { getTranslations } from 'next-intl/server'
 import { BlogCarousel } from './widgets/BlogCarousel'
-import { getLatestPosts } from '@/lib/actions/posts'
+import { getPixeltoolPosts } from '@/lib/blog/pixeltool-feed'
 
 type Props = {
 	locale: string
@@ -8,14 +8,7 @@ type Props = {
 
 export const SectionBlog = async ({ locale }: Props) => {
 	const t = await getTranslations('SectionBlog')
-	
-	let posts: any[] = []
-	try {
-		posts = await getLatestPosts({ limit: 6, locale })
-	} catch (error) {
-		console.warn('Failed to fetch blog posts:', error)
-		// Continue with empty posts array
-	}
+	const posts = await getPixeltoolPosts(6)
 
 	if (!posts || posts.length === 0) {
 		return null

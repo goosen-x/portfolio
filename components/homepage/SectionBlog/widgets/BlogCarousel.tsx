@@ -8,11 +8,11 @@ import {
 	CarouselPrevious,
 } from '@/components/ui/carousel'
 import { BlogCard } from './BlogCard'
-import type { PostWithMetadata } from '@/lib/types/post'
+import type { PixeltoolPost } from '@/lib/blog/pixeltool-feed'
 import Autoplay from 'embla-carousel-autoplay'
 
 type Props = {
-	posts: PostWithMetadata[]
+	posts: PixeltoolPost[]
 	locale: string
 }
 
@@ -32,7 +32,7 @@ export const BlogCarousel = ({ posts, locale }: Props) => {
 		>
 			<CarouselContent className="-ml-2 md:-ml-4">
 				{posts.map((post) => (
-					<CarouselItem key={post.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+					<CarouselItem key={post.link} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
 						<BlogCard post={post} locale={locale} />
 					</CarouselItem>
 				))}

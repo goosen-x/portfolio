@@ -272,7 +272,7 @@
 	"blog": {
 		"title": "Blog",
 		"description": "Articles about web development, CSS techniques, and frontend engineering.",
-		"noPosts": "No blog posts found. Please add some posts to the database."
+		"noPosts": "Couldn't load articles right now. Please try again later."
 	},
 	"contact": {
 		"title": "Get In Touch",

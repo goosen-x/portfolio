@@ -11,7 +11,8 @@ const nextConfig = {
 			{ protocol: 'https', hostname: 'pbs.twimg.com' },
 			{ protocol: 'https', hostname: 'images.unsplash.com' },
 			{ protocol: 'https', hostname: 'img.youtube.com' },
-			{ protocol: 'https', hostname: 'www.codewars.com' }
+			{ protocol: 'https', hostname: 'www.codewars.com' },
+			{ protocol: 'https', hostname: 'pixeltool.pro' }
 		]
 	}
 }
