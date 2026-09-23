@@ -14,6 +14,7 @@ import {
 } from '@/components/homepage'
 import { BackgroundBeamsWrapper } from '@/components/global/BackgroundBeamsWrapper'
 import { buildAlternates } from '@/lib/seo/alternates'
+import { PersonSchema } from '@/components/seo/PersonSchema'
 
 type Props = {
 	params: Promise<{
@@ -37,6 +38,7 @@ export default async function Home(props: Props) {
 	
 	return (
 		<>
+			<PersonSchema />
 			<ScrollSpy />
 			<Container>
 				<SectionMain id='main' />

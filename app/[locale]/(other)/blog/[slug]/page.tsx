@@ -6,6 +6,7 @@ import Alert from '@/components/blog/alert'
 import { PostBodyWithHighlight } from '@/components/blog/post-body-with-highlight'
 import { PostHeader } from '@/components/blog/post-header'
 import { buildAlternates } from '@/lib/seo/alternates'
+import { ArticleSchema } from '@/components/seo/ArticleSchema'
 
 export default async function Post(props: Params) {
 	const params = await props.params
@@ -19,6 +20,7 @@ export default async function Post(props: Params) {
 
 	return (
 		<main className='px-4 sm:px-6 md:px-8'>
+			<ArticleSchema post={post} locale={params.locale} />
 			{/* <Alert preview={post.preview} /> */}
 			<article className='mb-32'>
 				<PostHeader

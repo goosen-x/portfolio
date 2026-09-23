@@ -147,8 +147,8 @@
 			},
 			"autozorro": {
 				"name": "AutoZorro",
-				"company": "AutoZorro is a loyalty program with a personal account where users track their balance, documents, and transaction history. Login is passwordless — via a one-time code sent through Telegram or SMS",
-				"description": "The personal account is built on Next.js 16 with the App Router and shadcn/ui. Authentication is passwordless, using a one-time code delivered via the Telegram Gateway API with SMS and voice call as a fallback. User balances and documents live in a PHP backend accessed over REST; Redis handles sessions, confirmation codes, and push notification state. Content and the shop run on SQLite via Prisma ORM. Deployment uses GitHub Actions with separate production and preview environments on PM2."
+				"company": "AutoZorro is a loyalty program with a personal account where users track their balance, documents, and transaction history. Login is passwordless",
+				"description": "The personal account is built on Next.js 16 with the App Router and shadcn/ui. The stack also includes Prisma, Redis, and the Telegram API. Closed-source project."
 			},
 			"rentmetal": {
 				"name": "Rent Metal",
