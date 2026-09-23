@@ -5,6 +5,7 @@ import markdownToHtml from '@/lib/helpers/markdownToHtml'
 import Alert from '@/components/blog/alert'
 import { PostBodyWithHighlight } from '@/components/blog/post-body-with-highlight'
 import { PostHeader } from '@/components/blog/post-header'
+import { buildAlternates } from '@/lib/seo/alternates'
 
 export default async function Post(props: Params) {
 	const params = await props.params
@@ -57,6 +58,7 @@ export async function generateMetadata(props: Params): Promise<Metadata> {
 	return {
 		title,
 		description: post.excerpt,
+		alternates: buildAlternates(`/blog/${params.slug}`, params.locale),
 		openGraph: {
 			title,
 			description: post.excerpt,

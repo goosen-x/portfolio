@@ -27,6 +27,7 @@
 	"CryptoDonation": {
 		"title": "Support Development",
 		"subtitle": "Crypto Donation",
+		"metaDescription": "Support my open source and blog work with a cryptocurrency donation.",
 		"supportWithCrypto": "Support with cryptocurrency",
 		"selectNetwork": "Select Network",
 		"amount": "Amount",
@@ -235,6 +236,7 @@
 	},
 	"blog": {
 		"title": "Blog",
+		"description": "Articles about web development, CSS techniques, and frontend engineering.",
 		"noPosts": "No blog posts found. Please add some posts to the database."
 	},
 	"contact": {

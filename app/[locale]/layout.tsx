@@ -15,12 +15,17 @@ import { ScrollToTop } from '@/components/global/ScrollToTop'
 import { Toaster } from '@/components/ui/sonner'
 import { ThemeProvider } from '@/components/providers/theme-provider'
 import { BreadcrumbHeader } from '@/components/global'
+import { SITE_URL } from '@/lib/constants/site'
 
 export const metadata: Metadata = {
-	metadataBase: new URL('https://portfolio.gooselabs.ru'),
+	metadataBase: new URL(SITE_URL),
 	title: 'Web Developer Dmitry Borisenko',
 	description:
-		'Projects and experience in web development: building modern applications using Next.js, Strapi, PostgreSQL, and other technologies.'
+		'Projects and experience in web development: building modern applications using Next.js, Strapi, PostgreSQL, and other technologies.',
+	verification: {
+		yandex: 'd07382e3ad3d6a7a',
+		google: 'xdc-32SZXmV1Ksaje5lZls4uJChL9EgJE0Ne9QiCaqs'
+	}
 }
 
 // todo http://localhost:3000/rufd (not found)

@@ -1,3 +1,5 @@
+import { Metadata } from 'next'
+import { getTranslations } from 'next-intl/server'
 import { Container } from '@/components/layout/Container/container'
 import { ScrollSpy } from '@/components/global/ScrollSpy'
 import {
@@ -11,11 +13,23 @@ import {
 	SectionContact
 } from '@/components/homepage'
 import { BackgroundBeamsWrapper } from '@/components/global/BackgroundBeamsWrapper'
+import { buildAlternates } from '@/lib/seo/alternates'
 
 type Props = {
 	params: Promise<{
 		locale: string
 	}>
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+	const { locale } = await params
+	const t = await getTranslations({ locale, namespace: 'MetaData' })
+
+	return {
+		title: t('title'),
+		description: t('description'),
+		alternates: buildAlternates('', locale)
+	}
 }
 
 export default async function Home(props: Props) {

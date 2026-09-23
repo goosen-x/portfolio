@@ -1,11 +1,24 @@
+import { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
 import ContactForm from '@/components/contact/ContactForm'
 import ContactInfo from '@/components/contact/ContactInfo'
+import { buildAlternates } from '@/lib/seo/alternates'
 
 type Props = {
 	params: Promise<{
 		locale: string
 	}>
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+	const { locale } = await params
+	const t = await getTranslations({ locale, namespace: 'contact' })
+
+	return {
+		title: `${t('title')} | Dmitry Borisenko`,
+		description: t('subtitle'),
+		alternates: buildAlternates('/contact', locale)
+	}
 }
 
 export default async function ContactPage(props: Props) {

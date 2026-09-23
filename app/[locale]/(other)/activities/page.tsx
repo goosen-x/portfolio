@@ -1,4 +1,6 @@
+import { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
+import { buildAlternates } from '@/lib/seo/alternates'
 import {
 	Code2,
 	Users,
@@ -25,6 +27,17 @@ type Props = {
 	params: Promise<{
 		locale: string
 	}>
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+	const { locale } = await params
+	const t = await getTranslations({ locale, namespace: 'activities' })
+
+	return {
+		title: `${t('title')} | Dmitry Borisenko`,
+		description: t('description'),
+		alternates: buildAlternates('/activities', locale)
+	}
 }
 
 export default async function ActivitiesPage({ params }: Props) {

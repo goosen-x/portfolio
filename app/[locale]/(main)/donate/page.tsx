@@ -1,6 +1,23 @@
+import { Metadata } from 'next'
 import { CryptoDonation } from '@/components/global'
 import { useTranslations } from 'next-intl'
-import { setRequestLocale } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
+import { buildAlternates } from '@/lib/seo/alternates'
+
+export async function generateMetadata({
+	params
+}: {
+	params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+	const { locale } = await params
+	const t = await getTranslations({ locale, namespace: 'CryptoDonation' })
+
+	return {
+		title: `${t('title')} | Dmitry Borisenko`,
+		description: t('metaDescription'),
+		alternates: buildAlternates('/donate', locale)
+	}
+}
 
 export default async function DonatePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params

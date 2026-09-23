@@ -1,11 +1,24 @@
+import { Metadata } from 'next'
 import { getAllPosts } from '@/lib/api-db'
 import { PostPreview } from '@/components/blog/post-preview'
 import { getTranslations } from 'next-intl/server'
+import { buildAlternates } from '@/lib/seo/alternates'
 
 type Props = {
 	params: Promise<{
 		locale: string
 	}>
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+	const { locale } = await params
+	const t = await getTranslations({ locale, namespace: 'blog' })
+
+	return {
+		title: `${t('title')} | Dmitry Borisenko`,
+		description: t('description'),
+		alternates: buildAlternates('/blog', locale)
+	}
 }
 
 export default async function Blog(props: Props) {
