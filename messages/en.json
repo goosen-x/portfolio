@@ -24,27 +24,6 @@
 		"theme": "Theme",
 		"language": "Language"
 	},
-	"CryptoDonation": {
-		"title": "Support Development",
-		"subtitle": "Crypto Donation",
-		"metaDescription": "Support my open source and blog work with a cryptocurrency donation.",
-		"supportWithCrypto": "Support with cryptocurrency",
-		"selectNetwork": "Select Network",
-		"amount": "Amount",
-		"sendDonation": "Send Donation",
-		"connectWallet": "Connect Wallet",
-		"walletConnected": "Wallet connected successfully",
-		"connectionError": "Failed to connect wallet",
-		"noWallet": "MetaMask not found. Please install it",
-		"networkError": "Failed to switch network",
-		"enterAmount": "Please enter amount",
-		"donationSent": "Thank you for your donation!",
-		"transactionError": "Transaction failed",
-		"transactionCancelled": "Transaction cancelled",
-		"transactionRejected": "You rejected the transaction",
-		"addressCopied": "Address copied to clipboard",
-		"manualTransfer": "Or send directly to this address:"
-	},
 	"Feedback": {
 		"title": "Feedback",
 		"description": "Help us improve by reporting bugs, suggesting features, or sharing your thoughts.",
@@ -126,44 +105,52 @@
 		"moreButton": "Learn more",
 		"projects": {
 			"komponenta": {
-				"name": "Komponenta",
-				"company": "The company specializes in providing professional assistance in the field of personal bankruptcy. It offers comprehensive services for clients facing financial difficulties.",
-				"description": "This project is a Single Page Application (SPA) developed using pure JavaScript (ES6+) without the use of frameworks, implementing a modular code structure using the MVC pattern to improve scalability and maintainability. Performance optimization is achieved through the use of lazy loading for images and asynchronous loading of JavaScript modules, while interaction with the AmoCRM API is implemented through the native Fetch API with error handling and retries in case of network failures. CSS Grid and Flexbox are used to ensure responsive design, and the build process is configured using Webpack for minification and bundling of resources, followed by deployment through a CI/CD pipeline to a dedicated Linux server with Nginx. Special attention is paid to security: protection against XSS attacks is implemented, security headers are configured, and a rate limiting system is implemented at the server level to prevent DDoS attacks. A custom module for collecting performance metrics and user behavior is integrated with data sent to Google Analytics, allowing for evaluation of application effectiveness and improvement of user experience. The project demonstrates a deep understanding of vanilla JavaScript, asynchronous programming, web application performance optimization, and server infrastructure configuration, providing a smooth user experience and efficient processing of client applications for personal bankruptcy."
+				"name": "Componenta",
+				"company": "A personal bankruptcy landing page with a two-minute quiz and leads sent straight to amoCRM. A Node.js and Express server behind Nginx and PM2, prepared for ads and search.",
+				"description": "A landing page in HTML, CSS, and JavaScript with a quiz for a quick debt assessment. Requests go through a Node.js and Express server straight into amoCRM.",
+				"kind": "Landing page"
 			},
 			"mba": {
 				"name": "Moscow Business Academy",
-				"company": "Moscow Business Academy is a commercial institute of online business education. The company specializes in providing high-quality educational programs in business and management through a modern online platform, making business education accessible and effective for professionals worldwide.",
-				"description": "The project involves a complete redesign and overhaul of the Moscow Business Academy web platform using a modern technology stack. Development is based on Next.js, ensuring high performance and SEO optimization through server-side rendering. SASS is used for styling, allowing for scalable and easily maintainable styles. The backend is implemented with Strapi, providing flexible content management and API. Interaction between the frontend and backend is carried out through GraphQL, optimizing data queries and improving application performance. Deployment and container management is done using Portainer, ensuring ease of maintenance and project scalability. Key features include integration with AmoCRM for effective customer relationship management, as well as the implementation of an online payment system directly on the site. The project demonstrates a deep understanding of modern web technologies, development practices, and the needs of online educational platforms, providing users with a convenient and functional interface for accessing educational resources and managing learning."
+				"company": "A business school website with a new design: program catalog, seminars, media, and campaign landing pages. A move from MongoDB to PostgreSQL and to its own servers, plus technical SEO.",
+				"description": "A redesign, a move from MongoDB to PostgreSQL and from Vercel to the academy’s own servers, and new seminar, media, and campaign sections. Built with Next.js, GraphQL, and Strapi, plus technical SEO.",
+				"kind": "Business school site"
 			},
 			"digitalDyatel": {
 				"name": "Digital Dyatel",
-				"company": "Digital Dyatel specializes in marketing and online reputation management using SEO. The company provides comprehensive Online Reputation Management (ORM) services, which include creating a positive brand or personal image across all internet resources, creating content islands on review sites, encyclopedias, and geo-resources, as well as countering information attacks in real-time. Thanks to Digital Dyatel's effective work, clients increase brand awareness in the market, receive constant support and expert advice, leading to significant improvement in their positions and financial results.",
-				"description": "The Digital Dyatel project is in active development and represents a modern web platform for reputation management and internet marketing. Development is carried out using Next.js, ensuring high performance and search engine optimization through server-side rendering. The backend is implemented with Strapi, providing flexible content management and API. The shadcn/ui library is used for styling and component base, allowing for the creation of a modern and consistent user interface. The project is deployed on self-hosted infrastructure, providing full control over infrastructure and data. One of the key development features is the creation of a functional blog, which will become an important tool for content marketing and SEO optimization. Although the project is still in development, it already demonstrates potential for effectively solving complex tasks in the field of online reputation management and marketing. As the project develops, additional functions for real-time reputation analysis and management are planned to be implemented, making the Digital Dyatel platform a unique and powerful tool in the ORM services market."
+				"company": "A website for a reputation management agency that leads from a problem to the right service and an inquiry. SEO built into the structure and copy.",
+				"description": "An agency website. It leads visitors from a reputation problem to the right service and an inquiry, with SEO built into the structure and copy.",
+				"kind": "Agency website"
 			},
 			"healthshop": {
 				"name": "HealthShop",
-				"company": "HealthShop is an innovative online store specializing in health and wellness products. The company aims to provide customers with a wide range of quality products for maintaining a healthy lifestyle, including organic food, dietary supplements, sports nutrition, natural cosmetics, and fitness equipment. HealthShop is distinguished by careful product selection, cooperation with trusted manufacturers, and providing detailed information about each product.",
-				"description": "The HealthShop project is a modern e-commerce platform developed using advanced web technologies. The frontend is implemented in React using Next.js to ensure high performance, SEO optimization, and enhanced user experience. Redux is used for application state management, and styling is done using Styled Components, allowing for flexible and easily maintainable styles. The backend is built on Node.js using Express.js, and MongoDB is chosen for database operations, providing high performance and scalability. The payment system is integrated using the Stripe API, ensuring transaction security. Special attention is paid to developing a smart recommendation system that analyzes user behavior and offers personalized products. A product comparison feature is implemented, allowing customers to easily compare characteristics of different products. A review and rating system is integrated, helping users make informed purchase decisions. The project also includes an information section with expert articles on healthy lifestyles and proper use of products. To improve user experience, a machine learning-based chatbot is implemented, capable of answering frequently asked questions and assisting in product selection. HealthShop demonstrates a high level of technical implementation, combining modern development technologies with innovative solutions in the field of e-commerce and healthcare."
+				"company": "An online store with a catalog, ready-made bundles, a cart, and a custom admin panel, launched in one week. Orders reach the distributor by email and Telegram.",
+				"description": "A catalog, cart, and custom admin panel built in one week. Orders land in the distributor’s email and Telegram instantly. Built with Next.js, Tailwind CSS, Express, and MongoDB.",
+				"kind": "Online store"
 			},
 			"autozorro": {
 				"name": "AutoZorro",
-				"company": "AutoZorro is a loyalty program with a personal account where users track their balance, documents, and transaction history. Login is passwordless",
-				"description": "The personal account is built on Next.js 16 with the App Router and shadcn/ui. The stack also includes Prisma, Redis, and the Telegram API. Closed-source project."
+				"company": "A website alongside a Telegram bot: phone number sign-in, a participant dashboard, balance, and withdrawals to a card. It installs on the phone home screen like an app.",
+				"description": "A website on Next.js, TypeScript, and shadcn/ui that joined a Telegram bot. Participants sign in with a phone number, track their balance, and withdraw money straight from the dashboard.",
+				"kind": "Personal dashboard"
 			},
 			"rentmetal": {
-				"name": "Rent Metal",
-				"company": "RENTMETALL sells rolled metal products wholesale and retail across Moscow and the region: bar, sheet, and tube stock, stainless steel, and fasteners. The company also offers laser cutting, bending, and custom metal fabrication, shipping from its own warehouses in Podolsk, Moscow, and Ivanteevka",
-				"description": "A catalog site built on Next.js with shadcn/ui, backed by Payload CMS on PostgreSQL — product categories, prices, and listings are managed through a single admin panel instead of being hardcoded. The site includes a delivery calculator with a warehouse map, a metal fabrication request form, and an order FAQ. The domain was migrated from metsetcom.ru to rt-metal.ru with 301 redirects preserving SEO."
+				"name": "RentMetal",
+				"company": "A rolled metal catalog on Next.js and Payload CMS with weight and delivery cost calculators. Cart orders go to a manager, and the structure follows search demand.",
+				"description": "A Next.js and Payload CMS catalog with metal weight and delivery cost calculators. Orders from the cart go to a manager by email and Telegram, and the catalog structure follows search demand.",
+				"kind": "Metal catalog"
 			},
 			"businessPartner": {
 				"name": "Business Partner",
-				"company": "Business Partner is an online business journal covering management, marketing, and finance — case studies, founder interviews, and long-form pieces for entrepreneurs and executives",
-				"description": "An editorial platform built on Next.js with shadcn/ui, with content managed through Strapi CMS across separate production and preview instances. The site features article categories, long-reads, a news block, and special projects with their own card layouts per format."
+				"company": "A platform for a business online magazine on Next.js and Strapi: sections with filters and article pages with related pieces. A new article goes live almost right after publishing.",
+				"description": "A publishing platform on Next.js and Strapi. Sections with filters, article pages with related pieces, and publishing that puts a new article on the site almost immediately.",
+				"kind": "Online magazine"
 			},
 			"pixeltool": {
 				"name": "PixelTool",
-				"company": "PixelTool is a collection of 124 free browser-based tools for everyday and work tasks — password and QR code generators, unit converters, text and image utilities — no installs or sign-ups required",
-				"description": "A personal project built on Next.js 16, shadcn/ui, and Tailwind CSS 4. Each tool is an independent widget with its own SEO page; the project has a dedicated pipeline for scaffolding new tools quickly (create-widget scripts) plus automated security, accessibility, bundle-size, and performance checks before deploy. The code is open source on GitHub."
+				"company": "A catalog of free online tools on Next.js: a password generator, QR codes, converters, and image compression right in the browser. Almost all traffic comes from search.",
+				"description": "A service on Next.js, TypeScript, and shadcn/ui: every tool has its own page that explains the task. The catalog and navigation are built from a single list, so a new tool appears on the site on its own.",
+				"kind": "Tool catalog"
 			}
 		}
 	},
@@ -297,6 +284,7 @@
 			},
 			"submit": "Send Message",
 			"sending": "Sending...",
+			"note": "The reply arrives at the given email within a day.",
 			"error": "Failed to send message. Please try again later.",
 			"success": {
 				"title": "Message Sent!",
@@ -331,10 +319,6 @@
 			"copy": "⌘C Copy",
 			"clear": "⌘K Clear",
 			"save": "⌘S Save"
-		},
-		"support": {
-			"title": "Support",
-			"buyMeCoffee": "Buy me a coffee"
 		}
 	},
 	"activities": {
@@ -405,11 +389,6 @@
 				"activeDays": "Active Days",
 				"maxDay": "Max in Day"
 			}
-		},
-		"donation": {
-			"title": "Support Development",
-			"crypto": "Donate Crypto",
-			"tooltip": "Support with cryptocurrency"
 		}
 	},
 	"projectsPage": {
@@ -1291,7 +1270,7 @@
 		"enterText": "Enter text to speak",
 		"placeholder": "Type or paste your text here, then press ENTER or click Speak...",
 		"speak": "Speak",
-		"resume": "Resume", 
+		"resume": "Resume",
 		"pause": "Pause",
 		"stop": "Stop",
 		"settings": "Voice Settings",
@@ -1335,5 +1314,32 @@
 			"Android (Google voices)",
 			"Modern browsers (Chrome, Safari, Firefox)"
 		]
+	},
+	"ContactBlock": {
+		"direct": "Or write directly",
+		"telegram": "Telegram",
+		"email": "Email",
+		"reply": "The reply arrives within a day"
+	},
+	"ProjectPages": {
+		"title": "Projects",
+		"description": "Selected web projects, with implementation details, technology stacks, and screenshots.",
+		"eyebrow": "Portfolio",
+		"back": "All projects",
+		"case": "Project case study",
+		"work": "What I built",
+		"stack": "Technology stack",
+		"website": "Visit website",
+		"screenshot": "Screenshot",
+		"all": "View all projects",
+		"before": "Before",
+		"after": "After",
+		"mbaSubtitle": "Redesign, a new architecture, and technical SEO for an education platform",
+		"companyWebsite": "Company website",
+		"ctaTitle": "Have a similar task?",
+		"ctaText": "Tell us about it and we will find the solution together, from the idea and design to launch and support.",
+		"next": "Next project",
+		"prev": "Previous project",
+		"contents": "Contents"
 	}
 }

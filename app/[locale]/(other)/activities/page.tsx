@@ -19,7 +19,7 @@ import {
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import Link from 'next/link'
-import Image from 'next/image'
+import { CodewarsBadge } from '@/components/activities/CodewarsBadge'
 import { ContributionGraphCard } from '@/components/activities/ContributionGraphCard'
 import { cn } from '@/lib/utils'
 
@@ -132,14 +132,7 @@ export default async function ActivitiesPage({ params }: Props) {
 							</Link>
 						</div>
 						<div className='flex justify-start py-2'>
-							<Image
-								src='https://www.codewars.com/users/gysen/badges/large'
-								alt='Codewars Badge'
-								width={400}
-								height={60}
-								className='max-w-full h-auto'
-								unoptimized
-							/>
+							<CodewarsBadge fallbackLabel={t('viewProfile')} />
 						</div>
 					</Card>
 

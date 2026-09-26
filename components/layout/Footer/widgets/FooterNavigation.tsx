@@ -3,8 +3,7 @@
 import Link from 'next/link'
 import { useTranslations, useLocale } from 'next-intl'
 import { usePathname } from 'next/navigation'
-import { Home, FolderOpen, Activity, BookOpen, Mail, Heart } from 'lucide-react'
-import { CryptoDonationModal } from '@/components/global'
+import { Home, FolderOpen, Activity, BookOpen, Mail } from 'lucide-react'
 
 export const FooterNavigation = () => {
 	const t = useTranslations('Header.nav')
@@ -69,16 +68,6 @@ export const FooterNavigation = () => {
 							</Link>
 						)
 					})}
-				</div>
-			</div>
-
-			{/* Support Section */}
-			<div className='flex flex-col gap-4'>
-				<h3 className='text-sm font-semibold text-foreground uppercase tracking-wider'>
-					{tFooter('support.title')}
-				</h3>
-				<div className='flex flex-col gap-2'>
-					<CryptoDonationModal />
 				</div>
 			</div>
 		</div>

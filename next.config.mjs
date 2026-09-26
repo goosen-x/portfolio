@@ -5,6 +5,9 @@ const withNextIntl = createNextIntlPlugin()
 
 const nextConfig = {
 	output: 'standalone',
+	async redirects() {
+		return [{ source: '/:locale(en|ru)/blog/:slug', destination: '/:locale/blog', permanent: true }]
+	},
 	images: {
 		remotePatterns: [
 			{ protocol: 'https', hostname: 'lh3.googleusercontent.com' },

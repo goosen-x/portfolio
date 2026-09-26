@@ -24,7 +24,7 @@ export const ExperienceItem = ({ itemData }: Props) => {
 
 	return (
 		<div
-			className='grid grin-cols-1 md:grid-cols-2 gap-2 mb-4 p-4'
+			className='grid min-w-0 grid-cols-1 lg:grid-cols-2 gap-2 mb-4 py-4 sm:p-4'
 			key={itemData.title}
 		>
 			<div>
@@ -37,15 +37,15 @@ export const ExperienceItem = ({ itemData }: Props) => {
 				</p>
 				{companyUrl && (
 					<Link
-						className='flex gap-2 text-foreground'
+						className='flex min-w-0 items-start gap-2 text-foreground'
 						href={companyUrl}
 						target='_blank'
 					>
-						<TbWorld className='text-foreground text-2xl' /> {companyUrl}
+						<TbWorld className='shrink-0 text-foreground text-2xl' /><span className='min-w-0 break-all'>{companyUrl}</span>
 					</Link>
 				)}
 			</div>
-			<p className='text-foreground md:col-span-2 mb-4 text-sm md:text-base'>
+			<p className='text-foreground lg:col-span-2 mb-4 text-sm md:text-base'>
 				{description}
 			</p>
 			{images.length > 0 && isMBA ? (

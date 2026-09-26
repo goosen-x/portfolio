@@ -32,7 +32,7 @@ export const HeaderBlock = () => {
 	}, [])
 
 	return (
-		<Block className='col-span-12 row-span-2 md:col-span-8'>
+		<Block className='col-span-12 min-w-0 row-span-2 md:col-span-8'>
 			<Image
 				className='group-hover/block:z-0 mb-4 size-20 rounded-full object-cover group-hover/block:w-32 group-hover/block:h-32 transition-all duration-500'
 				src={avatarImg.src}
@@ -44,10 +44,10 @@ export const HeaderBlock = () => {
 				<span className='text-foreground/70 text-lg sm:text-2xl block mb-2'>
 					{t(`greeting.${timeOfDay}`)}
 				</span>
-				<span className='text-accent text-2xl sm:text-4xl md:group-hover/block:text-5xl font-bold block transition-all duration-500 whitespace-nowrap'>
+				<span className='text-accent text-2xl sm:text-4xl md:group-hover/block:text-5xl font-bold block transition-all duration-500 break-words'>
 					{t('namePrefix')} {t('name')}
 				</span>
-				<span className='block text-xl sm:text-3xl whitespace-nowrap'>
+				<span className='block text-xl sm:text-3xl break-words'>
 					{t('job')}
 				</span>
 			</h1>

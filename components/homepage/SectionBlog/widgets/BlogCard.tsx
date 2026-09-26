@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Image from 'next/image'
+import { FeedImage } from '@/components/blog/feed-image'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import type { PixeltoolPost } from '@/lib/blog/pixeltool-feed'
 import { formatDate } from '@/lib/utils'
@@ -16,12 +16,10 @@ export const BlogCard = ({ post, locale }: Props) => {
 		<Link href={post.link} target='_blank' rel='noopener noreferrer'>
 			<Card className="h-full hover:shadow-lg transition-shadow duration-300 overflow-hidden group cursor-pointer">
 				<div className="relative h-48">
-					<Image
+					<FeedImage
 						src={post.image}
-						alt={post.title}
-						fill
+						title={post.title}
 						sizes="(max-width: 768px) 100vw, 33vw"
-						className="object-cover transition-transform duration-300 group-hover:scale-105"
 					/>
 				</div>
 				<CardHeader className="space-y-2">

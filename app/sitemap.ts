@@ -1,12 +1,9 @@
 import { MetadataRoute } from 'next'
-import { getAllPostsFromFiles } from '@/lib/api-file'
 import { SITE_URL as BASE_URL } from '@/lib/constants/site'
+import { ProjectsData } from '@/components/homepage/SectionProjects/constants'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const locales = ['en', 'ru']
-
-  // Get all blog posts
-  const posts = getAllPostsFromFiles()
 
   // Static routes
   const staticRoutes = [
@@ -14,7 +11,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/contact',
     '/activities',
     '/blog',
-    '/donate',
+	'/projects',
   ]
 
   // Generate sitemap entries for all routes and locales
@@ -32,17 +29,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })
   })
 
-  // Add blog post routes
-  posts.forEach(post => {
-    locales.forEach(locale => {
-      sitemapEntries.push({
-        url: `${BASE_URL}/${locale}/blog/${post.slug}`,
-        lastModified: new Date(post.date || new Date()),
-        changeFrequency: 'monthly',
-        priority: 0.7,
-      })
-    })
-  })
-  
+  // Add project routes
+	ProjectsData.forEach(project => {
+		locales.forEach(locale => {
+			sitemapEntries.push({
+				url: `${BASE_URL}/${locale}/projects/${project.name}`,
+				changeFrequency: 'monthly',
+				priority: 0.7
+			})
+		})
+	})
+
   return sitemapEntries
 }

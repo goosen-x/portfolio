@@ -4,6 +4,7 @@ import { ComponentProps } from 'react'
 type Props = {
 	title: string
 	slug: string
+	heading?: 'h1' | 'h2'
 } & ComponentProps<'div'>
 
 const coverPatterns = [
@@ -48,7 +49,7 @@ function getPatternForSlug(slug: string): (typeof coverPatterns)[0] {
 	return coverPatterns[index]
 }
 
-export function PostCover({ className, title, slug }: Props) {
+export function PostCover({ className, title, slug, heading: Heading = 'h2' }: Props) {
 	const pattern = getPatternForSlug(slug)
 
 	return (
@@ -70,9 +71,9 @@ export function PostCover({ className, title, slug }: Props) {
 				}}
 			/>
 			<div className='relative z-10 text-center px-4'>
-				<h2 className='text-white text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold drop-shadow-lg line-clamp-3'>
+				<Heading className={cn('text-white text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold drop-shadow-lg', Heading === 'h2' && 'line-clamp-3')}>
 					{title}
-				</h2>
+				</Heading>
 			</div>
 		</div>
 	)

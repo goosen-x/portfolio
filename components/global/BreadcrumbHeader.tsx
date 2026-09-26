@@ -50,7 +50,16 @@ const BreadcrumbHeader = () => {
 		const translations: Record<string, Record<string, string>> = {
 			contact: { en: 'Contact', ru: 'Контакты' },
 			blog: { en: 'Blog', ru: 'Блог' },
-			activities: { en: 'Activities', ru: 'Активности' }
+			activities: { en: 'Activities', ru: 'Активности' },
+			projects: { en: 'Projects', ru: 'Проекты' },
+			mba: { en: 'Moscow Business Academy', ru: 'Moscow Business Academy' },
+			komponenta: { en: 'Componenta', ru: 'Компонента' },
+			digitalDyatel: { en: 'Digital Dyatel', ru: 'Digital Dyatel' },
+			healthshop: { en: 'HealthShop', ru: 'HealthShop' },
+			autozorro: { en: 'AutoZorro', ru: 'AutoZorro' },
+			rentmetal: { en: 'RentMetal', ru: 'RentMetal' },
+			businessPartner: { en: 'Business Partner', ru: 'Бизнес Партнёр' },
+			pixeltool: { en: 'PixelTool', ru: 'PixelTool' }
 		}
 
 		if (translations[segment] && translations[segment][locale]) {
@@ -85,12 +94,12 @@ const BreadcrumbHeader = () => {
 			data-force-font='tektur'
 		>
 			<div className='px-5'>
-				<div className='flex items-center justify-between h-16'>
+				<div className='flex items-center justify-between gap-6 h-16'>
 					{/* Logo/Brand with Breadcrumbs */}
-					<div className='flex items-center'>
+					<div className='flex min-w-0 items-center'>
 						<Link
 							href={`/${locale}`}
-							className='flex items-center gap-2 text-2xl font-bold text-foreground hover:text-foreground/80 transition-colors'
+							className='flex shrink-0 items-center gap-2 text-2xl font-bold text-foreground hover:text-foreground/80 transition-colors'
 						>
 							<Image
 								src={gooselabsImg}
@@ -103,18 +112,18 @@ const BreadcrumbHeader = () => {
 
 						{/* Breadcrumb navigation */}
 						{breadcrumbs.length > 0 && (
-							<nav className='flex items-center ml-2' aria-label='Breadcrumb'>
+							<nav className='hidden min-w-0 items-center overflow-hidden ml-2 sm:flex' aria-label='Breadcrumb'>
 								{breadcrumbs.map((crumb, index) => (
-									<div key={crumb.path} className={cn('flex items-center', index === breadcrumbs.length - 1 && breadcrumbs.length > 1 && 'hidden md:flex')}>
+									<div key={crumb.path} className={cn('flex min-w-0 items-center', index === breadcrumbs.length - 1 && breadcrumbs.length > 1 && 'hidden xl:flex')}>
 										<span className='mx-2 text-muted-foreground'>/</span>
 										{index === breadcrumbs.length - 1 ? (
-											<span className='text-lg font-medium text-primary'>
+											<span className='truncate whitespace-nowrap text-lg font-medium text-primary'>
 												{crumb.label}
 											</span>
 										) : (
 											<Link
 												href={crumb.path}
-												className='text-lg font-medium text-muted-foreground hover:text-foreground transition-colors'
+												className='whitespace-nowrap text-lg font-medium text-muted-foreground hover:text-foreground transition-colors'
 											>
 												{crumb.label}
 											</Link>
@@ -126,8 +135,8 @@ const BreadcrumbHeader = () => {
 					</div>
 
 					{/* Navigation & Controls */}
-					<div className='flex items-center gap-4'>
-						<nav className='hidden md:flex items-center space-x-8'>
+					<div className='hidden shrink-0 items-center gap-4 xl:flex'>
+						<nav className='hidden xl:flex items-center space-x-8'>
 							<Link
 								href={`/${locale}`}
 								className={cn(
@@ -143,8 +152,8 @@ const BreadcrumbHeader = () => {
 								)}
 							</Link>
 
-							<Link
-								href={`/${locale}/activities`}
+						<Link
+							href={`/${locale}/activities`}
 								className={cn(
 									'font-medium transition-colors relative',
 									pathname === `/${locale}/activities`
@@ -156,9 +165,10 @@ const BreadcrumbHeader = () => {
 								{pathname === `/${locale}/activities` && (
 									<span className='absolute -bottom-1 left-0 right-0 h-0.5 bg-accent' />
 								)}
-							</Link>
-							<Link
-								href={`/${locale}/blog`}
+						</Link>
+						<Link href={`/${locale}/projects`} className={cn('font-medium transition-colors cursor-pointer', pathname.startsWith(`/${locale}/projects`) ? 'text-foreground' : 'text-muted-foreground hover:text-foreground')}>{t('nav.projects')}</Link>
+						<Link
+							href={`/${locale}/blog`}
 								className={cn(
 									'font-medium transition-colors relative',
 									pathname.startsWith(`/${locale}/blog`)
@@ -186,7 +196,7 @@ const BreadcrumbHeader = () => {
 								)}
 							</Link>
 						</nav>
-						<div className='hidden md:flex items-center gap-2'>
+						<div className='hidden xl:flex items-center gap-2'>
 							<DownloadCV />
 							<LanguageSelect className='shrink-0' locale={locale} />
 							<ThemeToggle />
@@ -194,21 +204,21 @@ const BreadcrumbHeader = () => {
 					</div>
 
 					{/* Mobile controls */}
-					<div className='flex items-center gap-2 md:hidden'>
+					<div className='flex items-center gap-2 shrink-0 xl:hidden'>
 						<Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
 							<SheetTrigger asChild>
 								<button
-									className='text-muted-foreground hover:text-foreground'
+									className='flex size-11 cursor-pointer items-center justify-center rounded-md text-muted-foreground hover:text-foreground'
 									aria-label='Toggle menu'
 								>
 									<Menu className='w-6 h-6' />
 								</button>
 							</SheetTrigger>
-							<SheetContent side='right' className='w-[300px] sm:w-[400px]'>
+							<SheetContent side='right' className='w-full max-w-[25rem] overflow-y-auto overscroll-contain' aria-describedby={undefined}>
 								<SheetHeader>
 									<SheetTitle>{t('nav.menu')}</SheetTitle>
 								</SheetHeader>
-								<div className='flex flex-col h-[calc(100vh-8rem)]'>
+								<div className='flex min-h-[calc(100dvh-8rem)] flex-col'>
 									<nav className='mt-6 space-y-2 flex-1'>
 										<Link
 											href={`/${locale}`}
@@ -231,9 +241,10 @@ const BreadcrumbHeader = () => {
 											)}
 										>
 											{t('nav.activities')}
-										</Link>
-										<Link
-											href={`/${locale}/blog`}
+								</Link>
+								<Link href={`/${locale}/projects`} className='block px-4 py-2 rounded-lg font-medium text-muted-foreground hover:bg-accent/80 hover:text-white cursor-pointer'>{t('nav.projects')}</Link>
+								<Link
+									href={`/${locale}/blog`}
 											className={cn(
 												'block px-4 py-2 rounded-lg font-medium transition-colors',
 												pathname.startsWith(`/${locale}/blog`)

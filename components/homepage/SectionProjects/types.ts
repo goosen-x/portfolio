@@ -8,6 +8,10 @@ export type ProjectDataType = {
 		icon: ReactNode
 	}[]
 	image: string
+	logo: string
+	/** Основной цвет проекта */
+	brand: string
+	screenshots: string[]
 	link?: string
 	github?: string
 }

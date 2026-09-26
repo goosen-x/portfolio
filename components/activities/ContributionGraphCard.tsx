@@ -105,8 +105,8 @@ export function ContributionGraphCard() {
 						<div className='p-2 rounded-lg bg-green-500/10'>
 							<Github className='w-6 h-6 text-green-600 dark:text-green-500' />
 						</div>
-						<div>
-							<Skeleton className='h-7 w-48 mb-2' />
+						<div className='min-w-0 flex-1'>
+							<Skeleton className='h-7 w-full max-w-48 mb-2' />
 							<Skeleton className='h-4 w-32' />
 						</div>
 					</div>
@@ -155,13 +155,13 @@ export function ContributionGraphCard() {
 				</Link>
 			</div>
 
-			<div className='overflow-x-auto flex justify-center'>
+			<div className='min-w-0'>
 				<ContributionGraph
 					data={contributions}
 					year={currentYear}
 					showLegend={true}
 					showTooltips={true}
-					className='border rounded-lg p-4'
+					className='w-full border rounded-lg p-4'
 				/>
 			</div>
 
