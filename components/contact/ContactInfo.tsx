@@ -1,7 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { Mail, MapPin, Clock, Phone } from 'lucide-react'
+import { Mail, MapPin, Clock } from 'lucide-react'
 import { FaTelegram, FaGithub, FaLinkedin } from 'react-icons/fa'
 import { FaXTwitter } from 'react-icons/fa6'
 
@@ -20,7 +20,7 @@ export default function ContactInfo({ locale }: Props) {
 			href: 'mailto:dmitryborisenko.msk@gmail.com',
 		},
 		{
-			icon: Phone,
+			icon: FaTelegram,
 			label: t('telegram'),
 			value: '@borisenko_dmitry',
 			href: 'https://t.me/borisenko_dmitry',
@@ -75,7 +75,7 @@ export default function ContactInfo({ locale }: Props) {
 								<item.icon className='w-5 h-5 text-primary' />
 							</div>
 						</div>
-						<div className='flex-1'>
+						<div className='min-w-0 flex-1 break-words'>
 							<h3 className='font-semibold text-foreground mb-1'>
 								{item.label}
 							</h3>

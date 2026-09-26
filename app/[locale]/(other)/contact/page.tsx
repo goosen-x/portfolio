@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
-import ContactForm from '@/components/contact/ContactForm'
+import { ContactCta } from '@/components/contact/ContactCta'
 import ContactInfo from '@/components/contact/ContactInfo'
 import { buildAlternates } from '@/lib/seo/alternates'
 
@@ -38,34 +38,7 @@ export default async function ContactPage(props: Props) {
 					</p>
 				</div>
 
-				{/* Content Grid */}
-				<div className='grid grid-cols-1 lg:grid-cols-2 gap-12'>
-					{/* Contact Form */}
-					<div className='space-y-8'>
-						<div>
-							<h2 className='text-2xl font-bold text-foreground mb-4'>
-								{t('form.title')}
-							</h2>
-							<p className='text-muted-foreground mb-6'>
-								{t('form.description')}
-							</p>
-						</div>
-						<ContactForm />
-					</div>
-
-					{/* Contact Information */}
-					<div className='space-y-8'>
-						<div>
-							<h2 className='text-2xl font-bold text-foreground mb-4'>
-								{t('info.title')}
-							</h2>
-							<p className='text-muted-foreground mb-6'>
-								{t('info.description')}
-							</p>
-						</div>
-						<ContactInfo locale={params.locale} />
-					</div>
-				</div>
+				<ContactCta title={t('form.title')} text={t('form.description')} aside={<ContactInfo locale={params.locale} />} />
 			</div>
 		</main>
 	)
