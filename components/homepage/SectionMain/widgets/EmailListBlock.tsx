@@ -10,7 +10,7 @@ export const EmailListBlock = () => {
 	const t = useTranslations('SectionMain')
 
 	return (
-		<Block className='col-span-12 md:col-span-4'>
+		<Block className='col-span-12 md:col-span-4 animate-fade-in-up [animation-delay:400ms]'>
 			<p className='mb-3 text-lg'>{t('subscribeTitle')}</p>
 			<form className='flex flex-col md:flex-row items-conter gap-2'>
 				<Input type='email' placeholder={t('subscribePlaceholder')} />

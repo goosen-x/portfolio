@@ -32,7 +32,7 @@ export const HeaderBlock = () => {
 	}, [])
 
 	return (
-		<Block className='col-span-12 min-w-0 row-span-2 md:col-span-8'>
+		<Block className='col-span-12 min-w-0 row-span-2 md:col-span-8 animate-fade-in-up'>
 			<Image
 				className='group-hover/block:z-0 mb-4 size-20 rounded-full object-cover group-hover/block:w-32 group-hover/block:h-32 transition-all duration-500'
 				src={avatarImg.src}
