@@ -6,7 +6,23 @@ const withNextIntl = createNextIntlPlugin()
 const nextConfig = {
 	output: 'standalone',
 	async redirects() {
-		return [{ source: '/:locale(en|ru)/blog/:slug', destination: '/:locale/blog', permanent: true }]
+		// Старые статьи блога переехали на pixeltool.pro: ведём на тот же адрес,
+		// чтобы вес и ссылки ушли на статью, а не на общий список.
+		const movedToPixeltool = [
+			'css-flexbox-guide',
+			'css-grid-layout',
+			'css-variables',
+			'css-container-queries',
+			'css-animations'
+		]
+		return [
+			...movedToPixeltool.map(slug => ({
+				source: `/:locale(en|ru)/blog/${slug}`,
+				destination: `https://pixeltool.pro/blog/${slug}`,
+				permanent: true
+			})),
+			{ source: '/:locale(en|ru)/blog/:slug', destination: '/:locale/blog', permanent: true }
+		]
 	},
 	images: {
 		remotePatterns: [
