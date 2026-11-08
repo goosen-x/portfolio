@@ -11,6 +11,7 @@ import { routing } from '@/i18n/routing'
 import { dev } from '@/lib/config/env'
 import { ReactNode } from 'react'
 import YandexMetrika from '@/components/analytics/YandexMetrika'
+import AttributionTracker from '@/components/analytics/AttributionTracker'
 import { ScrollToTop } from '@/components/global/ScrollToTop'
 import { Toaster } from '@/components/ui/sonner'
 import { ThemeProvider } from '@/components/providers/theme-provider'
@@ -58,6 +59,7 @@ export default async function RootLayout({
 				>
 					<ThemeProvider attribute='class' defaultTheme='system' enableSystem>
 						<YandexMetrika />
+						<AttributionTracker />
 						{children}
 						<ScrollToTop />
 						<Toaster />

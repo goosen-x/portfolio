@@ -1,56 +1,36 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { telegramFetch } from '@/lib/telegram/proxy-fetch'
+import { sendLead } from '@/lib/lead-message'
 
 interface ContactRequest {
 	name: string
 	email: string
 	subject: string
 	message: string
+	attribution?: unknown
 }
 
+// Заявки со всех сайтов GooseLabs идут в один бот лидов
+// (TELEGRAM_LEADS_BOT_TOKEN/TELEGRAM_LEADS_CHAT_ID), формат общий: lib/lead-message.ts.
+// Отзывы (app/api/feedback) идут в общий бот уведомлений.
 async function sendToTelegram(data: ContactRequest) {
-	const botToken = process.env.TELEGRAM_BOT_TOKEN
-	const chatId = process.env.TELEGRAM_CHAT_ID
-
-	if (!botToken || !chatId) {
-		console.error('Telegram credentials not configured')
-		throw new Error('Telegram configuration missing')
-	}
-
-	const text = `
-🔔 <b>Новое сообщение с сайта</b>
-
-👤 <b>Имя:</b> ${data.name}
-📧 <b>Email:</b> ${data.email}
-📝 <b>Тема:</b> ${data.subject}
-
-💬 <b>Сообщение:</b>
-${data.message}
-
-⏰ <b>Время:</b> ${new Date().toLocaleString('ru-RU', { timeZone: 'Europe/Moscow' })}
-	`.trim()
-
-	const url = `https://api.telegram.org/bot${botToken}/sendMessage`
-
-	const response = await telegramFetch(url, {
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json',
+	const sent = await sendLead(
+		{
+			site: 'portfolio.gooselabs.ru',
+			siteTag: 'portfolio',
+			form: 'Контакты',
+			formTag: 'contact',
+			fields: [
+				['Имя', data.name],
+				['Email', data.email],
+				['Тема', data.subject],
+				['Сообщение', data.message]
+			],
+			attribution: data.attribution
 		},
-		body: JSON.stringify({
-			chat_id: chatId,
-			text: text,
-			parse_mode: 'HTML',
-		}),
-	})
-
-	if (!response.ok) {
-		const error = await response.text()
-		console.error('Telegram API error:', error)
-		throw new Error('Failed to send message to Telegram')
-	}
-
-	return await response.json()
+		telegramFetch
+	)
+	if (!sent) throw new Error('Заявка не доставлена в бот лидов')
 }
 
 export async function POST(request: NextRequest) {
@@ -80,7 +60,7 @@ export async function POST(request: NextRequest) {
 		return NextResponse.json(
 			{
 				message: 'Сообщение успешно отправлено',
-				success: true,
+				success: true
 			},
 			{ status: 200 }
 		)

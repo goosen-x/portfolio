@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { getAttribution } from '@/lib/attribution'
 import { useTranslations } from 'next-intl'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -41,7 +42,7 @@ export default function ContactForm() {
 			const response = await fetch('/api/contact', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify(data)
+				body: JSON.stringify({ ...data, attribution: getAttribution() })
 			})
 			if (!response.ok) throw new Error('Failed to send message')
 			setIsSubmitted(true)
@@ -69,24 +70,64 @@ export default function ContactForm() {
 		<form onSubmit={handleSubmit} className='space-y-5'>
 			<div className='grid grid-cols-1 gap-5 sm:grid-cols-2'>
 				<div className={s.field}>
-					<Label htmlFor='name' className={s.label}>{t('fields.name')}</Label>
-					<Input id='name' name='name' type='text' placeholder={t('placeholders.name')} required className={s.input} />
+					<Label htmlFor='name' className={s.label}>
+						{t('fields.name')}
+					</Label>
+					<Input
+						id='name'
+						name='name'
+						type='text'
+						placeholder={t('placeholders.name')}
+						required
+						className={s.input}
+					/>
 				</div>
 				<div className={s.field}>
-					<Label htmlFor='email' className={s.label}>{t('fields.email')}</Label>
-					<Input id='email' name='email' type='email' placeholder={t('placeholders.email')} required className={s.input} />
+					<Label htmlFor='email' className={s.label}>
+						{t('fields.email')}
+					</Label>
+					<Input
+						id='email'
+						name='email'
+						type='email'
+						placeholder={t('placeholders.email')}
+						required
+						className={s.input}
+					/>
 				</div>
 			</div>
 			<div className={s.field}>
-				<Label htmlFor='subject' className={s.label}>{t('fields.subject')}</Label>
-				<Input id='subject' name='subject' type='text' placeholder={t('placeholders.subject')} required className={s.input} />
+				<Label htmlFor='subject' className={s.label}>
+					{t('fields.subject')}
+				</Label>
+				<Input
+					id='subject'
+					name='subject'
+					type='text'
+					placeholder={t('placeholders.subject')}
+					required
+					className={s.input}
+				/>
 			</div>
 			<div className={s.field}>
-				<Label htmlFor='message' className={s.label}>{t('fields.message')}</Label>
-				<Textarea id='message' name='message' placeholder={t('placeholders.message')} required rows={5} className={cn('resize-none', s.textarea)} />
+				<Label htmlFor='message' className={s.label}>
+					{t('fields.message')}
+				</Label>
+				<Textarea
+					id='message'
+					name='message'
+					placeholder={t('placeholders.message')}
+					required
+					rows={5}
+					className={cn('resize-none', s.textarea)}
+				/>
 			</div>
 			<div className='space-y-3'>
-				<Button type='submit' className={cn('cursor-pointer', s.button)} disabled={isSubmitting}>
+				<Button
+					type='submit'
+					className={cn('cursor-pointer', s.button)}
+					disabled={isSubmitting}
+				>
 					{isSubmitting ? (
 						<span className='flex items-center gap-2'>
 							<span className='size-4 animate-spin rounded-full border-2 border-current border-t-transparent' />
@@ -99,7 +140,11 @@ export default function ContactForm() {
 						</span>
 					)}
 				</Button>
-				{hasError && <p role='alert' className='text-sm text-destructive'>{t('error')}</p>}
+				{hasError && (
+					<p role='alert' className='text-sm text-destructive'>
+						{t('error')}
+					</p>
+				)}
 				<p className={cn('text-sm', s.note)}>{t('note')}</p>
 			</div>
 		</form>
