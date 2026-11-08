@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { telegramFetch } from '@/lib/telegram/proxy-fetch'
-import { sendLead } from '@/lib/lead-message'
+import { submitLead } from '@/lib/lead-message'
 
 interface ContactRequest {
 	name: string
@@ -10,64 +10,61 @@ interface ContactRequest {
 	attribution?: unknown
 }
 
-// Заявки со всех сайтов GooseLabs идут в один бот лидов
-// (TELEGRAM_LEADS_BOT_TOKEN/TELEGRAM_LEADS_CHAT_ID), формат общий: lib/lead-message.ts.
-// Отзывы (app/api/feedback) идут в общий бот уведомлений.
-async function sendToTelegram(data: ContactRequest) {
-	const sent = await sendLead(
-		{
-			site: 'portfolio.gooselabs.ru',
-			siteTag: 'portfolio',
-			form: 'Контакты',
-			formTag: 'contact',
-			fields: [
-				['Имя', data.name],
-				['Email', data.email],
-				['Тема', data.subject],
-				['Сообщение', data.message]
-			],
-			attribution: data.attribution
+// Заявки со всех сайтов GooseLabs пишутся в одну базу (таблица site_leads)
+// и идут в один бот лидов. Формат и хранение общие: lib/lead-message.ts,
+// lib/lead-store.ts, lib/attribution.ts.
+function toLead(data: ContactRequest) {
+	return {
+		site: 'portfolio.gooselabs.ru',
+		siteTag: 'portfolio',
+		form: 'Контакты',
+		formTag: 'contact',
+		fields: [
+			['Имя', data.name],
+			['Email', data.email],
+			['Тема', data.subject],
+			['Сообщение', data.message]
+		] as [string, string][],
+		contact: {
+			name: data.name,
+			email: data.email,
+			message: `${data.subject}\n\n${data.message}`
 		},
-		telegramFetch
-	)
-	if (!sent) throw new Error('Заявка не доставлена в бот лидов')
+		attribution: data.attribution
+	}
 }
 
 export async function POST(request: NextRequest) {
 	try {
 		const body: ContactRequest = await request.json()
 
-		// Basic validation
 		if (!body.name || !body.email || !body.subject || !body.message) {
 			return NextResponse.json(
-				{ error: 'Все поля обязательны для заполнения' },
+				{ error: 'Заполните все поля формы' },
 				{ status: 400 }
 			)
 		}
 
-		// Validate email format
-		const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-		if (!emailRegex.test(body.email)) {
+		if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(body.email)) {
 			return NextResponse.json(
 				{ error: 'Некорректный формат email' },
 				{ status: 400 }
 			)
 		}
 
-		// Send to Telegram
-		await sendToTelegram(body)
+		const ok = await submitLead(toLead(body), telegramFetch)
+		if (!ok) {
+			return NextResponse.json(
+				{ error: 'Не удалось отправить сообщение. Попробуйте позже.' },
+				{ status: 500 }
+			)
+		}
 
-		return NextResponse.json(
-			{
-				message: 'Сообщение успешно отправлено',
-				success: true
-			},
-			{ status: 200 }
-		)
+		return NextResponse.json({ message: 'Message sent', success: true })
 	} catch (error) {
 		console.error('Error processing contact form:', error)
 		return NextResponse.json(
-			{ error: 'Ошибка при отправке сообщения. Попробуйте позже.' },
+			{ error: 'Internal server error' },
 			{ status: 500 }
 		)
 	}

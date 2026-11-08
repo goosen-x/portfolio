@@ -66,16 +66,31 @@ jobs:
         TELEGRAM_PROXY_URL: ${{ secrets.TELEGRAM_PROXY_URL }}
         TELEGRAM_LEADS_BOT_TOKEN: ${{ secrets.TELEGRAM_LEADS_BOT_TOKEN }}
         TELEGRAM_LEADS_CHAT_ID: ${{ secrets.TELEGRAM_LEADS_CHAT_ID }}
+        DATABASE_URL: ${{ secrets.DATABASE_URL }}
       with:
         host: ${{ secrets.SERVER_HOST }}
         username: ${{ secrets.SERVER_USER }}
         key: ${{ secrets.SERVER_SSH_KEY }}
         port: 22
-        envs: REGISTRY,IMAGE_NAME,NEXT_PUBLIC_YANDEX_METRIKA_ID,NEXT_PUBLIC_GOOGLE_ANALYTICS_ID,TELEGRAM_BOT_TOKEN,TELEGRAM_CHAT_ID,TELEGRAM_PROXY_URL,TELEGRAM_LEADS_BOT_TOKEN,TELEGRAM_LEADS_CHAT_ID
+        envs: REGISTRY,IMAGE_NAME,NEXT_PUBLIC_YANDEX_METRIKA_ID,NEXT_PUBLIC_GOOGLE_ANALYTICS_ID,TELEGRAM_BOT_TOKEN,TELEGRAM_CHAT_ID,TELEGRAM_PROXY_URL,TELEGRAM_LEADS_BOT_TOKEN,TELEGRAM_LEADS_CHAT_ID,DATABASE_URL
         script: |
           # Create app directory if it doesn't exist
           mkdir -p ~/portfolio
           cd ~/portfolio
+
+          # База заявок общая с pixeltool (таблица site_leads). Строка подключения
+          # из секрета DATABASE_URL, а если его нет, из .env.production pixeltool
+          # на этом же сервере.
+          LEADS_DB_URL="${DATABASE_URL}"
+          if [ -z "$LEADS_DB_URL" ]; then
+            LEADS_DB_URL=$(grep -s '^DATABASE_URL=' ~/pixeltool/.env.production | cut -d= -f2-)
+          fi
+          if [ -z "$LEADS_DB_URL" ]; then
+            echo "WARNING: DATABASE_URL не найден, заявки не будут сохраняться в базу"
+          else
+            echo "DATABASE_URL для заявок найден"
+          fi
+          docker network create pixeltool-net 2>/dev/null || true
 
           # Always regenerate .env.production so new/changed secrets actually reach the server
           echo "Writing .env.production file..."
@@ -88,6 +103,7 @@ jobs:
           TELEGRAM_PROXY_URL=${TELEGRAM_PROXY_URL}
           TELEGRAM_LEADS_BOT_TOKEN=${TELEGRAM_LEADS_BOT_TOKEN}
           TELEGRAM_LEADS_CHAT_ID=${TELEGRAM_LEADS_CHAT_ID}
+          DATABASE_URL=${LEADS_DB_URL}
           NODE_ENV=production
           PORT=3004
           HOSTNAME=0.0.0.0
@@ -105,6 +121,7 @@ jobs:
           docker run -d \
             --name portfolio \
             --restart unless-stopped \
+            --network pixeltool-net \
             --env-file ~/portfolio/.env.production \
             -p 3004:3004 \
             ${REGISTRY}/${IMAGE_NAME}:latest

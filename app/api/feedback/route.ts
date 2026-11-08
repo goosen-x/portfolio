@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { telegramFetch } from '@/lib/telegram/proxy-fetch'
+import { markSiteMessageSent, saveSiteMessage } from '@/lib/lead-store'
 
 interface FeedbackRequest {
 	type: 'bug' | 'feature' | 'general'
@@ -34,14 +35,40 @@ export async function POST(request: NextRequest) {
 			url: request.headers.get('referer')
 		}
 
-		// Send to Telegram
-		await sendToTelegram(feedbackData)
+		// Сначала общая база (site_messages), Telegram поверх: если бот
+		// недоступен, отзыв всё равно не теряется.
+		const id = await saveSiteMessage({
+			site: 'portfolio.gooselabs.ru',
+			source: 'feedback',
+			type: body.type,
+			email: body.email,
+			subject: body.title,
+			message: body.description,
+			meta: {
+				widget: body.widget,
+				url: feedbackData.url,
+				userAgent: feedbackData.userAgent
+			}
+		})
+
+		let sent = false
+		try {
+			await sendToTelegram(feedbackData)
+			sent = true
+			if (id) await markSiteMessageSent(id)
+		} catch (telegramError) {
+			console.error('Отзыв не доставлен в Telegram:', telegramError)
+		}
+
+		if (!sent && id === null) {
+			return NextResponse.json(
+				{ error: 'Internal server error' },
+				{ status: 500 }
+			)
+		}
 
 		return NextResponse.json(
-			{
-				message: 'Feedback submitted successfully',
-				id: Date.now().toString() // In production, use proper ID generation
-			},
+			{ message: 'Feedback submitted successfully', id },
 			{ status: 200 }
 		)
 	} catch (error) {
